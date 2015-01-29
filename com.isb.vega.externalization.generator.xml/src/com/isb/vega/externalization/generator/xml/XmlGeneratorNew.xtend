@@ -129,12 +129,12 @@ class XmlGeneratorNew {
 	
 		def doGenerateCommunication() '''
 		<communication>
-			«TrxOP.doGenerateTrxOP»
-			«Sat.doGenerateSat»
-			«Altair.doGenerateAltair»
-			«Bboo.doGenerateBboo»
-			«Tp.doGenerateTp»
-			«Siebel.doGenerateSiebel»
+			«Connectors.doGenerateTrxOP»
+			«Connectors.doGenerateSat»
+			«Connectors.doGenerateAltair»
+			«Connectors.doGenerateBboo»
+			«Connectors.doGenerateTp»
+			«Connectors.doGenerateSiebel»
 		</communication>		
 	'''
 	
