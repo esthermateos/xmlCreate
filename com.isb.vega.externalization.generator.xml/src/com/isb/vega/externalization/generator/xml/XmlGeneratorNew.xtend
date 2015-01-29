@@ -1,6 +1,6 @@
 package com.isb.vega.externalization.generator.xml
 
-import static com.isb.bks.xml.Using.*
+import static com.isb.vega.externalization.generator.xml.Using.*
 import java.io.File
 import java.io.FileWriter
 
