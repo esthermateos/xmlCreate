@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.isb.vega.generator.xml.model/src" modelPluginID="com.isb.vega.generator.xml.model"
+    modelName="Dependencies" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>Dependencies.ecore</foreignModel>
+  <genPackages prefix="Dependencies" disposableProviderFactory="true" ecorePackage="Dependencies.ecore#/">
+    <genClasses ecoreClass="Dependencies.ecore#//HOST">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//HOST/satProtocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//HOST/satAlias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//HOST/satTimeOut"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//HOST/satNullValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//HOST/satNullWhenSpaces"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//HOST/trxOPDefaultMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//HOST/trxOPTCPAlias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//HOST/altairProtocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//HOST/altairAlias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//HOST/RedProtocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//HOST/trxprotocol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//HOST/eOPLogicalChannel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//HOST/ePhysicalChannel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//HOST/eSATLogicalChannel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//HOST/eSATPhysicalChannel"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//OP">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OP/estadoLlamadaOP"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OP/ERJSP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//OP/lpName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//OP/opName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//OP/version"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OP/eWebService"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OP/eFachada"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OP/eOI"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//OI">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/estadoLlamadaOI"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/ERAppAdapter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//OI/lnName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//OI/oiName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//OI/version"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/EReference1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eTp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eBBOO"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eSiebel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eSQLComponent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eJava"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eAltair"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eTrxOP"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eSAT"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eFachada"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//Fachada">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Fachada/facadeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Fachada/interfazName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Fachada/methodName"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//TrxOP">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//TrxOP/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//TrxOP/transaction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//TrxOP/operation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//TrxOP/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//TrxOP/alias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//TrxOP/protocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//TrxOP/transactionMode"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//SAT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SAT/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SAT/satName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SAT/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SAT/alias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SAT/mode"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//Altair">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Altair/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Altair/transaction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Altair/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Altair/alias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Altair/mode"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//Webservice">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Webservice/associatedLogics"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Webservice/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Webservice/alias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Webservice/transport"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Webservice/synchrony"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Webservice/wsdl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Webservice/wsOp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Webservice/namespace"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//ChannelAdapter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//ChannelAdapter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//ChannelAdapter/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//ChannelAdapter/facadeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//ChannelAdapter/interfaceName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//ChannelAdapter/alias"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//JMS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//JMS/listenerPorts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//JMS/jmsModules"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//Ensamblado">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Ensamblado/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Ensamblado/eLogLevel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Ensamblado/eMultiProfile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Ensamblado/eHOST"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Ensamblado/eJMS"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Ensamblado/eChannelAdapter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Ensamblado/eEnsamblado"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Ensamblado/eOP"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//Security">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Security/autentication"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Security/usuNotes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Security/entityAlias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Security/codePassword"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Security/multi"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//MultiProfile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//MultiProfile/catCompany"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//MultiProfile/catCanalMarco"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//MultiProfile/catGama"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//MultiProfile/catIdioma"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//MultiProfile/catEstructura"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//MultiProfile/catNivelIU"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//MultiProfile/catEmpresaAsociada"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//MultiProfile/catRender"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//MultiProfile/catOrden"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//Java">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Java/eFachada"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Java/eCache"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//AppAdapter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//AppAdapter/eFachada"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//AppAdapter/eCache"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//JSP">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//JSP/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//JSP/eTableParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//JSP/eRules"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//Siebel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Siebel/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Siebel/server"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Siebel/object"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Siebel/request"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//Tp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Tp/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Tp/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Tp/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Tp/subtype"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//BBOO">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//BBOO/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//BBOO/alias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//BBOO/document"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//BBOO/provider"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//TableParameters">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//TableParameters/table"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//TableParameters/columns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//TableParameters/cacheado"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//TableParameters/eClientArcReferences"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//SQLComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SQLComponent/implementationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SQLComponent/datasource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SQLComponent/dataSourceAlias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SQLComponent/maxRows"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SQLComponent/pageMaxSize"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//SQLComponent/eSQLSentence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//SQLComponent/eCache"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//sqlSentence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//sqlSentence/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//sqlSentence/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//sqlSentence/sql"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//sqlSentence/eFachada"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//ClientArcReferences">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//ClientArcReferences/src"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//ClientArcReferences/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//LogLevel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//LogLevel/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//LogLevel/propagation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//LogLevel/propagationPriority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//LogLevel/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//LogLevel/levelPriority"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//Rules">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Rules/idLit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Rules/lit"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//trxOPLogicalChannel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//trxOPLogicalChannel/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//trxOPLogicalChannel/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//trxOPPhysicalChannel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//trxOPPhysicalChannel/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//trxOPPhysicalChannel/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//SATLogicalChannel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SATLogicalChannel/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SATLogicalChannel/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//SATPhysicalChannel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SATPhysicalChannel/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SATPhysicalChannel/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//Cache">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Cache/package"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Cache/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Cache/alias"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
