@@ -3294,11 +3294,11 @@ public interface DependenciesPackage extends EPackage {
 	EAttribute getSecurity_CodePassword();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.Security#isMulti <em>Multi</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.Security#getMulti <em>Multi</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Multi</em>'.
-	 * @see dependencies.Security#isMulti()
+	 * @see dependencies.Security#getMulti()
 	 * @see #getSecurity()
 	 * @generated
 	 */

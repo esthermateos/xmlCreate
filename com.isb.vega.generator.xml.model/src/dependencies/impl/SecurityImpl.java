@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link dependencies.impl.SecurityImpl#getUsuNotes <em>Usu Notes</em>}</li>
  *   <li>{@link dependencies.impl.SecurityImpl#getEntityAlias <em>Entity Alias</em>}</li>
  *   <li>{@link dependencies.impl.SecurityImpl#getCodePassword <em>Code Password</em>}</li>
- *   <li>{@link dependencies.impl.SecurityImpl#isMulti <em>Multi</em>}</li>
+ *   <li>{@link dependencies.impl.SecurityImpl#getMulti <em>Multi</em>}</li>
  * </ul>
  * </p>
  *
@@ -111,24 +111,24 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 	protected String codePassword = CODE_PASSWORD_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isMulti() <em>Multi</em>}' attribute.
+	 * The default value of the '{@link #getMulti() <em>Multi</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isMulti()
+	 * @see #getMulti()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean MULTI_EDEFAULT = false;
+	protected static final String MULTI_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #isMulti() <em>Multi</em>}' attribute.
+	 * The cached value of the '{@link #getMulti() <em>Multi</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isMulti()
+	 * @see #getMulti()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean multi = MULTI_EDEFAULT;
+	protected String multi = MULTI_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -238,7 +238,7 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isMulti() {
+	public String getMulti() {
 		return multi;
 	}
 
@@ -247,8 +247,8 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMulti(boolean newMulti) {
-		boolean oldMulti = multi;
+	public void setMulti(String newMulti) {
+		String oldMulti = multi;
 		multi = newMulti;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SECURITY__MULTI, oldMulti, multi));
@@ -271,7 +271,7 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 			case DependenciesPackage.SECURITY__CODE_PASSWORD:
 				return getCodePassword();
 			case DependenciesPackage.SECURITY__MULTI:
-				return isMulti();
+				return getMulti();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -297,7 +297,7 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 				setCodePassword((String)newValue);
 				return;
 			case DependenciesPackage.SECURITY__MULTI:
-				setMulti((Boolean)newValue);
+				setMulti((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -347,7 +347,7 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 			case DependenciesPackage.SECURITY__CODE_PASSWORD:
 				return CODE_PASSWORD_EDEFAULT == null ? codePassword != null : !CODE_PASSWORD_EDEFAULT.equals(codePassword);
 			case DependenciesPackage.SECURITY__MULTI:
-				return multi != MULTI_EDEFAULT;
+				return MULTI_EDEFAULT == null ? multi != null : !MULTI_EDEFAULT.equals(multi);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dependencies.Security#getUsuNotes <em>Usu Notes</em>}</li>
  *   <li>{@link dependencies.Security#getEntityAlias <em>Entity Alias</em>}</li>
  *   <li>{@link dependencies.Security#getCodePassword <em>Code Password</em>}</li>
- *   <li>{@link dependencies.Security#isMulti <em>Multi</em>}</li>
+ *   <li>{@link dependencies.Security#getMulti <em>Multi</em>}</li>
  * </ul>
  * </p>
  *
@@ -138,21 +138,21 @@ public interface Security extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Multi</em>' attribute.
-	 * @see #setMulti(boolean)
+	 * @see #setMulti(String)
 	 * @see dependencies.DependenciesPackage#getSecurity_Multi()
 	 * @model
 	 * @generated
 	 */
-	boolean isMulti();
+	String getMulti();
 
 	/**
-	 * Sets the value of the '{@link dependencies.Security#isMulti <em>Multi</em>}' attribute.
+	 * Sets the value of the '{@link dependencies.Security#getMulti <em>Multi</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Multi</em>' attribute.
-	 * @see #isMulti()
+	 * @see #getMulti()
 	 * @generated
 	 */
-	void setMulti(boolean value);
+	void setMulti(String value);
 
 } // Security
