@@ -1,6 +1,7 @@
 package com.isb.vega.generator.xml.configuration;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,51 +52,56 @@ public class CreateconfigurationXML {
 				IAssembly assembly = ((IAssemblyProject)vegaProject).getAssembly();
 				assemblyFile = assembly.getAssemblyFile();
 			}
+			
+			Ensamblado ensamblado = dependencies.createEnsamblado();
+			ensamblado.setName(name);	
 			// a partir del objeto assembllyFileData creamos las entidades MULTIPROFILE y SECURITY
 			IAssemblyFileData assemblyFileData = assemblyFile.getAssemblyFileData();
-			CreateEntities.createMultiProfile(assemblyFileData,dependencies);
+			CreateEntities.createMultiProfile(assemblyFileData,dependencies, ensamblado);
 			CreateEntities.createBasicSecurity(assemblyFileData, dependencies);
-		
-			//Creamos el objeto ensamblado y obtenemos los posibles escenarios
-			Ensamblado ensamblado = dependencies.createEnsamblado();
-			ensamblado.setName(name);		
-			iscenarios = UtilsDependencies.getScenarios(vegaProject, iscenarios, assemblyFile);
-			for (IScenario scenario : iscenarios) 
-			{				
-				ScenarioExternalizationContributor scenarioExternalizationContributor = new ScenarioExternalizationContributor();
-				operation = scenarioExternalizationContributor.contributeOperations(scenario);
-			}
-	
-			List<IOperation> listOPs = UtilsDependencies.getlist(operation, UtilsOperations.OP_OPERATIONS);
-			List<IOperation> listOIs = UtilsDependencies.getlist(operation, UtilsOperations.OI_OPERATIONS);
-			
-			/*recorremos las OPS para crear las fachadas de OPS*/
-			
-			for (IOperation iOperationOP : listOPs) {			
-				IOperationData operationData = iOperationOP.getOperationData();
-				if  (operationData instanceof IFlowOperationData){
-					IFlowOperationData iFlowOperationData = (IFlowOperationData)operationData;
-					CreateEntities.createOPs(dependencies, iFlowOperationData);
-					IState[] lstStates = iFlowOperationData.getOperationFlow().getStateContainer().getStates();
-					for (IState iState : lstStates) {
-						CreateEntities.createFacades(dependencies, iState);		
-					}
-				}			 
-			}	
-	
-			//			for (Fachada fachada : listFachada) {
-			//			
-			//			}
+//		
+//			//Creamos el objeto ensamblado y obtenemos los posibles escenarios
+//	
+//			iscenarios = UtilsDependencies.getScenarios(vegaProject, iscenarios, assemblyFile);
+//			for (IScenario scenario : iscenarios) 
+//			{				
+//				ScenarioExternalizationContributor scenarioExternalizationContributor = new ScenarioExternalizationContributor();
+//				operation = scenarioExternalizationContributor.contributeOperations(scenario);
+//			}
+//	
+//			List<IOperation> listOPs = UtilsDependencies.getlist(operation, UtilsOperations.OP_OPERATIONS);
+//			List<IOperation> listOIs = UtilsDependencies.getlist(operation, UtilsOperations.OI_OPERATIONS);
+//			
+//			/*recorremos las OPS para crear las fachadas de OPS*/
+//			
+//			for (IOperation iOperationOP : listOPs) {			
+//				IOperationData operationData = iOperationOP.getOperationData();
+//				if  (operationData instanceof IFlowOperationData){
+//					IFlowOperationData iFlowOperationData = (IFlowOperationData)operationData;
+//					CreateEntities.createOPs(dependencies, iFlowOperationData);
+//					IState[] lstStates = iFlowOperationData.getOperationFlow().getStateContainer().getStates();
+//					for (IState iState : lstStates) {
+//						CreateEntities.createFacades(dependencies, iState);		
+//					}
+//				}			 
+//			}	
+//	
+//			//			for (Fachada fachada : listFachada) {
+//			//			
+//			//			}
 	
 		
 			//Creamos el fichero de ruta dada
-			File path = new File(ruta);
-			if (!path.exists()) {
-				path.mkdirs();
+			File configuration = new File(ruta);
+			try {
+				configuration.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 			
 			//Externalizamos los datos del modelo			
-			XmlGeneratorNew.compile(path, dependencies.getDependenciesPackage());
+			XmlGeneratorNew.compile(configuration, ensamblado);
 	
 	}
 

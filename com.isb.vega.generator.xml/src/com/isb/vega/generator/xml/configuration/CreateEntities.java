@@ -14,6 +14,7 @@ import com.isb.vega.model.operation.flow.IState;
 import com.isb.vega.model.operation.flow.state.facade.IFacadeInterfaceState;
 
 import dependencies.DependenciesFactory;
+import dependencies.Ensamblado;
 import dependencies.Fachada;
 import dependencies.MultiProfile;
 import dependencies.OP;
@@ -60,13 +61,14 @@ public class CreateEntities {
 	  * @param assemblyFileData - Datos del fichero del ensamblado
 	  * @param dependencies - Factoría de entidades del modelo
 	*/
-	public static void createMultiProfile(IAssemblyFileData assemblyFileData, DependenciesFactory dependencies) {
+	public static void createMultiProfile(IAssemblyFileData assemblyFileData, DependenciesFactory dependencies, Ensamblado ensamblado) {
 		IAssemblyCategoryProfileContainer assemblyCategoryContainer = assemblyFileData.getAssemblyCategoryContainer();
 		IAssemblyCategoryProfile[] categories = assemblyCategoryContainer.getCategories();
 		MultiProfile multiprofile = dependencies.createMultiProfile();
 		for (IAssemblyCategoryProfile iAssemblyCategoryProfile : categories) {
 			setValuesMultiProfiles(iAssemblyCategoryProfile, multiprofile);
 		}
+		ensamblado.setEMultiProfile(multiprofile);
 	}
 	
 	
