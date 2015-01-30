@@ -2,16 +2,19 @@ package com.isb.vega.externalization.generator.xml;
 
 import com.isb.vega.externalization.generator.xml.LogLevelDefinitions;
 import com.isb.vega.externalization.generator.xml.MultisCategories;
+import dependencies.Ensamblado;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class AssemblyXML {
-  public static CharSequence doGenerateAssembly() {
+  public static CharSequence doGenerateAssembly(final Ensamblado ensamblado) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<assembly defaultBankChannel=\"");
     _builder.append("\" name=\"");
+    String _name = ensamblado.getName();
+    _builder.append(_name, "");
     _builder.append("\"> ");
-    _builder.newLine();
+    _builder.newLineIfNotEmpty();
     _builder.append("\t");
     CharSequence _doGenerateLogLevel = LogLevelDefinitions.doGenerateLogLevel();
     _builder.append(_doGenerateLogLevel, "	");

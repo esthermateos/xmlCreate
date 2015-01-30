@@ -8,19 +8,21 @@ import com.isb.vega.externalization.generator.xml.SqlSentence;
 import com.isb.vega.externalization.generator.xml.Using;
 import com.isb.vega.externalization.generator.xml.Utils;
 import com.isb.vega.externalization.generator.xml.WebServiceStates;
-import dependencies.DependenciesFactory;
+import dependencies.DependenciesPackage;
+import dependencies.Ensamblado;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 
 @SuppressWarnings("all")
 public class XmlGeneratorNew {
-  private DependenciesFactory dependen;
+  private DependenciesPackage dependen;
   
-  public XmlGeneratorNew(final DependenciesFactory dependencies) {
+  public XmlGeneratorNew(final DependenciesPackage dependencies) {
     this.dependen = dependencies;
   }
   
@@ -34,23 +36,23 @@ public class XmlGeneratorNew {
             {
               CharSequence _doGenerateHeader = XmlGeneratorNew.this.doGenerateHeader();
               it.append(_doGenerateHeader);
-              CharSequence _doGenerateAssembly = XmlGeneratorNew.this.doGenerateAssembly();
+              CharSequence _doGenerateAssembly = XmlGeneratorNew.this.doGenerateAssembly(XmlGeneratorNew.this.dependen);
               it.append(_doGenerateAssembly);
-              CharSequence _doGenerateCommunication = XmlGeneratorNew.this.doGenerateCommunication();
+              CharSequence _doGenerateCommunication = XmlGeneratorNew.this.doGenerateCommunication(XmlGeneratorNew.this.dependen);
               it.append(_doGenerateCommunication);
-              CharSequence _doGenerateChannelAdapter = XmlGeneratorNew.this.doGenerateChannelAdapter();
+              CharSequence _doGenerateChannelAdapter = XmlGeneratorNew.this.doGenerateChannelAdapter(XmlGeneratorNew.this.dependen);
               it.append(_doGenerateChannelAdapter);
-              CharSequence _doGenerateWebServices = XmlGeneratorNew.this.doGenerateWebServices();
+              CharSequence _doGenerateWebServices = XmlGeneratorNew.this.doGenerateWebServices(XmlGeneratorNew.this.dependen);
               it.append(_doGenerateWebServices);
-              CharSequence _doGenerateSQLComponents = XmlGeneratorNew.this.doGenerateSQLComponents();
+              CharSequence _doGenerateSQLComponents = XmlGeneratorNew.this.doGenerateSQLComponents(XmlGeneratorNew.this.dependen);
               it.append(_doGenerateSQLComponents);
-              CharSequence _doGenerateCaches = XmlGeneratorNew.this.doGenerateCaches();
+              CharSequence _doGenerateCaches = XmlGeneratorNew.this.doGenerateCaches(XmlGeneratorNew.this.dependen);
               it.append(_doGenerateCaches);
-              CharSequence _doGenerateFtps = XmlGeneratorNew.this.doGenerateFtps();
+              CharSequence _doGenerateFtps = XmlGeneratorNew.this.doGenerateFtps(XmlGeneratorNew.this.dependen);
               it.append(_doGenerateFtps);
-              CharSequence _doGenerateRules = XmlGeneratorNew.this.doGenerateRules();
+              CharSequence _doGenerateRules = XmlGeneratorNew.this.doGenerateRules(XmlGeneratorNew.this.dependen);
               it.append(_doGenerateRules);
-              CharSequence _doGenerateGlobal = XmlGeneratorNew.this.doGenerateGlobal();
+              CharSequence _doGenerateGlobal = XmlGeneratorNew.this.doGenerateGlobal(XmlGeneratorNew.this.dependen);
               it.append(_doGenerateGlobal);
               CharSequence _doGenerateOther = XmlGeneratorNew.this.doGenerateOther();
               it.append(_doGenerateOther);
@@ -71,7 +73,7 @@ public class XmlGeneratorNew {
     }
   }
   
-  public CharSequence doGenerateCaches() {
+  public CharSequence doGenerateCaches(final DependenciesPackage dependency) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<caches>");
     _builder.newLine();
@@ -94,7 +96,7 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateFtps() {
+  public CharSequence doGenerateFtps(final DependenciesPackage dependency) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<ftps>");
     _builder.newLine();
@@ -121,7 +123,7 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateGlobal() {
+  public CharSequence doGenerateGlobal(final DependenciesPackage dependency) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<global>");
     _builder.newLine();
@@ -134,7 +136,7 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateRules() {
+  public CharSequence doGenerateRules(final DependenciesPackage dependency) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<rules>");
     _builder.newLine();
@@ -188,7 +190,7 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateSQLComponents() {
+  public CharSequence doGenerateSQLComponents(final DependenciesPackage dependency) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<sqlComponents>");
     _builder.newLine();
@@ -257,7 +259,7 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateWebServices() {
+  public CharSequence doGenerateWebServices(final DependenciesPackage dependency) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<webServices>");
     _builder.newLine();
@@ -273,7 +275,7 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateChannelAdapter() {
+  public CharSequence doGenerateChannelAdapter(final DependenciesPackage dependency) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<channelAdapters>");
     _builder.newLine();
@@ -321,7 +323,7 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateCommunication() {
+  public CharSequence doGenerateCommunication(final DependenciesPackage dependency) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<communication>");
     _builder.newLine();
@@ -361,12 +363,13 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateAssembly() {
-    CharSequence _doGenerateAssembly = AssemblyXML.doGenerateAssembly();
+  public CharSequence doGenerateAssembly(final DependenciesPackage dependency) {
+    EClass _ensamblado = dependency.getEnsamblado();
+    CharSequence _doGenerateAssembly = AssemblyXML.doGenerateAssembly(((Ensamblado) _ensamblado));
     return _doGenerateAssembly;
   }
   
-  public static Writer compile(final File target, final DependenciesFactory dependencies) {
+  public static Writer compile(final File target, final DependenciesPackage dependencies) {
     XmlGeneratorNew _xmlGeneratorNew = new XmlGeneratorNew(dependencies);
     Writer _generate = _xmlGeneratorNew.generate(target);
     return _generate;

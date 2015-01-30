@@ -1,10 +1,12 @@
 package com.isb.vega.externalization.generator.xml
 
+import dependencies.Ensamblado
+
 class AssemblyXML {
 		
-	def static doGenerateAssembly() 
+	def static doGenerateAssembly( Ensamblado ensamblado) 
     '''
-	<assembly defaultBankChannel="«»" name="«»"> 
+	<assembly defaultBankChannel="«»" name="«ensamblado.name»"> 
 		«LogLevelDefinitions.doGenerateLogLevel»
 		<assemblySecurity>
 			<authenticationEnabled>«»</assemblySecurity>

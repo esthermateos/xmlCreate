@@ -95,7 +95,7 @@ public class CreateconfigurationXML {
 			}
 			
 			//Externalizamos los datos del modelo			
-			XmlGeneratorNew.compile(path, dependencies);
+			XmlGeneratorNew.compile(path, dependencies.getDependenciesPackage());
 	
 	}
 
