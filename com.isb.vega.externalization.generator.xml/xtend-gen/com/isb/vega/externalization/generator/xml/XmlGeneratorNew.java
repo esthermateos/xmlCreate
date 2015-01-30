@@ -3,6 +3,7 @@ package com.isb.vega.externalization.generator.xml;
 import com.isb.vega.externalization.generator.xml.AssemblyXML;
 import com.isb.vega.externalization.generator.xml.Connectors;
 import com.isb.vega.externalization.generator.xml.GetDate;
+import com.isb.vega.externalization.generator.xml.Global;
 import com.isb.vega.externalization.generator.xml.SqlSentence;
 import com.isb.vega.externalization.generator.xml.Using;
 import com.isb.vega.externalization.generator.xml.Utils;
@@ -125,7 +126,9 @@ public class XmlGeneratorNew {
     _builder.append("<global>");
     _builder.newLine();
     _builder.append("\t");
-    _builder.newLine();
+    CharSequence _doGenerateGlobal = Global.doGenerateGlobal();
+    _builder.append(_doGenerateGlobal, "	");
+    _builder.newLineIfNotEmpty();
     _builder.append("</global>");
     _builder.newLine();
     return _builder;

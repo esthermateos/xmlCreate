@@ -60,7 +60,7 @@ class XmlGeneratorNew {
 	
 		def doGenerateGlobal() '''
 		<global>
-			
+			«Global.doGenerateGlobal»
 		</global>
 	'''
 	
