@@ -7,6 +7,7 @@ import com.isb.vega.externalization.generator.xml.SqlSentence;
 import com.isb.vega.externalization.generator.xml.Using;
 import com.isb.vega.externalization.generator.xml.Utils;
 import com.isb.vega.externalization.generator.xml.WebServiceStates;
+import dependencies.DependenciesFactory;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
@@ -16,6 +17,12 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 
 @SuppressWarnings("all")
 public class XmlGeneratorNew {
+  private DependenciesFactory dependen;
+  
+  public XmlGeneratorNew(final DependenciesFactory dependencies) {
+    this.dependen = dependencies;
+  }
+  
   public Writer generate(final File file) {
     try {
       FileWriter _fileWriter = new FileWriter(file);
@@ -356,8 +363,8 @@ public class XmlGeneratorNew {
     return _doGenerateAssembly;
   }
   
-  public static Writer compile(final File target) {
-    XmlGeneratorNew _xmlGeneratorNew = new XmlGeneratorNew();
+  public static Writer compile(final File target, final DependenciesFactory dependencies) {
+    XmlGeneratorNew _xmlGeneratorNew = new XmlGeneratorNew(dependencies);
     Writer _generate = _xmlGeneratorNew.generate(target);
     return _generate;
   }

@@ -1,12 +1,15 @@
 package com.isb.vega.generator.xml.configuration;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 
+import com.isb.vega.externalization.generator.xml.XmlGeneratorNew;
 import com.isb.vega.internal.model.assembly.AssemblyProject;
+import com.isb.vega.internal.model.component.externalization.XmlGenerator;
 import com.isb.vega.model.api.utils.UtilsProjectsApi;
 import com.isb.vega.model.assembly.IAssembly;
 import com.isb.vega.model.assembly.IAssemblyFile;
@@ -38,7 +41,7 @@ public class CreateconfigurationXML {
 	DependenciesFactory dependencies = DependenciesFactory.eINSTANCE;
 	
 	
-	public  void  getConfigurationXML(String name) {
+	public  void  getConfigurationXML(String name, String ruta) {
 			IProject iProject = ResourcesPlugin.getWorkspace().getRoot().getProject(name);
 			IVegaProject vegaProject = UtilsProjectsApi.findVegProjectInVegaCore(iProject);
 			
@@ -84,7 +87,17 @@ public class CreateconfigurationXML {
 			//			
 			//			}
 	
-		}
+		
+			//Creamos el fichero de ruta dada
+			File path = new File(ruta);
+			if (!path.exists()) {
+				path.mkdirs();
+			}
+			
+			//Externalizamos los datos del modelo			
+			XmlGeneratorNew.compile(path, dependencies);
+	
+	}
 
 
 }

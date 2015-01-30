@@ -16,7 +16,8 @@ Require-Bundle: org.eclipse.ui,
  com.isb.vega.generator.xml.model;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Import-Package: com.isb.vega.model.core,
+Import-Package: com.isb.vega.externalization.generator.xml,
+ com.isb.vega.model.core,
  com.isb.vega.model.operation,
  com.isb.vega.model.operation.flow,
  com.isb.vega.model.preassembly.util,

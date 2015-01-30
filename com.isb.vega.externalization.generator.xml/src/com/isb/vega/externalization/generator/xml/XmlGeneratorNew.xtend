@@ -3,8 +3,18 @@ package com.isb.vega.externalization.generator.xml
 import static com.isb.vega.externalization.generator.xml.Using.*
 import java.io.File
 import java.io.FileWriter
+import dependencies.DependenciesFactory
+
+
 
 class XmlGeneratorNew {
+	
+	DependenciesFactory dependen
+	
+	new(DependenciesFactory dependencies) {
+		dependen =dependencies
+	}
+	
 	def generate(File file) {
 		using(new FileWriter(file)) [
 			it.append(doGenerateHeader())
@@ -147,7 +157,7 @@ class XmlGeneratorNew {
 		}
 		
 	
-	def static compile(File target) {
-		new XmlGeneratorNew().generate(target);
+	def static compile(File target, DependenciesFactory dependencies) {
+		new XmlGeneratorNew(dependencies).generate(target);
 	}
 }
