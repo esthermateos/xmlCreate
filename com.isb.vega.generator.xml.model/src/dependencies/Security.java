@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link dependencies.Security#isAutentication <em>Autentication</em>}</li>
+ *   <li>{@link dependencies.Security#getAutentication <em>Autentication</em>}</li>
  *   <li>{@link dependencies.Security#getUsuNotes <em>Usu Notes</em>}</li>
  *   <li>{@link dependencies.Security#getEntityAlias <em>Entity Alias</em>}</li>
- *   <li>{@link dependencies.Security#isCodePassword <em>Code Password</em>}</li>
+ *   <li>{@link dependencies.Security#getCodePassword <em>Code Password</em>}</li>
  *   <li>{@link dependencies.Security#isMulti <em>Multi</em>}</li>
  * </ul>
  * </p>
@@ -34,22 +34,22 @@ public interface Security extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Autentication</em>' attribute.
-	 * @see #setAutentication(boolean)
+	 * @see #setAutentication(String)
 	 * @see dependencies.DependenciesPackage#getSecurity_Autentication()
 	 * @model
 	 * @generated
 	 */
-	boolean isAutentication();
+	String getAutentication();
 
 	/**
-	 * Sets the value of the '{@link dependencies.Security#isAutentication <em>Autentication</em>}' attribute.
+	 * Sets the value of the '{@link dependencies.Security#getAutentication <em>Autentication</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Autentication</em>' attribute.
-	 * @see #isAutentication()
+	 * @see #getAutentication()
 	 * @generated
 	 */
-	void setAutentication(boolean value);
+	void setAutentication(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Usu Notes</b></em>' attribute.
@@ -112,22 +112,22 @@ public interface Security extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Code Password</em>' attribute.
-	 * @see #setCodePassword(boolean)
+	 * @see #setCodePassword(String)
 	 * @see dependencies.DependenciesPackage#getSecurity_CodePassword()
 	 * @model
 	 * @generated
 	 */
-	boolean isCodePassword();
+	String getCodePassword();
 
 	/**
-	 * Sets the value of the '{@link dependencies.Security#isCodePassword <em>Code Password</em>}' attribute.
+	 * Sets the value of the '{@link dependencies.Security#getCodePassword <em>Code Password</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Code Password</em>' attribute.
-	 * @see #isCodePassword()
+	 * @see #getCodePassword()
 	 * @generated
 	 */
-	void setCodePassword(boolean value);
+	void setCodePassword(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Multi</b></em>' attribute.

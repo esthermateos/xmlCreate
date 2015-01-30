@@ -3250,11 +3250,11 @@ public interface DependenciesPackage extends EPackage {
 	EClass getSecurity();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.Security#isAutentication <em>Autentication</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.Security#getAutentication <em>Autentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Autentication</em>'.
-	 * @see dependencies.Security#isAutentication()
+	 * @see dependencies.Security#getAutentication()
 	 * @see #getSecurity()
 	 * @generated
 	 */
@@ -3283,11 +3283,11 @@ public interface DependenciesPackage extends EPackage {
 	EAttribute getSecurity_EntityAlias();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.Security#isCodePassword <em>Code Password</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.Security#getCodePassword <em>Code Password</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Code Password</em>'.
-	 * @see dependencies.Security#isCodePassword()
+	 * @see dependencies.Security#getCodePassword()
 	 * @see #getSecurity()
 	 * @generated
 	 */

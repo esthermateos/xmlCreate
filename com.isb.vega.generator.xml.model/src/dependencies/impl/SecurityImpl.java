@@ -19,10 +19,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link dependencies.impl.SecurityImpl#isAutentication <em>Autentication</em>}</li>
+ *   <li>{@link dependencies.impl.SecurityImpl#getAutentication <em>Autentication</em>}</li>
  *   <li>{@link dependencies.impl.SecurityImpl#getUsuNotes <em>Usu Notes</em>}</li>
  *   <li>{@link dependencies.impl.SecurityImpl#getEntityAlias <em>Entity Alias</em>}</li>
- *   <li>{@link dependencies.impl.SecurityImpl#isCodePassword <em>Code Password</em>}</li>
+ *   <li>{@link dependencies.impl.SecurityImpl#getCodePassword <em>Code Password</em>}</li>
  *   <li>{@link dependencies.impl.SecurityImpl#isMulti <em>Multi</em>}</li>
  * </ul>
  * </p>
@@ -31,24 +31,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class SecurityImpl extends MinimalEObjectImpl.Container implements Security {
 	/**
-	 * The default value of the '{@link #isAutentication() <em>Autentication</em>}' attribute.
+	 * The default value of the '{@link #getAutentication() <em>Autentication</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isAutentication()
+	 * @see #getAutentication()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean AUTENTICATION_EDEFAULT = false;
+	protected static final String AUTENTICATION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #isAutentication() <em>Autentication</em>}' attribute.
+	 * The cached value of the '{@link #getAutentication() <em>Autentication</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isAutentication()
+	 * @see #getAutentication()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean autentication = AUTENTICATION_EDEFAULT;
+	protected String autentication = AUTENTICATION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getUsuNotes() <em>Usu Notes</em>}' attribute.
@@ -91,24 +91,24 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 	protected String entityAlias = ENTITY_ALIAS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isCodePassword() <em>Code Password</em>}' attribute.
+	 * The default value of the '{@link #getCodePassword() <em>Code Password</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCodePassword()
+	 * @see #getCodePassword()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean CODE_PASSWORD_EDEFAULT = false;
+	protected static final String CODE_PASSWORD_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #isCodePassword() <em>Code Password</em>}' attribute.
+	 * The cached value of the '{@link #getCodePassword() <em>Code Password</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCodePassword()
+	 * @see #getCodePassword()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean codePassword = CODE_PASSWORD_EDEFAULT;
+	protected String codePassword = CODE_PASSWORD_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isMulti() <em>Multi</em>}' attribute.
@@ -154,7 +154,7 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAutentication() {
+	public String getAutentication() {
 		return autentication;
 	}
 
@@ -163,8 +163,8 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAutentication(boolean newAutentication) {
-		boolean oldAutentication = autentication;
+	public void setAutentication(String newAutentication) {
+		String oldAutentication = autentication;
 		autentication = newAutentication;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SECURITY__AUTENTICATION, oldAutentication, autentication));
@@ -217,7 +217,7 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isCodePassword() {
+	public String getCodePassword() {
 		return codePassword;
 	}
 
@@ -226,8 +226,8 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCodePassword(boolean newCodePassword) {
-		boolean oldCodePassword = codePassword;
+	public void setCodePassword(String newCodePassword) {
+		String oldCodePassword = codePassword;
 		codePassword = newCodePassword;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SECURITY__CODE_PASSWORD, oldCodePassword, codePassword));
@@ -263,13 +263,13 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DependenciesPackage.SECURITY__AUTENTICATION:
-				return isAutentication();
+				return getAutentication();
 			case DependenciesPackage.SECURITY__USU_NOTES:
 				return getUsuNotes();
 			case DependenciesPackage.SECURITY__ENTITY_ALIAS:
 				return getEntityAlias();
 			case DependenciesPackage.SECURITY__CODE_PASSWORD:
-				return isCodePassword();
+				return getCodePassword();
 			case DependenciesPackage.SECURITY__MULTI:
 				return isMulti();
 		}
@@ -285,7 +285,7 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DependenciesPackage.SECURITY__AUTENTICATION:
-				setAutentication((Boolean)newValue);
+				setAutentication((String)newValue);
 				return;
 			case DependenciesPackage.SECURITY__USU_NOTES:
 				setUsuNotes((String)newValue);
@@ -294,7 +294,7 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 				setEntityAlias((String)newValue);
 				return;
 			case DependenciesPackage.SECURITY__CODE_PASSWORD:
-				setCodePassword((Boolean)newValue);
+				setCodePassword((String)newValue);
 				return;
 			case DependenciesPackage.SECURITY__MULTI:
 				setMulti((Boolean)newValue);
@@ -339,13 +339,13 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DependenciesPackage.SECURITY__AUTENTICATION:
-				return autentication != AUTENTICATION_EDEFAULT;
+				return AUTENTICATION_EDEFAULT == null ? autentication != null : !AUTENTICATION_EDEFAULT.equals(autentication);
 			case DependenciesPackage.SECURITY__USU_NOTES:
 				return USU_NOTES_EDEFAULT == null ? usuNotes != null : !USU_NOTES_EDEFAULT.equals(usuNotes);
 			case DependenciesPackage.SECURITY__ENTITY_ALIAS:
 				return ENTITY_ALIAS_EDEFAULT == null ? entityAlias != null : !ENTITY_ALIAS_EDEFAULT.equals(entityAlias);
 			case DependenciesPackage.SECURITY__CODE_PASSWORD:
-				return codePassword != CODE_PASSWORD_EDEFAULT;
+				return CODE_PASSWORD_EDEFAULT == null ? codePassword != null : !CODE_PASSWORD_EDEFAULT.equals(codePassword);
 			case DependenciesPackage.SECURITY__MULTI:
 				return multi != MULTI_EDEFAULT;
 		}
