@@ -3,13 +3,8 @@ package com.isb.vega.generator.xml.configuration;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.core.commands.AbstractHandler;
-import org.eclipse.core.commands.ExecutionEvent;
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.handlers.HandlerUtil;
 
 import com.isb.vega.internal.model.assembly.AssemblyProject;
 import com.isb.vega.model.api.utils.UtilsProjectsApi;
@@ -31,12 +26,8 @@ import dependencies.Ensamblado;
 import dependencies.Fachada;
 import dependencies.OP;
 
-/**
- * Our sample handler extends AbstractHandler, an IHandler base class.
- * @see org.eclipse.core.commands.IHandler
- * @see org.eclipse.core.commands.AbstractHandler
- */
-public class CreateconfigurationXML extends AbstractHandler {
+
+public class CreateconfigurationXML {
 	
 	
 	List<Fachada> listFachada = new ArrayList<>();
@@ -45,21 +36,9 @@ public class CreateconfigurationXML extends AbstractHandler {
 	IOperation[] operation;
 	IScenario[] iscenarios;
 	DependenciesFactory dependencies = DependenciesFactory.eINSTANCE;
-
-	/**
-	 * the command has been executed, so extract extract the needed information
-	 * from the application context.
-	 */
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-			IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
-			String name = "SGSDEP_ENS";
-			//String name = "SCU_CRECAR_ENS";
-			getConfigurationXML(name);
-			return null;
-	}
 	
 	
-	private  void  getConfigurationXML(String name) {
+	public  void  getConfigurationXML(String name) {
 			IProject iProject = ResourcesPlugin.getWorkspace().getRoot().getProject(name);
 			IVegaProject vegaProject = UtilsProjectsApi.findVegProjectInVegaCore(iProject);
 			
