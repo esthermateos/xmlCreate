@@ -9,6 +9,7 @@ import com.isb.vega.model.assembly.profile.multi.IAssemblyCategoryProfileContain
 import com.isb.vega.model.assembly.profile.multi.IAssemblyValueCategory;
 import com.isb.vega.model.assembly.settings.IAssemblySettingsContainer;
 import com.isb.vega.model.assembly.settings.IBasicSettingsContainer;
+import com.isb.vega.model.assembly.settings.ISetting;
 import com.isb.vega.model.operation.flow.IFlowOperationData;
 import com.isb.vega.model.operation.flow.IState;
 import com.isb.vega.model.operation.flow.state.facade.IFacadeInterfaceState;
@@ -16,6 +17,7 @@ import com.isb.vega.model.operation.flow.state.facade.IFacadeInterfaceState;
 import dependencies.DependenciesFactory;
 import dependencies.Ensamblado;
 import dependencies.Fachada;
+import dependencies.HOST;
 import dependencies.MultiProfile;
 import dependencies.OP;
 import dependencies.Security;
@@ -119,11 +121,19 @@ public class CreateEntities {
 	  * @param assemblyFileData - datos del fichero del ensamblado
 	  * @param dependencies - Factoría de entidades del modelo
 	*/
-	public static void createBasicSecurity(IAssemblyFileData assemblyFileData, DependenciesFactory dependencies, Ensamblado ensamblado) {
+	public static void createSecurity(IAssemblyFileData assemblyFileData, DependenciesFactory dependencies, Ensamblado ensamblado) {
 		Security security = dependencies.createSecurity();
 		IAssemblySettingsContainer assemblySettingsContainer = assemblyFileData.getAssemblySettingsContainer();
-	    IBasicSettingsContainer basicSettingContainer = assemblySettingsContainer.getBasicSettingsContainer();
+	    IBasicSettingsContainer basicSettingContainer = (IBasicSettingsContainer) assemblySettingsContainer.getAdvancedSettingsContainer();
 	    ensamblado.setEEnsamblado(security);
+	    ISetting[] setting = basicSettingContainer.getSettings();
+	    for (ISetting iSetting : setting) {
+	    	String value = iSetting.getValue();
+	    	if (iSetting.getElementId().equals("TrxOp.ProtocolsUsed.Alias.Ctg")){
+	    		
+	    		
+	    	}
+		}
 	    //security.setAutentication(basicSettingContainer.);
 	}
 	

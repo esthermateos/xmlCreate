@@ -60,7 +60,7 @@ public class CreateconfigurationXML {
 			IAssemblyFileData assemblyFileData = assemblyFile.getAssemblyFileData();
 			CreateEntities.createMultiProfile(assemblyFileData,dependencies, ensamblado);
 			
-			CreateEntities.createBasicSecurity(assemblyFileData, dependencies, ensamblado);
+			CreateEntities.createSecurity(assemblyFileData, dependencies, ensamblado);
 		
 			//Creamos el objeto ensamblado y obtenemos los posibles escenarios
 	
