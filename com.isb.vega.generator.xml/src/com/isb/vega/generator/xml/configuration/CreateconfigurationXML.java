@@ -40,6 +40,7 @@ public class CreateconfigurationXML {
 	IOperation[] operation;
 	IScenario[] iscenarios;
 	DependenciesFactory dependencies = DependenciesFactory.eINSTANCE;
+	Fachada fachada;
 	
 	
 	public  void  getConfigurationXML(String name, String ruta) {
@@ -71,7 +72,7 @@ public class CreateconfigurationXML {
 			}
 //	
 			List<IOperation> listOPs = UtilsDependencies.getlist(operation, UtilsOperations.OP_OPERATIONS);
-			List<IOperation> listOIs = UtilsDependencies.getlist(operation, UtilsOperations.OI_OPERATIONS);
+		//	List<IOperation> listOIs = UtilsDependencies.getlist(operation, UtilsOperations.OI_OPERATIONS);
 			
 			/*recorremos las OPS para crear las fachadas de OPS*/
 			
@@ -82,17 +83,16 @@ public class CreateconfigurationXML {
 					OP op = CreateEntities.createOPs(dependencies, iFlowOperationData, ensamblado);
 					IState[] lstStates = iFlowOperationData.getOperationFlow().getStateContainer().getStates();
 					for (IState iState : lstStates) {
-						Fachada fachada = CreateEntities.createFacades(dependencies, iState);	
-						op.setEFachada(fachada);
+						fachada = CreateEntities.createFacades(dependencies, iState);	
 					}
-	
+					op.setEFachada(fachada);
 				}			 
 			}	
 	
 
 		
 			//Creamos el fichero de ruta dada
-			File configuration = new File(ruta);
+			File configuration = new File(ruta, "configuration.xml");
 			try {
 				configuration.createNewFile();
 			} catch (IOException e) {
