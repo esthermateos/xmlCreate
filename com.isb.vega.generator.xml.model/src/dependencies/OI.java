@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dependencies.OI#getEAltair <em>EAltair</em>}</li>
  *   <li>{@link dependencies.OI#getETrxOP <em>ETrx OP</em>}</li>
  *   <li>{@link dependencies.OI#getESAT <em>ESAT</em>}</li>
- *   <li>{@link dependencies.OI#getEFachada <em>EFachada</em>}</li>
+ *   <li>{@link dependencies.OI#getEReference0 <em>EReference0</em>}</li>
  * </ul>
  * </p>
  *
@@ -322,19 +322,29 @@ public interface OI extends EObject {
 	EList<SAT> getESAT();
 
 	/**
-	 * Returns the value of the '<em><b>EFachada</b></em>' reference list.
-	 * The list contents are of type {@link dependencies.Fachada}.
+	 * Returns the value of the '<em><b>EReference0</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EFachada</em>' reference list isn't clear,
+	 * If the meaning of the '<em>EReference0</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EFachada</em>' reference list.
-	 * @see dependencies.DependenciesPackage#getOI_EFachada()
-	 * @model
+	 * @return the value of the '<em>EReference0</em>' containment reference.
+	 * @see #setEReference0(Fachada)
+	 * @see dependencies.DependenciesPackage#getOI_EReference0()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Fachada> getEFachada();
+	Fachada getEReference0();
+
+	/**
+	 * Sets the value of the '{@link dependencies.OI#getEReference0 <em>EReference0</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>EReference0</em>' containment reference.
+	 * @see #getEReference0()
+	 * @generated
+	 */
+	void setEReference0(Fachada value);
 
 } // OI

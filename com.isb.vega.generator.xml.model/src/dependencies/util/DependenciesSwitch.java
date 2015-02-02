@@ -192,9 +192,9 @@ public class DependenciesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DependenciesPackage.SQL_SENTENCE: {
-				sqlSentence sqlSentence = (sqlSentence)theEObject;
-				T result = casesqlSentence(sqlSentence);
+			case DependenciesPackage.EFACHADA: {
+				eFachada eFachada = (eFachada)theEObject;
+				T result = caseeFachada(eFachada);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -566,17 +566,17 @@ public class DependenciesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>sql Sentence</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>eFachada</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>sql Sentence</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>eFachada</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casesqlSentence(sqlSentence object) {
+	public T caseeFachada(eFachada object) {
 		return null;
 	}
 

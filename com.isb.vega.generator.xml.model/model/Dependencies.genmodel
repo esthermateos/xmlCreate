@@ -30,8 +30,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//OP/opName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//OP/version"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OP/eWebService"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OP/eFachada"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OP/eOI"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OP/eFachada"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//OI">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/estadoLlamadaOI"/>
@@ -48,7 +48,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eAltair"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eTrxOP"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eSAT"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eFachada"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/EReference0"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//Fachada">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Fachada/facadeName"/>
@@ -173,11 +173,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//SQLComponent/eSQLSentence"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//SQLComponent/eCache"/>
     </genClasses>
-    <genClasses ecoreClass="Dependencies.ecore#//sqlSentence">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//sqlSentence/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//sqlSentence/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//sqlSentence/sql"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//sqlSentence/eFachada"/>
+    <genClasses ecoreClass="Dependencies.ecore#//eFachada">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//eFachada/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//eFachada/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//eFachada/sql"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//eFachada/eFachada"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//ClientArcReferences">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//ClientArcReferences/src"/>

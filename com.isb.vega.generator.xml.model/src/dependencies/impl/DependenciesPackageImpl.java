@@ -24,7 +24,7 @@ import dependencies.TableParameters;
 import dependencies.Tp;
 import dependencies.TrxOP;
 import dependencies.Webservice;
-import dependencies.sqlSentence;
+import dependencies.eFachada;
 import dependencies.trxOPLogicalChannel;
 import dependencies.trxOPPhysicalChannel;
 
@@ -194,7 +194,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass sqlSentenceEClass = null;
+	private EClass eFachadaEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -525,7 +525,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOP_EFachada() {
+	public EReference getOP_EOI() {
 		return (EReference)opEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -534,7 +534,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOP_EOI() {
+	public EReference getOP_EFachada() {
 		return (EReference)opEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -678,7 +678,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOI_EFachada() {
+	public EReference getOI_EReference0() {
 		return (EReference)oiEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -1632,8 +1632,8 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getsqlSentence() {
-		return sqlSentenceEClass;
+	public EClass geteFachada() {
+		return eFachadaEClass;
 	}
 
 	/**
@@ -1641,8 +1641,8 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getsqlSentence_Name() {
-		return (EAttribute)sqlSentenceEClass.getEStructuralFeatures().get(0);
+	public EAttribute geteFachada_Name() {
+		return (EAttribute)eFachadaEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1650,8 +1650,8 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getsqlSentence_Type() {
-		return (EAttribute)sqlSentenceEClass.getEStructuralFeatures().get(1);
+	public EAttribute geteFachada_Type() {
+		return (EAttribute)eFachadaEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1659,8 +1659,8 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getsqlSentence_Sql() {
-		return (EAttribute)sqlSentenceEClass.getEStructuralFeatures().get(2);
+	public EAttribute geteFachada_Sql() {
+		return (EAttribute)eFachadaEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1668,8 +1668,8 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getsqlSentence_EFachada() {
-		return (EReference)sqlSentenceEClass.getEStructuralFeatures().get(3);
+	public EReference geteFachada_EFachada() {
+		return (EReference)eFachadaEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1976,8 +1976,8 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		createEAttribute(opEClass, OP__OP_NAME);
 		createEAttribute(opEClass, OP__VERSION);
 		createEReference(opEClass, OP__EWEB_SERVICE);
-		createEReference(opEClass, OP__EFACHADA);
 		createEReference(opEClass, OP__EOI);
+		createEReference(opEClass, OP__EFACHADA);
 
 		oiEClass = createEClass(OI);
 		createEReference(oiEClass, OI__ESTADO_LLAMADA_OI);
@@ -1994,7 +1994,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		createEReference(oiEClass, OI__EALTAIR);
 		createEReference(oiEClass, OI__ETRX_OP);
 		createEReference(oiEClass, OI__ESAT);
-		createEReference(oiEClass, OI__EFACHADA);
+		createEReference(oiEClass, OI__EREFERENCE0);
 
 		fachadaEClass = createEClass(FACHADA);
 		createEAttribute(fachadaEClass, FACHADA__FACADE_NAME);
@@ -2119,11 +2119,11 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		createEReference(sqlComponentEClass, SQL_COMPONENT__ESQL_SENTENCE);
 		createEReference(sqlComponentEClass, SQL_COMPONENT__ECACHE);
 
-		sqlSentenceEClass = createEClass(SQL_SENTENCE);
-		createEAttribute(sqlSentenceEClass, SQL_SENTENCE__NAME);
-		createEAttribute(sqlSentenceEClass, SQL_SENTENCE__TYPE);
-		createEAttribute(sqlSentenceEClass, SQL_SENTENCE__SQL);
-		createEReference(sqlSentenceEClass, SQL_SENTENCE__EFACHADA);
+		eFachadaEClass = createEClass(EFACHADA);
+		createEAttribute(eFachadaEClass, EFACHADA__NAME);
+		createEAttribute(eFachadaEClass, EFACHADA__TYPE);
+		createEAttribute(eFachadaEClass, EFACHADA__SQL);
+		createEReference(eFachadaEClass, EFACHADA__EFACHADA);
 
 		clientArcReferencesEClass = createEClass(CLIENT_ARC_REFERENCES);
 		createEAttribute(clientArcReferencesEClass, CLIENT_ARC_REFERENCES__SRC);
@@ -2216,8 +2216,8 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEAttribute(getOP_OpName(), ecorePackage.getEString(), "opName", null, 0, 1, dependencies.OP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOP_Version(), ecorePackage.getEString(), "version", null, 0, 1, dependencies.OP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOP_EWebService(), this.getWebservice(), null, "eWebService", null, 0, -1, dependencies.OP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOP_EFachada(), this.getFachada(), null, "eFachada", null, 0, -1, dependencies.OP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOP_EOI(), this.getOI(), null, "eOI", null, 0, -1, dependencies.OP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOP_EFachada(), this.getFachada(), null, "eFachada", null, 0, 1, dependencies.OP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(oiEClass, dependencies.OI.class, "OI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOI_EstadoLlamadaOI(), this.getOI(), null, "estadoLlamadaOI", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2234,7 +2234,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEReference(getOI_EAltair(), this.getAltair(), null, "eAltair", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOI_ETrxOP(), this.getTrxOP(), null, "eTrxOP", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOI_ESAT(), this.getSAT(), null, "eSAT", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOI_EFachada(), this.getFachada(), null, "eFachada", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOI_EReference0(), this.getFachada(), null, "EReference0", null, 0, 1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fachadaEClass, Fachada.class, "Fachada", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFachada_FacadeName(), ecorePackage.getEString(), "facadeName", null, 0, 1, Fachada.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2356,14 +2356,14 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEAttribute(getSQLComponent_DataSourceAlias(), ecorePackage.getEString(), "dataSourceAlias", null, 0, 1, SQLComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSQLComponent_MaxRows(), ecorePackage.getEString(), "maxRows", null, 0, 1, SQLComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSQLComponent_PageMaxSize(), ecorePackage.getEString(), "pageMaxSize", null, 0, 1, SQLComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSQLComponent_ESQLSentence(), this.getsqlSentence(), null, "eSQLSentence", null, 1, -1, SQLComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSQLComponent_ESQLSentence(), this.geteFachada(), null, "eSQLSentence", null, 1, -1, SQLComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSQLComponent_ECache(), this.getCache(), null, "eCache", null, 0, 1, SQLComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(sqlSentenceEClass, sqlSentence.class, "sqlSentence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getsqlSentence_Name(), ecorePackage.getEString(), "name", null, 0, 1, sqlSentence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getsqlSentence_Type(), ecorePackage.getEString(), "type", null, 0, 1, sqlSentence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getsqlSentence_Sql(), ecorePackage.getEString(), "sql", null, 0, 1, sqlSentence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getsqlSentence_EFachada(), this.getFachada(), null, "eFachada", null, 0, 1, sqlSentence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(eFachadaEClass, eFachada.class, "eFachada", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(geteFachada_Name(), ecorePackage.getEString(), "name", null, 0, 1, eFachada.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(geteFachada_Type(), ecorePackage.getEString(), "type", null, 0, 1, eFachada.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(geteFachada_Sql(), ecorePackage.getEString(), "sql", null, 0, 1, eFachada.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(geteFachada_EFachada(), this.getFachada(), null, "eFachada", null, 0, 1, eFachada.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(clientArcReferencesEClass, ClientArcReferences.class, "ClientArcReferences", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getClientArcReferences_Src(), ecorePackage.getEString(), "src", null, 0, 1, ClientArcReferences.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

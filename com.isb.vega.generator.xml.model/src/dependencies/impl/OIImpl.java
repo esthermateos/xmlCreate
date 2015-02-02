@@ -54,7 +54,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dependencies.impl.OIImpl#getEAltair <em>EAltair</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getETrxOP <em>ETrx OP</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getESAT <em>ESAT</em>}</li>
- *   <li>{@link dependencies.impl.OIImpl#getEFachada <em>EFachada</em>}</li>
+ *   <li>{@link dependencies.impl.OIImpl#getEReference0 <em>EReference0</em>}</li>
  * </ul>
  * </p>
  *
@@ -232,14 +232,14 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	protected EList<SAT> eSAT;
 
 	/**
-	 * The cached value of the '{@link #getEFachada() <em>EFachada</em>}' reference list.
+	 * The cached value of the '{@link #getEReference0() <em>EReference0</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEFachada()
+	 * @see #getEReference0()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Fachada> eFachada;
+	protected Fachada eReference0;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -548,11 +548,42 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Fachada> getEFachada() {
-		if (eFachada == null) {
-			eFachada = new EObjectResolvingEList<Fachada>(Fachada.class, this, DependenciesPackage.OI__EFACHADA);
+	public Fachada getEReference0() {
+		return eReference0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEReference0(Fachada newEReference0, NotificationChain msgs) {
+		Fachada oldEReference0 = eReference0;
+		eReference0 = newEReference0;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.OI__EREFERENCE0, oldEReference0, newEReference0);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return eFachada;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEReference0(Fachada newEReference0) {
+		if (newEReference0 != eReference0) {
+			NotificationChain msgs = null;
+			if (eReference0 != null)
+				msgs = ((InternalEObject)eReference0).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.OI__EREFERENCE0, null, msgs);
+			if (newEReference0 != null)
+				msgs = ((InternalEObject)newEReference0).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.OI__EREFERENCE0, null, msgs);
+			msgs = basicSetEReference0(newEReference0, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.OI__EREFERENCE0, newEReference0, newEReference0));
 	}
 
 	/**
@@ -581,6 +612,8 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				return ((InternalEList<?>)getETrxOP()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.OI__ESAT:
 				return ((InternalEList<?>)getESAT()).basicRemove(otherEnd, msgs);
+			case DependenciesPackage.OI__EREFERENCE0:
+				return basicSetEReference0(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -622,8 +655,8 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				return getETrxOP();
 			case DependenciesPackage.OI__ESAT:
 				return getESAT();
-			case DependenciesPackage.OI__EFACHADA:
-				return getEFachada();
+			case DependenciesPackage.OI__EREFERENCE0:
+				return getEReference0();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -687,9 +720,8 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				getESAT().clear();
 				getESAT().addAll((Collection<? extends SAT>)newValue);
 				return;
-			case DependenciesPackage.OI__EFACHADA:
-				getEFachada().clear();
-				getEFachada().addAll((Collection<? extends Fachada>)newValue);
+			case DependenciesPackage.OI__EREFERENCE0:
+				setEReference0((Fachada)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -745,8 +777,8 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 			case DependenciesPackage.OI__ESAT:
 				getESAT().clear();
 				return;
-			case DependenciesPackage.OI__EFACHADA:
-				getEFachada().clear();
+			case DependenciesPackage.OI__EREFERENCE0:
+				setEReference0((Fachada)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -788,8 +820,8 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				return eTrxOP != null && !eTrxOP.isEmpty();
 			case DependenciesPackage.OI__ESAT:
 				return eSAT != null && !eSAT.isEmpty();
-			case DependenciesPackage.OI__EFACHADA:
-				return eFachada != null && !eFachada.isEmpty();
+			case DependenciesPackage.OI__EREFERENCE0:
+				return eReference0 != null;
 		}
 		return super.eIsSet(featureID);
 	}

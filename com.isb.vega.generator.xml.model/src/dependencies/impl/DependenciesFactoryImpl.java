@@ -77,7 +77,7 @@ public class DependenciesFactoryImpl extends EFactoryImpl implements Dependencie
 			case DependenciesPackage.BBOO: return createBBOO();
 			case DependenciesPackage.TABLE_PARAMETERS: return createTableParameters();
 			case DependenciesPackage.SQL_COMPONENT: return createSQLComponent();
-			case DependenciesPackage.SQL_SENTENCE: return createsqlSentence();
+			case DependenciesPackage.EFACHADA: return createeFachada();
 			case DependenciesPackage.CLIENT_ARC_REFERENCES: return createClientArcReferences();
 			case DependenciesPackage.LOG_LEVEL: return createLogLevel();
 			case DependenciesPackage.RULES: return createRules();
@@ -306,9 +306,9 @@ public class DependenciesFactoryImpl extends EFactoryImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public sqlSentence createsqlSentence() {
-		sqlSentenceImpl sqlSentence = new sqlSentenceImpl();
-		return sqlSentence;
+	public eFachada createeFachada() {
+		eFachadaImpl eFachada = new eFachadaImpl();
+		return eFachada;
 	}
 
 	/**

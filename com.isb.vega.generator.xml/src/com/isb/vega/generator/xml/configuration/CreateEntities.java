@@ -22,38 +22,43 @@ import dependencies.Security;
 
 public class CreateEntities {
 
-
+	static Fachada fachada;
 	/** Rellena la entidad fachada a partir del State proporcionado.
 	  * @param dependencies - Factoría de entidades del modelo
 	  * @param iState - estado de interfaz de fachada
+	 * @return 
 	  * @return listFachada - lista de fachadas cargadas
 	  */
-	public static void createFacades(DependenciesFactory dependencies,
+	public static Fachada createFacades(DependenciesFactory dependencies,
 									 IState iState) {
 		List<Fachada> listFachada = new ArrayList<>();
 		if(iState instanceof IFacadeInterfaceState){
 			IFacadeInterfaceState facadeState = (IFacadeInterfaceState)iState;					
-			Fachada fachada = dependencies.createFachada();
+			fachada = dependencies.createFachada();
 			fachada.setFacadeName(facadeState.getFacade());
 			fachada.setMethodName(facadeState.getName());
 			fachada.setInterfazName(facadeState.getFacadeInterface());
 			listFachada.add(fachada);
 		}
+		return fachada;
 	}
 	
 	/** Rellena la entidad OP a partir del IFlowOperationData proporcionado.
 	  * @param iFlowOperationData -
 	  * @param dependencies - Factoría de entidades del modelo
+	 * @return 
 	  * @return listOP - lista de ops cargadas
 	*/
-	public static void createOPs(DependenciesFactory dependencies,
-								 IFlowOperationData iFlowOperationData) {
+	public static OP createOPs(DependenciesFactory dependencies,
+								 IFlowOperationData iFlowOperationData,Ensamblado ensamblado) {
 		List<OP> listOP = new ArrayList<>();
 		OP op = dependencies.createOP();	
 		op.setOpName(iFlowOperationData.getName());
 		op.setVersion(iFlowOperationData.getVersion());
 		op.setLpName(iFlowOperationData.getParent().getParent().getParent().getElementId());
 		listOP.add(op);
+		ensamblado.setEOP(op);
+		return op;
 	}
 	
 	
@@ -114,10 +119,11 @@ public class CreateEntities {
 	  * @param assemblyFileData - datos del fichero del ensamblado
 	  * @param dependencies - Factoría de entidades del modelo
 	*/
-	public static void createBasicSecurity(IAssemblyFileData assemblyFileData, DependenciesFactory dependencies) {
+	public static void createBasicSecurity(IAssemblyFileData assemblyFileData, DependenciesFactory dependencies, Ensamblado ensamblado) {
 		Security security = dependencies.createSecurity();
 		IAssemblySettingsContainer assemblySettingsContainer = assemblyFileData.getAssemblySettingsContainer();
 	    IBasicSettingsContainer basicSettingContainer = assemblySettingsContainer.getBasicSettingsContainer();
+	    ensamblado.setEEnsamblado(security);
 	    //security.setAutentication(basicSettingContainer.);
 	}
 	

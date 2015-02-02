@@ -58,38 +58,38 @@ public class CreateconfigurationXML {
 			// a partir del objeto assembllyFileData creamos las entidades MULTIPROFILE y SECURITY
 			IAssemblyFileData assemblyFileData = assemblyFile.getAssemblyFileData();
 			CreateEntities.createMultiProfile(assemblyFileData,dependencies, ensamblado);
-			CreateEntities.createBasicSecurity(assemblyFileData, dependencies);
-//		
-//			//Creamos el objeto ensamblado y obtenemos los posibles escenarios
-//	
-//			iscenarios = UtilsDependencies.getScenarios(vegaProject, iscenarios, assemblyFile);
-//			for (IScenario scenario : iscenarios) 
-//			{				
-//				ScenarioExternalizationContributor scenarioExternalizationContributor = new ScenarioExternalizationContributor();
-//				operation = scenarioExternalizationContributor.contributeOperations(scenario);
-//			}
-//	
-//			List<IOperation> listOPs = UtilsDependencies.getlist(operation, UtilsOperations.OP_OPERATIONS);
-//			List<IOperation> listOIs = UtilsDependencies.getlist(operation, UtilsOperations.OI_OPERATIONS);
-//			
-//			/*recorremos las OPS para crear las fachadas de OPS*/
-//			
-//			for (IOperation iOperationOP : listOPs) {			
-//				IOperationData operationData = iOperationOP.getOperationData();
-//				if  (operationData instanceof IFlowOperationData){
-//					IFlowOperationData iFlowOperationData = (IFlowOperationData)operationData;
-//					CreateEntities.createOPs(dependencies, iFlowOperationData);
-//					IState[] lstStates = iFlowOperationData.getOperationFlow().getStateContainer().getStates();
-//					for (IState iState : lstStates) {
-//						CreateEntities.createFacades(dependencies, iState);		
-//					}
-//				}			 
-//			}	
-//	
-//			//			for (Fachada fachada : listFachada) {
-//			//			
-//			//			}
+			
+			CreateEntities.createBasicSecurity(assemblyFileData, dependencies, ensamblado);
+		
+			//Creamos el objeto ensamblado y obtenemos los posibles escenarios
 	
+			iscenarios = UtilsDependencies.getScenarios(vegaProject, iscenarios, assemblyFile);
+			for (IScenario scenario : iscenarios) 
+			{				
+				ScenarioExternalizationContributor scenarioExternalizationContributor = new ScenarioExternalizationContributor();
+				operation = scenarioExternalizationContributor.contributeOperations(scenario);
+			}
+//	
+			List<IOperation> listOPs = UtilsDependencies.getlist(operation, UtilsOperations.OP_OPERATIONS);
+			List<IOperation> listOIs = UtilsDependencies.getlist(operation, UtilsOperations.OI_OPERATIONS);
+			
+			/*recorremos las OPS para crear las fachadas de OPS*/
+			
+			for (IOperation iOperationOP : listOPs) {			
+				IOperationData operationData = iOperationOP.getOperationData();
+				if  (operationData instanceof IFlowOperationData){
+					IFlowOperationData iFlowOperationData = (IFlowOperationData)operationData;
+					OP op = CreateEntities.createOPs(dependencies, iFlowOperationData, ensamblado);
+					IState[] lstStates = iFlowOperationData.getOperationFlow().getStateContainer().getStates();
+					for (IState iState : lstStates) {
+						Fachada fachada = CreateEntities.createFacades(dependencies, iState);	
+						op.setEFachada(fachada);
+					}
+	
+				}			 
+			}	
+	
+
 		
 			//Creamos el fichero de ruta dada
 			File configuration = new File(ruta);
@@ -101,7 +101,7 @@ public class CreateconfigurationXML {
 			}
 			
 			//Externalizamos los datos del modelo			
-			XmlGeneratorNew.compile(configuration, ensamblado);
+			//XmlGeneratorNew.compile(configuration, ensamblado);
 	
 	}
 

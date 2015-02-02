@@ -284,22 +284,22 @@ public interface DependenciesPackage extends EPackage {
 	int OP__EWEB_SERVICE = 5;
 
 	/**
-	 * The feature id for the '<em><b>EFachada</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OP__EFACHADA = 6;
-
-	/**
 	 * The feature id for the '<em><b>EOI</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OP__EOI = 7;
+	int OP__EOI = 6;
+
+	/**
+	 * The feature id for the '<em><b>EFachada</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OP__EFACHADA = 7;
 
 	/**
 	 * The number of structural features of the '<em>OP</em>' class.
@@ -456,13 +456,13 @@ public interface DependenciesPackage extends EPackage {
 	int OI__ESAT = 13;
 
 	/**
-	 * The feature id for the '<em><b>EFachada</b></em>' reference list.
+	 * The feature id for the '<em><b>EReference0</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OI__EFACHADA = 14;
+	int OI__EREFERENCE0 = 14;
 
 	/**
 	 * The number of structural features of the '<em>OI</em>' class.
@@ -1770,14 +1770,14 @@ public interface DependenciesPackage extends EPackage {
 	int SQL_COMPONENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link dependencies.impl.sqlSentenceImpl <em>sql Sentence</em>}' class.
+	 * The meta object id for the '{@link dependencies.impl.eFachadaImpl <em>eFachada</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dependencies.impl.sqlSentenceImpl
-	 * @see dependencies.impl.DependenciesPackageImpl#getsqlSentence()
+	 * @see dependencies.impl.eFachadaImpl
+	 * @see dependencies.impl.DependenciesPackageImpl#geteFachada()
 	 * @generated
 	 */
-	int SQL_SENTENCE = 21;
+	int EFACHADA = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1786,7 +1786,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_SENTENCE__NAME = 0;
+	int EFACHADA__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1795,7 +1795,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_SENTENCE__TYPE = 1;
+	int EFACHADA__TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Sql</b></em>' attribute.
@@ -1804,7 +1804,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_SENTENCE__SQL = 2;
+	int EFACHADA__SQL = 2;
 
 	/**
 	 * The feature id for the '<em><b>EFachada</b></em>' reference.
@@ -1813,25 +1813,25 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_SENTENCE__EFACHADA = 3;
+	int EFACHADA__EFACHADA = 3;
 
 	/**
-	 * The number of structural features of the '<em>sql Sentence</em>' class.
+	 * The number of structural features of the '<em>eFachada</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_SENTENCE_FEATURE_COUNT = 4;
+	int EFACHADA_FEATURE_COUNT = 4;
 
 	/**
-	 * The number of operations of the '<em>sql Sentence</em>' class.
+	 * The number of operations of the '<em>eFachada</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_SENTENCE_OPERATION_COUNT = 0;
+	int EFACHADA_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link dependencies.impl.ClientArcReferencesImpl <em>Client Arc References</em>}' class.
@@ -2490,17 +2490,6 @@ public interface DependenciesPackage extends EPackage {
 	EReference getOP_EWebService();
 
 	/**
-	 * Returns the meta object for the reference list '{@link dependencies.OP#getEFachada <em>EFachada</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>EFachada</em>'.
-	 * @see dependencies.OP#getEFachada()
-	 * @see #getOP()
-	 * @generated
-	 */
-	EReference getOP_EFachada();
-
-	/**
 	 * Returns the meta object for the reference list '{@link dependencies.OP#getEOI <em>EOI</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2510,6 +2499,17 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOP_EOI();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dependencies.OP#getEFachada <em>EFachada</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>EFachada</em>'.
+	 * @see dependencies.OP#getEFachada()
+	 * @see #getOP()
+	 * @generated
+	 */
+	EReference getOP_EFachada();
 
 	/**
 	 * Returns the meta object for class '{@link dependencies.OI <em>OI</em>}'.
@@ -2676,15 +2676,15 @@ public interface DependenciesPackage extends EPackage {
 	EReference getOI_ESAT();
 
 	/**
-	 * Returns the meta object for the reference list '{@link dependencies.OI#getEFachada <em>EFachada</em>}'.
+	 * Returns the meta object for the containment reference '{@link dependencies.OI#getEReference0 <em>EReference0</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>EFachada</em>'.
-	 * @see dependencies.OI#getEFachada()
+	 * @return the meta object for the containment reference '<em>EReference0</em>'.
+	 * @see dependencies.OI#getEReference0()
 	 * @see #getOI()
 	 * @generated
 	 */
-	EReference getOI_EFachada();
+	EReference getOI_EReference0();
 
 	/**
 	 * Returns the meta object for class '{@link dependencies.Fachada <em>Fachada</em>}'.
@@ -3824,58 +3824,58 @@ public interface DependenciesPackage extends EPackage {
 	EReference getSQLComponent_ECache();
 
 	/**
-	 * Returns the meta object for class '{@link dependencies.sqlSentence <em>sql Sentence</em>}'.
+	 * Returns the meta object for class '{@link dependencies.eFachada <em>eFachada</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>sql Sentence</em>'.
-	 * @see dependencies.sqlSentence
+	 * @return the meta object for class '<em>eFachada</em>'.
+	 * @see dependencies.eFachada
 	 * @generated
 	 */
-	EClass getsqlSentence();
+	EClass geteFachada();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.sqlSentence#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.eFachada#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see dependencies.sqlSentence#getName()
-	 * @see #getsqlSentence()
+	 * @see dependencies.eFachada#getName()
+	 * @see #geteFachada()
 	 * @generated
 	 */
-	EAttribute getsqlSentence_Name();
+	EAttribute geteFachada_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.sqlSentence#getType <em>Type</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.eFachada#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see dependencies.sqlSentence#getType()
-	 * @see #getsqlSentence()
+	 * @see dependencies.eFachada#getType()
+	 * @see #geteFachada()
 	 * @generated
 	 */
-	EAttribute getsqlSentence_Type();
+	EAttribute geteFachada_Type();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.sqlSentence#getSql <em>Sql</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.eFachada#getSql <em>Sql</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Sql</em>'.
-	 * @see dependencies.sqlSentence#getSql()
-	 * @see #getsqlSentence()
+	 * @see dependencies.eFachada#getSql()
+	 * @see #geteFachada()
 	 * @generated
 	 */
-	EAttribute getsqlSentence_Sql();
+	EAttribute geteFachada_Sql();
 
 	/**
-	 * Returns the meta object for the reference '{@link dependencies.sqlSentence#getEFachada <em>EFachada</em>}'.
+	 * Returns the meta object for the reference '{@link dependencies.eFachada#getEFachada <em>EFachada</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>EFachada</em>'.
-	 * @see dependencies.sqlSentence#getEFachada()
-	 * @see #getsqlSentence()
+	 * @see dependencies.eFachada#getEFachada()
+	 * @see #geteFachada()
 	 * @generated
 	 */
-	EReference getsqlSentence_EFachada();
+	EReference geteFachada_EFachada();
 
 	/**
 	 * Returns the meta object for class '{@link dependencies.ClientArcReferences <em>Client Arc References</em>}'.
@@ -4389,20 +4389,20 @@ public interface DependenciesPackage extends EPackage {
 		EReference OP__EWEB_SERVICE = eINSTANCE.getOP_EWebService();
 
 		/**
-		 * The meta object literal for the '<em><b>EFachada</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OP__EFACHADA = eINSTANCE.getOP_EFachada();
-
-		/**
 		 * The meta object literal for the '<em><b>EOI</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference OP__EOI = eINSTANCE.getOP_EOI();
+
+		/**
+		 * The meta object literal for the '<em><b>EFachada</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OP__EFACHADA = eINSTANCE.getOP_EFachada();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.OIImpl <em>OI</em>}' class.
@@ -4527,12 +4527,12 @@ public interface DependenciesPackage extends EPackage {
 		EReference OI__ESAT = eINSTANCE.getOI_ESAT();
 
 		/**
-		 * The meta object literal for the '<em><b>EFachada</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>EReference0</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OI__EFACHADA = eINSTANCE.getOI_EFachada();
+		EReference OI__EREFERENCE0 = eINSTANCE.getOI_EReference0();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.FachadaImpl <em>Fachada</em>}' class.
@@ -5411,14 +5411,14 @@ public interface DependenciesPackage extends EPackage {
 		EReference SQL_COMPONENT__ECACHE = eINSTANCE.getSQLComponent_ECache();
 
 		/**
-		 * The meta object literal for the '{@link dependencies.impl.sqlSentenceImpl <em>sql Sentence</em>}' class.
+		 * The meta object literal for the '{@link dependencies.impl.eFachadaImpl <em>eFachada</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dependencies.impl.sqlSentenceImpl
-		 * @see dependencies.impl.DependenciesPackageImpl#getsqlSentence()
+		 * @see dependencies.impl.eFachadaImpl
+		 * @see dependencies.impl.DependenciesPackageImpl#geteFachada()
 		 * @generated
 		 */
-		EClass SQL_SENTENCE = eINSTANCE.getsqlSentence();
+		EClass EFACHADA = eINSTANCE.geteFachada();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -5426,7 +5426,7 @@ public interface DependenciesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SQL_SENTENCE__NAME = eINSTANCE.getsqlSentence_Name();
+		EAttribute EFACHADA__NAME = eINSTANCE.geteFachada_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -5434,7 +5434,7 @@ public interface DependenciesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SQL_SENTENCE__TYPE = eINSTANCE.getsqlSentence_Type();
+		EAttribute EFACHADA__TYPE = eINSTANCE.geteFachada_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Sql</b></em>' attribute feature.
@@ -5442,7 +5442,7 @@ public interface DependenciesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SQL_SENTENCE__SQL = eINSTANCE.getsqlSentence_Sql();
+		EAttribute EFACHADA__SQL = eINSTANCE.geteFachada_Sql();
 
 		/**
 		 * The meta object literal for the '<em><b>EFachada</b></em>' reference feature.
@@ -5450,7 +5450,7 @@ public interface DependenciesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SQL_SENTENCE__EFACHADA = eINSTANCE.getsqlSentence_EFachada();
+		EReference EFACHADA__EFACHADA = eINSTANCE.geteFachada_EFachada();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.ClientArcReferencesImpl <em>Client Arc References</em>}' class.

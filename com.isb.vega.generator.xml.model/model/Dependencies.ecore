@@ -32,9 +32,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eWebService" upperBound="-1"
         eType="#//Webservice" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eFachada" upperBound="-1"
-        eType="#//Fachada"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eOI" upperBound="-1" eType="#//OI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eFachada" eType="#//Fachada"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OI">
     <eStructuralFeatures xsi:type="ecore:EReference" name="estadoLlamadaOI" upperBound="-1"
@@ -61,8 +61,8 @@
         eType="#//TrxOP" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eSAT" upperBound="-1" eType="#//SAT"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eFachada" upperBound="-1"
-        eType="#//Fachada"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Fachada"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Fachada">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="facadeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -195,11 +195,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxRows" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pageMaxSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eSQLSentence" lowerBound="1"
-        upperBound="-1" eType="#//sqlSentence" containment="true"/>
+        upperBound="-1" eType="#//eFachada" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eCache" eType="#//Cache"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="sqlSentence">
+  <eClassifiers xsi:type="ecore:EClass" name="eFachada">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sql" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -211,13 +211,13 @@ public interface DependenciesFactory extends EFactory {
 	SQLComponent createSQLComponent();
 
 	/**
-	 * Returns a new object of class '<em>sql Sentence</em>'.
+	 * Returns a new object of class '<em>eFachada</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>sql Sentence</em>'.
+	 * @return a new object of class '<em>eFachada</em>'.
 	 * @generated
 	 */
-	sqlSentence createsqlSentence();
+	eFachada createeFachada();
 
 	/**
 	 * Returns a new object of class '<em>Client Arc References</em>'.

@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dependencies.OP#getOpName <em>Op Name</em>}</li>
  *   <li>{@link dependencies.OP#getVersion <em>Version</em>}</li>
  *   <li>{@link dependencies.OP#getEWebService <em>EWeb Service</em>}</li>
- *   <li>{@link dependencies.OP#getEFachada <em>EFachada</em>}</li>
  *   <li>{@link dependencies.OP#getEOI <em>EOI</em>}</li>
+ *   <li>{@link dependencies.OP#getEFachada <em>EFachada</em>}</li>
  * </ul>
  * </p>
  *
@@ -157,22 +157,6 @@ public interface OP extends EObject {
 	EList<Webservice> getEWebService();
 
 	/**
-	 * Returns the value of the '<em><b>EFachada</b></em>' reference list.
-	 * The list contents are of type {@link dependencies.Fachada}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>EFachada</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EFachada</em>' reference list.
-	 * @see dependencies.DependenciesPackage#getOP_EFachada()
-	 * @model
-	 * @generated
-	 */
-	EList<Fachada> getEFachada();
-
-	/**
 	 * Returns the value of the '<em><b>EOI</b></em>' reference list.
 	 * The list contents are of type {@link dependencies.OI}.
 	 * <!-- begin-user-doc -->
@@ -187,5 +171,31 @@ public interface OP extends EObject {
 	 * @generated
 	 */
 	EList<OI> getEOI();
+
+	/**
+	 * Returns the value of the '<em><b>EFachada</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>EFachada</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>EFachada</em>' containment reference.
+	 * @see #setEFachada(Fachada)
+	 * @see dependencies.DependenciesPackage#getOP_EFachada()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Fachada getEFachada();
+
+	/**
+	 * Sets the value of the '{@link dependencies.OP#getEFachada <em>EFachada</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>EFachada</em>' containment reference.
+	 * @see #getEFachada()
+	 * @generated
+	 */
+	void setEFachada(Fachada value);
 
 } // OP

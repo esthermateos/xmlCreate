@@ -161,7 +161,7 @@ public interface SQLComponent extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>ESQL Sentence</b></em>' containment reference list.
-	 * The list contents are of type {@link dependencies.sqlSentence}.
+	 * The list contents are of type {@link dependencies.eFachada}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>ESQL Sentence</em>' containment reference list isn't clear,
@@ -173,7 +173,7 @@ public interface SQLComponent extends EObject {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<sqlSentence> getESQLSentence();
+	EList<eFachada> getESQLSentence();
 
 	/**
 	 * Returns the value of the '<em><b>ECache</b></em>' containment reference.

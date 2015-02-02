@@ -39,8 +39,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dependencies.impl.OPImpl#getOpName <em>Op Name</em>}</li>
  *   <li>{@link dependencies.impl.OPImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link dependencies.impl.OPImpl#getEWebService <em>EWeb Service</em>}</li>
- *   <li>{@link dependencies.impl.OPImpl#getEFachada <em>EFachada</em>}</li>
  *   <li>{@link dependencies.impl.OPImpl#getEOI <em>EOI</em>}</li>
+ *   <li>{@link dependencies.impl.OPImpl#getEFachada <em>EFachada</em>}</li>
  * </ul>
  * </p>
  *
@@ -138,16 +138,6 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 	protected EList<Webservice> eWebService;
 
 	/**
-	 * The cached value of the '{@link #getEFachada() <em>EFachada</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEFachada()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Fachada> eFachada;
-
-	/**
 	 * The cached value of the '{@link #getEOI() <em>EOI</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -156,6 +146,16 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 	 * @ordered
 	 */
 	protected EList<OI> eOI;
+
+	/**
+	 * The cached value of the '{@link #getEFachada() <em>EFachada</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEFachada()
+	 * @generated
+	 * @ordered
+	 */
+	protected Fachada eFachada;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -280,10 +280,19 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Fachada> getEFachada() {
-		if (eFachada == null) {
-			eFachada = new EObjectResolvingEList<Fachada>(Fachada.class, this, DependenciesPackage.OP__EFACHADA);
+	public EList<OI> getEOI() {
+		if (eOI == null) {
+			eOI = new EObjectResolvingEList<OI>(OI.class, this, DependenciesPackage.OP__EOI);
 		}
+		return eOI;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Fachada getEFachada() {
 		return eFachada;
 	}
 
@@ -292,11 +301,33 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<OI> getEOI() {
-		if (eOI == null) {
-			eOI = new EObjectResolvingEList<OI>(OI.class, this, DependenciesPackage.OP__EOI);
+	public NotificationChain basicSetEFachada(Fachada newEFachada, NotificationChain msgs) {
+		Fachada oldEFachada = eFachada;
+		eFachada = newEFachada;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.OP__EFACHADA, oldEFachada, newEFachada);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return eOI;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEFachada(Fachada newEFachada) {
+		if (newEFachada != eFachada) {
+			NotificationChain msgs = null;
+			if (eFachada != null)
+				msgs = ((InternalEObject)eFachada).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.OP__EFACHADA, null, msgs);
+			if (newEFachada != null)
+				msgs = ((InternalEObject)newEFachada).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.OP__EFACHADA, null, msgs);
+			msgs = basicSetEFachada(newEFachada, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.OP__EFACHADA, newEFachada, newEFachada));
 	}
 
 	/**
@@ -311,6 +342,8 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 				return ((InternalEList<?>)getERJSP()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.OP__EWEB_SERVICE:
 				return ((InternalEList<?>)getEWebService()).basicRemove(otherEnd, msgs);
+			case DependenciesPackage.OP__EFACHADA:
+				return basicSetEFachada(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -335,10 +368,10 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 				return getVersion();
 			case DependenciesPackage.OP__EWEB_SERVICE:
 				return getEWebService();
-			case DependenciesPackage.OP__EFACHADA:
-				return getEFachada();
 			case DependenciesPackage.OP__EOI:
 				return getEOI();
+			case DependenciesPackage.OP__EFACHADA:
+				return getEFachada();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -373,13 +406,12 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 				getEWebService().clear();
 				getEWebService().addAll((Collection<? extends Webservice>)newValue);
 				return;
-			case DependenciesPackage.OP__EFACHADA:
-				getEFachada().clear();
-				getEFachada().addAll((Collection<? extends Fachada>)newValue);
-				return;
 			case DependenciesPackage.OP__EOI:
 				getEOI().clear();
 				getEOI().addAll((Collection<? extends OI>)newValue);
+				return;
+			case DependenciesPackage.OP__EFACHADA:
+				setEFachada((Fachada)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -411,11 +443,11 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 			case DependenciesPackage.OP__EWEB_SERVICE:
 				getEWebService().clear();
 				return;
-			case DependenciesPackage.OP__EFACHADA:
-				getEFachada().clear();
-				return;
 			case DependenciesPackage.OP__EOI:
 				getEOI().clear();
+				return;
+			case DependenciesPackage.OP__EFACHADA:
+				setEFachada((Fachada)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -441,10 +473,10 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 			case DependenciesPackage.OP__EWEB_SERVICE:
 				return eWebService != null && !eWebService.isEmpty();
-			case DependenciesPackage.OP__EFACHADA:
-				return eFachada != null && !eFachada.isEmpty();
 			case DependenciesPackage.OP__EOI:
 				return eOI != null && !eOI.isEmpty();
+			case DependenciesPackage.OP__EFACHADA:
+				return eFachada != null;
 		}
 		return super.eIsSet(featureID);
 	}
