@@ -22,6 +22,5 @@ Import-Package: com.isb.vega.externalization.generator.xml,
  com.isb.vega.model.operation.flow,
  com.isb.vega.model.preassembly.util,
  com.isb.vega.model.scenario,
- com.tangosol.dev.assembler,
  org.eclipse.core.resources
 Export-Package: com.isb.vega.generator.xml.configuration
