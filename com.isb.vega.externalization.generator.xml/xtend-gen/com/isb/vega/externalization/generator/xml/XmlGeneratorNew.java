@@ -1,5 +1,6 @@
 package com.isb.vega.externalization.generator.xml;
 
+import com.google.common.base.Objects;
 import com.isb.vega.externalization.generator.xml.AssemblyXML;
 import com.isb.vega.externalization.generator.xml.Connectors;
 import com.isb.vega.externalization.generator.xml.GetDate;
@@ -8,22 +9,20 @@ import com.isb.vega.externalization.generator.xml.SqlSentence;
 import com.isb.vega.externalization.generator.xml.Using;
 import com.isb.vega.externalization.generator.xml.Utils;
 import com.isb.vega.externalization.generator.xml.WebServiceStates;
-import dependencies.DependenciesPackage;
 import dependencies.Ensamblado;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 
 @SuppressWarnings("all")
 public class XmlGeneratorNew {
-  private DependenciesPackage dependen;
+  private Ensamblado ensamblado;
   
-  public XmlGeneratorNew(final DependenciesPackage dependencies) {
-    this.dependen = dependencies;
+  public XmlGeneratorNew(final Ensamblado ensamblado) {
+    this.ensamblado = ensamblado;
   }
   
   public Writer generate(final File file) {
@@ -36,23 +35,23 @@ public class XmlGeneratorNew {
             {
               CharSequence _doGenerateHeader = XmlGeneratorNew.this.doGenerateHeader();
               it.append(_doGenerateHeader);
-              CharSequence _doGenerateAssembly = XmlGeneratorNew.this.doGenerateAssembly(XmlGeneratorNew.this.dependen);
+              CharSequence _doGenerateAssembly = XmlGeneratorNew.this.doGenerateAssembly(XmlGeneratorNew.this.ensamblado);
               it.append(_doGenerateAssembly);
-              CharSequence _doGenerateCommunication = XmlGeneratorNew.this.doGenerateCommunication(XmlGeneratorNew.this.dependen);
+              CharSequence _doGenerateCommunication = XmlGeneratorNew.this.doGenerateCommunication(XmlGeneratorNew.this.ensamblado);
               it.append(_doGenerateCommunication);
-              CharSequence _doGenerateChannelAdapter = XmlGeneratorNew.this.doGenerateChannelAdapter(XmlGeneratorNew.this.dependen);
+              CharSequence _doGenerateChannelAdapter = XmlGeneratorNew.this.doGenerateChannelAdapter();
               it.append(_doGenerateChannelAdapter);
-              CharSequence _doGenerateWebServices = XmlGeneratorNew.this.doGenerateWebServices(XmlGeneratorNew.this.dependen);
+              CharSequence _doGenerateWebServices = XmlGeneratorNew.this.doGenerateWebServices();
               it.append(_doGenerateWebServices);
-              CharSequence _doGenerateSQLComponents = XmlGeneratorNew.this.doGenerateSQLComponents(XmlGeneratorNew.this.dependen);
+              CharSequence _doGenerateSQLComponents = XmlGeneratorNew.this.doGenerateSQLComponents();
               it.append(_doGenerateSQLComponents);
-              CharSequence _doGenerateCaches = XmlGeneratorNew.this.doGenerateCaches(XmlGeneratorNew.this.dependen);
+              CharSequence _doGenerateCaches = XmlGeneratorNew.this.doGenerateCaches();
               it.append(_doGenerateCaches);
-              CharSequence _doGenerateFtps = XmlGeneratorNew.this.doGenerateFtps(XmlGeneratorNew.this.dependen);
+              CharSequence _doGenerateFtps = XmlGeneratorNew.this.doGenerateFtps();
               it.append(_doGenerateFtps);
-              CharSequence _doGenerateRules = XmlGeneratorNew.this.doGenerateRules(XmlGeneratorNew.this.dependen);
+              CharSequence _doGenerateRules = XmlGeneratorNew.this.doGenerateRules();
               it.append(_doGenerateRules);
-              CharSequence _doGenerateGlobal = XmlGeneratorNew.this.doGenerateGlobal(XmlGeneratorNew.this.dependen);
+              CharSequence _doGenerateGlobal = XmlGeneratorNew.this.doGenerateGlobal();
               it.append(_doGenerateGlobal);
               CharSequence _doGenerateOther = XmlGeneratorNew.this.doGenerateOther();
               it.append(_doGenerateOther);
@@ -73,7 +72,7 @@ public class XmlGeneratorNew {
     }
   }
   
-  public CharSequence doGenerateCaches(final DependenciesPackage dependency) {
+  public CharSequence doGenerateCaches() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<caches>");
     _builder.newLine();
@@ -96,7 +95,7 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateFtps(final DependenciesPackage dependency) {
+  public CharSequence doGenerateFtps() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<ftps>");
     _builder.newLine();
@@ -123,7 +122,7 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateGlobal(final DependenciesPackage dependency) {
+  public CharSequence doGenerateGlobal() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<global>");
     _builder.newLine();
@@ -136,7 +135,7 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateRules(final DependenciesPackage dependency) {
+  public CharSequence doGenerateRules() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<rules>");
     _builder.newLine();
@@ -185,12 +184,12 @@ public class XmlGeneratorNew {
     _builder.append("<appmetainf createBy=\"ALMSupport\" date=\"");
     String _Date = GetDate.Date();
     _builder.append(_Date, "	");
-    _builder.append(" version=\"2.0\">");
+    _builder.append("\" version=\"2.0\">");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
   
-  public CharSequence doGenerateSQLComponents(final DependenciesPackage dependency) {
+  public CharSequence doGenerateSQLComponents() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<sqlComponents>");
     _builder.newLine();
@@ -259,7 +258,7 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateWebServices(final DependenciesPackage dependency) {
+  public CharSequence doGenerateWebServices() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<webServices>");
     _builder.newLine();
@@ -275,7 +274,7 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateChannelAdapter(final DependenciesPackage dependency) {
+  public CharSequence doGenerateChannelAdapter() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<channelAdapters>");
     _builder.newLine();
@@ -323,36 +322,44 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateCommunication(final DependenciesPackage dependency) {
+  public CharSequence doGenerateCommunication(final Ensamblado ensamblado) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<communication>");
-    _builder.newLine();
-    _builder.append("\t");
-    CharSequence _doGenerateTrxOP = Connectors.doGenerateTrxOP();
-    _builder.append(_doGenerateTrxOP, "	");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    CharSequence _doGenerateSat = Connectors.doGenerateSat();
-    _builder.append(_doGenerateSat, "	");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    CharSequence _doGenerateAltair = Connectors.doGenerateAltair();
-    _builder.append(_doGenerateAltair, "	");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    CharSequence _doGenerateBboo = Connectors.doGenerateBboo();
-    _builder.append(_doGenerateBboo, "	");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    CharSequence _doGenerateTp = Connectors.doGenerateTp();
-    _builder.append(_doGenerateTp, "	");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    CharSequence _doGenerateSiebel = Connectors.doGenerateSiebel();
-    _builder.append(_doGenerateSiebel, "	");
-    _builder.newLineIfNotEmpty();
-    _builder.append("</communication>\t\t");
-    _builder.newLine();
+    {
+      boolean _notEquals = (!Objects.equal(ensamblado, null));
+      if (_notEquals) {
+        _builder.append("<communication>");
+        _builder.newLine();
+        _builder.append("\t");
+        CharSequence _doGenerateTrxOP = Connectors.doGenerateTrxOP(ensamblado);
+        _builder.append(_doGenerateTrxOP, "	");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        CharSequence _doGenerateSat = Connectors.doGenerateSat(ensamblado);
+        _builder.append(_doGenerateSat, "	");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        CharSequence _doGenerateAltair = Connectors.doGenerateAltair(ensamblado);
+        _builder.append(_doGenerateAltair, "	");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        CharSequence _doGenerateBboo = Connectors.doGenerateBboo();
+        _builder.append(_doGenerateBboo, "	");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        CharSequence _doGenerateTp = Connectors.doGenerateTp();
+        _builder.append(_doGenerateTp, "	");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        CharSequence _doGenerateSiebel = Connectors.doGenerateSiebel();
+        _builder.append(_doGenerateSiebel, "	");
+        _builder.newLineIfNotEmpty();
+        _builder.append("</communication>");
+        _builder.newLine();
+      } else {
+        _builder.append("<communication/>");
+        _builder.newLine();
+      }
+    }
     return _builder;
   }
   
@@ -363,14 +370,18 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateAssembly(final DependenciesPackage dependency) {
-    EClass _ensamblado = dependency.getEnsamblado();
-    CharSequence _doGenerateAssembly = AssemblyXML.doGenerateAssembly(((Ensamblado) _ensamblado));
-    return _doGenerateAssembly;
+  public CharSequence doGenerateAssembly(final Ensamblado ensamblado) {
+    CharSequence _xifexpression = null;
+    boolean _notEquals = (!Objects.equal(ensamblado, null));
+    if (_notEquals) {
+      CharSequence _doGenerateAssembly = AssemblyXML.doGenerateAssembly(ensamblado);
+      _xifexpression = _doGenerateAssembly;
+    }
+    return _xifexpression;
   }
   
-  public static Writer compile(final File target, final DependenciesPackage dependencies) {
-    XmlGeneratorNew _xmlGeneratorNew = new XmlGeneratorNew(dependencies);
+  public static Writer compile(final File target, final Ensamblado ensamblado) {
+    XmlGeneratorNew _xmlGeneratorNew = new XmlGeneratorNew(ensamblado);
     Writer _generate = _xmlGeneratorNew.generate(target);
     return _generate;
   }

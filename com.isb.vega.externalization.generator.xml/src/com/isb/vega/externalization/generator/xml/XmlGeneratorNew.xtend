@@ -3,37 +3,36 @@ package com.isb.vega.externalization.generator.xml
 import static com.isb.vega.externalization.generator.xml.Using.*
 import java.io.File
 import java.io.FileWriter
-import dependencies.DependenciesFactory
 import dependencies.Ensamblado
 import dependencies.DependenciesPackage
 
 class XmlGeneratorNew {
 	
-	DependenciesPackage dependen
+	Ensamblado ensamblado
 	
-	new(DependenciesPackage dependencies) {
-		dependen =dependencies
+	new(Ensamblado ensamblado) {
+		this.ensamblado = ensamblado
 	}
 	
 	def generate(File file) {
 		using(new FileWriter(file)) [
 			it.append(doGenerateHeader())
-			it.append(doGenerateAssembly(dependen))
-			it.append(doGenerateCommunication(dependen))
-			it.append(doGenerateChannelAdapter(dependen))
-			it.append(doGenerateWebServices(dependen))
-			it.append(doGenerateSQLComponents(dependen))
-			it.append(doGenerateCaches(dependen))
-			it.append(doGenerateFtps(dependen))
-			it.append(doGenerateRules(dependen))
-			it.append(doGenerateGlobal(dependen))
+			it.append(doGenerateAssembly(ensamblado))
+			it.append(doGenerateCommunication(ensamblado))
+			it.append(doGenerateChannelAdapter())
+			it.append(doGenerateWebServices())
+			it.append(doGenerateSQLComponents())
+			it.append(doGenerateCaches())
+			it.append(doGenerateFtps())
+			it.append(doGenerateRules())
+			it.append(doGenerateGlobal())
 			it.append(doGenerateOther())
 			it.append(doGenerateFooter());
 		]
 	}
 	
 	
-		def doGenerateCaches(DependenciesPackage dependency) '''
+		def doGenerateCaches() '''
 		<caches>
 			«//FOR
 			»
@@ -45,7 +44,7 @@ class XmlGeneratorNew {
 		</caches>
 	'''
 	
-		def doGenerateFtps(DependenciesPackage dependency) '''
+		def doGenerateFtps() '''
 		<ftps>
 			«//FOR
 			»
@@ -58,13 +57,13 @@ class XmlGeneratorNew {
 		</ftps>
 	'''
 	
-		def doGenerateGlobal(DependenciesPackage dependency) '''
+		def doGenerateGlobal() '''
 		<global>
 			«Global.doGenerateGlobal»
 		</global>
 	'''
 	
-		def doGenerateRules(DependenciesPackage dependency) '''
+		def doGenerateRules() '''
 		<rules>
 			«//FOR
 			»
@@ -86,10 +85,10 @@ class XmlGeneratorNew {
 		def doGenerateHeader() '''
 		<?xml version="1.0" encoding="ISO-8859-1"?>
 		<configuration>
-			<appmetainf createBy="ALMSupport" date="«GetDate.Date()» version="2.0">
+			<appmetainf createBy="ALMSupport" date="«GetDate.Date()»" version="2.0">
 	'''
 	
-		def doGenerateSQLComponents(DependenciesPackage dependency) '''
+		def doGenerateSQLComponents() '''
 		<sqlComponents>
 			<propertiesPath>«»</propertiesPath>
 			<sqlComponent>
@@ -111,14 +110,14 @@ class XmlGeneratorNew {
 		</sqlComponents>
 	'''
 	
-		def doGenerateWebServices(DependenciesPackage dependency) '''
+		def doGenerateWebServices() '''
 		<webServices>
 			<associatedLogics></associatedLogics>
 			«WebServiceStates.doGenerateWebServiceStates»
 		</webServices>
 	'''
 	
-		def doGenerateChannelAdapter(DependenciesPackage dependency) '''
+		def doGenerateChannelAdapter() '''
 		<channelAdapters>
 			«//FOR
 			»
@@ -137,27 +136,34 @@ class XmlGeneratorNew {
 		</channelAdapters>
 	'''
 	
-		def doGenerateCommunication(DependenciesPackage dependency) '''
+		def doGenerateCommunication(Ensamblado ensamblado) '''
+		«IF ensamblado!=null»
 		<communication>
-			«Connectors.doGenerateTrxOP()»
-			«Connectors.doGenerateSat()»
-			«Connectors.doGenerateAltair()»
+			«Connectors.doGenerateTrxOP(ensamblado)»
+			«Connectors.doGenerateSat(ensamblado)»
+			«Connectors.doGenerateAltair(ensamblado)»
 			«Connectors.doGenerateBboo()»
 			«Connectors.doGenerateTp()»
 			«Connectors.doGenerateSiebel()»
-		</communication>		
+		</communication>
+		«ELSE»
+		<communication/>
+		«ENDIF»		
 	'''
 	
 		def doGenerateFooter() '''
 		</configuration>
 	'''
 	
-		def doGenerateAssembly(DependenciesPackage dependency){
-			AssemblyXML.doGenerateAssembly(dependency.ensamblado as Ensamblado)
+		def doGenerateAssembly(Ensamblado ensamblado){
+			if (ensamblado!=null){
+				AssemblyXML.doGenerateAssembly(ensamblado)
+			}
+
 		}
 		
 	
-	def static compile(File target, DependenciesPackage dependencies) {
-		new XmlGeneratorNew(dependencies).generate(target);
+	def static compile(File target, Ensamblado ensamblado) {
+		new XmlGeneratorNew(ensamblado).generate(target);
 	}
 }
