@@ -24,3 +24,4 @@ Import-Package: com.isb.vega.externalization.generator.xml,
  com.isb.vega.model.scenario,
  org.eclipse.core.resources
 Export-Package: com.isb.vega.generator.xml.configuration
+
