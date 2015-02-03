@@ -41,7 +41,7 @@ public class CreateconfigurationXML {
 	IScenario[] iscenarios;
 	DependenciesFactory dependencies = DependenciesFactory.eINSTANCE;
 	Fachada fachada;
-	
+	List<Fachada> listFachadas = new ArrayList<>();
 	
 	public  void  getConfigurationXML(String name, String ruta) {
 			IProject iProject = ResourcesPlugin.getWorkspace().getRoot().getProject(name);
@@ -83,9 +83,10 @@ public class CreateconfigurationXML {
 					OP op = CreateEntities.createOPs(dependencies, iFlowOperationData, ensamblado);
 					IState[] lstStates = iFlowOperationData.getOperationFlow().getStateContainer().getStates();
 					for (IState iState : lstStates) {
-						fachada = CreateEntities.createFacades(dependencies, iState);	
+						fachada = CreateEntities.createFacades(dependencies, iState);
+						listFachadas.add(fachada);
 					}
-					op.setEFachada(fachada);
+					op.getEFachada().addAll(listFachadas);
 				}			 
 			}	
 	
