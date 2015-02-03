@@ -101,7 +101,7 @@ public class CreateconfigurationXML {
 			}
 			
 			//Externalizamos los datos del modelo			
-			//XmlGeneratorNew.compile(configuration, ensamblado);
+			XmlGeneratorNew.compile(configuration, ensamblado);
 	
 	}
 

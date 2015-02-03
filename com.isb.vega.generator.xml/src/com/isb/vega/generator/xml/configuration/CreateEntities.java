@@ -1,15 +1,19 @@
 package com.isb.vega.generator.xml.configuration;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import com.isb.vega.model.assembly.IAssemblyFileData;
 import com.isb.vega.model.assembly.profile.multi.IAssemblyCategoryProfile;
 import com.isb.vega.model.assembly.profile.multi.IAssemblyCategoryProfileContainer;
 import com.isb.vega.model.assembly.profile.multi.IAssemblyValueCategory;
+import com.isb.vega.model.assembly.settings.IAdvancedSettingsContainer;
 import com.isb.vega.model.assembly.settings.IAssemblySettingsContainer;
 import com.isb.vega.model.assembly.settings.IBasicSettingsContainer;
+import com.isb.vega.model.assembly.settings.IHostCommChannelContainer;
 import com.isb.vega.model.assembly.settings.ISetting;
+import com.isb.vega.model.core.IVegaElement;
 import com.isb.vega.model.operation.flow.IFlowOperationData;
 import com.isb.vega.model.operation.flow.IState;
 import com.isb.vega.model.operation.flow.state.facade.IFacadeInterfaceState;
@@ -20,9 +24,19 @@ import dependencies.Fachada;
 import dependencies.HOST;
 import dependencies.MultiProfile;
 import dependencies.OP;
+import dependencies.SATLogicalChannel;
+import dependencies.SATPhysicalChannel;
 import dependencies.Security;
+import dependencies.trxOPLogicalChannel;
+import dependencies.trxOPPhysicalChannel;
 
 public class CreateEntities {
+	
+	static String logicalChannel = ".LogicalChannel";
+	static String physicalChannel = ".PhysicalChannel";
+	static String trxOp = "TrxOp.HostCommunication.";
+	static String sat = "Sat.HostCommunication.";
+	
 
 	static Fachada fachada;
 	/** Rellena la entidad fachada a partir del State proporcionado.
@@ -123,18 +137,122 @@ public class CreateEntities {
 	*/
 	public static void createSecurity(IAssemblyFileData assemblyFileData, DependenciesFactory dependencies, Ensamblado ensamblado) {
 		Security security = dependencies.createSecurity();
+		HOST host = dependencies.createHOST();
 		IAssemblySettingsContainer assemblySettingsContainer = assemblyFileData.getAssemblySettingsContainer();
-	    IBasicSettingsContainer basicSettingContainer = (IBasicSettingsContainer) assemblySettingsContainer.getAdvancedSettingsContainer();
-	    ensamblado.setEEnsamblado(security);
-	    ISetting[] setting = basicSettingContainer.getSettings();
+	    IAdvancedSettingsContainer advancedSettingContainer = assemblySettingsContainer.getAdvancedSettingsContainer();
+	    ISetting[] basisSettings = assemblySettingsContainer.getBasicSettingsContainer().getSettings();
+	    ISetting[] setting = advancedSettingContainer.getSettingsContainer().getSettings();
 	    for (ISetting iSetting : setting) {
 	    	String value = iSetting.getValue();
-	    	if (iSetting.getElementId().equals("TrxOp.ProtocolsUsed.Alias.Ctg")){
-	    		
-	    		
+	    	if (iSetting.getElementId().equals("aeb.opcontainer.uploadusunotes")){
+	    		security.setUsuNotes(value);
+	    	}else if(iSetting.getElementId().equals("aeb.multis")){
+	    		security.setMulti(value);
+	    	}else if(iSetting.getElementId().equals("aeb.external.entity.alias")){
+	    		security.setEntityAlias(value);
+	    	}else if(iSetting.getElementId().equals("initialization.codedPassword")){
+	    		security.setCodePassword(value);
+	    	}else if (iSetting.getElementId().equals("Sat.Timeout")){
+	    		host.setSatTimeOut(value);
+	    	}else if(iSetting.getElementId().equals("satTypeString.nullWhenSpaces")){
+	    		host.setSatNullWhenSpaces(value);
+	    	}else if(iSetting.getElementId().equals("sattype.null")){
+	    		host.setSatNullValues(value);
 	    	}
 		}
-	    //security.setAutentication(basicSettingContainer.);
+	    
+	    for (ISetting basisSetting : basisSettings) {
+	    	String value = basisSetting.getValue();
+			if (basisSetting.getElementId().equals("aeb.authentication.enabled")){
+				security.setAutentication(value);				
+			}else if(basisSetting.getElementId().equals("TrxOp.ProtocolsUsed.TransactionRedG")){
+				host.setRedProtocol(value);
+			}else if(basisSetting.getElementId().equals("TrxOp.ProtocolsUsed.Transaction")){
+				host.setTrxprotocol(value);
+			}else if(basisSetting.getElementId().equals("Altair.ProtocolsUsed.Alias")){
+				host.setAltairAlias(value);
+			}else if(basisSetting.getElementId().equals("Altair.ProtocolsUsed.Transaction")){
+				host.setAltairProtocol(value);
+			}else if(basisSetting.getElementId().equals("TrxOp.ProtocolsUsed.Alias")){//TCP
+				host.setTrxOPTCPAlias(value);
+			}else if(basisSetting.getElementId().equals("Sat.ProtocolsUsed.Transaction")){
+				host.setSatProtocol(value);
+			}else if(basisSetting.getElementId().equals("Sat.ProtocolsUsed.Alias")){
+				host.setSatAlias(value);
+			}else if(basisSetting.getElementId().equals("TrxOp.ProtocolsUsed.Alias.Type")){
+				host.setTrxOPDefaultMode(value);				
+			}
+		}
+	    
+	    // Vamos a crear los canales fisicos y logicos del host.
+	    Collection<IHostCommChannelContainer> listChannels = advancedSettingContainer.getAllChannelContainers();
+	    List<trxOPLogicalChannel> listTrxLogicalChannel = new ArrayList<>();
+	    List<trxOPPhysicalChannel> listTrxPhysicalChannel = new ArrayList<>();
+	    List<SATLogicalChannel> listSATLogicalChannel = new ArrayList<>();
+	    List<SATPhysicalChannel> listSATPhysicalChannel = new ArrayList<>();
+	    for (IHostCommChannelContainer channel : listChannels) {
+	    	IVegaElement[] children;
+	    	if(channel.getElementId().equals("trxOpHostCommLogicChContainer")){
+	    		children = channel.getChildren();
+	    		for (int i=0; i<children.length; i++) {
+	    			String name = children[i].getFieldValue("name").toString();	    			
+	    			String value = children[i].getFieldValue("value").toString();
+	    			trxOPLogicalChannel trxLogicalChannel = dependencies.createtrxOPLogicalChannel();
+		    		trxLogicalChannel.setName(getname(name, trxOp, logicalChannel));
+		    		trxLogicalChannel.setValue(value);
+		    		listTrxLogicalChannel.add(i,trxLogicalChannel);		
+				}
+	    		host.getEOPLogicalChannel().addAll(listTrxLogicalChannel);
+	    		
+	    	}else if(channel.getElementId().equals("trxOpHostCommPhysicChContainer")){
+		    		children = channel.getChildren();
+		    		for (int i=0; i<children.length; i++) {
+		    			String name = children[i].getFieldValue("name").toString();
+		    			String value = children[i].getFieldValue("value").toString();
+		    			trxOPPhysicalChannel trxPhysicalChannel = dependencies.createtrxOPPhysicalChannel();
+		    			trxPhysicalChannel.setName(getname(name, trxOp, physicalChannel));
+		    			trxPhysicalChannel.setValue(value);
+		    			listTrxPhysicalChannel.add(i,trxPhysicalChannel);	
+					}
+		    		host.getEPhysicalChannel().addAll(listTrxPhysicalChannel);
+		    		
+	    		}else if(channel.getElementId().equals("satHostCommLogicChContainer")){
+	    			children = channel.getChildren();
+		    		for (int i=0; i<children.length; i++) {
+		    			String name = children[i].getFieldValue("name").toString();
+		    			String value = children[i].getFieldValue("value").toString();
+		    		    SATLogicalChannel satLogicalChannel = dependencies.createSATLogicalChannel();
+		    			satLogicalChannel.setName(getname(name, sat, logicalChannel));
+		    			satLogicalChannel.setValue(value);
+		    			listSATLogicalChannel.add(i,satLogicalChannel);	
+					}
+		    		host.getESATLogicalChannel().addAll(listSATLogicalChannel);
+	    		
+	    		}else if(channel.getElementId().equals("satHostCommPhysicChContainer")){
+	    			children = channel.getChildren();
+		    		for (int i=0; i<children.length; i++) {
+		    			String name = children[i].getFieldValue("name").toString();
+		    			String value = children[i].getFieldValue("value").toString();
+		    		    SATPhysicalChannel satPhysicalChannel = dependencies.createSATPhysicalChannel();
+		    			satPhysicalChannel.setName(getname(name, sat, physicalChannel));
+		    			satPhysicalChannel.setValue(value);
+		    			listSATPhysicalChannel.add(i,satPhysicalChannel);
+					}
+		    		host.getESATPhysicalChannel().addAll(listSATPhysicalChannel);
+	    		}
+	    	
+
+		} 
+	    
+	    ensamblado.setEEnsamblado(security);
+	    ensamblado.setEHOST(host);
+	}
+
+	private static String getname(String name, String connector, String channel) {
+		String nameconnector="";
+		nameconnector= name.replaceFirst(connector, "").trim();
+		nameconnector = nameconnector.replaceFirst(channel, "").trim();
+		return nameconnector;
 	}
 	
 }
