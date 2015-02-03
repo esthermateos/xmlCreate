@@ -138,7 +138,7 @@ public class Connectors {
             _builder.append("\t");
             _builder.append("<trxOpLogicalChannels>");
             _builder.newLine();
-            _builder.append("\t");
+            _builder.append("\t\t");
             EList<trxOPLogicalChannel> logicalChannels = host.getEOPLogicalChannel();
             _builder.newLineIfNotEmpty();
             {
@@ -146,13 +146,13 @@ public class Connectors {
               if (_notEquals_11) {
                 {
                   for(final trxOPLogicalChannel logicalChannel : logicalChannels) {
-                    _builder.append("\t");
+                    _builder.append("\t\t");
                     _builder.append("<trxOpLogicalChannel name=\"");
                     String _name = logicalChannel.getName();
-                    _builder.append(_name, "	");
+                    _builder.append(_name, "		");
                     _builder.append("\">");
                     String _value = logicalChannel.getValue();
-                    _builder.append(_value, "	");
+                    _builder.append(_value, "		");
                     _builder.append("</trxOpLogicalChannel>");
                     _builder.newLineIfNotEmpty();
                   }
@@ -165,21 +165,21 @@ public class Connectors {
             _builder.append("\t");
             _builder.append("<trxOpPyshicalChannels>");
             _builder.newLine();
-            _builder.append("\t");
-            EList<trxOPLogicalChannel> PyshicalChannels = host.getEOPLogicalChannel();
+            _builder.append("\t\t");
+            EList<trxOPPhysicalChannel> PyshicalChannels = host.getEPhysicalChannel();
             _builder.newLineIfNotEmpty();
             {
               boolean _notEquals_12 = (!Objects.equal(PyshicalChannels, null));
               if (_notEquals_12) {
                 {
-                  for(final trxOPLogicalChannel PyshicalChannel : PyshicalChannels) {
-                    _builder.append("\t");
+                  for(final trxOPPhysicalChannel PyshicalChannel : PyshicalChannels) {
+                    _builder.append("\t\t");
                     _builder.append("<trxOpPyshicalChannel name=\"");
                     String _name_1 = PyshicalChannel.getName();
-                    _builder.append(_name_1, "	");
+                    _builder.append(_name_1, "		");
                     _builder.append("\">");
                     String _value_1 = PyshicalChannel.getValue();
-                    _builder.append(_value_1, "	");
+                    _builder.append(_value_1, "		");
                     _builder.append("</trxOpPyshicalChannel>");
                     _builder.newLineIfNotEmpty();
                   }
@@ -439,7 +439,7 @@ public class Connectors {
             _builder.append("\t");
             _builder.append("<satLogicalChannels>");
             _builder.newLine();
-            _builder.append("\t");
+            _builder.append("\t\t");
             EList<SATLogicalChannel> logicalChannels = host.getESATLogicalChannel();
             _builder.newLineIfNotEmpty();
             {
@@ -447,13 +447,13 @@ public class Connectors {
               if (_notEquals_13) {
                 {
                   for(final SATLogicalChannel logicalChannel : logicalChannels) {
-                    _builder.append("\t");
+                    _builder.append("\t\t");
                     _builder.append("<satLogicalChannel name=\"");
                     String _name = logicalChannel.getName();
-                    _builder.append(_name, "	");
+                    _builder.append(_name, "		");
                     _builder.append("\">");
                     String _value = logicalChannel.getValue();
-                    _builder.append(_value, "	");
+                    _builder.append(_value, "		");
                     _builder.append("</satLogicalChannel>");
                     _builder.newLineIfNotEmpty();
                   }
@@ -466,21 +466,21 @@ public class Connectors {
             _builder.append("\t");
             _builder.append("<satPyshicalChannels>");
             _builder.newLine();
-            _builder.append("\t");
-            EList<SATLogicalChannel> PyshicalChannels = host.getESATLogicalChannel();
+            _builder.append("\t\t");
+            EList<SATPhysicalChannel> PyshicalChannels = host.getESATPhysicalChannel();
             _builder.newLineIfNotEmpty();
             {
               boolean _notEquals_14 = (!Objects.equal(PyshicalChannels, null));
               if (_notEquals_14) {
                 {
-                  for(final SATLogicalChannel PyshicalChannel : PyshicalChannels) {
-                    _builder.append("\t");
+                  for(final SATPhysicalChannel PyshicalChannel : PyshicalChannels) {
+                    _builder.append("\t\t");
                     _builder.append("<satPyshicalChannel name=\"");
                     String _name_1 = PyshicalChannel.getName();
-                    _builder.append(_name_1, "	");
+                    _builder.append(_name_1, "		");
                     _builder.append("\">");
                     String _value_1 = PyshicalChannel.getValue();
-                    _builder.append(_value_1, "	");
+                    _builder.append(_value_1, "		");
                     _builder.append("</satPyshicalChannel>");
                     _builder.newLineIfNotEmpty();
                   }

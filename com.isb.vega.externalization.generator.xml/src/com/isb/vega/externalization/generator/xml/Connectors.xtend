@@ -31,20 +31,20 @@ class Connectors {
 			<trxOpTCPAlias/>
 			«ENDIF»
 			<trxOpLogicalChannels>
-			«var logicalChannels = host.EOPLogicalChannel»
-			«IF logicalChannels!=null»
-				«FOR logicalChannel : logicalChannels»
-					<trxOpLogicalChannel name="«logicalChannel.name»">«logicalChannel.value»</trxOpLogicalChannel>
-				«ENDFOR»
-			«ENDIF»
+				«var logicalChannels = host.EOPLogicalChannel»
+				«IF logicalChannels!=null»
+					«FOR logicalChannel : logicalChannels»
+						<trxOpLogicalChannel name="«logicalChannel.name»">«logicalChannel.value»</trxOpLogicalChannel>
+					«ENDFOR»
+				«ENDIF»
 			</trxOpLogicalChannels>
 			<trxOpPyshicalChannels>
-			«var PyshicalChannels = host.EOPLogicalChannel»
-			«IF PyshicalChannels!=null»
-				«FOR PyshicalChannel : PyshicalChannels»
-					<trxOpPyshicalChannel name="«PyshicalChannel.name»">«PyshicalChannel.value»</trxOpPyshicalChannel>
-				«ENDFOR»
-			«ENDIF»			
+				«var PyshicalChannels = host.EPhysicalChannel»
+				«IF PyshicalChannels!=null»
+					«FOR PyshicalChannel : PyshicalChannels»
+						<trxOpPyshicalChannel name="«PyshicalChannel.name»">«PyshicalChannel.value»</trxOpPyshicalChannel>
+					«ENDFOR»
+				«ENDIF»			
 			</trxOpPyshicalChannels>
 			<trxOpStates>
 				«//FOR
@@ -119,20 +119,20 @@ class Connectors {
 			<satNullWhenSpaces/>
 			«ENDIF»
 			<satLogicalChannels>
-			«var logicalChannels = host.ESATLogicalChannel»
-			«IF logicalChannels!=null»
-				«FOR logicalChannel : logicalChannels»
-					<satLogicalChannel name="«logicalChannel.name»">«logicalChannel.value»</satLogicalChannel>
-				«ENDFOR»
-			«ENDIF»
+				«var logicalChannels = host.ESATLogicalChannel»
+				«IF logicalChannels!=null»
+					«FOR logicalChannel : logicalChannels»
+						<satLogicalChannel name="«logicalChannel.name»">«logicalChannel.value»</satLogicalChannel>
+					«ENDFOR»
+				«ENDIF»
 			</satLogicalChannels>
 			<satPyshicalChannels>
-			«var PyshicalChannels = host.ESATLogicalChannel»
-			«IF PyshicalChannels!=null»
-				«FOR PyshicalChannel : PyshicalChannels»
-					<satPyshicalChannel name="«PyshicalChannel.name»">«PyshicalChannel.value»</satPyshicalChannel>
-				«ENDFOR»
-			«ENDIF»
+				«var PyshicalChannels = host.ESATPhysicalChannel»
+				«IF PyshicalChannels!=null»
+					«FOR PyshicalChannel : PyshicalChannels»
+						<satPyshicalChannel name="«PyshicalChannel.name»">«PyshicalChannel.value»</satPyshicalChannel>
+					«ENDFOR»
+				«ENDIF»
 			</satPyshicalChannels>
 			<satStates>
 				«//FOR

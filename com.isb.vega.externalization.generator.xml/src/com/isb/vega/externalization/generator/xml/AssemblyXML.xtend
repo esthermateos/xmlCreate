@@ -1,8 +1,7 @@
 package com.isb.vega.externalization.generator.xml
 
 import dependencies.Ensamblado
-import dependencies.Security
-import dependencies.MultiProfile
+
 
 class AssemblyXML {
 		
