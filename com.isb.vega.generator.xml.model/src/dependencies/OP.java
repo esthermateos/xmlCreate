@@ -173,29 +173,19 @@ public interface OP extends EObject {
 	EList<OI> getEOI();
 
 	/**
-	 * Returns the value of the '<em><b>EFachada</b></em>' containment reference.
+	 * Returns the value of the '<em><b>EFachada</b></em>' containment reference list.
+	 * The list contents are of type {@link dependencies.Fachada}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EFachada</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>EFachada</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EFachada</em>' containment reference.
-	 * @see #setEFachada(Fachada)
+	 * @return the value of the '<em>EFachada</em>' containment reference list.
 	 * @see dependencies.DependenciesPackage#getOP_EFachada()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Fachada getEFachada();
-
-	/**
-	 * Sets the value of the '{@link dependencies.OP#getEFachada <em>EFachada</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EFachada</em>' containment reference.
-	 * @see #getEFachada()
-	 * @generated
-	 */
-	void setEFachada(Fachada value);
+	EList<Fachada> getEFachada();
 
 } // OP

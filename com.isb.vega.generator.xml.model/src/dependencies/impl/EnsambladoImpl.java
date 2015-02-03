@@ -100,24 +100,24 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 	protected HOST eHOST;
 
 	/**
-	 * The cached value of the '{@link #getEJMS() <em>EJMS</em>}' containment reference.
+	 * The cached value of the '{@link #getEJMS() <em>EJMS</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEJMS()
 	 * @generated
 	 * @ordered
 	 */
-	protected JMS eJMS;
+	protected EList<JMS> eJMS;
 
 	/**
-	 * The cached value of the '{@link #getEChannelAdapter() <em>EChannel Adapter</em>}' containment reference.
+	 * The cached value of the '{@link #getEChannelAdapter() <em>EChannel Adapter</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEChannelAdapter()
 	 * @generated
 	 * @ordered
 	 */
-	protected ChannelAdapter eChannelAdapter;
+	protected EList<ChannelAdapter> eChannelAdapter;
 
 	/**
 	 * The cached value of the '{@link #getEEnsamblado() <em>EEnsamblado</em>}' containment reference.
@@ -282,7 +282,10 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public JMS getEJMS() {
+	public EList<JMS> getEJMS() {
+		if (eJMS == null) {
+			eJMS = new EObjectContainmentEList<JMS>(JMS.class, this, DependenciesPackage.ENSAMBLADO__EJMS);
+		}
 		return eJMS;
 	}
 
@@ -291,76 +294,11 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEJMS(JMS newEJMS, NotificationChain msgs) {
-		JMS oldEJMS = eJMS;
-		eJMS = newEJMS;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.ENSAMBLADO__EJMS, oldEJMS, newEJMS);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<ChannelAdapter> getEChannelAdapter() {
+		if (eChannelAdapter == null) {
+			eChannelAdapter = new EObjectContainmentEList<ChannelAdapter>(ChannelAdapter.class, this, DependenciesPackage.ENSAMBLADO__ECHANNEL_ADAPTER);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEJMS(JMS newEJMS) {
-		if (newEJMS != eJMS) {
-			NotificationChain msgs = null;
-			if (eJMS != null)
-				msgs = ((InternalEObject)eJMS).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.ENSAMBLADO__EJMS, null, msgs);
-			if (newEJMS != null)
-				msgs = ((InternalEObject)newEJMS).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.ENSAMBLADO__EJMS, null, msgs);
-			msgs = basicSetEJMS(newEJMS, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.ENSAMBLADO__EJMS, newEJMS, newEJMS));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ChannelAdapter getEChannelAdapter() {
 		return eChannelAdapter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetEChannelAdapter(ChannelAdapter newEChannelAdapter, NotificationChain msgs) {
-		ChannelAdapter oldEChannelAdapter = eChannelAdapter;
-		eChannelAdapter = newEChannelAdapter;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.ENSAMBLADO__ECHANNEL_ADAPTER, oldEChannelAdapter, newEChannelAdapter);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEChannelAdapter(ChannelAdapter newEChannelAdapter) {
-		if (newEChannelAdapter != eChannelAdapter) {
-			NotificationChain msgs = null;
-			if (eChannelAdapter != null)
-				msgs = ((InternalEObject)eChannelAdapter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.ENSAMBLADO__ECHANNEL_ADAPTER, null, msgs);
-			if (newEChannelAdapter != null)
-				msgs = ((InternalEObject)newEChannelAdapter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.ENSAMBLADO__ECHANNEL_ADAPTER, null, msgs);
-			msgs = basicSetEChannelAdapter(newEChannelAdapter, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.ENSAMBLADO__ECHANNEL_ADAPTER, newEChannelAdapter, newEChannelAdapter));
 	}
 
 	/**
@@ -464,9 +402,9 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 			case DependenciesPackage.ENSAMBLADO__EHOST:
 				return basicSetEHOST(null, msgs);
 			case DependenciesPackage.ENSAMBLADO__EJMS:
-				return basicSetEJMS(null, msgs);
+				return ((InternalEList<?>)getEJMS()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.ENSAMBLADO__ECHANNEL_ADAPTER:
-				return basicSetEChannelAdapter(null, msgs);
+				return ((InternalEList<?>)getEChannelAdapter()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.ENSAMBLADO__EENSAMBLADO:
 				return basicSetEEnsamblado(null, msgs);
 			case DependenciesPackage.ENSAMBLADO__EOP:
@@ -526,10 +464,12 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 				setEHOST((HOST)newValue);
 				return;
 			case DependenciesPackage.ENSAMBLADO__EJMS:
-				setEJMS((JMS)newValue);
+				getEJMS().clear();
+				getEJMS().addAll((Collection<? extends JMS>)newValue);
 				return;
 			case DependenciesPackage.ENSAMBLADO__ECHANNEL_ADAPTER:
-				setEChannelAdapter((ChannelAdapter)newValue);
+				getEChannelAdapter().clear();
+				getEChannelAdapter().addAll((Collection<? extends ChannelAdapter>)newValue);
 				return;
 			case DependenciesPackage.ENSAMBLADO__EENSAMBLADO:
 				setEEnsamblado((Security)newValue);
@@ -562,10 +502,10 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 				setEHOST((HOST)null);
 				return;
 			case DependenciesPackage.ENSAMBLADO__EJMS:
-				setEJMS((JMS)null);
+				getEJMS().clear();
 				return;
 			case DependenciesPackage.ENSAMBLADO__ECHANNEL_ADAPTER:
-				setEChannelAdapter((ChannelAdapter)null);
+				getEChannelAdapter().clear();
 				return;
 			case DependenciesPackage.ENSAMBLADO__EENSAMBLADO:
 				setEEnsamblado((Security)null);
@@ -594,9 +534,9 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 			case DependenciesPackage.ENSAMBLADO__EHOST:
 				return eHOST != null;
 			case DependenciesPackage.ENSAMBLADO__EJMS:
-				return eJMS != null;
+				return eJMS != null && !eJMS.isEmpty();
 			case DependenciesPackage.ENSAMBLADO__ECHANNEL_ADAPTER:
-				return eChannelAdapter != null;
+				return eChannelAdapter != null && !eChannelAdapter.isEmpty();
 			case DependenciesPackage.ENSAMBLADO__EENSAMBLADO:
 				return eEnsamblado != null;
 			case DependenciesPackage.ENSAMBLADO__EOP:

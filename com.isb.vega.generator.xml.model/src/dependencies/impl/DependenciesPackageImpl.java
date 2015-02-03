@@ -23,10 +23,10 @@ import dependencies.Siebel;
 import dependencies.TableParameters;
 import dependencies.Tp;
 import dependencies.TrxOP;
+import dependencies.TrxOPLogicalChannel;
+import dependencies.TrxOPPhysicalChannel;
 import dependencies.Webservice;
 import dependencies.eFachada;
-import dependencies.trxOPLogicalChannel;
-import dependencies.trxOPPhysicalChannel;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -678,7 +678,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOI_EReference0() {
+	public EReference getOI_EFachada() {
 		return (EReference)oiEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -1785,7 +1785,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass gettrxOPLogicalChannel() {
+	public EClass getTrxOPLogicalChannel() {
 		return trxOPLogicalChannelEClass;
 	}
 
@@ -1794,7 +1794,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute gettrxOPLogicalChannel_Name() {
+	public EAttribute getTrxOPLogicalChannel_Name() {
 		return (EAttribute)trxOPLogicalChannelEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1803,7 +1803,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute gettrxOPLogicalChannel_Value() {
+	public EAttribute getTrxOPLogicalChannel_Value() {
 		return (EAttribute)trxOPLogicalChannelEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1812,7 +1812,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass gettrxOPPhysicalChannel() {
+	public EClass getTrxOPPhysicalChannel() {
 		return trxOPPhysicalChannelEClass;
 	}
 
@@ -1821,7 +1821,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute gettrxOPPhysicalChannel_Name() {
+	public EAttribute getTrxOPPhysicalChannel_Name() {
 		return (EAttribute)trxOPPhysicalChannelEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1830,7 +1830,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute gettrxOPPhysicalChannel_Value() {
+	public EAttribute getTrxOPPhysicalChannel_Value() {
 		return (EAttribute)trxOPPhysicalChannelEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1994,7 +1994,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		createEReference(oiEClass, OI__EALTAIR);
 		createEReference(oiEClass, OI__ETRX_OP);
 		createEReference(oiEClass, OI__ESAT);
-		createEReference(oiEClass, OI__EREFERENCE0);
+		createEReference(oiEClass, OI__EFACHADA);
 
 		fachadaEClass = createEClass(FACHADA);
 		createEAttribute(fachadaEClass, FACHADA__FACADE_NAME);
@@ -2204,8 +2204,8 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEAttribute(getHOST_AltairAlias(), ecorePackage.getEString(), "altairAlias", null, 0, 1, dependencies.HOST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHOST_RedProtocol(), ecorePackage.getEString(), "RedProtocol", null, 0, 1, dependencies.HOST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHOST_Trxprotocol(), ecorePackage.getEString(), "trxprotocol", null, 0, 1, dependencies.HOST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHOST_EOPLogicalChannel(), this.gettrxOPLogicalChannel(), null, "eOPLogicalChannel", null, 0, -1, dependencies.HOST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHOST_EPhysicalChannel(), this.gettrxOPPhysicalChannel(), null, "ePhysicalChannel", null, 0, -1, dependencies.HOST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHOST_EOPLogicalChannel(), this.getTrxOPLogicalChannel(), null, "eOPLogicalChannel", null, 0, -1, dependencies.HOST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHOST_EPhysicalChannel(), this.getTrxOPPhysicalChannel(), null, "ePhysicalChannel", null, 0, -1, dependencies.HOST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHOST_ESATLogicalChannel(), this.getSATLogicalChannel(), null, "eSATLogicalChannel", null, 0, -1, dependencies.HOST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHOST_ESATPhysicalChannel(), this.getSATPhysicalChannel(), null, "eSATPhysicalChannel", null, 0, -1, dependencies.HOST.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2217,7 +2217,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEAttribute(getOP_Version(), ecorePackage.getEString(), "version", null, 0, 1, dependencies.OP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOP_EWebService(), this.getWebservice(), null, "eWebService", null, 0, -1, dependencies.OP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOP_EOI(), this.getOI(), null, "eOI", null, 0, -1, dependencies.OP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOP_EFachada(), this.getFachada(), null, "eFachada", null, 0, 1, dependencies.OP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOP_EFachada(), this.getFachada(), null, "eFachada", null, 0, -1, dependencies.OP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(oiEClass, dependencies.OI.class, "OI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOI_EstadoLlamadaOI(), this.getOI(), null, "estadoLlamadaOI", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2234,7 +2234,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEReference(getOI_EAltair(), this.getAltair(), null, "eAltair", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOI_ETrxOP(), this.getTrxOP(), null, "eTrxOP", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOI_ESAT(), this.getSAT(), null, "eSAT", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOI_EReference0(), this.getFachada(), null, "EReference0", null, 0, 1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOI_EFachada(), this.getFachada(), null, "eFachada", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fachadaEClass, Fachada.class, "Fachada", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFachada_FacadeName(), ecorePackage.getEString(), "facadeName", null, 0, 1, Fachada.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2290,8 +2290,8 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEReference(getEnsamblado_ELogLevel(), this.getLogLevel(), null, "eLogLevel", null, 0, -1, Ensamblado.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnsamblado_EMultiProfile(), this.getMultiProfile(), null, "eMultiProfile", null, 0, 1, Ensamblado.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnsamblado_EHOST(), this.getHOST(), null, "eHOST", null, 0, 1, Ensamblado.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnsamblado_EJMS(), this.getJMS(), null, "eJMS", null, 0, 1, Ensamblado.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnsamblado_EChannelAdapter(), this.getChannelAdapter(), null, "eChannelAdapter", null, 0, 1, Ensamblado.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnsamblado_EJMS(), this.getJMS(), null, "eJMS", null, 0, -1, Ensamblado.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnsamblado_EChannelAdapter(), this.getChannelAdapter(), null, "eChannelAdapter", null, 0, -1, Ensamblado.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnsamblado_EEnsamblado(), this.getSecurity(), null, "eEnsamblado", null, 0, 1, Ensamblado.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnsamblado_EOP(), this.getOP(), null, "eOP", null, 0, 1, Ensamblado.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2380,13 +2380,13 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEAttribute(getRules_IdLit(), ecorePackage.getEString(), "idLit", null, 0, 1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRules_Lit(), ecorePackage.getEString(), "lit", null, 0, 1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(trxOPLogicalChannelEClass, trxOPLogicalChannel.class, "trxOPLogicalChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(gettrxOPLogicalChannel_Name(), ecorePackage.getEString(), "name", null, 0, 1, trxOPLogicalChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(gettrxOPLogicalChannel_Value(), ecorePackage.getEString(), "value", null, 0, 1, trxOPLogicalChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(trxOPLogicalChannelEClass, TrxOPLogicalChannel.class, "TrxOPLogicalChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTrxOPLogicalChannel_Name(), ecorePackage.getEString(), "name", null, 0, 1, TrxOPLogicalChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrxOPLogicalChannel_Value(), ecorePackage.getEString(), "value", null, 0, 1, TrxOPLogicalChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(trxOPPhysicalChannelEClass, trxOPPhysicalChannel.class, "trxOPPhysicalChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(gettrxOPPhysicalChannel_Name(), ecorePackage.getEString(), "name", null, 0, 1, trxOPPhysicalChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(gettrxOPPhysicalChannel_Value(), ecorePackage.getEString(), "value", null, 0, 1, trxOPPhysicalChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(trxOPPhysicalChannelEClass, TrxOPPhysicalChannel.class, "TrxOPPhysicalChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTrxOPPhysicalChannel_Name(), ecorePackage.getEString(), "name", null, 0, 1, TrxOPPhysicalChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrxOPPhysicalChannel_Value(), ecorePackage.getEString(), "value", null, 0, 1, TrxOPPhysicalChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(satLogicalChannelEClass, SATLogicalChannel.class, "SATLogicalChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSATLogicalChannel_Name(), ecorePackage.getEString(), "name", null, 0, 1, SATLogicalChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -247,22 +247,22 @@ public interface DependenciesFactory extends EFactory {
 	Rules createRules();
 
 	/**
-	 * Returns a new object of class '<em>trx OP Logical Channel</em>'.
+	 * Returns a new object of class '<em>Trx OP Logical Channel</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>trx OP Logical Channel</em>'.
+	 * @return a new object of class '<em>Trx OP Logical Channel</em>'.
 	 * @generated
 	 */
-	trxOPLogicalChannel createtrxOPLogicalChannel();
+	TrxOPLogicalChannel createTrxOPLogicalChannel();
 
 	/**
-	 * Returns a new object of class '<em>trx OP Physical Channel</em>'.
+	 * Returns a new object of class '<em>Trx OP Physical Channel</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>trx OP Physical Channel</em>'.
+	 * @return a new object of class '<em>Trx OP Physical Channel</em>'.
 	 * @generated
 	 */
-	trxOPPhysicalChannel createtrxOPPhysicalChannel();
+	TrxOPPhysicalChannel createTrxOPPhysicalChannel();
 
 	/**
 	 * Returns a new object of class '<em>SAT Logical Channel</em>'.

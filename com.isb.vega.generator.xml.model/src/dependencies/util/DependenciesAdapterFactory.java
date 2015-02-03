@@ -168,12 +168,12 @@ public class DependenciesAdapterFactory extends AdapterFactoryImpl {
 				return createRulesAdapter();
 			}
 			@Override
-			public Adapter casetrxOPLogicalChannel(trxOPLogicalChannel object) {
-				return createtrxOPLogicalChannelAdapter();
+			public Adapter caseTrxOPLogicalChannel(TrxOPLogicalChannel object) {
+				return createTrxOPLogicalChannelAdapter();
 			}
 			@Override
-			public Adapter casetrxOPPhysicalChannel(trxOPPhysicalChannel object) {
-				return createtrxOPPhysicalChannelAdapter();
+			public Adapter caseTrxOPPhysicalChannel(TrxOPPhysicalChannel object) {
+				return createTrxOPPhysicalChannelAdapter();
 			}
 			@Override
 			public Adapter caseSATLogicalChannel(SATLogicalChannel object) {
@@ -558,30 +558,30 @@ public class DependenciesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dependencies.trxOPLogicalChannel <em>trx OP Logical Channel</em>}'.
+	 * Creates a new adapter for an object of class '{@link dependencies.TrxOPLogicalChannel <em>Trx OP Logical Channel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dependencies.trxOPLogicalChannel
+	 * @see dependencies.TrxOPLogicalChannel
 	 * @generated
 	 */
-	public Adapter createtrxOPLogicalChannelAdapter() {
+	public Adapter createTrxOPLogicalChannelAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dependencies.trxOPPhysicalChannel <em>trx OP Physical Channel</em>}'.
+	 * Creates a new adapter for an object of class '{@link dependencies.TrxOPPhysicalChannel <em>Trx OP Physical Channel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dependencies.trxOPPhysicalChannel
+	 * @see dependencies.TrxOPPhysicalChannel
 	 * @generated
 	 */
-	public Adapter createtrxOPPhysicalChannelAdapter() {
+	public Adapter createTrxOPPhysicalChannelAdapter() {
 		return null;
 	}
 

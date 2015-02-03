@@ -325,7 +325,7 @@ public interface HOST extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>EOP Logical Channel</b></em>' containment reference list.
-	 * The list contents are of type {@link dependencies.trxOPLogicalChannel}.
+	 * The list contents are of type {@link dependencies.TrxOPLogicalChannel}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>EOP Logical Channel</em>' containment reference list isn't clear,
@@ -337,11 +337,11 @@ public interface HOST extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<trxOPLogicalChannel> getEOPLogicalChannel();
+	EList<TrxOPLogicalChannel> getEOPLogicalChannel();
 
 	/**
 	 * Returns the value of the '<em><b>EPhysical Channel</b></em>' containment reference list.
-	 * The list contents are of type {@link dependencies.trxOPPhysicalChannel}.
+	 * The list contents are of type {@link dependencies.TrxOPPhysicalChannel}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>EPhysical Channel</em>' containment reference list isn't clear,
@@ -353,7 +353,7 @@ public interface HOST extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<trxOPPhysicalChannel> getEPhysicalChannel();
+	EList<TrxOPPhysicalChannel> getEPhysicalChannel();
 
 	/**
 	 * Returns the value of the '<em><b>ESAT Logical Channel</b></em>' containment reference list.

@@ -217,14 +217,14 @@ public class DependenciesSwitch<T> extends Switch<T> {
 				return result;
 			}
 			case DependenciesPackage.TRX_OP_LOGICAL_CHANNEL: {
-				trxOPLogicalChannel trxOPLogicalChannel = (trxOPLogicalChannel)theEObject;
-				T result = casetrxOPLogicalChannel(trxOPLogicalChannel);
+				TrxOPLogicalChannel trxOPLogicalChannel = (TrxOPLogicalChannel)theEObject;
+				T result = caseTrxOPLogicalChannel(trxOPLogicalChannel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case DependenciesPackage.TRX_OP_PHYSICAL_CHANNEL: {
-				trxOPPhysicalChannel trxOPPhysicalChannel = (trxOPPhysicalChannel)theEObject;
-				T result = casetrxOPPhysicalChannel(trxOPPhysicalChannel);
+				TrxOPPhysicalChannel trxOPPhysicalChannel = (TrxOPPhysicalChannel)theEObject;
+				T result = caseTrxOPPhysicalChannel(trxOPPhysicalChannel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -626,32 +626,32 @@ public class DependenciesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>trx OP Logical Channel</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Trx OP Logical Channel</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>trx OP Logical Channel</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Trx OP Logical Channel</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casetrxOPLogicalChannel(trxOPLogicalChannel object) {
+	public T caseTrxOPLogicalChannel(TrxOPLogicalChannel object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>trx OP Physical Channel</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Trx OP Physical Channel</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>trx OP Physical Channel</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Trx OP Physical Channel</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casetrxOPPhysicalChannel(trxOPPhysicalChannel object) {
+	public T caseTrxOPPhysicalChannel(TrxOPPhysicalChannel object) {
 		return null;
 	}
 

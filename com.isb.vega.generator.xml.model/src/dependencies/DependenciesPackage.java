@@ -293,7 +293,7 @@ public interface DependenciesPackage extends EPackage {
 	int OP__EOI = 6;
 
 	/**
-	 * The feature id for the '<em><b>EFachada</b></em>' containment reference.
+	 * The feature id for the '<em><b>EFachada</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -456,13 +456,13 @@ public interface DependenciesPackage extends EPackage {
 	int OI__ESAT = 13;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' containment reference.
+	 * The feature id for the '<em><b>EFachada</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OI__EREFERENCE0 = 14;
+	int OI__EFACHADA = 14;
 
 	/**
 	 * The number of structural features of the '<em>OI</em>' class.
@@ -1040,7 +1040,7 @@ public interface DependenciesPackage extends EPackage {
 	int ENSAMBLADO__EHOST = 3;
 
 	/**
-	 * The feature id for the '<em><b>EJMS</b></em>' containment reference.
+	 * The feature id for the '<em><b>EJMS</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1049,7 +1049,7 @@ public interface DependenciesPackage extends EPackage {
 	int ENSAMBLADO__EJMS = 4;
 
 	/**
-	 * The feature id for the '<em><b>EChannel Adapter</b></em>' containment reference.
+	 * The feature id for the '<em><b>EChannel Adapter</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1999,11 +1999,11 @@ public interface DependenciesPackage extends EPackage {
 	int RULES_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link dependencies.impl.trxOPLogicalChannelImpl <em>trx OP Logical Channel</em>}' class.
+	 * The meta object id for the '{@link dependencies.impl.TrxOPLogicalChannelImpl <em>Trx OP Logical Channel</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dependencies.impl.trxOPLogicalChannelImpl
-	 * @see dependencies.impl.DependenciesPackageImpl#gettrxOPLogicalChannel()
+	 * @see dependencies.impl.TrxOPLogicalChannelImpl
+	 * @see dependencies.impl.DependenciesPackageImpl#getTrxOPLogicalChannel()
 	 * @generated
 	 */
 	int TRX_OP_LOGICAL_CHANNEL = 25;
@@ -2027,7 +2027,7 @@ public interface DependenciesPackage extends EPackage {
 	int TRX_OP_LOGICAL_CHANNEL__VALUE = 1;
 
 	/**
-	 * The number of structural features of the '<em>trx OP Logical Channel</em>' class.
+	 * The number of structural features of the '<em>Trx OP Logical Channel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2036,7 +2036,7 @@ public interface DependenciesPackage extends EPackage {
 	int TRX_OP_LOGICAL_CHANNEL_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>trx OP Logical Channel</em>' class.
+	 * The number of operations of the '<em>Trx OP Logical Channel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2045,11 +2045,11 @@ public interface DependenciesPackage extends EPackage {
 	int TRX_OP_LOGICAL_CHANNEL_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link dependencies.impl.trxOPPhysicalChannelImpl <em>trx OP Physical Channel</em>}' class.
+	 * The meta object id for the '{@link dependencies.impl.TrxOPPhysicalChannelImpl <em>Trx OP Physical Channel</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dependencies.impl.trxOPPhysicalChannelImpl
-	 * @see dependencies.impl.DependenciesPackageImpl#gettrxOPPhysicalChannel()
+	 * @see dependencies.impl.TrxOPPhysicalChannelImpl
+	 * @see dependencies.impl.DependenciesPackageImpl#getTrxOPPhysicalChannel()
 	 * @generated
 	 */
 	int TRX_OP_PHYSICAL_CHANNEL = 26;
@@ -2073,7 +2073,7 @@ public interface DependenciesPackage extends EPackage {
 	int TRX_OP_PHYSICAL_CHANNEL__VALUE = 1;
 
 	/**
-	 * The number of structural features of the '<em>trx OP Physical Channel</em>' class.
+	 * The number of structural features of the '<em>Trx OP Physical Channel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2082,7 +2082,7 @@ public interface DependenciesPackage extends EPackage {
 	int TRX_OP_PHYSICAL_CHANNEL_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>trx OP Physical Channel</em>' class.
+	 * The number of operations of the '<em>Trx OP Physical Channel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2501,10 +2501,10 @@ public interface DependenciesPackage extends EPackage {
 	EReference getOP_EOI();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link dependencies.OP#getEFachada <em>EFachada</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dependencies.OP#getEFachada <em>EFachada</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>EFachada</em>'.
+	 * @return the meta object for the containment reference list '<em>EFachada</em>'.
 	 * @see dependencies.OP#getEFachada()
 	 * @see #getOP()
 	 * @generated
@@ -2676,15 +2676,15 @@ public interface DependenciesPackage extends EPackage {
 	EReference getOI_ESAT();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link dependencies.OI#getEReference0 <em>EReference0</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dependencies.OI#getEFachada <em>EFachada</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>EReference0</em>'.
-	 * @see dependencies.OI#getEReference0()
+	 * @return the meta object for the containment reference list '<em>EFachada</em>'.
+	 * @see dependencies.OI#getEFachada()
 	 * @see #getOI()
 	 * @generated
 	 */
-	EReference getOI_EReference0();
+	EReference getOI_EFachada();
 
 	/**
 	 * Returns the meta object for class '{@link dependencies.Fachada <em>Fachada</em>}'.
@@ -3196,10 +3196,10 @@ public interface DependenciesPackage extends EPackage {
 	EReference getEnsamblado_EHOST();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link dependencies.Ensamblado#getEJMS <em>EJMS</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dependencies.Ensamblado#getEJMS <em>EJMS</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>EJMS</em>'.
+	 * @return the meta object for the containment reference list '<em>EJMS</em>'.
 	 * @see dependencies.Ensamblado#getEJMS()
 	 * @see #getEnsamblado()
 	 * @generated
@@ -3207,10 +3207,10 @@ public interface DependenciesPackage extends EPackage {
 	EReference getEnsamblado_EJMS();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link dependencies.Ensamblado#getEChannelAdapter <em>EChannel Adapter</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dependencies.Ensamblado#getEChannelAdapter <em>EChannel Adapter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>EChannel Adapter</em>'.
+	 * @return the meta object for the containment reference list '<em>EChannel Adapter</em>'.
 	 * @see dependencies.Ensamblado#getEChannelAdapter()
 	 * @see #getEnsamblado()
 	 * @generated
@@ -4007,68 +4007,68 @@ public interface DependenciesPackage extends EPackage {
 	EAttribute getRules_Lit();
 
 	/**
-	 * Returns the meta object for class '{@link dependencies.trxOPLogicalChannel <em>trx OP Logical Channel</em>}'.
+	 * Returns the meta object for class '{@link dependencies.TrxOPLogicalChannel <em>Trx OP Logical Channel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>trx OP Logical Channel</em>'.
-	 * @see dependencies.trxOPLogicalChannel
+	 * @return the meta object for class '<em>Trx OP Logical Channel</em>'.
+	 * @see dependencies.TrxOPLogicalChannel
 	 * @generated
 	 */
-	EClass gettrxOPLogicalChannel();
+	EClass getTrxOPLogicalChannel();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.trxOPLogicalChannel#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.TrxOPLogicalChannel#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see dependencies.trxOPLogicalChannel#getName()
-	 * @see #gettrxOPLogicalChannel()
+	 * @see dependencies.TrxOPLogicalChannel#getName()
+	 * @see #getTrxOPLogicalChannel()
 	 * @generated
 	 */
-	EAttribute gettrxOPLogicalChannel_Name();
+	EAttribute getTrxOPLogicalChannel_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.trxOPLogicalChannel#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.TrxOPLogicalChannel#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see dependencies.trxOPLogicalChannel#getValue()
-	 * @see #gettrxOPLogicalChannel()
+	 * @see dependencies.TrxOPLogicalChannel#getValue()
+	 * @see #getTrxOPLogicalChannel()
 	 * @generated
 	 */
-	EAttribute gettrxOPLogicalChannel_Value();
+	EAttribute getTrxOPLogicalChannel_Value();
 
 	/**
-	 * Returns the meta object for class '{@link dependencies.trxOPPhysicalChannel <em>trx OP Physical Channel</em>}'.
+	 * Returns the meta object for class '{@link dependencies.TrxOPPhysicalChannel <em>Trx OP Physical Channel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>trx OP Physical Channel</em>'.
-	 * @see dependencies.trxOPPhysicalChannel
+	 * @return the meta object for class '<em>Trx OP Physical Channel</em>'.
+	 * @see dependencies.TrxOPPhysicalChannel
 	 * @generated
 	 */
-	EClass gettrxOPPhysicalChannel();
+	EClass getTrxOPPhysicalChannel();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.trxOPPhysicalChannel#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.TrxOPPhysicalChannel#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see dependencies.trxOPPhysicalChannel#getName()
-	 * @see #gettrxOPPhysicalChannel()
+	 * @see dependencies.TrxOPPhysicalChannel#getName()
+	 * @see #getTrxOPPhysicalChannel()
 	 * @generated
 	 */
-	EAttribute gettrxOPPhysicalChannel_Name();
+	EAttribute getTrxOPPhysicalChannel_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.trxOPPhysicalChannel#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.TrxOPPhysicalChannel#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see dependencies.trxOPPhysicalChannel#getValue()
-	 * @see #gettrxOPPhysicalChannel()
+	 * @see dependencies.TrxOPPhysicalChannel#getValue()
+	 * @see #getTrxOPPhysicalChannel()
 	 * @generated
 	 */
-	EAttribute gettrxOPPhysicalChannel_Value();
+	EAttribute getTrxOPPhysicalChannel_Value();
 
 	/**
 	 * Returns the meta object for class '{@link dependencies.SATLogicalChannel <em>SAT Logical Channel</em>}'.
@@ -4397,7 +4397,7 @@ public interface DependenciesPackage extends EPackage {
 		EReference OP__EOI = eINSTANCE.getOP_EOI();
 
 		/**
-		 * The meta object literal for the '<em><b>EFachada</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>EFachada</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -4527,12 +4527,12 @@ public interface DependenciesPackage extends EPackage {
 		EReference OI__ESAT = eINSTANCE.getOI_ESAT();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference0</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>EFachada</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OI__EREFERENCE0 = eINSTANCE.getOI_EReference0();
+		EReference OI__EFACHADA = eINSTANCE.getOI_EFachada();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.FachadaImpl <em>Fachada</em>}' class.
@@ -4927,7 +4927,7 @@ public interface DependenciesPackage extends EPackage {
 		EReference ENSAMBLADO__EHOST = eINSTANCE.getEnsamblado_EHOST();
 
 		/**
-		 * The meta object literal for the '<em><b>EJMS</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>EJMS</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -4935,7 +4935,7 @@ public interface DependenciesPackage extends EPackage {
 		EReference ENSAMBLADO__EJMS = eINSTANCE.getEnsamblado_EJMS();
 
 		/**
-		 * The meta object literal for the '<em><b>EChannel Adapter</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>EChannel Adapter</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5555,14 +5555,14 @@ public interface DependenciesPackage extends EPackage {
 		EAttribute RULES__LIT = eINSTANCE.getRules_Lit();
 
 		/**
-		 * The meta object literal for the '{@link dependencies.impl.trxOPLogicalChannelImpl <em>trx OP Logical Channel</em>}' class.
+		 * The meta object literal for the '{@link dependencies.impl.TrxOPLogicalChannelImpl <em>Trx OP Logical Channel</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dependencies.impl.trxOPLogicalChannelImpl
-		 * @see dependencies.impl.DependenciesPackageImpl#gettrxOPLogicalChannel()
+		 * @see dependencies.impl.TrxOPLogicalChannelImpl
+		 * @see dependencies.impl.DependenciesPackageImpl#getTrxOPLogicalChannel()
 		 * @generated
 		 */
-		EClass TRX_OP_LOGICAL_CHANNEL = eINSTANCE.gettrxOPLogicalChannel();
+		EClass TRX_OP_LOGICAL_CHANNEL = eINSTANCE.getTrxOPLogicalChannel();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -5570,7 +5570,7 @@ public interface DependenciesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRX_OP_LOGICAL_CHANNEL__NAME = eINSTANCE.gettrxOPLogicalChannel_Name();
+		EAttribute TRX_OP_LOGICAL_CHANNEL__NAME = eINSTANCE.getTrxOPLogicalChannel_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -5578,17 +5578,17 @@ public interface DependenciesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRX_OP_LOGICAL_CHANNEL__VALUE = eINSTANCE.gettrxOPLogicalChannel_Value();
+		EAttribute TRX_OP_LOGICAL_CHANNEL__VALUE = eINSTANCE.getTrxOPLogicalChannel_Value();
 
 		/**
-		 * The meta object literal for the '{@link dependencies.impl.trxOPPhysicalChannelImpl <em>trx OP Physical Channel</em>}' class.
+		 * The meta object literal for the '{@link dependencies.impl.TrxOPPhysicalChannelImpl <em>Trx OP Physical Channel</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dependencies.impl.trxOPPhysicalChannelImpl
-		 * @see dependencies.impl.DependenciesPackageImpl#gettrxOPPhysicalChannel()
+		 * @see dependencies.impl.TrxOPPhysicalChannelImpl
+		 * @see dependencies.impl.DependenciesPackageImpl#getTrxOPPhysicalChannel()
 		 * @generated
 		 */
-		EClass TRX_OP_PHYSICAL_CHANNEL = eINSTANCE.gettrxOPPhysicalChannel();
+		EClass TRX_OP_PHYSICAL_CHANNEL = eINSTANCE.getTrxOPPhysicalChannel();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -5596,7 +5596,7 @@ public interface DependenciesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRX_OP_PHYSICAL_CHANNEL__NAME = eINSTANCE.gettrxOPPhysicalChannel_Name();
+		EAttribute TRX_OP_PHYSICAL_CHANNEL__NAME = eINSTANCE.getTrxOPPhysicalChannel_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -5604,7 +5604,7 @@ public interface DependenciesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRX_OP_PHYSICAL_CHANNEL__VALUE = eINSTANCE.gettrxOPPhysicalChannel_Value();
+		EAttribute TRX_OP_PHYSICAL_CHANNEL__VALUE = eINSTANCE.getTrxOPPhysicalChannel_Value();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.SATLogicalChannelImpl <em>SAT Logical Channel</em>}' class.

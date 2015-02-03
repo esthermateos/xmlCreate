@@ -6,8 +6,8 @@ import dependencies.DependenciesPackage;
 import dependencies.HOST;
 import dependencies.SATLogicalChannel;
 import dependencies.SATPhysicalChannel;
-import dependencies.trxOPLogicalChannel;
-import dependencies.trxOPPhysicalChannel;
+import dependencies.TrxOPLogicalChannel;
+import dependencies.TrxOPPhysicalChannel;
 
 import java.util.Collection;
 
@@ -281,7 +281,7 @@ public class HOSTImpl extends MinimalEObjectImpl.Container implements HOST {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<trxOPLogicalChannel> eOPLogicalChannel;
+	protected EList<TrxOPLogicalChannel> eOPLogicalChannel;
 
 	/**
 	 * The cached value of the '{@link #getEPhysicalChannel() <em>EPhysical Channel</em>}' containment reference list.
@@ -291,7 +291,7 @@ public class HOSTImpl extends MinimalEObjectImpl.Container implements HOST {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<trxOPPhysicalChannel> ePhysicalChannel;
+	protected EList<TrxOPPhysicalChannel> ePhysicalChannel;
 
 	/**
 	 * The cached value of the '{@link #getESATLogicalChannel() <em>ESAT Logical Channel</em>}' containment reference list.
@@ -568,9 +568,9 @@ public class HOSTImpl extends MinimalEObjectImpl.Container implements HOST {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<trxOPLogicalChannel> getEOPLogicalChannel() {
+	public EList<TrxOPLogicalChannel> getEOPLogicalChannel() {
 		if (eOPLogicalChannel == null) {
-			eOPLogicalChannel = new EObjectContainmentEList<trxOPLogicalChannel>(trxOPLogicalChannel.class, this, DependenciesPackage.HOST__EOP_LOGICAL_CHANNEL);
+			eOPLogicalChannel = new EObjectContainmentEList<TrxOPLogicalChannel>(TrxOPLogicalChannel.class, this, DependenciesPackage.HOST__EOP_LOGICAL_CHANNEL);
 		}
 		return eOPLogicalChannel;
 	}
@@ -580,9 +580,9 @@ public class HOSTImpl extends MinimalEObjectImpl.Container implements HOST {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<trxOPPhysicalChannel> getEPhysicalChannel() {
+	public EList<TrxOPPhysicalChannel> getEPhysicalChannel() {
 		if (ePhysicalChannel == null) {
-			ePhysicalChannel = new EObjectContainmentEList<trxOPPhysicalChannel>(trxOPPhysicalChannel.class, this, DependenciesPackage.HOST__EPHYSICAL_CHANNEL);
+			ePhysicalChannel = new EObjectContainmentEList<TrxOPPhysicalChannel>(TrxOPPhysicalChannel.class, this, DependenciesPackage.HOST__EPHYSICAL_CHANNEL);
 		}
 		return ePhysicalChannel;
 	}
@@ -717,11 +717,11 @@ public class HOSTImpl extends MinimalEObjectImpl.Container implements HOST {
 				return;
 			case DependenciesPackage.HOST__EOP_LOGICAL_CHANNEL:
 				getEOPLogicalChannel().clear();
-				getEOPLogicalChannel().addAll((Collection<? extends trxOPLogicalChannel>)newValue);
+				getEOPLogicalChannel().addAll((Collection<? extends TrxOPLogicalChannel>)newValue);
 				return;
 			case DependenciesPackage.HOST__EPHYSICAL_CHANNEL:
 				getEPhysicalChannel().clear();
-				getEPhysicalChannel().addAll((Collection<? extends trxOPPhysicalChannel>)newValue);
+				getEPhysicalChannel().addAll((Collection<? extends TrxOPPhysicalChannel>)newValue);
 				return;
 			case DependenciesPackage.HOST__ESAT_LOGICAL_CHANNEL:
 				getESATLogicalChannel().clear();

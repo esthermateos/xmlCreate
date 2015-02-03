@@ -125,56 +125,36 @@ public interface Ensamblado extends EObject {
 	void setEHOST(HOST value);
 
 	/**
-	 * Returns the value of the '<em><b>EJMS</b></em>' containment reference.
+	 * Returns the value of the '<em><b>EJMS</b></em>' containment reference list.
+	 * The list contents are of type {@link dependencies.JMS}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EJMS</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>EJMS</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EJMS</em>' containment reference.
-	 * @see #setEJMS(JMS)
+	 * @return the value of the '<em>EJMS</em>' containment reference list.
 	 * @see dependencies.DependenciesPackage#getEnsamblado_EJMS()
 	 * @model containment="true"
 	 * @generated
 	 */
-	JMS getEJMS();
+	EList<JMS> getEJMS();
 
 	/**
-	 * Sets the value of the '{@link dependencies.Ensamblado#getEJMS <em>EJMS</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EJMS</em>' containment reference.
-	 * @see #getEJMS()
-	 * @generated
-	 */
-	void setEJMS(JMS value);
-
-	/**
-	 * Returns the value of the '<em><b>EChannel Adapter</b></em>' containment reference.
+	 * Returns the value of the '<em><b>EChannel Adapter</b></em>' containment reference list.
+	 * The list contents are of type {@link dependencies.ChannelAdapter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EChannel Adapter</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>EChannel Adapter</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EChannel Adapter</em>' containment reference.
-	 * @see #setEChannelAdapter(ChannelAdapter)
+	 * @return the value of the '<em>EChannel Adapter</em>' containment reference list.
 	 * @see dependencies.DependenciesPackage#getEnsamblado_EChannelAdapter()
 	 * @model containment="true"
 	 * @generated
 	 */
-	ChannelAdapter getEChannelAdapter();
-
-	/**
-	 * Sets the value of the '{@link dependencies.Ensamblado#getEChannelAdapter <em>EChannel Adapter</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EChannel Adapter</em>' containment reference.
-	 * @see #getEChannelAdapter()
-	 * @generated
-	 */
-	void setEChannelAdapter(ChannelAdapter value);
+	EList<ChannelAdapter> getEChannelAdapter();
 
 	/**
 	 * Returns the value of the '<em><b>EEnsamblado</b></em>' containment reference.

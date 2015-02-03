@@ -81,8 +81,8 @@ public class DependenciesFactoryImpl extends EFactoryImpl implements Dependencie
 			case DependenciesPackage.CLIENT_ARC_REFERENCES: return createClientArcReferences();
 			case DependenciesPackage.LOG_LEVEL: return createLogLevel();
 			case DependenciesPackage.RULES: return createRules();
-			case DependenciesPackage.TRX_OP_LOGICAL_CHANNEL: return createtrxOPLogicalChannel();
-			case DependenciesPackage.TRX_OP_PHYSICAL_CHANNEL: return createtrxOPPhysicalChannel();
+			case DependenciesPackage.TRX_OP_LOGICAL_CHANNEL: return createTrxOPLogicalChannel();
+			case DependenciesPackage.TRX_OP_PHYSICAL_CHANNEL: return createTrxOPPhysicalChannel();
 			case DependenciesPackage.SAT_LOGICAL_CHANNEL: return createSATLogicalChannel();
 			case DependenciesPackage.SAT_PHYSICAL_CHANNEL: return createSATPhysicalChannel();
 			case DependenciesPackage.CACHE: return createCache();
@@ -346,8 +346,8 @@ public class DependenciesFactoryImpl extends EFactoryImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public trxOPLogicalChannel createtrxOPLogicalChannel() {
-		trxOPLogicalChannelImpl trxOPLogicalChannel = new trxOPLogicalChannelImpl();
+	public TrxOPLogicalChannel createTrxOPLogicalChannel() {
+		TrxOPLogicalChannelImpl trxOPLogicalChannel = new TrxOPLogicalChannelImpl();
 		return trxOPLogicalChannel;
 	}
 
@@ -356,8 +356,8 @@ public class DependenciesFactoryImpl extends EFactoryImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public trxOPPhysicalChannel createtrxOPPhysicalChannel() {
-		trxOPPhysicalChannelImpl trxOPPhysicalChannel = new trxOPPhysicalChannelImpl();
+	public TrxOPPhysicalChannel createTrxOPPhysicalChannel() {
+		TrxOPPhysicalChannelImpl trxOPPhysicalChannel = new TrxOPPhysicalChannelImpl();
 		return trxOPPhysicalChannel;
 	}
 

@@ -3,7 +3,7 @@
 package dependencies.impl;
 
 import dependencies.DependenciesPackage;
-import dependencies.SATPhysicalChannel;
+import dependencies.TrxOPPhysicalChannel;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,19 +14,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>SAT Physical Channel</b></em>'.
+ * An implementation of the model object '<em><b>Trx OP Physical Channel</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link dependencies.impl.SATPhysicalChannelImpl#getName <em>Name</em>}</li>
- *   <li>{@link dependencies.impl.SATPhysicalChannelImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link dependencies.impl.TrxOPPhysicalChannelImpl#getName <em>Name</em>}</li>
+ *   <li>{@link dependencies.impl.TrxOPPhysicalChannelImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SATPhysicalChannelImpl extends MinimalEObjectImpl.Container implements SATPhysicalChannel {
+public class TrxOPPhysicalChannelImpl extends MinimalEObjectImpl.Container implements TrxOPPhysicalChannel {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public class SATPhysicalChannelImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SATPhysicalChannelImpl() {
+	protected TrxOPPhysicalChannelImpl() {
 		super();
 	}
 
@@ -83,7 +83,7 @@ public class SATPhysicalChannelImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DependenciesPackage.Literals.SAT_PHYSICAL_CHANNEL;
+		return DependenciesPackage.Literals.TRX_OP_PHYSICAL_CHANNEL;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class SATPhysicalChannelImpl extends MinimalEObjectImpl.Container impleme
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SAT_PHYSICAL_CHANNEL__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.TRX_OP_PHYSICAL_CHANNEL__NAME, oldName, name));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class SATPhysicalChannelImpl extends MinimalEObjectImpl.Container impleme
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SAT_PHYSICAL_CHANNEL__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.TRX_OP_PHYSICAL_CHANNEL__VALUE, oldValue, value));
 	}
 
 	/**
@@ -136,9 +136,9 @@ public class SATPhysicalChannelImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DependenciesPackage.SAT_PHYSICAL_CHANNEL__NAME:
+			case DependenciesPackage.TRX_OP_PHYSICAL_CHANNEL__NAME:
 				return getName();
-			case DependenciesPackage.SAT_PHYSICAL_CHANNEL__VALUE:
+			case DependenciesPackage.TRX_OP_PHYSICAL_CHANNEL__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -152,10 +152,10 @@ public class SATPhysicalChannelImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DependenciesPackage.SAT_PHYSICAL_CHANNEL__NAME:
+			case DependenciesPackage.TRX_OP_PHYSICAL_CHANNEL__NAME:
 				setName((String)newValue);
 				return;
-			case DependenciesPackage.SAT_PHYSICAL_CHANNEL__VALUE:
+			case DependenciesPackage.TRX_OP_PHYSICAL_CHANNEL__VALUE:
 				setValue((String)newValue);
 				return;
 		}
@@ -170,10 +170,10 @@ public class SATPhysicalChannelImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DependenciesPackage.SAT_PHYSICAL_CHANNEL__NAME:
+			case DependenciesPackage.TRX_OP_PHYSICAL_CHANNEL__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case DependenciesPackage.SAT_PHYSICAL_CHANNEL__VALUE:
+			case DependenciesPackage.TRX_OP_PHYSICAL_CHANNEL__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -188,9 +188,9 @@ public class SATPhysicalChannelImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DependenciesPackage.SAT_PHYSICAL_CHANNEL__NAME:
+			case DependenciesPackage.TRX_OP_PHYSICAL_CHANNEL__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DependenciesPackage.SAT_PHYSICAL_CHANNEL__VALUE:
+			case DependenciesPackage.TRX_OP_PHYSICAL_CHANNEL__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
@@ -214,4 +214,4 @@ public class SATPhysicalChannelImpl extends MinimalEObjectImpl.Container impleme
 		return result.toString();
 	}
 
-} //SATPhysicalChannelImpl
+} //TrxOPPhysicalChannelImpl

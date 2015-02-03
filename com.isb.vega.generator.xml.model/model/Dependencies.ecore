@@ -14,9 +14,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="RedProtocol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="trxprotocol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eOPLogicalChannel" upperBound="-1"
-        eType="#//trxOPLogicalChannel" containment="true"/>
+        eType="#//TrxOPLogicalChannel" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ePhysicalChannel" upperBound="-1"
-        eType="#//trxOPPhysicalChannel" containment="true"/>
+        eType="#//TrxOPPhysicalChannel" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eSATLogicalChannel" upperBound="-1"
         eType="#//SATLogicalChannel" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eSATPhysicalChannel" upperBound="-1"
@@ -33,8 +33,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="eWebService" upperBound="-1"
         eType="#//Webservice" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eOI" upperBound="-1" eType="#//OI"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eFachada" eType="#//Fachada"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eFachada" upperBound="-1"
+        eType="#//Fachada" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OI">
     <eStructuralFeatures xsi:type="ecore:EReference" name="estadoLlamadaOI" upperBound="-1"
@@ -61,8 +61,8 @@
         eType="#//TrxOP" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eSAT" upperBound="-1" eType="#//SAT"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Fachada"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eFachada" upperBound="-1"
+        eType="#//Fachada" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Fachada">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="facadeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -121,9 +121,10 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eHOST" eType="#//HOST"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eJMS" eType="#//JMS" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eChannelAdapter" eType="#//ChannelAdapter"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eJMS" upperBound="-1" eType="#//JMS"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eChannelAdapter" upperBound="-1"
+        eType="#//ChannelAdapter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eEnsamblado" eType="#//Security"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eOP" eType="#//OP" containment="true"/>
@@ -220,11 +221,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="idLit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="trxOPLogicalChannel">
+  <eClassifiers xsi:type="ecore:EClass" name="TrxOPLogicalChannel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="trxOPPhysicalChannel">
+  <eClassifiers xsi:type="ecore:EClass" name="TrxOPPhysicalChannel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

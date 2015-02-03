@@ -804,11 +804,11 @@
     <children xmi:type="notation:Node" xmi:id="_VEUkIKbgEeSekOnQTZtO6w" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_VEVLMKbgEeSekOnQTZtO6w" type="5001">
       <children xmi:type="notation:Node" xmi:id="_XmVN4KbgEeSekOnQTZtO6w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//trxOPLogicalChannel/name"/>
+        <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//TrxOPLogicalChannel/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_XmVN4abgEeSekOnQTZtO6w"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_cqFboKbgEeSekOnQTZtO6w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//trxOPLogicalChannel/value"/>
+        <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//TrxOPLogicalChannel/value"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_cqFboabgEeSekOnQTZtO6w"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_VEVLMabgEeSekOnQTZtO6w"/>
@@ -821,18 +821,18 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_VEVLN6bgEeSekOnQTZtO6w"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_VET9EabgEeSekOnQTZtO6w" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="Dependencies.ecore#//trxOPLogicalChannel"/>
+    <element xmi:type="ecore:EClass" href="Dependencies.ecore#//TrxOPLogicalChannel"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VET9EqbgEeSekOnQTZtO6w" x="-395" y="655" width="138"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_lvtjYKbgEeSekOnQTZtO6w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_lvuKcKbgEeSekOnQTZtO6w" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_lvuxgKbgEeSekOnQTZtO6w" type="5001">
       <children xmi:type="notation:Node" xmi:id="_sO50YKbgEeSekOnQTZtO6w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//trxOPPhysicalChannel/name"/>
+        <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//TrxOPPhysicalChannel/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_sO50YabgEeSekOnQTZtO6w"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_tmvKAKbgEeSekOnQTZtO6w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//trxOPPhysicalChannel/value"/>
+        <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//TrxOPPhysicalChannel/value"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_tmvKAabgEeSekOnQTZtO6w"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_lvuxgabgEeSekOnQTZtO6w"/>
@@ -845,7 +845,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_lvuxh6bgEeSekOnQTZtO6w"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_lvtjYabgEeSekOnQTZtO6w" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="Dependencies.ecore#//trxOPPhysicalChannel"/>
+    <element xmi:type="ecore:EClass" href="Dependencies.ecore#//TrxOPPhysicalChannel"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lvtjYqbgEeSekOnQTZtO6w" x="-235" y="655" width="143"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_4htp0KbgEeSekOnQTZtO6w" type="1001">
@@ -1442,14 +1442,14 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_2ZmpUKq7EeSXwIgDjvONDQ" type="3002" source="_fJ8DYJvWEeSCPOWj8Tvrfg" target="_igoSYJvWEeSCPOWj8Tvrfg">
     <children xmi:type="notation:Node" xmi:id="_2ZnQYKq7EeSXwIgDjvONDQ" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_2ZnQYaq7EeSXwIgDjvONDQ" x="-10" y="-10"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_2ZnQYaq7EeSXwIgDjvONDQ" x="-136" y="12"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_2Zn3cKq7EeSXwIgDjvONDQ" type="4012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_2Zn3caq7EeSXwIgDjvONDQ" x="10" y="10"/>
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_2ZmpUaq7EeSXwIgDjvONDQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_2ZmpUqq7EeSXwIgDjvONDQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="Dependencies.ecore#//OI/EReference0"/>
+    <element xmi:type="ecore:EReference" href="Dependencies.ecore#//OI/eFachada"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2ZmpU6q7EeSXwIgDjvONDQ" points="[64, -8, 6, -482]$[517, -8, 459, -482]$[507, 522, 449, 48]$[122, 522, 64, 48]$[118, 519, 60, 45]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2Zrh0Kq7EeSXwIgDjvONDQ" id="(0.6319018404907976,0.15294117647058825)"/>
   </edges>

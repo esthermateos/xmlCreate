@@ -6,22 +6,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>SAT Physical Channel</b></em>'.
+ * A representation of the model object '<em><b>Trx OP Logical Channel</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link dependencies.SATPhysicalChannel#getName <em>Name</em>}</li>
- *   <li>{@link dependencies.SATPhysicalChannel#getValue <em>Value</em>}</li>
+ *   <li>{@link dependencies.TrxOPLogicalChannel#getName <em>Name</em>}</li>
+ *   <li>{@link dependencies.TrxOPLogicalChannel#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
- * @see dependencies.DependenciesPackage#getSATPhysicalChannel()
+ * @see dependencies.DependenciesPackage#getTrxOPLogicalChannel()
  * @model
  * @generated
  */
-public interface SATPhysicalChannel extends EObject {
+public interface TrxOPLogicalChannel extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -32,14 +32,14 @@ public interface SATPhysicalChannel extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see dependencies.DependenciesPackage#getSATPhysicalChannel_Name()
+	 * @see dependencies.DependenciesPackage#getTrxOPLogicalChannel_Name()
 	 * @model
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link dependencies.SATPhysicalChannel#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link dependencies.TrxOPLogicalChannel#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -58,14 +58,14 @@ public interface SATPhysicalChannel extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
-	 * @see dependencies.DependenciesPackage#getSATPhysicalChannel_Value()
+	 * @see dependencies.DependenciesPackage#getTrxOPLogicalChannel_Value()
 	 * @model
 	 * @generated
 	 */
 	String getValue();
 
 	/**
-	 * Sets the value of the '{@link dependencies.SATPhysicalChannel#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link dependencies.TrxOPLogicalChannel#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Value</em>' attribute.
@@ -74,4 +74,4 @@ public interface SATPhysicalChannel extends EObject {
 	 */
 	void setValue(String value);
 
-} // SATPhysicalChannel
+} // TrxOPLogicalChannel
