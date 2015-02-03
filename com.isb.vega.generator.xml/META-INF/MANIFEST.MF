@@ -7,14 +7,14 @@ Bundle-Activator: com.isb.vega.generator.xml.activator.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  com.isb.san.vega.alm.support;bundle-version="4.1.2",
- com.isb.bks.provider.information;bundle-version="2.1.2",
+ com.isb.bks.provider.information;bundle-version="2.0.5",
  com.isb.vega.model.api,
  com.isb.vega.model.component,
  com.isb.vega.model.operation.flow.state.component,
  com.isb.vega.model.core,
  com.isb.vega.model.preassembly,
  com.isb.vega.generator.xml.model;bundle-version="0.1.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Import-Package: com.isb.vega.externalization.generator.xml,
  com.isb.vega.model.core,

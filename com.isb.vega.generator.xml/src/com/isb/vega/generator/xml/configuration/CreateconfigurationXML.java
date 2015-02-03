@@ -34,14 +34,14 @@ import dependencies.OP;
 public class CreateconfigurationXML {
 	
 	
-	List<Fachada> listFachada = new ArrayList<>();
-	List<OP> listOP = new ArrayList<>();
+	List<Fachada> listFachada = new ArrayList<Fachada>();
+	List<OP> listOP = new ArrayList<OP>();
 	IAssemblyFile assemblyFile;
 	IOperation[] operation;
 	IScenario[] iscenarios;
 	DependenciesFactory dependencies = DependenciesFactory.eINSTANCE;
 	Fachada fachada;
-	List<Fachada> listFachadas = new ArrayList<>();
+	List<Fachada> listFachadas = new ArrayList<Fachada>();
 	
 	public  void  getConfigurationXML(String name, String ruta) {
 			IProject iProject = ResourcesPlugin.getWorkspace().getRoot().getProject(name);
@@ -102,7 +102,7 @@ public class CreateconfigurationXML {
 			}
 			
 			//Externalizamos los datos del modelo			
-			XmlGeneratorNew.compile(configuration, ensamblado);
+		//	XmlGeneratorNew.compile(configuration, ensamblado);
 	
 	}
 

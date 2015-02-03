@@ -10,7 +10,6 @@ import com.isb.vega.model.assembly.profile.multi.IAssemblyCategoryProfileContain
 import com.isb.vega.model.assembly.profile.multi.IAssemblyValueCategory;
 import com.isb.vega.model.assembly.settings.IAdvancedSettingsContainer;
 import com.isb.vega.model.assembly.settings.IAssemblySettingsContainer;
-import com.isb.vega.model.assembly.settings.IBasicSettingsContainer;
 import com.isb.vega.model.assembly.settings.IHostCommChannelContainer;
 import com.isb.vega.model.assembly.settings.ISetting;
 import com.isb.vega.model.core.IVegaElement;
@@ -27,8 +26,8 @@ import dependencies.OP;
 import dependencies.SATLogicalChannel;
 import dependencies.SATPhysicalChannel;
 import dependencies.Security;
-import dependencies.trxOPLogicalChannel;
-import dependencies.trxOPPhysicalChannel;
+import dependencies.TrxOPLogicalChannel;
+import dependencies.TrxOPPhysicalChannel;
 
 public class CreateEntities {
 	
@@ -47,7 +46,7 @@ public class CreateEntities {
 	  */
 	public static Fachada createFacades(DependenciesFactory dependencies,
 									 IState iState) {
-		List<Fachada> listFachada = new ArrayList<>();
+		List<Fachada> listFachada = new ArrayList<Fachada>();
 		if(iState instanceof IFacadeInterfaceState){
 			IFacadeInterfaceState facadeState = (IFacadeInterfaceState)iState;					
 			fachada = dependencies.createFachada();
@@ -67,7 +66,7 @@ public class CreateEntities {
 	*/
 	public static OP createOPs(DependenciesFactory dependencies,
 								 IFlowOperationData iFlowOperationData,Ensamblado ensamblado) {
-		List<OP> listOP = new ArrayList<>();
+		List<OP> listOP = new ArrayList<OP>();
 		OP op = dependencies.createOP();	
 		op.setOpName(iFlowOperationData.getName());
 		op.setVersion(iFlowOperationData.getVersion());
@@ -100,36 +99,24 @@ public class CreateEntities {
 	public static void setValuesMultiProfiles(
 			IAssemblyCategoryProfile iAssemblyCategoryProfile, MultiProfile multiprofile) {
 			IAssemblyValueCategory[] assemblyValueCategory = iAssemblyCategoryProfile.getAssemblyValueCategoryContainer().getValues();
-			switch (iAssemblyCategoryProfile.getName()) {
-				case "CanalMarco":
-					multiprofile.setCatCanalMarco(UtilsDependencies.obtenerValor(assemblyValueCategory));
-					break;
-				case "Empresa":
-					multiprofile.setCatCompany(UtilsDependencies.obtenerValor(assemblyValueCategory));
-					break;
-				case "EmpresaAsociada":
-					multiprofile.setCatEmpresaAsociada(UtilsDependencies.obtenerValor(assemblyValueCategory));
-					break;
-				case "Estructura":
-					multiprofile.setCatEstructura(UtilsDependencies.obtenerValor(assemblyValueCategory));
-					break;
-				case "Gama":
-					multiprofile.setCatGama(UtilsDependencies.obtenerValor(assemblyValueCategory));
-					break;
-				case "Idioma":
-					multiprofile.setCatIdioma(UtilsDependencies.obtenerValor(assemblyValueCategory));
-					break;
-				case "NivelIU":
-					multiprofile.setCatNivelIU(UtilsDependencies.obtenerValor(assemblyValueCategory));
-					break;
-				case "Render":
-					multiprofile.setCatRender(UtilsDependencies.obtenerValor(assemblyValueCategory));
-					break;
-				default:
-					break;
+			if (iAssemblyCategoryProfile.getName().equals( "CanalMarco")){
+				multiprofile.setCatCanalMarco(UtilsDependencies.obtenerValor(assemblyValueCategory));
+			}else if (iAssemblyCategoryProfile.getName().equals( "Empresa")){
+				multiprofile.setCatCompany(UtilsDependencies.obtenerValor(assemblyValueCategory));
+			}else if (iAssemblyCategoryProfile.getName().equals( "EmpresaAsociada")){
+				multiprofile.setCatEmpresaAsociada(UtilsDependencies.obtenerValor(assemblyValueCategory));
+			}else if (iAssemblyCategoryProfile.getName().equals( "Estructura")){
+				multiprofile.setCatEstructura(UtilsDependencies.obtenerValor(assemblyValueCategory));
+			}else if (iAssemblyCategoryProfile.getName().equals( "Gama")){
+				multiprofile.setCatGama(UtilsDependencies.obtenerValor(assemblyValueCategory));
+			}else if (iAssemblyCategoryProfile.getName().equals( "Idioma")){
+				multiprofile.setCatIdioma(UtilsDependencies.obtenerValor(assemblyValueCategory));
+			}else if (iAssemblyCategoryProfile.getName().equals( "NivelIU")){
+				multiprofile.setCatNivelIU(UtilsDependencies.obtenerValor(assemblyValueCategory));
+			}else if (iAssemblyCategoryProfile.getName().equals( "Render")){
+				multiprofile.setCatRender(UtilsDependencies.obtenerValor(assemblyValueCategory));
 			}
-
-	}
+}
 	
 	/** Rellena la entidad SECURITY a partir del AssemblyFileData proporcionado.
 	  * @param assemblyFileData - datos del fichero del ensamblado
@@ -186,10 +173,10 @@ public class CreateEntities {
 	    
 	    // Vamos a crear los canales fisicos y logicos del host.
 	    Collection<IHostCommChannelContainer> listChannels = advancedSettingContainer.getAllChannelContainers();
-	    List<trxOPLogicalChannel> listTrxLogicalChannel = new ArrayList<>();
-	    List<trxOPPhysicalChannel> listTrxPhysicalChannel = new ArrayList<>();
-	    List<SATLogicalChannel> listSATLogicalChannel = new ArrayList<>();
-	    List<SATPhysicalChannel> listSATPhysicalChannel = new ArrayList<>();
+	    List<TrxOPLogicalChannel> listTrxLogicalChannel = new ArrayList<TrxOPLogicalChannel>();
+	    List<TrxOPPhysicalChannel> listTrxPhysicalChannel = new ArrayList<TrxOPPhysicalChannel>();
+	    List<SATLogicalChannel> listSATLogicalChannel = new ArrayList<SATLogicalChannel>();
+	    List<SATPhysicalChannel> listSATPhysicalChannel = new ArrayList<SATPhysicalChannel>();
 	    for (IHostCommChannelContainer channel : listChannels) {
 	    	IVegaElement[] children;
 	    	if(channel.getElementId().equals("trxOpHostCommLogicChContainer")){
@@ -197,7 +184,7 @@ public class CreateEntities {
 	    		for (int i=0; i<children.length; i++) {
 	    			String name = children[i].getFieldValue("name").toString();	    			
 	    			String value = children[i].getFieldValue("value").toString();
-	    			trxOPLogicalChannel trxLogicalChannel = dependencies.createtrxOPLogicalChannel();
+	    			TrxOPLogicalChannel trxLogicalChannel = dependencies.createTrxOPLogicalChannel();
 		    		trxLogicalChannel.setName(getname(name, trxOp, logicalChannel));
 		    		trxLogicalChannel.setValue(value);
 		    		listTrxLogicalChannel.add(i,trxLogicalChannel);		
@@ -209,7 +196,7 @@ public class CreateEntities {
 		    		for (int i=0; i<children.length; i++) {
 		    			String name = children[i].getFieldValue("name").toString();
 		    			String value = children[i].getFieldValue("value").toString();
-		    			trxOPPhysicalChannel trxPhysicalChannel = dependencies.createtrxOPPhysicalChannel();
+		    			TrxOPPhysicalChannel trxPhysicalChannel = dependencies.createTrxOPPhysicalChannel();
 		    			trxPhysicalChannel.setName(getname(name, trxOp, physicalChannel));
 		    			trxPhysicalChannel.setValue(value);
 		    			listTrxPhysicalChannel.add(i,trxPhysicalChannel);	

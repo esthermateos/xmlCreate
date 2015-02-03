@@ -50,7 +50,7 @@ public class UtilsDependencies {
 	  */
 	public static List<IOperation> getlist(IOperation[] operations,
 			int operation) {
-		List<IOperation> list = new ArrayList<>();
+		List<IOperation> list = new ArrayList<IOperation>();
 		for (IOperation iOperation : operations) {
 			if(iOperation.getOperationType() == operation){
 				list.add(iOperation);					
