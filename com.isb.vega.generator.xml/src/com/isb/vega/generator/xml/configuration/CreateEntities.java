@@ -22,6 +22,7 @@ import com.isb.vega.model.loglevels.ILogLevel;
 import com.isb.vega.model.operation.flow.IFlowOperationData;
 import com.isb.vega.model.operation.flow.IState;
 import com.isb.vega.model.operation.flow.state.facade.IFacadeInterfaceState;
+import com.isb.vega.runtime.wrapper.manager.MessagingServiceManager;
 
 import dependencies.ChannelAdapter;
 import dependencies.DependenciesFactory;
@@ -302,13 +303,17 @@ public class CreateEntities {
 	    List<JMS> listJMS = new ArrayList<JMS>();
 	    for (ISetting iSetting : setting) {
 	    	String value = iSetting.getValue();
+	    	String portName = MessagingServiceManager.getInstance().getListenerPortByAlias(value);
 	    	if (iSetting.getElementId().equals("jms.transactional")){
 	    		JMS jms = dependencies.createJMS();
 	    		jms.setJmsModules(value);
+	    		jms.setListenerPorts(portName);
 	    		listJMS.add(jms);
 	    	}
-	    }
-	    ensamblado.getEJMS().addAll(listJMS);
+	   }
+	    
+	  
+	   ensamblado.getEJMS().addAll(listJMS);
 	   
 	}
 	
