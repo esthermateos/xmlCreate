@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.core.runtime.ListenerList;
+
 import com.isb.vega.internal.model.assembly.AssemblyChannelAdapterReference;
 import com.isb.vega.internal.model.channeladapter.ChannelAdapterManager;
 import com.isb.vega.internal.model.core.VegaFragmentRoot;
@@ -303,13 +305,17 @@ public class CreateEntities {
 		IAssemblySettingsContainer assemblySettingsContainer = assemblyFileData.getAssemblySettingsContainer();
 	    IAdvancedSettingsContainer advancedSettingContainer = assemblySettingsContainer.getAdvancedSettingsContainer();
 	    ISetting[] setting = advancedSettingContainer.getSettingsContainer().getSettings();
-	    JMS jms = dependencies.createJMS();
+	    List<JMS> listJMS = new ArrayList<JMS>();
 	    for (ISetting iSetting : setting) {
 	    	String value = iSetting.getValue();
 	    	if (iSetting.getElementId().equals("jms.transactional")){
+	    		JMS jms = dependencies.createJMS();
 	    		jms.setJmsModules(value);
+	    		listJMS.add(jms);
 	    	}
 	    }
+	    ensamblado.getEJMS().addAll(listJMS);
+	   
 	}
 	
 }
