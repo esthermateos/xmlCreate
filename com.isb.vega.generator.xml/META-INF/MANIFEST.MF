@@ -18,10 +18,13 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Import-Package: com.isb.vega.externalization.generator.xml,
  com.isb.vega.model.core,
+ com.isb.vega.model.descriptors.external.externalization,
+ com.isb.vega.model.descriptors.xml.generator,
  com.isb.vega.model.operation,
  com.isb.vega.model.operation.flow,
  com.isb.vega.model.preassembly.util,
  com.isb.vega.model.scenario,
+ com.isb.vega.runtime.wrapper.manager,
  org.eclipse.core.resources
 Export-Package: com.isb.vega.generator.xml.configuration
 
