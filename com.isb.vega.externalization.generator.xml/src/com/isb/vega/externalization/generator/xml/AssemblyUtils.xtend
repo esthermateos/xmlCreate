@@ -4,6 +4,7 @@ import dependencies.LogLevel
 import org.eclipse.emf.common.util.EList
 import dependencies.JMS
 import java.util.ArrayList
+import java.util.List
 
 class AssemblyUtils {
 	
@@ -23,41 +24,35 @@ class AssemblyUtils {
 	«ENDIF»
 	'''
 	
-	def static doGenerateJMS(EList<JMS> listjms)
+	def static doGenerateJMS(List<String> listPort, List<String>listModules)
 	'''
 	<jmsTransactionals>
-		«var ArrayList<String> listPort»
-		«var ArrayList<String> listModules»
-		«FOR jms : listjms»
-		«listPort.add(jms.listenerPorts)»
-		«listModules.add(jms.jmsModules)»
-		«ENDFOR»
-			«IF listPort!=null || listPort.size!=0»
-			<listenerPorts>
-				«FOR port : listPort»
-					«IF port!=null && !port.equals("")»
-					<portName>«port»</portName>
-					«ELSE»
-					<portName/>
-					«ENDIF»
-				«ENDFOR»
-			</listenerPorts>
-			«ELSE»
-			</listenerPorts>
-			«ENDIF»
-			«IF listPort!=null || listPort.size!=0»
-			<jmsModules>
-				«FOR module : listModules»
-					«IF module!=null && !module.equals("")»
-					<jmsTransactional>«module»</jmsTransactional>
-					«ELSE»
-					<jmsTransactional/>
-					«ENDIF»
-				«ENDFOR»
-			</jmsModules>
-			«ELSE»
-			</jmsModules>
-			«ENDIF»
+		«IF listPort!=null && listPort.size!=0»
+		<listenerPorts>
+			«FOR port : listPort»
+				«IF port!=null && !port.equals("")»
+				<portName>«port»</portName>
+				«ELSE»
+				<portName/>
+				«ENDIF»
+			«ENDFOR»
+		</listenerPorts>
+		«ELSE»
+		</listenerPorts>
+		«ENDIF»
+		«IF listModules!=null && listModules.size!=0»
+		<jmsModules>
+			«FOR module : listModules»
+				«IF module!=null && !module.equals("")»
+				<jmsTransactional>«module»</jmsTransactional>
+				«ELSE»
+				<jmsTransactional/>
+				«ENDIF»
+			«ENDFOR»
+		</jmsModules>
+		«ELSE»
+		</jmsModules>
+		«ENDIF»
 	</jmsTransactionals>		
 	'''
 }

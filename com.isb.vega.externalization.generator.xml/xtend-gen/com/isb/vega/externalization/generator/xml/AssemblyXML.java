@@ -8,12 +8,13 @@ import dependencies.JMS;
 import dependencies.LogLevel;
 import dependencies.MultiProfile;
 import dependencies.Security;
+import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class AssemblyXML {
-  public static CharSequence doGenerateAssembly(final Ensamblado ensamblado) {
+  public static CharSequence doGenerateAssembly(final Ensamblado ensamblado, final List<String> listPort, final List<String> listModules) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<assembly defaultBankChannel=\"");
     _builder.append("\" name=\"");
@@ -61,7 +62,7 @@ public class AssemblyXML {
             String _autentication_2 = _eEnsamblado_3.getAutentication();
             String _string = _autentication_2.toString();
             _builder.append(_string, "		");
-            _builder.append("</authenticationEnabled>");
+            _builder.append("</assemblySecurity>");
             _builder.newLineIfNotEmpty();
           } else {
             _builder.append("\t");
@@ -230,8 +231,7 @@ public class AssemblyXML {
       boolean _notEquals_8 = (!Objects.equal(_eJMS, null));
       if (_notEquals_8) {
         _builder.append("\t");
-        EList<JMS> _eJMS_1 = ensamblado.getEJMS();
-        CharSequence _doGenerateJMS = AssemblyUtils.doGenerateJMS(_eJMS_1);
+        CharSequence _doGenerateJMS = AssemblyUtils.doGenerateJMS(listPort, listModules);
         _builder.append(_doGenerateJMS, "	");
         _builder.newLineIfNotEmpty();
       } else {

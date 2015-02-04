@@ -4,19 +4,24 @@ import static com.isb.vega.externalization.generator.xml.Using.*
 import java.io.File
 import java.io.FileWriter
 import dependencies.Ensamblado
+import java.util.List
 
 class XmlGeneratorNew {
 	
 	Ensamblado ensamblado
+	List<String> listPort
+	List<String>listModules
 	
-	new(Ensamblado ensamblado) {
+	new(Ensamblado ensamblado, List<String> listPort, List<String>listModules) {
 		this.ensamblado = ensamblado
+		this.listModules = listModules
+		this.listPort = listPort
 	}
 	
 	def generate(File file) {
 		using(new FileWriter(file)) [
 			it.append(doGenerateHeader())
-			it.append(doGenerateAssembly(ensamblado))
+			it.append(doGenerateAssembly(ensamblado, listPort, listModules))
 			it.append(doGenerateCommunication(ensamblado))
 			it.append(doGenerateChannelAdapter(ensamblado))
 			it.append(doGenerateWebServices())
@@ -177,14 +182,14 @@ class XmlGeneratorNew {
 		</configuration>
 	'''
 	
-		def doGenerateAssembly(Ensamblado ensamblado){
+		def doGenerateAssembly(Ensamblado ensamblado, List<String> listPort, List<String>listModules){
 			if (ensamblado!=null){
-				AssemblyXML.doGenerateAssembly(ensamblado)
+				AssemblyXML.doGenerateAssembly(ensamblado, listPort, listModules)
 			}
 		}
 		
 	
-	def static compile(File target, Ensamblado ensamblado) {
-		new XmlGeneratorNew(ensamblado).generate(target);
+	def static compile(File target, Ensamblado ensamblado, List<String> listPort, List<String>listModules) {
+		new XmlGeneratorNew(ensamblado, listPort, listModules).generate(target);
 	}
 }

@@ -1,11 +1,11 @@
 package com.isb.vega.externalization.generator.xml
 
 import dependencies.Ensamblado
-
+import java.util.List
 
 class AssemblyXML {
 		
-	def static doGenerateAssembly(Ensamblado ensamblado) 
+	def static doGenerateAssembly(Ensamblado ensamblado, List<String> listPort, List<String>listModules) 
 		
     '''
 	<assembly defaultBankChannel="«»" name="«ensamblado.name»"> 
@@ -15,7 +15,7 @@ class AssemblyXML {
 		«IF (ensamblado.EEnsamblado!=null)»
 		<assemblySecurity>
 			«IF ensamblado.EEnsamblado.autentication!=null && !ensamblado.EEnsamblado.autentication.equals("")»
-			<authenticationEnabled>«ensamblado.EEnsamblado.autentication.toString»</authenticationEnabled>
+			<authenticationEnabled>«ensamblado.EEnsamblado.autentication.toString»</assemblySecurity>
 			«ELSE»
 			<authenticationEnabled/>
 			«ENDIF»
@@ -50,7 +50,7 @@ class AssemblyXML {
 		<aebMultis/>
 		«ENDIF»
 		«IF (ensamblado.EJMS!=null)»
-		«AssemblyUtils.doGenerateJMS(ensamblado.EJMS)»
+		«AssemblyUtils.doGenerateJMS(listPort, listModules)»
 		«ELSE»
 		<jmsTransactionals/>
 		«ENDIF»

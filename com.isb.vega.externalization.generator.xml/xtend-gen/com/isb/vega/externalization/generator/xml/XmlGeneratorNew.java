@@ -14,6 +14,7 @@ import dependencies.Ensamblado;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
+import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
@@ -23,8 +24,14 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 public class XmlGeneratorNew {
   private Ensamblado ensamblado;
   
-  public XmlGeneratorNew(final Ensamblado ensamblado) {
+  private List<String> listPort;
+  
+  private List<String> listModules;
+  
+  public XmlGeneratorNew(final Ensamblado ensamblado, final List<String> listPort, final List<String> listModules) {
     this.ensamblado = ensamblado;
+    this.listModules = listModules;
+    this.listPort = listPort;
   }
   
   public Writer generate(final File file) {
@@ -37,7 +44,7 @@ public class XmlGeneratorNew {
             {
               CharSequence _doGenerateHeader = XmlGeneratorNew.this.doGenerateHeader();
               it.append(_doGenerateHeader);
-              CharSequence _doGenerateAssembly = XmlGeneratorNew.this.doGenerateAssembly(XmlGeneratorNew.this.ensamblado);
+              CharSequence _doGenerateAssembly = XmlGeneratorNew.this.doGenerateAssembly(XmlGeneratorNew.this.ensamblado, XmlGeneratorNew.this.listPort, XmlGeneratorNew.this.listModules);
               it.append(_doGenerateAssembly);
               CharSequence _doGenerateCommunication = XmlGeneratorNew.this.doGenerateCommunication(XmlGeneratorNew.this.ensamblado);
               it.append(_doGenerateCommunication);
@@ -499,18 +506,18 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateAssembly(final Ensamblado ensamblado) {
+  public CharSequence doGenerateAssembly(final Ensamblado ensamblado, final List<String> listPort, final List<String> listModules) {
     CharSequence _xifexpression = null;
     boolean _notEquals = (!Objects.equal(ensamblado, null));
     if (_notEquals) {
-      CharSequence _doGenerateAssembly = AssemblyXML.doGenerateAssembly(ensamblado);
+      CharSequence _doGenerateAssembly = AssemblyXML.doGenerateAssembly(ensamblado, listPort, listModules);
       _xifexpression = _doGenerateAssembly;
     }
     return _xifexpression;
   }
   
-  public static Writer compile(final File target, final Ensamblado ensamblado) {
-    XmlGeneratorNew _xmlGeneratorNew = new XmlGeneratorNew(ensamblado);
+  public static Writer compile(final File target, final Ensamblado ensamblado, final List<String> listPort, final List<String> listModules) {
+    XmlGeneratorNew _xmlGeneratorNew = new XmlGeneratorNew(ensamblado, listPort, listModules);
     Writer _generate = _xmlGeneratorNew.generate(target);
     return _generate;
   }
