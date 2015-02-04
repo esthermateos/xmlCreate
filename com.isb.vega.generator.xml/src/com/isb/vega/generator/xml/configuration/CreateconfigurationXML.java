@@ -28,6 +28,7 @@ import com.isb.vega.model.scenario.IScenario;
 import dependencies.DependenciesFactory;
 import dependencies.Ensamblado;
 import dependencies.Fachada;
+import dependencies.JMS;
 import dependencies.OP;
 
 
@@ -105,8 +106,15 @@ public class CreateconfigurationXML {
 				e.printStackTrace();
 			}
 			
-			//Externalizamos los datos del modelo			
-		//	XmlGeneratorNew.compile(configuration, ensamblado);
+			//Externalizamos los datos del modelo	
+			List <String> listPort = new ArrayList<String>();
+			List <String> listModules = new ArrayList<String>();
+			for (JMS jms : ensamblado.getEJMS()) {
+				listPort.add(jms.getListenerPorts());
+				listModules.add(jms.getJmsModules());
+			}
+
+			XmlGeneratorNew.compile(configuration, ensamblado,listPort, listModules);
 	
 	}
 
