@@ -42,6 +42,7 @@ public class CreateconfigurationXML {
 	DependenciesFactory dependencies = DependenciesFactory.eINSTANCE;
 	Fachada fachada;
 	List<Fachada> listFachadas = new ArrayList<Fachada>();
+	IAssemblyProject assemblyProject;
 	
 	public  void  getConfigurationXML(String name, String ruta) {
 			IProject iProject = ResourcesPlugin.getWorkspace().getRoot().getProject(name);
@@ -49,8 +50,9 @@ public class CreateconfigurationXML {
 			
 			//a partir de la conversión del objeto vegaProject obtenemos el fichero de ensamblado, mediante el cual 
 			// vamos a ir cargando todo el ECORE
-			if (vegaProject instanceof AssemblyProject){ 
-				IAssembly assembly = ((IAssemblyProject)vegaProject).getAssembly();
+			if (vegaProject instanceof AssemblyProject){
+				assemblyProject = ((IAssemblyProject)vegaProject);
+				IAssembly assembly = assemblyProject.getAssembly();
 				assemblyFile = assembly.getAssemblyFile();
 			}
 			
@@ -61,6 +63,7 @@ public class CreateconfigurationXML {
 			CreateEntities.createMultiProfile(assemblyFileData,dependencies, ensamblado);
 			
 			CreateEntities.createSecurity(assemblyFileData, dependencies, ensamblado);
+			CreateEntities.createChannelAdapter(assemblyProject, assemblyFileData, dependencies, ensamblado);
 		
 			//Creamos el objeto ensamblado y obtenemos los posibles escenarios
 	
@@ -102,7 +105,7 @@ public class CreateconfigurationXML {
 			}
 			
 			//Externalizamos los datos del modelo			
-		//	XmlGeneratorNew.compile(configuration, ensamblado);
+			XmlGeneratorNew.compile(configuration, ensamblado);
 	
 	}
 

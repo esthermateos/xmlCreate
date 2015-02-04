@@ -9,10 +9,12 @@ import com.isb.vega.externalization.generator.xml.SqlSentence;
 import com.isb.vega.externalization.generator.xml.Using;
 import com.isb.vega.externalization.generator.xml.Utils;
 import com.isb.vega.externalization.generator.xml.WebServiceStates;
+import dependencies.ChannelAdapter;
 import dependencies.Ensamblado;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
@@ -39,7 +41,7 @@ public class XmlGeneratorNew {
               it.append(_doGenerateAssembly);
               CharSequence _doGenerateCommunication = XmlGeneratorNew.this.doGenerateCommunication(XmlGeneratorNew.this.ensamblado);
               it.append(_doGenerateCommunication);
-              CharSequence _doGenerateChannelAdapter = XmlGeneratorNew.this.doGenerateChannelAdapter();
+              CharSequence _doGenerateChannelAdapter = XmlGeneratorNew.this.doGenerateChannelAdapter(XmlGeneratorNew.this.ensamblado);
               it.append(_doGenerateChannelAdapter);
               CharSequence _doGenerateWebServices = XmlGeneratorNew.this.doGenerateWebServices();
               it.append(_doGenerateWebServices);
@@ -180,10 +182,9 @@ public class XmlGeneratorNew {
     _builder.newLine();
     _builder.append("<configuration>");
     _builder.newLine();
-    _builder.append("\t");
     _builder.append("<appmetainf createBy=\"ALMSupport\" date=\"");
     String _Date = GetDate.Date();
-    _builder.append(_Date, "	");
+    _builder.append(_Date, "");
     _builder.append("\" version=\"2.0\">");
     _builder.newLineIfNotEmpty();
     return _builder;
@@ -274,51 +275,179 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateChannelAdapter() {
+  public CharSequence doGenerateChannelAdapter(final Ensamblado ensamblado) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<channelAdapters>");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("<channelAdapters>");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("<adapterName>");
-    _builder.append("</adapterName>");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("<type>");
-    _builder.append("</type>");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("<facadeName>");
-    _builder.append("</facadeName>");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("<interfaceName>");
-    _builder.append("</interfaceName>");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("<alias>");
-    _builder.append("</alias>");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("<block/>");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("<transport/>");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("<package/>");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("</channelAdapter>");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("</channelAdapters>");
-    _builder.newLine();
+    EList<ChannelAdapter> channelAdapters = ensamblado.getEChannelAdapter();
+    _builder.newLineIfNotEmpty();
+    {
+      boolean _notEquals = (!Objects.equal(channelAdapters, null));
+      if (_notEquals) {
+        _builder.append("<channelAdapters>");
+        _builder.newLine();
+        {
+          for(final ChannelAdapter channelAdapter : channelAdapters) {
+            _builder.append("\t");
+            _builder.append("<channelAdapters>");
+            _builder.newLine();
+            {
+              boolean _and = false;
+              String _name = channelAdapter.getName();
+              boolean _notEquals_1 = (!Objects.equal(_name, null));
+              if (!_notEquals_1) {
+                _and = false;
+              } else {
+                String _name_1 = channelAdapter.getName();
+                boolean _equals = _name_1.equals("");
+                boolean _not = (!_equals);
+                _and = (_notEquals_1 && _not);
+              }
+              if (_and) {
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("<adapterName>");
+                String _name_2 = channelAdapter.getName();
+                _builder.append(_name_2, "		");
+                _builder.append("</adapterName>");
+                _builder.newLineIfNotEmpty();
+              } else {
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("<adapterName/>");
+                _builder.newLine();
+              }
+            }
+            {
+              boolean _and_1 = false;
+              String _type = channelAdapter.getType();
+              boolean _notEquals_2 = (!Objects.equal(_type, null));
+              if (!_notEquals_2) {
+                _and_1 = false;
+              } else {
+                String _type_1 = channelAdapter.getType();
+                boolean _equals_1 = _type_1.equals("");
+                boolean _not_1 = (!_equals_1);
+                _and_1 = (_notEquals_2 && _not_1);
+              }
+              if (_and_1) {
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("<type>");
+                String _type_2 = channelAdapter.getType();
+                _builder.append(_type_2, "		");
+                _builder.append("</type>");
+                _builder.newLineIfNotEmpty();
+              } else {
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("<type/>");
+                _builder.newLine();
+              }
+            }
+            {
+              boolean _and_2 = false;
+              String _facadeName = channelAdapter.getFacadeName();
+              boolean _notEquals_3 = (!Objects.equal(_facadeName, null));
+              if (!_notEquals_3) {
+                _and_2 = false;
+              } else {
+                String _facadeName_1 = channelAdapter.getFacadeName();
+                boolean _equals_2 = _facadeName_1.equals("");
+                boolean _not_2 = (!_equals_2);
+                _and_2 = (_notEquals_3 && _not_2);
+              }
+              if (_and_2) {
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("<facadeName>");
+                String _facadeName_2 = channelAdapter.getFacadeName();
+                _builder.append(_facadeName_2, "		");
+                _builder.append("</facadeName>");
+                _builder.newLineIfNotEmpty();
+              } else {
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("<facadeName/>");
+                _builder.newLine();
+              }
+            }
+            {
+              boolean _and_3 = false;
+              String _interfaceName = channelAdapter.getInterfaceName();
+              boolean _notEquals_4 = (!Objects.equal(_interfaceName, null));
+              if (!_notEquals_4) {
+                _and_3 = false;
+              } else {
+                String _interfaceName_1 = channelAdapter.getInterfaceName();
+                boolean _equals_3 = _interfaceName_1.equals("");
+                boolean _not_3 = (!_equals_3);
+                _and_3 = (_notEquals_4 && _not_3);
+              }
+              if (_and_3) {
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("<interfaceName>");
+                String _interfaceName_2 = channelAdapter.getInterfaceName();
+                _builder.append(_interfaceName_2, "		");
+                _builder.append("</interfaceName>");
+                _builder.newLineIfNotEmpty();
+              } else {
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("<interfaceName/>");
+                _builder.newLine();
+              }
+            }
+            {
+              boolean _and_4 = false;
+              String _alias = channelAdapter.getAlias();
+              boolean _notEquals_5 = (!Objects.equal(_alias, null));
+              if (!_notEquals_5) {
+                _and_4 = false;
+              } else {
+                String _alias_1 = channelAdapter.getAlias();
+                boolean _equals_4 = _alias_1.equals("");
+                boolean _not_4 = (!_equals_4);
+                _and_4 = (_notEquals_5 && _not_4);
+              }
+              if (_and_4) {
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("<alias>");
+                String _alias_2 = channelAdapter.getAlias();
+                _builder.append(_alias_2, "		");
+                _builder.append("</alias>");
+                _builder.newLineIfNotEmpty();
+              } else {
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("<alias/>");
+                _builder.newLine();
+              }
+            }
+            _builder.append("\t");
+            _builder.append("\t");
+            _builder.append("<block/>");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("\t");
+            _builder.append("<transport/>");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("\t");
+            _builder.append("<package/>");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("</channelAdapter>");
+            _builder.newLine();
+          }
+        }
+        _builder.append("</channelAdapters>");
+        _builder.newLine();
+      } else {
+        _builder.append("<channelAdapters/>");
+        _builder.newLine();
+      }
+    }
     return _builder;
   }
   

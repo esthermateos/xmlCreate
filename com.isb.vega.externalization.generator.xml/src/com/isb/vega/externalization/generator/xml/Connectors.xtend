@@ -10,22 +10,22 @@ class Connectors {
 	«IF host!=null»
 		«IF host.trxprotocol!=null || host.trxOPDefaultMode!=null || host.redProtocol!=null || host.trxOPTCPAlias!=null || host.EOPLogicalChannel!=null || host.EPhysicalChannel!=null »
 		<trxOP>
-			«IF host.trxprotocol!=null»
+			«IF host.trxprotocol!=null && !host.trxprotocol.equals("")»
 			<trxOpProtocol>«host.trxprotocol.toString»</trxOpProtocol>
 			«ELSE»
 			<trxOpProtocol/>
 			«ENDIF»
-			«IF host.trxOPDefaultMode!=null»
+			«IF host.trxOPDefaultMode!=null && !host.trxOPDefaultMode.equals("")»
 			<trxOpDefaultMode>«host.trxOPDefaultMode.toString»</trxOpDefaultMode>
 			«ELSE»
 			<trxOpDefaultMode/>
 			«ENDIF»
-			«IF host.redProtocol!=null»
+			«IF host.redProtocol!=null && !host.redProtocol.equals("")»
 			<trxOpRedGProtocol>«host.redProtocol.toString»</trxOpRedGProtocol>
 			«ELSE»
 			<trxOpRedGProtocol/>
 			«ENDIF»
-			«IF host.trxOPTCPAlias!=null»
+			«IF host.trxOPTCPAlias!=null && !host.trxOPTCPAlias.equals("")»
 			<trxOpTCPAlias>«host.trxOPTCPAlias.toString»</trxOpTCPAlias>
 			«ELSE»
 			<trxOpTCPAlias/>
@@ -93,27 +93,27 @@ class Connectors {
 		«IF host.satProtocol!=null || host.satAlias!=null || host.satTimeOut!=null || host.satNullValues!=null || host.satNullWhenSpaces!=null
 		|| host.ESATLogicalChannel!=null || host.ESATPhysicalChannel!=null »
 		<sat>
-			«IF host.satProtocol!=null»
+			«IF host.satProtocol!=null && !host.satProtocol.equals("")»
 			<satProtocol>«host.satProtocol»</satProtocol>
 			«ELSE»
 			<satProtocol/>
 			«ENDIF»
-			«IF host.satAlias!=null»
+			«IF host.satAlias!=null && !host.satAlias.equals("")»
 			<satAlias>«host.satAlias»</satAlias>
 			«ELSE»
 			<satAlias/>
 			«ENDIF»
-			«IF host.satTimeOut!=null»
+			«IF host.satTimeOut!=null && !host.satTimeOut.equals("")»
 			<satTimeOut>«host.satTimeOut»</satTimeOut>
 			«ELSE»
 			<satTimeOut/>
 			«ENDIF»
-			«IF host.satNullValues!=null»
+			«IF host.satNullValues!=null && !host.satNullValues.equals("")»
 			<satNullValues>«host.satNullValues»</satNullValues>
 			«ELSE»
 			<satNullValues/>
 			«ENDIF»
-			«IF host.satNullWhenSpaces!=null»
+			«IF host.satNullWhenSpaces!=null && !host.satNullWhenSpaces.equals("")»
 			<satNullWhenSpaces>«host.satNullWhenSpaces»</satNullWhenSpaces>
 			«ELSE»
 			<satNullWhenSpaces/>
@@ -178,12 +178,12 @@ class Connectors {
 	«IF host!=null»
 		«IF host.altairAlias!=null || host.altairProtocol!=null»
 		<altair>
-			«IF host.altairProtocol!=null»
+			«IF host.altairProtocol!=null && !host.altairProtocol.equals("")»
 			<altairProtocol>«host.altairProtocol»</altairProtocol>
 			«ELSE»
 			<altairProtocol/>
 			«ENDIF»
-			«IF host.altairAlias!=null»
+			«IF host.altairAlias!=null && !host.altairAlias.equals("")»
 			<altairAlias>«host.altairAlias»</altairAlias>
 			«ELSE»
 			<altairAlias/>
@@ -195,8 +195,7 @@ class Connectors {
 					«Utils.doGenerateFieldStatesHead»
 					<transaction>«»</transaction>
 					«Utils.doGenerateFieldStatesFoot»
-				</altairState>
-				
+				</altairState>				
 				«//ENDFOR
 				»
 			</altairStates>

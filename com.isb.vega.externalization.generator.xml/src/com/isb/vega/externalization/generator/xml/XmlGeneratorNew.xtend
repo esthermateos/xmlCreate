@@ -4,7 +4,6 @@ import static com.isb.vega.externalization.generator.xml.Using.*
 import java.io.File
 import java.io.FileWriter
 import dependencies.Ensamblado
-import dependencies.DependenciesPackage
 
 class XmlGeneratorNew {
 	
@@ -19,7 +18,7 @@ class XmlGeneratorNew {
 			it.append(doGenerateHeader())
 			it.append(doGenerateAssembly(ensamblado))
 			it.append(doGenerateCommunication(ensamblado))
-			it.append(doGenerateChannelAdapter())
+			it.append(doGenerateChannelAdapter(ensamblado))
 			it.append(doGenerateWebServices())
 			it.append(doGenerateSQLComponents())
 			it.append(doGenerateCaches())
@@ -85,7 +84,7 @@ class XmlGeneratorNew {
 		def doGenerateHeader() '''
 		<?xml version="1.0" encoding="ISO-8859-1"?>
 		<configuration>
-			<appmetainf createBy="ALMSupport" date="«GetDate.Date()»" version="2.0">
+		<appmetainf createBy="ALMSupport" date="«GetDate.Date()»" version="2.0">
 	'''
 	
 		def doGenerateSQLComponents() '''
@@ -117,23 +116,46 @@ class XmlGeneratorNew {
 		</webServices>
 	'''
 	
-		def doGenerateChannelAdapter() '''
+		def doGenerateChannelAdapter(Ensamblado ensamblado) '''
+		«var channelAdapters = ensamblado.EChannelAdapter»
+		«IF channelAdapters!=null»
 		<channelAdapters>
-			«//FOR
-			»
+			«FOR channelAdapter : channelAdapters»
 			<channelAdapters>
-				<adapterName>«»</adapterName>
-				<type>«»</type>
-				<facadeName>«»</facadeName>
-				<interfaceName>«»</interfaceName>
-				<alias>«»</alias>
+				«IF channelAdapter.name!=null && !channelAdapter.name.equals("")»
+					<adapterName>«channelAdapter.name»</adapterName>
+				«ELSE»
+					<adapterName/>
+				«ENDIF»
+				«IF channelAdapter.type!=null && !channelAdapter.type.equals("")»
+					<type>«channelAdapter.type»</type>
+				«ELSE»
+					<type/>
+				«ENDIF»
+				«IF channelAdapter.facadeName!=null && !channelAdapter.facadeName.equals("")»
+					<facadeName>«channelAdapter.facadeName»</facadeName>
+				«ELSE»
+					<facadeName/>
+				«ENDIF»
+				«IF channelAdapter.interfaceName!=null && !channelAdapter.interfaceName.equals("")»
+					<interfaceName>«channelAdapter.interfaceName»</interfaceName>
+				«ELSE»
+					<interfaceName/>
+				«ENDIF»
+				«IF channelAdapter.alias!=null && !channelAdapter.alias.equals("")»
+					<alias>«channelAdapter.alias»</alias>
+				«ELSE»
+					<alias/>
+				«ENDIF»
 				<block/>
 				<transport/>
 				<package/>
 			</channelAdapter>
-			«//ENDFOR
-			»
+			«ENDFOR»
 		</channelAdapters>
+		«ELSE»
+		<channelAdapters/>
+		«ENDIF»
 	'''
 	
 		def doGenerateCommunication(Ensamblado ensamblado) '''
@@ -159,7 +181,6 @@ class XmlGeneratorNew {
 			if (ensamblado!=null){
 				AssemblyXML.doGenerateAssembly(ensamblado)
 			}
-
 		}
 		
 	

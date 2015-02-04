@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import com.isb.vega.internal.model.assembly.AssemblyChannelAdapterReference;
+import com.isb.vega.internal.model.channeladapter.ChannelAdapterManager;
+import com.isb.vega.internal.model.core.VegaFragmentRoot;
 import com.isb.vega.model.assembly.IAssemblyFileData;
+import com.isb.vega.model.assembly.IAssemblyProject;
+import com.isb.vega.model.assembly.UtilsAssembly;
 import com.isb.vega.model.assembly.profile.multi.IAssemblyCategoryProfile;
 import com.isb.vega.model.assembly.profile.multi.IAssemblyCategoryProfileContainer;
 import com.isb.vega.model.assembly.profile.multi.IAssemblyValueCategory;
@@ -12,11 +17,16 @@ import com.isb.vega.model.assembly.settings.IAdvancedSettingsContainer;
 import com.isb.vega.model.assembly.settings.IAssemblySettingsContainer;
 import com.isb.vega.model.assembly.settings.IHostCommChannelContainer;
 import com.isb.vega.model.assembly.settings.ISetting;
+import com.isb.vega.model.channeladapter.IChannelAdapter;
+import com.isb.vega.model.channeladapter.IChannelAdapterMethod;
+import com.isb.vega.model.channeladapter.IChannelAdapterMethodContainer;
 import com.isb.vega.model.core.IVegaElement;
+import com.isb.vega.model.core.IVegaFragmentRoot;
 import com.isb.vega.model.operation.flow.IFlowOperationData;
 import com.isb.vega.model.operation.flow.IState;
 import com.isb.vega.model.operation.flow.state.facade.IFacadeInterfaceState;
 
+import dependencies.ChannelAdapter;
 import dependencies.DependenciesFactory;
 import dependencies.Ensamblado;
 import dependencies.Fachada;
@@ -240,6 +250,34 @@ public class CreateEntities {
 		nameconnector= name.replaceFirst(connector, "").trim();
 		nameconnector = nameconnector.replaceFirst(channel, "").trim();
 		return nameconnector;
+	}
+
+	public static void createChannelAdapter(IAssemblyProject assemblyProject,
+			IAssemblyFileData assemblyFileData, DependenciesFactory dependencies, Ensamblado ensamblado) {
+		
+		IVegaElement[] assemblyNodeContainer = assemblyFileData.getAssemblyDiagram().getAssemblyNodeContainer().getChildren();
+		List<ChannelAdapter> listChannelAdapter = new ArrayList<ChannelAdapter>();
+		for (IVegaElement assemblyNode : assemblyNodeContainer) {
+			if(assemblyNode instanceof AssemblyChannelAdapterReference){
+				AssemblyChannelAdapterReference channelAdapterReference = (AssemblyChannelAdapterReference)assemblyNode;
+				//Accedemos la adaptador para obtener todos sus datos
+				IChannelAdapter adapter = UtilsAssembly.findChannelAdapter(assemblyProject, channelAdapterReference.getName());
+				IChannelAdapterMethod[] channelAdapterMethod = adapter.getChannelAdapterFile().getChannelAdapterFileData().getChannelAdapterMethodContainer().getChannelAdapterMethods();
+				for (IChannelAdapterMethod iChannelAdapterMethod : channelAdapterMethod) {
+					String alias = iChannelAdapterMethod.getAlias();
+					String interfacename = iChannelAdapterMethod.getFacadeInterfaceReference();
+					interfacename= interfacename.substring(interfacename.lastIndexOf(".")+1, interfacename.length());
+					ChannelAdapter channelAdapter = dependencies.createChannelAdapter();
+					channelAdapter.setName(channelAdapterReference.getName());
+					channelAdapter.setType(channelAdapterReference.getChannelAdapterType());
+					channelAdapter.setFacadeName(channelAdapterReference.getReferenceFacade());
+					channelAdapter.setInterfaceName(interfacename);
+					channelAdapter.setAlias(alias);
+					listChannelAdapter.add(channelAdapter);						
+				}
+				ensamblado.getEChannelAdapter().addAll(listChannelAdapter);				
+			}			
+		}	
 	}
 	
 }
