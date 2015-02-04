@@ -61,7 +61,8 @@ public class CreateconfigurationXML {
 			CreateEntities.createMultiProfile(assemblyFileData,dependencies, ensamblado);
 			
 			CreateEntities.createSecurity(assemblyFileData, dependencies, ensamblado);
-		
+		//	CreateEntities.createLogLevel(assemblyFileData, dependencies, ensamblado);
+			CreateEntities.createJMS(assemblyFileData, dependencies, ensamblado);
 			//Creamos el objeto ensamblado y obtenemos los posibles escenarios
 	
 			iscenarios = UtilsDependencies.getScenarios(vegaProject, iscenarios, assemblyFile);

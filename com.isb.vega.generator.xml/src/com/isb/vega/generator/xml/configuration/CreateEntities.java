@@ -13,6 +13,9 @@ import com.isb.vega.model.assembly.settings.IAssemblySettingsContainer;
 import com.isb.vega.model.assembly.settings.IHostCommChannelContainer;
 import com.isb.vega.model.assembly.settings.ISetting;
 import com.isb.vega.model.core.IVegaElement;
+import com.isb.vega.model.core.IVegaRootElementContainer;
+import com.isb.vega.model.loglevels.ILogLevel;
+import com.isb.vega.model.loglevels.ILogLevelsContainer;
 import com.isb.vega.model.operation.flow.IFlowOperationData;
 import com.isb.vega.model.operation.flow.IState;
 import com.isb.vega.model.operation.flow.state.facade.IFacadeInterfaceState;
@@ -21,6 +24,8 @@ import dependencies.DependenciesFactory;
 import dependencies.Ensamblado;
 import dependencies.Fachada;
 import dependencies.HOST;
+import dependencies.JMS;
+import dependencies.LogLevel;
 import dependencies.MultiProfile;
 import dependencies.OP;
 import dependencies.SATLogicalChannel;
@@ -234,7 +239,35 @@ public class CreateEntities {
 	    ensamblado.setEEnsamblado(security);
 	    ensamblado.setEHOST(host);
 	}
-
+	
+	public static void createLogLevel(IAssemblyFileData assemblyFileData, DependenciesFactory dependencies, Ensamblado ensamblado) {
+		 LogLevel logLevel = dependencies.createLogLevel();
+		  ILogLevel[] logLevelC = assemblyFileData.getLogLevelsContainer().getLogLevels();
+		
+	 
+		 
+		 
+		
+	}
+	
+	/** Rellena la entidad JMS a partir del AssemblyFileData proporcionado.
+	  * @param assemblyFileData - datos del fichero del ensamblado
+	  * @param dependencies - Factoría de entidades del modelo
+	  * @param ensamblado -  Ensamblado
+	*/
+	public static void createJMS(IAssemblyFileData assemblyFileData, DependenciesFactory dependencies, Ensamblado ensamblado) {
+		IAssemblySettingsContainer assemblySettingsContainer = assemblyFileData.getAssemblySettingsContainer();
+	    IAdvancedSettingsContainer advancedSettingContainer = assemblySettingsContainer.getAdvancedSettingsContainer();
+	    ISetting[] setting = advancedSettingContainer.getSettingsContainer().getSettings();
+	    JMS jms = dependencies.createJMS();
+	    for (ISetting iSetting : setting) {
+	    	String value = iSetting.getValue();
+	    	if (iSetting.getElementId().equals("jms.transactional")){
+	    		jms.setJmsModules(value);
+	    	}
+	    }
+	}
+	
 	private static String getname(String name, String connector, String channel) {
 		String nameconnector="";
 		nameconnector= name.replaceFirst(connector, "").trim();
