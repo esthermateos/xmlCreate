@@ -755,10 +755,6 @@
         <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//LogLevel/propagationPriority"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_4CUwMabBEeSekOnQTZtO6w"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_7QRS4KbBEeSekOnQTZtO6w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//LogLevel/level"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_7QRS4abBEeSekOnQTZtO6w"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_8r-b4KbBEeSekOnQTZtO6w" type="2001">
         <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//LogLevel/levelPriority"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_8r-b4abBEeSekOnQTZtO6w"/>
@@ -923,6 +919,26 @@
     <styles xmi:type="notation:ShapeStyle" xmi:id="_KGaGQab6EeSekOnQTZtO6w" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="Dependencies.ecore#//Cache"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KGaGQqb6EeSekOnQTZtO6w" x="1350" y="545"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_A9KXkK1BEeSXSMmtOHRGfQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_A9UIkK1BEeSXSMmtOHRGfQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_A9dSgK1BEeSXSMmtOHRGfQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_DabEMK1BEeSXSMmtOHRGfQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//Levels/nameLevel"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_DabEMa1BEeSXSMmtOHRGfQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_A9dSga1BEeSXSMmtOHRGfQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_A9dSgq1BEeSXSMmtOHRGfQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_A9dSg61BEeSXSMmtOHRGfQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_A9dShK1BEeSXSMmtOHRGfQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_A9dSha1BEeSXSMmtOHRGfQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_A9dShq1BEeSXSMmtOHRGfQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_A9dSh61BEeSXSMmtOHRGfQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_A9KXka1BEeSXSMmtOHRGfQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="Dependencies.ecore#//Levels"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A9KXkq1BEeSXSMmtOHRGfQ" x="510" y="-235"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_168dYZvTEeSCPOWj8Tvrfg"/>
   <element xmi:type="ecore:EPackage" href="Dependencies.ecore#/"/>
@@ -1452,5 +1468,19 @@
     <element xmi:type="ecore:EReference" href="Dependencies.ecore#//OI/eFachada"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2ZmpU6q7EeSXwIgDjvONDQ" points="[64, -8, 6, -482]$[517, -8, 459, -482]$[507, 522, 449, 48]$[122, 522, 64, 48]$[118, 519, 60, 45]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2Zrh0Kq7EeSXwIgDjvONDQ" id="(0.6319018404907976,0.15294117647058825)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_Gjj_YK1BEeSXSMmtOHRGfQ" type="3002" source="_ynk-wKbBEeSekOnQTZtO6w" target="_A9KXkK1BEeSXSMmtOHRGfQ">
+    <children xmi:type="notation:Node" xmi:id="_GkmhMK1BEeSXSMmtOHRGfQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GkmhMa1BEeSXSMmtOHRGfQ" x="-26" y="33"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_GkmhMq1BEeSXSMmtOHRGfQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GkmhM61BEeSXSMmtOHRGfQ" x="-6" y="21"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Gjj_Ya1BEeSXSMmtOHRGfQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Gjj_Yq1BEeSXSMmtOHRGfQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="Dependencies.ecore#//LogLevel/eLevels"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Gjj_Y61BEeSXSMmtOHRGfQ" points="[4, -6, 1, 68]$[4, -57, 1, 17]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GkmhNK1BEeSXSMmtOHRGfQ" id="(0.28426395939086296,0.058823529411764705)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GkmhNa1BEeSXSMmtOHRGfQ" id="(0.1743119266055046,0.6666666666666666)"/>
   </edges>
 </notation:Diagram>

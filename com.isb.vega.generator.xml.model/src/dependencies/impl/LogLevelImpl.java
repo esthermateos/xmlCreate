@@ -3,14 +3,24 @@
 package dependencies.impl;
 
 import dependencies.DependenciesPackage;
+import dependencies.Levels;
 import dependencies.LogLevel;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,8 +32,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link dependencies.impl.LogLevelImpl#getId <em>Id</em>}</li>
  *   <li>{@link dependencies.impl.LogLevelImpl#getPropagation <em>Propagation</em>}</li>
  *   <li>{@link dependencies.impl.LogLevelImpl#getPropagationPriority <em>Propagation Priority</em>}</li>
- *   <li>{@link dependencies.impl.LogLevelImpl#getLevel <em>Level</em>}</li>
  *   <li>{@link dependencies.impl.LogLevelImpl#getLevelPriority <em>Level Priority</em>}</li>
+ *   <li>{@link dependencies.impl.LogLevelImpl#getELevels <em>ELevels</em>}</li>
  * </ul>
  * </p>
  *
@@ -91,26 +101,6 @@ public class LogLevelImpl extends MinimalEObjectImpl.Container implements LogLev
 	protected String propagationPriority = PROPAGATION_PRIORITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLevel()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LEVEL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLevel() <em>Level</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLevel()
-	 * @generated
-	 * @ordered
-	 */
-	protected String level = LEVEL_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getLevelPriority() <em>Level Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,6 +119,16 @@ public class LogLevelImpl extends MinimalEObjectImpl.Container implements LogLev
 	 * @ordered
 	 */
 	protected String levelPriority = LEVEL_PRIORITY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getELevels() <em>ELevels</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getELevels()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Levels> eLevels;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,27 +217,6 @@ public class LogLevelImpl extends MinimalEObjectImpl.Container implements LogLev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLevel() {
-		return level;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLevel(String newLevel) {
-		String oldLevel = level;
-		level = newLevel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.LOG_LEVEL__LEVEL, oldLevel, level));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getLevelPriority() {
 		return levelPriority;
 	}
@@ -259,6 +238,32 @@ public class LogLevelImpl extends MinimalEObjectImpl.Container implements LogLev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Levels> getELevels() {
+		if (eLevels == null) {
+			eLevels = new EObjectContainmentEList<Levels>(Levels.class, this, DependenciesPackage.LOG_LEVEL__ELEVELS);
+		}
+		return eLevels;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DependenciesPackage.LOG_LEVEL__ELEVELS:
+				return ((InternalEList<?>)getELevels()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -268,10 +273,10 @@ public class LogLevelImpl extends MinimalEObjectImpl.Container implements LogLev
 				return getPropagation();
 			case DependenciesPackage.LOG_LEVEL__PROPAGATION_PRIORITY:
 				return getPropagationPriority();
-			case DependenciesPackage.LOG_LEVEL__LEVEL:
-				return getLevel();
 			case DependenciesPackage.LOG_LEVEL__LEVEL_PRIORITY:
 				return getLevelPriority();
+			case DependenciesPackage.LOG_LEVEL__ELEVELS:
+				return getELevels();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,6 +286,7 @@ public class LogLevelImpl extends MinimalEObjectImpl.Container implements LogLev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -293,11 +299,12 @@ public class LogLevelImpl extends MinimalEObjectImpl.Container implements LogLev
 			case DependenciesPackage.LOG_LEVEL__PROPAGATION_PRIORITY:
 				setPropagationPriority((String)newValue);
 				return;
-			case DependenciesPackage.LOG_LEVEL__LEVEL:
-				setLevel((String)newValue);
-				return;
 			case DependenciesPackage.LOG_LEVEL__LEVEL_PRIORITY:
 				setLevelPriority((String)newValue);
+				return;
+			case DependenciesPackage.LOG_LEVEL__ELEVELS:
+				getELevels().clear();
+				getELevels().addAll((Collection<? extends Levels>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -320,11 +327,11 @@ public class LogLevelImpl extends MinimalEObjectImpl.Container implements LogLev
 			case DependenciesPackage.LOG_LEVEL__PROPAGATION_PRIORITY:
 				setPropagationPriority(PROPAGATION_PRIORITY_EDEFAULT);
 				return;
-			case DependenciesPackage.LOG_LEVEL__LEVEL:
-				setLevel(LEVEL_EDEFAULT);
-				return;
 			case DependenciesPackage.LOG_LEVEL__LEVEL_PRIORITY:
 				setLevelPriority(LEVEL_PRIORITY_EDEFAULT);
+				return;
+			case DependenciesPackage.LOG_LEVEL__ELEVELS:
+				getELevels().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -344,10 +351,10 @@ public class LogLevelImpl extends MinimalEObjectImpl.Container implements LogLev
 				return PROPAGATION_EDEFAULT == null ? propagation != null : !PROPAGATION_EDEFAULT.equals(propagation);
 			case DependenciesPackage.LOG_LEVEL__PROPAGATION_PRIORITY:
 				return PROPAGATION_PRIORITY_EDEFAULT == null ? propagationPriority != null : !PROPAGATION_PRIORITY_EDEFAULT.equals(propagationPriority);
-			case DependenciesPackage.LOG_LEVEL__LEVEL:
-				return LEVEL_EDEFAULT == null ? level != null : !LEVEL_EDEFAULT.equals(level);
 			case DependenciesPackage.LOG_LEVEL__LEVEL_PRIORITY:
 				return LEVEL_PRIORITY_EDEFAULT == null ? levelPriority != null : !LEVEL_PRIORITY_EDEFAULT.equals(levelPriority);
+			case DependenciesPackage.LOG_LEVEL__ELEVELS:
+				return eLevels != null && !eLevels.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -368,8 +375,6 @@ public class LogLevelImpl extends MinimalEObjectImpl.Container implements LogLev
 		result.append(propagation);
 		result.append(", propagationPriority: ");
 		result.append(propagationPriority);
-		result.append(", level: ");
-		result.append(level);
 		result.append(", levelPriority: ");
 		result.append(levelPriority);
 		result.append(')');

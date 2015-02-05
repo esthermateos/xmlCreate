@@ -1917,22 +1917,22 @@ public interface DependenciesPackage extends EPackage {
 	int LOG_LEVEL__PROPAGATION_PRIORITY = 2;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOG_LEVEL__LEVEL = 3;
-
-	/**
 	 * The feature id for the '<em><b>Level Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOG_LEVEL__LEVEL_PRIORITY = 4;
+	int LOG_LEVEL__LEVEL_PRIORITY = 3;
+
+	/**
+	 * The feature id for the '<em><b>ELevels</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_LEVEL__ELEVELS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Log Level</em>' class.
@@ -2236,6 +2236,43 @@ public interface DependenciesPackage extends EPackage {
 	 * @ordered
 	 */
 	int CACHE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link dependencies.impl.LevelsImpl <em>Levels</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dependencies.impl.LevelsImpl
+	 * @see dependencies.impl.DependenciesPackageImpl#getLevels()
+	 * @generated
+	 */
+	int LEVELS = 30;
+
+	/**
+	 * The feature id for the '<em><b>Name Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEVELS__NAME_LEVEL = 0;
+
+	/**
+	 * The number of structural features of the '<em>Levels</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEVELS_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Levels</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEVELS_OPERATION_COUNT = 0;
 
 
 	/**
@@ -3953,17 +3990,6 @@ public interface DependenciesPackage extends EPackage {
 	EAttribute getLogLevel_PropagationPriority();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.LogLevel#getLevel <em>Level</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Level</em>'.
-	 * @see dependencies.LogLevel#getLevel()
-	 * @see #getLogLevel()
-	 * @generated
-	 */
-	EAttribute getLogLevel_Level();
-
-	/**
 	 * Returns the meta object for the attribute '{@link dependencies.LogLevel#getLevelPriority <em>Level Priority</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3973,6 +3999,17 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLogLevel_LevelPriority();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dependencies.LogLevel#getELevels <em>ELevels</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>ELevels</em>'.
+	 * @see dependencies.LogLevel#getELevels()
+	 * @see #getLogLevel()
+	 * @generated
+	 */
+	EReference getLogLevel_ELevels();
 
 	/**
 	 * Returns the meta object for class '{@link dependencies.Rules <em>Rules</em>}'.
@@ -4176,6 +4213,27 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCache_Alias();
+
+	/**
+	 * Returns the meta object for class '{@link dependencies.Levels <em>Levels</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Levels</em>'.
+	 * @see dependencies.Levels
+	 * @generated
+	 */
+	EClass getLevels();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dependencies.Levels#getNameLevel <em>Name Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name Level</em>'.
+	 * @see dependencies.Levels#getNameLevel()
+	 * @see #getLevels()
+	 * @generated
+	 */
+	EAttribute getLevels_NameLevel();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -5513,20 +5571,20 @@ public interface DependenciesPackage extends EPackage {
 		EAttribute LOG_LEVEL__PROPAGATION_PRIORITY = eINSTANCE.getLogLevel_PropagationPriority();
 
 		/**
-		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LOG_LEVEL__LEVEL = eINSTANCE.getLogLevel_Level();
-
-		/**
 		 * The meta object literal for the '<em><b>Level Priority</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute LOG_LEVEL__LEVEL_PRIORITY = eINSTANCE.getLogLevel_LevelPriority();
+
+		/**
+		 * The meta object literal for the '<em><b>ELevels</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOG_LEVEL__ELEVELS = eINSTANCE.getLogLevel_ELevels();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.RulesImpl <em>Rules</em>}' class.
@@ -5691,6 +5749,24 @@ public interface DependenciesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CACHE__ALIAS = eINSTANCE.getCache_Alias();
+
+		/**
+		 * The meta object literal for the '{@link dependencies.impl.LevelsImpl <em>Levels</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dependencies.impl.LevelsImpl
+		 * @see dependencies.impl.DependenciesPackageImpl#getLevels()
+		 * @generated
+		 */
+		EClass LEVELS = eINSTANCE.getLevels();
+
+		/**
+		 * The meta object literal for the '<em><b>Name Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LEVELS__NAME_LEVEL = eINSTANCE.getLevels_NameLevel();
 
 	}
 

@@ -86,6 +86,7 @@ public class DependenciesFactoryImpl extends EFactoryImpl implements Dependencie
 			case DependenciesPackage.SAT_LOGICAL_CHANNEL: return createSATLogicalChannel();
 			case DependenciesPackage.SAT_PHYSICAL_CHANNEL: return createSATPhysicalChannel();
 			case DependenciesPackage.CACHE: return createCache();
+			case DependenciesPackage.LEVELS: return createLevels();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -389,6 +390,16 @@ public class DependenciesFactoryImpl extends EFactoryImpl implements Dependencie
 	public Cache createCache() {
 		CacheImpl cache = new CacheImpl();
 		return cache;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Levels createLevels() {
+		LevelsImpl levels = new LevelsImpl();
+		return levels;
 	}
 
 	/**

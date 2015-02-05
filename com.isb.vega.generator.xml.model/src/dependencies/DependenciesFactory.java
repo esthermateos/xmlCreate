@@ -292,6 +292,15 @@ public interface DependenciesFactory extends EFactory {
 	Cache createCache();
 
 	/**
+	 * Returns a new object of class '<em>Levels</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Levels</em>'.
+	 * @generated
+	 */
+	Levels createLevels();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -12,6 +12,7 @@ import dependencies.DependenciesPackage;
 import dependencies.Ensamblado;
 import dependencies.Fachada;
 import dependencies.Java;
+import dependencies.Levels;
 import dependencies.LogLevel;
 import dependencies.MultiProfile;
 import dependencies.Rules;
@@ -251,6 +252,13 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * @generated
 	 */
 	private EClass cacheEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass levelsEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1740,7 +1748,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLogLevel_Level() {
+	public EAttribute getLogLevel_LevelPriority() {
 		return (EAttribute)logLevelEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1749,8 +1757,8 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLogLevel_LevelPriority() {
-		return (EAttribute)logLevelEClass.getEStructuralFeatures().get(4);
+	public EReference getLogLevel_ELevels() {
+		return (EReference)logLevelEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1922,6 +1930,24 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 */
 	public EAttribute getCache_Alias() {
 		return (EAttribute)cacheEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLevels() {
+		return levelsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLevels_NameLevel() {
+		return (EAttribute)levelsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2133,8 +2159,8 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		createEAttribute(logLevelEClass, LOG_LEVEL__ID);
 		createEAttribute(logLevelEClass, LOG_LEVEL__PROPAGATION);
 		createEAttribute(logLevelEClass, LOG_LEVEL__PROPAGATION_PRIORITY);
-		createEAttribute(logLevelEClass, LOG_LEVEL__LEVEL);
 		createEAttribute(logLevelEClass, LOG_LEVEL__LEVEL_PRIORITY);
+		createEReference(logLevelEClass, LOG_LEVEL__ELEVELS);
 
 		rulesEClass = createEClass(RULES);
 		createEAttribute(rulesEClass, RULES__ID_LIT);
@@ -2160,6 +2186,9 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		createEAttribute(cacheEClass, CACHE__PACKAGE);
 		createEAttribute(cacheEClass, CACHE__NAME);
 		createEAttribute(cacheEClass, CACHE__ALIAS);
+
+		levelsEClass = createEClass(LEVELS);
+		createEAttribute(levelsEClass, LEVELS__NAME_LEVEL);
 	}
 
 	/**
@@ -2373,8 +2402,8 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEAttribute(getLogLevel_Id(), ecorePackage.getEString(), "id", null, 0, 1, LogLevel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLogLevel_Propagation(), ecorePackage.getEString(), "propagation", null, 0, 1, LogLevel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLogLevel_PropagationPriority(), ecorePackage.getEString(), "propagationPriority", null, 0, 1, LogLevel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLogLevel_Level(), ecorePackage.getEString(), "level", null, 0, 1, LogLevel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLogLevel_LevelPriority(), ecorePackage.getEString(), "levelPriority", null, 0, 1, LogLevel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogLevel_ELevels(), this.getLevels(), null, "eLevels", null, 0, -1, LogLevel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rulesEClass, Rules.class, "Rules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRules_IdLit(), ecorePackage.getEString(), "idLit", null, 0, 1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2400,6 +2429,9 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEAttribute(getCache_Package(), ecorePackage.getEString(), "package", null, 0, 1, Cache.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCache_Name(), ecorePackage.getEString(), "name", null, 0, 1, Cache.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCache_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, Cache.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(levelsEClass, Levels.class, "Levels", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLevels_NameLevel(), ecorePackage.getEString(), "nameLevel", null, 0, 1, Levels.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

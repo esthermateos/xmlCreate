@@ -2,6 +2,8 @@
  */
 package dependencies;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dependencies.LogLevel#getId <em>Id</em>}</li>
  *   <li>{@link dependencies.LogLevel#getPropagation <em>Propagation</em>}</li>
  *   <li>{@link dependencies.LogLevel#getPropagationPriority <em>Propagation Priority</em>}</li>
- *   <li>{@link dependencies.LogLevel#getLevel <em>Level</em>}</li>
  *   <li>{@link dependencies.LogLevel#getLevelPriority <em>Level Priority</em>}</li>
+ *   <li>{@link dependencies.LogLevel#getELevels <em>ELevels</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,32 +106,6 @@ public interface LogLevel extends EObject {
 	void setPropagationPriority(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Level</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Level</em>' attribute.
-	 * @see #setLevel(String)
-	 * @see dependencies.DependenciesPackage#getLogLevel_Level()
-	 * @model
-	 * @generated
-	 */
-	String getLevel();
-
-	/**
-	 * Sets the value of the '{@link dependencies.LogLevel#getLevel <em>Level</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Level</em>' attribute.
-	 * @see #getLevel()
-	 * @generated
-	 */
-	void setLevel(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Level Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -154,5 +130,21 @@ public interface LogLevel extends EObject {
 	 * @generated
 	 */
 	void setLevelPriority(String value);
+
+	/**
+	 * Returns the value of the '<em><b>ELevels</b></em>' containment reference list.
+	 * The list contents are of type {@link dependencies.Levels}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>ELevels</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>ELevels</em>' containment reference list.
+	 * @see dependencies.DependenciesPackage#getLogLevel_ELevels()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Levels> getELevels();
 
 } // LogLevel

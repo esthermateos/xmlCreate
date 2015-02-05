@@ -187,8 +187,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//LogLevel/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//LogLevel/propagation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//LogLevel/propagationPriority"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//LogLevel/level"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//LogLevel/levelPriority"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//LogLevel/eLevels"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//Rules">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Rules/idLit"/>
@@ -214,6 +214,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Cache/package"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Cache/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Cache/alias"/>
+    </genClasses>
+    <genClasses ecoreClass="Dependencies.ecore#//Levels">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Levels/nameLevel"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
