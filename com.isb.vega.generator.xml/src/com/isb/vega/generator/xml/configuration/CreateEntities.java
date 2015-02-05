@@ -304,12 +304,16 @@ public class CreateEntities {
 	
 	public static void createLogLevel(IAssemblyFileData assemblyFileData, DependenciesFactory dependencies, Ensamblado ensamblado) {
 		IAssemblyNode[] nodos=assemblyFileData.getAssemblyDiagram().getAssemblyNodeContainer().getNodes();
-		getLogLevels(nodos, dependencies);
+		List<LogLevel> list = getLogLevels(nodos, dependencies);
+		ensamblado.getELogLevel().addAll(list);
+	
 	}
 
-	private static void getLogLevels(IAssemblyNode[] nodos, DependenciesFactory dependencies) {
+	private static List<LogLevel>  getLogLevels(IAssemblyNode[] nodos, DependenciesFactory dependencies) {
 		
+		List <LogLevel>	 listLogLevels = new ArrayList<LogLevel>();	
 		List<EntityAndLogLevels> assemblyLogLevelsList = new ArrayList<EntityAndLogLevels>();
+		List<String> levels = new ArrayList<String>();
 
 		for (int i=0; i<nodos.length; i++)
 		{
@@ -507,15 +511,20 @@ public class CreateEntities {
 		
 		// Si hay entidades loggeables
 		if (assemblyLogLevelsList != null && !assemblyLogLevelsList.isEmpty())
-		{				
+		{		
+			
 			// Recorremos las entidades logables obtenidas para rellenar el modelo
 			for (Iterator<EntityAndLogLevels> it=assemblyLogLevelsList.iterator(); it.hasNext();)
 			{
 				EntityAndLogLevels entityAndLogLevels = (EntityAndLogLevels) it.next();
 				LogLevel loglevel = dependencies.createLogLevel();
 				//loglevel.setId(value);
-				String level = entityAndLogLevels.getLogLevelsContainer().getFieldValue("name").toString();
-				loglevel.setLevel(level);
+				IVegaElement[] levelContainer = entityAndLogLevels.getLogLevelsContainer().getChildren();
+				for (IVegaElement iVegaElement : levelContainer) {
+					String level =iVegaElement.getFieldValue("name").toString();
+					levels.add(level);					
+				}
+				//loglevel.setLevel(level);
 				loglevel.setLevelPriority(entityAndLogLevels.getPriority());
 				if(entityAndLogLevels.getPropagateLog()){
 					loglevel.setPropagation("true");
@@ -524,11 +533,12 @@ public class CreateEntities {
 				}
 				
 				loglevel.setPropagationPriority(entityAndLogLevels.getPropagationPriority());
-				
+				listLogLevels.add(loglevel);
 				
 			}
-
+			
 		}
+		return listLogLevels;
 
 	}
 	
