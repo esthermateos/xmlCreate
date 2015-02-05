@@ -16,8 +16,18 @@ class AssemblyUtils {
 	<assemblyLogLevelsDefinitions>
 		«FOR loglevel : loglevels»
 		<category id="«loglevel.id»">
+			«IF loglevel.propagationPriority!=null && !loglevel.propagationPriority.equals("")»
 			<propagation priority="«loglevel.propagationPriority»">«loglevel.propagation»</propagation>
-			<level priority="«loglevel.levelPriority»">«loglevel.level»</level>
+			«ELSE»
+			<propagation/>
+			«ENDIF»
+			«IF loglevel.ELevels!=null && loglevel.ELevels.size!=0»
+			«FOR levels : loglevel.ELevels»
+			<level priority="«loglevel.levelPriority»">«levels.nameLevel»</level>
+			«ENDFOR»
+			«ELSE»
+			<level/>
+			«ENDIF»
 		</category>
 		«ENDFOR»
 	</assemblyLogLevelsDefinitions>

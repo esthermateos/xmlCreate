@@ -51,6 +51,7 @@ import dependencies.Ensamblado;
 import dependencies.Fachada;
 import dependencies.HOST;
 import dependencies.JMS;
+import dependencies.Levels;
 import dependencies.LogLevel;
 import dependencies.MultiProfile;
 import dependencies.OP;
@@ -313,7 +314,7 @@ public class CreateEntities {
 		
 		List <LogLevel>	 listLogLevels = new ArrayList<LogLevel>();	
 		List<EntityAndLogLevels> assemblyLogLevelsList = new ArrayList<EntityAndLogLevels>();
-		List<String> levels = new ArrayList<String>();
+		
 
 		for (int i=0; i<nodos.length; i++)
 		{
@@ -520,11 +521,15 @@ public class CreateEntities {
 				LogLevel loglevel = dependencies.createLogLevel();
 				//loglevel.setId(value);
 				IVegaElement[] levelContainer = entityAndLogLevels.getLogLevelsContainer().getChildren();
+				List<Levels> levels = new ArrayList<Levels>();
 				for (IVegaElement iVegaElement : levelContainer) {
 					String level =iVegaElement.getFieldValue("name").toString();
-					levels.add(level);					
+					Levels elevels = dependencies.createLevels();
+					elevels.setNameLevel(level);
+					levels.add(elevels);					
 				}
-				//loglevel.setLevel(level);
+				
+				loglevel.getELevels().addAll(levels);
 				loglevel.setLevelPriority(entityAndLogLevels.getPriority());
 				if(entityAndLogLevels.getPropagateLog()){
 					loglevel.setPropagation("true");
@@ -533,9 +538,9 @@ public class CreateEntities {
 				}
 				
 				loglevel.setPropagationPriority(entityAndLogLevels.getPropagationPriority());
-				listLogLevels.add(loglevel);
-				
+				listLogLevels.add(loglevel);		
 			}
+			
 			
 		}
 		return listLogLevels;

@@ -1,6 +1,7 @@
 package com.isb.vega.externalization.generator.xml;
 
 import com.google.common.base.Objects;
+import dependencies.Levels;
 import dependencies.LogLevel;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
@@ -35,26 +36,71 @@ public class AssemblyUtils {
             _builder.append(_id, "	");
             _builder.append("\">");
             _builder.newLineIfNotEmpty();
-            _builder.append("\t");
-            _builder.append("\t");
-            _builder.append("<propagation priority=\"");
-            String _propagationPriority = loglevel.getPropagationPriority();
-            _builder.append(_propagationPriority, "		");
-            _builder.append("\">");
-            String _propagation = loglevel.getPropagation();
-            _builder.append(_propagation, "		");
-            _builder.append("</propagation>");
-            _builder.newLineIfNotEmpty();
-            _builder.append("\t");
-            _builder.append("\t");
-            _builder.append("<level priority=\"");
-            String _levelPriority = loglevel.getLevelPriority();
-            _builder.append(_levelPriority, "		");
-            _builder.append("\">");
-            String _level = loglevel.getLevel();
-            _builder.append(_level, "		");
-            _builder.append("</level>");
-            _builder.newLineIfNotEmpty();
+            {
+              boolean _and = false;
+              String _propagationPriority = loglevel.getPropagationPriority();
+              boolean _notEquals = (!Objects.equal(_propagationPriority, null));
+              if (!_notEquals) {
+                _and = false;
+              } else {
+                String _propagationPriority_1 = loglevel.getPropagationPriority();
+                boolean _equals_2 = _propagationPriority_1.equals("");
+                boolean _not = (!_equals_2);
+                _and = (_notEquals && _not);
+              }
+              if (_and) {
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("<propagation priority=\"");
+                String _propagationPriority_2 = loglevel.getPropagationPriority();
+                _builder.append(_propagationPriority_2, "		");
+                _builder.append("\">");
+                String _propagation = loglevel.getPropagation();
+                _builder.append(_propagation, "		");
+                _builder.append("</propagation>");
+                _builder.newLineIfNotEmpty();
+              } else {
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("<propagation/>");
+                _builder.newLine();
+              }
+            }
+            {
+              boolean _and_1 = false;
+              EList<Levels> _eLevels = loglevel.getELevels();
+              boolean _notEquals_1 = (!Objects.equal(_eLevels, null));
+              if (!_notEquals_1) {
+                _and_1 = false;
+              } else {
+                EList<Levels> _eLevels_1 = loglevel.getELevels();
+                int _size = _eLevels_1.size();
+                boolean _notEquals_2 = (_size != 0);
+                _and_1 = (_notEquals_1 && _notEquals_2);
+              }
+              if (_and_1) {
+                {
+                  EList<Levels> _eLevels_2 = loglevel.getELevels();
+                  for(final Levels levels : _eLevels_2) {
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    _builder.append("<level priority=\"");
+                    String _levelPriority = loglevel.getLevelPriority();
+                    _builder.append(_levelPriority, "		");
+                    _builder.append("\">");
+                    String _nameLevel = levels.getNameLevel();
+                    _builder.append(_nameLevel, "		");
+                    _builder.append("</level>");
+                    _builder.newLineIfNotEmpty();
+                  }
+                }
+              } else {
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("<level/>");
+                _builder.newLine();
+              }
+            }
             _builder.append("\t");
             _builder.append("</category>");
             _builder.newLine();
