@@ -44,7 +44,8 @@ public class AssemblyUtils {
                 _and = false;
               } else {
                 String _propagationPriority_1 = loglevel.getPropagationPriority();
-                boolean _equals_2 = _propagationPriority_1.equals("");
+                String _string = _propagationPriority_1.toString();
+                boolean _equals_2 = _string.equals("");
                 boolean _not = (!_equals_2);
                 _and = (_notEquals && _not);
               }
@@ -82,16 +83,37 @@ public class AssemblyUtils {
                 {
                   EList<Levels> _eLevels_2 = loglevel.getELevels();
                   for(final Levels levels : _eLevels_2) {
-                    _builder.append("\t");
-                    _builder.append("\t");
-                    _builder.append("<level priority=\"");
-                    String _levelPriority = loglevel.getLevelPriority();
-                    _builder.append(_levelPriority, "		");
-                    _builder.append("\">");
-                    String _nameLevel = levels.getNameLevel();
-                    _builder.append(_nameLevel, "		");
-                    _builder.append("</level>");
-                    _builder.newLineIfNotEmpty();
+                    {
+                      boolean _and_2 = false;
+                      String _nameLevel = levels.getNameLevel();
+                      boolean _notEquals_3 = (!Objects.equal(_nameLevel, null));
+                      if (!_notEquals_3) {
+                        _and_2 = false;
+                      } else {
+                        String _nameLevel_1 = levels.getNameLevel();
+                        String _string_1 = _nameLevel_1.toString();
+                        boolean _equals_3 = _string_1.equals("");
+                        boolean _not_1 = (!_equals_3);
+                        _and_2 = (_notEquals_3 && _not_1);
+                      }
+                      if (_and_2) {
+                        _builder.append("\t");
+                        _builder.append("\t");
+                        _builder.append("<level priority=\"");
+                        String _levelPriority = loglevel.getLevelPriority();
+                        _builder.append(_levelPriority, "		");
+                        _builder.append("\">");
+                        String _nameLevel_2 = levels.getNameLevel();
+                        _builder.append(_nameLevel_2, "		");
+                        _builder.append("</level>");
+                        _builder.newLineIfNotEmpty();
+                      } else {
+                        _builder.append("\t");
+                        _builder.append("\t");
+                        _builder.append("<level/>");
+                        _builder.newLine();
+                      }
+                    }
                   }
                 }
               } else {

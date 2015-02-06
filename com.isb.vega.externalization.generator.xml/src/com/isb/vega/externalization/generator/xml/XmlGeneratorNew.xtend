@@ -20,7 +20,7 @@ class XmlGeneratorNew {
 	
 	def generate(File file) {
 		using(new FileWriter(file)) [
-			it.append(doGenerateHeader())
+			it.append(doGenerateHeader())			
 			it.append(doGenerateAssembly(ensamblado, listPort, listModules))
 			it.append(doGenerateCommunication(ensamblado))
 			it.append(doGenerateChannelAdapter(ensamblado))
@@ -38,26 +38,18 @@ class XmlGeneratorNew {
 	
 		def doGenerateCaches() '''
 		<caches>
-			«//FOR
-			»
 			<cache>
 				«Utils.doGeneratePackNameAlias»
 			</cache>
-			«//ENDFOR
-			»
 		</caches>
 	'''
 	
 		def doGenerateFtps() '''
 		<ftps>
-			«//FOR
-			»
 			<ftp>
 				<module>«»</module>
 				«Utils.doGeneratePackNameAlias»
 			</ftp>
-			«//ENDFOR
-			»
 		</ftps>
 	'''
 	
@@ -69,14 +61,10 @@ class XmlGeneratorNew {
 	
 		def doGenerateRules() '''
 		<rules>
-			«//FOR
-			»
 			<rule>
 				<id>«»</id>
 				<lit>«»</lit>
 			</rule>
-			«//ENDFOR
-			»
 		</rules>
 	'''
 	
@@ -122,32 +110,33 @@ class XmlGeneratorNew {
 	'''
 	
 		def doGenerateChannelAdapter(Ensamblado ensamblado) '''
+		«IF ensamblado!=null»
 		«var channelAdapters = ensamblado.EChannelAdapter»
 		«IF channelAdapters!=null»
 		<channelAdapters>
 			«FOR channelAdapter : channelAdapters»
 			<channelAdapters>
-				«IF channelAdapter.name!=null && !channelAdapter.name.equals("")»
+				«IF channelAdapter.name!=null && !channelAdapter.name.toString.equals("")»
 					<adapterName>«channelAdapter.name»</adapterName>
 				«ELSE»
 					<adapterName/>
 				«ENDIF»
-				«IF channelAdapter.type!=null && !channelAdapter.type.equals("")»
+				«IF channelAdapter.type!=null && !channelAdapter.type.toString.equals("")»
 					<type>«channelAdapter.type»</type>
 				«ELSE»
 					<type/>
 				«ENDIF»
-				«IF channelAdapter.facadeName!=null && !channelAdapter.facadeName.equals("")»
+				«IF channelAdapter.facadeName!=null && !channelAdapter.facadeName.toString.equals("")»
 					<facadeName>«channelAdapter.facadeName»</facadeName>
 				«ELSE»
 					<facadeName/>
 				«ENDIF»
-				«IF channelAdapter.interfaceName!=null && !channelAdapter.interfaceName.equals("")»
+				«IF channelAdapter.interfaceName!=null && !channelAdapter.interfaceName.toString.equals("")»
 					<interfaceName>«channelAdapter.interfaceName»</interfaceName>
 				«ELSE»
 					<interfaceName/>
 				«ENDIF»
-				«IF channelAdapter.alias!=null && !channelAdapter.alias.equals("")»
+				«IF channelAdapter.alias!=null && !channelAdapter.alias.toString.equals("")»
 					<alias>«channelAdapter.alias»</alias>
 				«ELSE»
 					<alias/>
@@ -158,6 +147,9 @@ class XmlGeneratorNew {
 			</channelAdapter>
 			«ENDFOR»
 		</channelAdapters>
+		«ELSE»
+		<channelAdapters/>
+		«ENDIF»
 		«ELSE»
 		<channelAdapters/>
 		«ENDIF»
@@ -182,11 +174,13 @@ class XmlGeneratorNew {
 		</configuration>
 	'''
 	
-		def doGenerateAssembly(Ensamblado ensamblado, List<String> listPort, List<String>listModules){
-			if (ensamblado!=null){
-				AssemblyXML.doGenerateAssembly(ensamblado, listPort, listModules)
-			}
-		}
+		def doGenerateAssembly(Ensamblado ensamblado, List<String> listPort, List<String>listModules)'''
+		«IF ensamblado!=null»
+			«AssemblyXML.doGenerateAssembly(ensamblado, listPort, listModules)»
+		«ELSE»
+		<assembly/>
+		«ENDIF»
+		'''
 		
 	
 	def static compile(File target, Ensamblado ensamblado, List<String> listPort, List<String>listModules) {

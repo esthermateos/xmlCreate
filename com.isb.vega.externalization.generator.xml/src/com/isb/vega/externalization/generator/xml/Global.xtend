@@ -4,8 +4,6 @@ class Global {
 	
 	def static doGenerateGlobal() 	
     '''
-	«//FOR
-	»
 	<treeTbls>
 		<treeTbl>
 			<application>«»</application>
@@ -16,8 +14,6 @@ class Global {
 			<columns>«»</columns> 
 		</treeTbl>
 	</treeTbls>
-	«//FOR
-	»
 	<mgrTables>
 		<mgrTable>
 			<application>«»</application>
@@ -28,11 +24,7 @@ class Global {
 			<columns>«»</columns> 
 		</mgrTable>
 	</mgrTables>
-	«//FOR
-		 »
 	<clientArcReferences>
-		«//FOR
-		»
 		<clientArcRef>
 			<application>«»</application>
 			<presentationOP>«»</presentationOP>

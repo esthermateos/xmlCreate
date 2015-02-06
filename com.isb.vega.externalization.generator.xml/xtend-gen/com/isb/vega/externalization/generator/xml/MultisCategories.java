@@ -18,7 +18,8 @@ public class MultisCategories {
         _and = false;
       } else {
         String _catGama_1 = multiProfile.getCatGama();
-        boolean _equals = _catGama_1.equals("");
+        String _string = _catGama_1.toString();
+        boolean _equals = _string.equals("");
         boolean _not = (!_equals);
         _and = (_notEquals && _not);
       }
@@ -29,10 +30,6 @@ public class MultisCategories {
         _builder.append(_catGama_2, "	");
         _builder.append("</category>");
         _builder.newLineIfNotEmpty();
-      } else {
-        _builder.append("\t");
-        _builder.append("<category name=\"Perfil.Gama\"></category>");
-        _builder.newLine();
       }
     }
     {
@@ -43,7 +40,8 @@ public class MultisCategories {
         _and_1 = false;
       } else {
         String _catIdioma_1 = multiProfile.getCatIdioma();
-        boolean _equals_1 = _catIdioma_1.equals("");
+        String _string_1 = _catIdioma_1.toString();
+        boolean _equals_1 = _string_1.equals("");
         boolean _not_1 = (!_equals_1);
         _and_1 = (_notEquals_1 && _not_1);
       }
@@ -54,10 +52,6 @@ public class MultisCategories {
         _builder.append(_catIdioma_2, "	");
         _builder.append("</category>");
         _builder.newLineIfNotEmpty();
-      } else {
-        _builder.append("\t");
-        _builder.append("<category name=\"Perfil.Idioma\"></category>");
-        _builder.newLine();
       }
     }
     {
@@ -68,7 +62,8 @@ public class MultisCategories {
         _and_2 = false;
       } else {
         String _catCompany_1 = multiProfile.getCatCompany();
-        boolean _equals_2 = _catCompany_1.equals("");
+        String _string_2 = _catCompany_1.toString();
+        boolean _equals_2 = _string_2.equals("");
         boolean _not_2 = (!_equals_2);
         _and_2 = (_notEquals_2 && _not_2);
       }
@@ -79,10 +74,6 @@ public class MultisCategories {
         _builder.append(_catCompany_2, "	");
         _builder.append("</category>");
         _builder.newLineIfNotEmpty();
-      } else {
-        _builder.append("\t");
-        _builder.append("<category name=\"Perfil.Empresa\"></category>");
-        _builder.newLine();
       }
     }
     {
@@ -93,7 +84,8 @@ public class MultisCategories {
         _and_3 = false;
       } else {
         String _catCanalMarco_1 = multiProfile.getCatCanalMarco();
-        boolean _equals_3 = _catCanalMarco_1.equals("");
+        String _string_3 = _catCanalMarco_1.toString();
+        boolean _equals_3 = _string_3.equals("");
         boolean _not_3 = (!_equals_3);
         _and_3 = (_notEquals_3 && _not_3);
       }
@@ -104,10 +96,6 @@ public class MultisCategories {
         _builder.append(_catCanalMarco_2, "	");
         _builder.append("</category>");
         _builder.newLineIfNotEmpty();
-      } else {
-        _builder.append("\t");
-        _builder.append("<category name=\"Perfil.CanalMarco\"></category>");
-        _builder.newLine();
       }
     }
     {
@@ -118,7 +106,8 @@ public class MultisCategories {
         _and_4 = false;
       } else {
         String _catOrden_1 = multiProfile.getCatOrden();
-        boolean _equals_4 = _catOrden_1.equals("");
+        String _string_4 = _catOrden_1.toString();
+        boolean _equals_4 = _string_4.equals("");
         boolean _not_4 = (!_equals_4);
         _and_4 = (_notEquals_4 && _not_4);
       }
@@ -129,10 +118,6 @@ public class MultisCategories {
         _builder.append(_catOrden_2, "	");
         _builder.append("</category>");
         _builder.newLineIfNotEmpty();
-      } else {
-        _builder.append("\t");
-        _builder.append("<category name=\"Perfil.orden\"></category>");
-        _builder.newLine();
       }
     }
     {
@@ -143,7 +128,8 @@ public class MultisCategories {
         _and_5 = false;
       } else {
         String _catEstructura_1 = multiProfile.getCatEstructura();
-        boolean _equals_5 = _catEstructura_1.equals("");
+        String _string_5 = _catEstructura_1.toString();
+        boolean _equals_5 = _string_5.equals("");
         boolean _not_5 = (!_equals_5);
         _and_5 = (_notEquals_5 && _not_5);
       }
@@ -154,10 +140,6 @@ public class MultisCategories {
         _builder.append(_catEstructura_2, "	");
         _builder.append("</category>");
         _builder.newLineIfNotEmpty();
-      } else {
-        _builder.append("\t");
-        _builder.append("<category name=\"Perfil.Estructura\"></category>");
-        _builder.newLine();
       }
     }
     {
@@ -168,7 +150,8 @@ public class MultisCategories {
         _and_6 = false;
       } else {
         String _catNivelIU_1 = multiProfile.getCatNivelIU();
-        boolean _equals_6 = _catNivelIU_1.equals("");
+        String _string_6 = _catNivelIU_1.toString();
+        boolean _equals_6 = _string_6.equals("");
         boolean _not_6 = (!_equals_6);
         _and_6 = (_notEquals_6 && _not_6);
       }
@@ -179,10 +162,6 @@ public class MultisCategories {
         _builder.append(_catNivelIU_2, "	");
         _builder.append("</category>");
         _builder.newLineIfNotEmpty();
-      } else {
-        _builder.append("\t");
-        _builder.append("<category name=\"Perfil.NivelUI\"></category>");
-        _builder.newLine();
       }
     }
     {
@@ -193,7 +172,8 @@ public class MultisCategories {
         _and_7 = false;
       } else {
         String _catEmpresaAsociada_1 = multiProfile.getCatEmpresaAsociada();
-        boolean _equals_7 = _catEmpresaAsociada_1.equals("");
+        String _string_7 = _catEmpresaAsociada_1.toString();
+        boolean _equals_7 = _string_7.equals("");
         boolean _not_7 = (!_equals_7);
         _and_7 = (_notEquals_7 && _not_7);
       }
@@ -204,10 +184,6 @@ public class MultisCategories {
         _builder.append(_catEmpresaAsociada_2, "	");
         _builder.append("</category>");
         _builder.newLineIfNotEmpty();
-      } else {
-        _builder.append("\t");
-        _builder.append("<category name=\"Perfil.EmpresaAsociada\"></category>");
-        _builder.newLine();
       }
     }
     {
@@ -218,7 +194,8 @@ public class MultisCategories {
         _and_8 = false;
       } else {
         String _catRender_1 = multiProfile.getCatRender();
-        boolean _equals_8 = _catRender_1.equals("");
+        String _string_8 = _catRender_1.toString();
+        boolean _equals_8 = _string_8.equals("");
         boolean _not_8 = (!_equals_8);
         _and_8 = (_notEquals_8 && _not_8);
       }
@@ -229,10 +206,6 @@ public class MultisCategories {
         _builder.append(_catRender_2, "	");
         _builder.append("</category>");
         _builder.newLineIfNotEmpty();
-      } else {
-        _builder.append("\t");
-        _builder.append("<category name=\"Perfil.Render\"></category>");
-        _builder.newLine();
       }
     }
     _builder.append("</multisCategories>");

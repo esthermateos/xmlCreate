@@ -6,7 +6,6 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 public class SqlSentence {
   public static CharSequence doGenerateSqlSentence() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.newLine();
     _builder.append("<sql-sentence>");
     _builder.newLine();
     _builder.append("\t");
@@ -30,7 +29,6 @@ public class SqlSentence {
     _builder.append("</sql>");
     _builder.newLine();
     _builder.append("</sql-sentence>");
-    _builder.newLine();
     _builder.newLine();
     return _builder;
   }

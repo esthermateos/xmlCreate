@@ -75,7 +75,8 @@ public class Connectors {
                 _and = false;
               } else {
                 String _trxprotocol_2 = host.getTrxprotocol();
-                boolean _equals = _trxprotocol_2.equals("");
+                String _string = _trxprotocol_2.toString();
+                boolean _equals = _string.equals("");
                 boolean _not = (!_equals);
                 _and = (_notEquals_7 && _not);
               }
@@ -83,8 +84,8 @@ public class Connectors {
                 _builder.append("\t");
                 _builder.append("<trxOpProtocol>");
                 String _trxprotocol_3 = host.getTrxprotocol();
-                String _string = _trxprotocol_3.toString();
-                _builder.append(_string, "	");
+                String _string_1 = _trxprotocol_3.toString();
+                _builder.append(_string_1, "	");
                 _builder.append("</trxOpProtocol>");
                 _builder.newLineIfNotEmpty();
               } else {
@@ -101,7 +102,8 @@ public class Connectors {
                 _and_1 = false;
               } else {
                 String _trxOPDefaultMode_2 = host.getTrxOPDefaultMode();
-                boolean _equals_1 = _trxOPDefaultMode_2.equals("");
+                String _string_2 = _trxOPDefaultMode_2.toString();
+                boolean _equals_1 = _string_2.equals("");
                 boolean _not_1 = (!_equals_1);
                 _and_1 = (_notEquals_8 && _not_1);
               }
@@ -109,8 +111,8 @@ public class Connectors {
                 _builder.append("\t");
                 _builder.append("<trxOpDefaultMode>");
                 String _trxOPDefaultMode_3 = host.getTrxOPDefaultMode();
-                String _string_1 = _trxOPDefaultMode_3.toString();
-                _builder.append(_string_1, "	");
+                String _string_3 = _trxOPDefaultMode_3.toString();
+                _builder.append(_string_3, "	");
                 _builder.append("</trxOpDefaultMode>");
                 _builder.newLineIfNotEmpty();
               } else {
@@ -127,7 +129,8 @@ public class Connectors {
                 _and_2 = false;
               } else {
                 String _redProtocol_2 = host.getRedProtocol();
-                boolean _equals_2 = _redProtocol_2.equals("");
+                String _string_4 = _redProtocol_2.toString();
+                boolean _equals_2 = _string_4.equals("");
                 boolean _not_2 = (!_equals_2);
                 _and_2 = (_notEquals_9 && _not_2);
               }
@@ -135,8 +138,8 @@ public class Connectors {
                 _builder.append("\t");
                 _builder.append("<trxOpRedGProtocol>");
                 String _redProtocol_3 = host.getRedProtocol();
-                String _string_2 = _redProtocol_3.toString();
-                _builder.append(_string_2, "	");
+                String _string_5 = _redProtocol_3.toString();
+                _builder.append(_string_5, "	");
                 _builder.append("</trxOpRedGProtocol>");
                 _builder.newLineIfNotEmpty();
               } else {
@@ -153,7 +156,8 @@ public class Connectors {
                 _and_3 = false;
               } else {
                 String _trxOPTCPAlias_2 = host.getTrxOPTCPAlias();
-                boolean _equals_3 = _trxOPTCPAlias_2.equals("");
+                String _string_6 = _trxOPTCPAlias_2.toString();
+                boolean _equals_3 = _string_6.equals("");
                 boolean _not_3 = (!_equals_3);
                 _and_3 = (_notEquals_10 && _not_3);
               }
@@ -161,8 +165,8 @@ public class Connectors {
                 _builder.append("\t");
                 _builder.append("<trxOpTCPAlias>");
                 String _trxOPTCPAlias_3 = host.getTrxOPTCPAlias();
-                String _string_3 = _trxOPTCPAlias_3.toString();
-                _builder.append(_string_3, "	");
+                String _string_7 = _trxOPTCPAlias_3.toString();
+                _builder.append(_string_7, "	");
                 _builder.append("</trxOpTCPAlias>");
                 _builder.newLineIfNotEmpty();
               } else {
@@ -400,7 +404,8 @@ public class Connectors {
                 _and = false;
               } else {
                 String _satProtocol_2 = host.getSatProtocol();
-                boolean _equals = _satProtocol_2.equals("");
+                String _string = _satProtocol_2.toString();
+                boolean _equals = _string.equals("");
                 boolean _not = (!_equals);
                 _and = (_notEquals_8 && _not);
               }
@@ -425,7 +430,8 @@ public class Connectors {
                 _and_1 = false;
               } else {
                 String _satAlias_2 = host.getSatAlias();
-                boolean _equals_1 = _satAlias_2.equals("");
+                String _string_1 = _satAlias_2.toString();
+                boolean _equals_1 = _string_1.equals("");
                 boolean _not_1 = (!_equals_1);
                 _and_1 = (_notEquals_9 && _not_1);
               }
@@ -450,7 +456,8 @@ public class Connectors {
                 _and_2 = false;
               } else {
                 String _satTimeOut_2 = host.getSatTimeOut();
-                boolean _equals_2 = _satTimeOut_2.equals("");
+                String _string_2 = _satTimeOut_2.toString();
+                boolean _equals_2 = _string_2.equals("");
                 boolean _not_2 = (!_equals_2);
                 _and_2 = (_notEquals_10 && _not_2);
               }
@@ -475,7 +482,8 @@ public class Connectors {
                 _and_3 = false;
               } else {
                 String _satNullValues_2 = host.getSatNullValues();
-                boolean _equals_3 = _satNullValues_2.equals("");
+                String _string_3 = _satNullValues_2.toString();
+                boolean _equals_3 = _string_3.equals("");
                 boolean _not_3 = (!_equals_3);
                 _and_3 = (_notEquals_11 && _not_3);
               }
@@ -500,7 +508,8 @@ public class Connectors {
                 _and_4 = false;
               } else {
                 String _satNullWhenSpaces_2 = host.getSatNullWhenSpaces();
-                boolean _equals_4 = _satNullWhenSpaces_2.equals("");
+                String _string_4 = _satNullWhenSpaces_2.toString();
+                boolean _equals_4 = _string_4.equals("");
                 boolean _not_4 = (!_equals_4);
                 _and_4 = (_notEquals_12 && _not_4);
               }

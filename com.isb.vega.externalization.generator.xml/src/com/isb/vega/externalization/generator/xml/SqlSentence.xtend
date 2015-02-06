@@ -4,8 +4,6 @@ class SqlSentence {
 	
 	def static doGenerateSqlSentence() 
 	'''
-	«//FOR
-	»
 	<sql-sentence>
 		<module>«»</module>
 		<component>«»</component>
@@ -13,6 +11,5 @@ class SqlSentence {
 		<type>«»</type>
 		<sql>«»</sql>
 	</sql-sentence>
-	«//ENDFOR
-	»
-	'''}
+	'''
+}

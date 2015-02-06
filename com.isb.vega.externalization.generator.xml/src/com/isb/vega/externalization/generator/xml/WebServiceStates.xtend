@@ -5,8 +5,6 @@ class WebServiceStates {
 	def static doGenerateWebServiceStates() 
 	'''
 	<webServiceStates>
-		«//FOR
-		»
 		<webServiceState>
 			«Utils.doGenerateFieldStatesHead»
 			<alias>«»</alias>
@@ -16,8 +14,6 @@ class WebServiceStates {
 			<wsOp>«»</wsOp>
 			<namespace>«»</namespace>
 		</webServiceState>
-		«//ENDFOR
-		»
 	</webServiceStates>
 	'''
 }

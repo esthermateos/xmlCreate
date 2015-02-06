@@ -14,27 +14,27 @@ class AssemblyXML {
 		«ENDIF»
 		«IF (ensamblado.EEnsamblado!=null)»
 		<assemblySecurity>
-			«IF ensamblado.EEnsamblado.autentication!=null && !ensamblado.EEnsamblado.autentication.equals("")»
+			«IF ensamblado.EEnsamblado.autentication!=null && !ensamblado.EEnsamblado.autentication.toString.equals("")»
 			<authenticationEnabled>«ensamblado.EEnsamblado.autentication.toString»</assemblySecurity>
 			«ELSE»
 			<authenticationEnabled/>
 			«ENDIF»
-			«IF ensamblado.EEnsamblado.usuNotes!=null && !ensamblado.EEnsamblado.usuNotes.equals("")»
+			«IF ensamblado.EEnsamblado.usuNotes!=null && !ensamblado.EEnsamblado.usuNotes.toString.equals("")»
 			<uploadUsunotes>«ensamblado.EEnsamblado.usuNotes.toString»</uploadUsunotes>
 			«ELSE»
 			<uploadUsunotes/>
 			«ENDIF»
-			«IF ensamblado.EEnsamblado.entityAlias!=null && !ensamblado.EEnsamblado.entityAlias.equals("")»
+			«IF ensamblado.EEnsamblado.entityAlias!=null && !ensamblado.EEnsamblado.entityAlias.toString.equals("")»
 			<externalEntityAlias>«ensamblado.EEnsamblado.entityAlias.toString»</externalEntityAlias>
 			«ELSE»
 			<externalEntityAlias/>
 			«ENDIF»
-			«IF ensamblado.EEnsamblado.codePassword!=null && !ensamblado.EEnsamblado.codePassword.equals("")»
+			«IF ensamblado.EEnsamblado.codePassword!=null && !ensamblado.EEnsamblado.codePassword.toString.equals("")»
 			<codedPassword>«ensamblado.EEnsamblado.codePassword.toString»</codedPassword>
 			«ELSE»
 			<codedPassword/>
 			«ENDIF»
-			«IF ensamblado.EEnsamblado.multi!=null && !ensamblado.EEnsamblado.multi.equals("")»
+			«IF ensamblado.EEnsamblado.multi!=null && !ensamblado.EEnsamblado.multi.toString.equals("")»
 			<aebMultis>«ensamblado.EEnsamblado.multi.toString»</aebMultis>
 			«ELSE»
 			<aebMultis/>

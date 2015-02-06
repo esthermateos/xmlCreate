@@ -50,7 +50,8 @@ public class AssemblyXML {
           } else {
             Security _eEnsamblado_2 = ensamblado.getEEnsamblado();
             String _autentication_1 = _eEnsamblado_2.getAutentication();
-            boolean _equals = _autentication_1.equals("");
+            String _string = _autentication_1.toString();
+            boolean _equals = _string.equals("");
             boolean _not = (!_equals);
             _and = (_notEquals_2 && _not);
           }
@@ -60,8 +61,8 @@ public class AssemblyXML {
             _builder.append("<authenticationEnabled>");
             Security _eEnsamblado_3 = ensamblado.getEEnsamblado();
             String _autentication_2 = _eEnsamblado_3.getAutentication();
-            String _string = _autentication_2.toString();
-            _builder.append(_string, "		");
+            String _string_1 = _autentication_2.toString();
+            _builder.append(_string_1, "		");
             _builder.append("</assemblySecurity>");
             _builder.newLineIfNotEmpty();
           } else {
@@ -81,7 +82,8 @@ public class AssemblyXML {
           } else {
             Security _eEnsamblado_5 = ensamblado.getEEnsamblado();
             String _usuNotes_1 = _eEnsamblado_5.getUsuNotes();
-            boolean _equals_1 = _usuNotes_1.equals("");
+            String _string_2 = _usuNotes_1.toString();
+            boolean _equals_1 = _string_2.equals("");
             boolean _not_1 = (!_equals_1);
             _and_1 = (_notEquals_3 && _not_1);
           }
@@ -91,8 +93,8 @@ public class AssemblyXML {
             _builder.append("<uploadUsunotes>");
             Security _eEnsamblado_6 = ensamblado.getEEnsamblado();
             String _usuNotes_2 = _eEnsamblado_6.getUsuNotes();
-            String _string_1 = _usuNotes_2.toString();
-            _builder.append(_string_1, "		");
+            String _string_3 = _usuNotes_2.toString();
+            _builder.append(_string_3, "		");
             _builder.append("</uploadUsunotes>");
             _builder.newLineIfNotEmpty();
           } else {
@@ -112,7 +114,8 @@ public class AssemblyXML {
           } else {
             Security _eEnsamblado_8 = ensamblado.getEEnsamblado();
             String _entityAlias_1 = _eEnsamblado_8.getEntityAlias();
-            boolean _equals_2 = _entityAlias_1.equals("");
+            String _string_4 = _entityAlias_1.toString();
+            boolean _equals_2 = _string_4.equals("");
             boolean _not_2 = (!_equals_2);
             _and_2 = (_notEquals_4 && _not_2);
           }
@@ -122,8 +125,8 @@ public class AssemblyXML {
             _builder.append("<externalEntityAlias>");
             Security _eEnsamblado_9 = ensamblado.getEEnsamblado();
             String _entityAlias_2 = _eEnsamblado_9.getEntityAlias();
-            String _string_2 = _entityAlias_2.toString();
-            _builder.append(_string_2, "		");
+            String _string_5 = _entityAlias_2.toString();
+            _builder.append(_string_5, "		");
             _builder.append("</externalEntityAlias>");
             _builder.newLineIfNotEmpty();
           } else {
@@ -143,7 +146,8 @@ public class AssemblyXML {
           } else {
             Security _eEnsamblado_11 = ensamblado.getEEnsamblado();
             String _codePassword_1 = _eEnsamblado_11.getCodePassword();
-            boolean _equals_3 = _codePassword_1.equals("");
+            String _string_6 = _codePassword_1.toString();
+            boolean _equals_3 = _string_6.equals("");
             boolean _not_3 = (!_equals_3);
             _and_3 = (_notEquals_5 && _not_3);
           }
@@ -153,8 +157,8 @@ public class AssemblyXML {
             _builder.append("<codedPassword>");
             Security _eEnsamblado_12 = ensamblado.getEEnsamblado();
             String _codePassword_2 = _eEnsamblado_12.getCodePassword();
-            String _string_3 = _codePassword_2.toString();
-            _builder.append(_string_3, "		");
+            String _string_7 = _codePassword_2.toString();
+            _builder.append(_string_7, "		");
             _builder.append("</codedPassword>");
             _builder.newLineIfNotEmpty();
           } else {
@@ -174,7 +178,8 @@ public class AssemblyXML {
           } else {
             Security _eEnsamblado_14 = ensamblado.getEEnsamblado();
             String _multi_1 = _eEnsamblado_14.getMulti();
-            boolean _equals_4 = _multi_1.equals("");
+            String _string_8 = _multi_1.toString();
+            boolean _equals_4 = _string_8.equals("");
             boolean _not_4 = (!_equals_4);
             _and_4 = (_notEquals_6 && _not_4);
           }
@@ -184,8 +189,8 @@ public class AssemblyXML {
             _builder.append("<aebMultis>");
             Security _eEnsamblado_15 = ensamblado.getEEnsamblado();
             String _multi_2 = _eEnsamblado_15.getMulti();
-            String _string_4 = _multi_2.toString();
-            _builder.append(_string_4, "		");
+            String _string_9 = _multi_2.toString();
+            _builder.append(_string_9, "		");
             _builder.append("</aebMultis>");
             _builder.newLineIfNotEmpty();
           } else {

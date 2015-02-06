@@ -6,7 +6,6 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 public class Global {
   public static CharSequence doGenerateGlobal() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.newLine();
     _builder.append("<treeTbls>");
     _builder.newLine();
     _builder.append("\t");
@@ -40,7 +39,6 @@ public class Global {
     _builder.append("</treeTbl>");
     _builder.newLine();
     _builder.append("</treeTbls>");
-    _builder.newLine();
     _builder.newLine();
     _builder.append("<mgrTables>");
     _builder.newLine();
@@ -76,10 +74,7 @@ public class Global {
     _builder.newLine();
     _builder.append("</mgrTables>");
     _builder.newLine();
-    _builder.newLine();
     _builder.append("<clientArcReferences>");
-    _builder.newLine();
-    _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("<clientArcRef>");

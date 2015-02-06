@@ -10,8 +10,6 @@ public class WebServiceStates {
     _builder.append("<webServiceStates>");
     _builder.newLine();
     _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t");
     _builder.append("<webServiceState>");
     _builder.newLine();
     _builder.append("\t\t");
@@ -44,8 +42,6 @@ public class WebServiceStates {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("</webServiceState>");
-    _builder.newLine();
-    _builder.append("\t");
     _builder.newLine();
     _builder.append("</webServiceStates>");
     _builder.newLine();
