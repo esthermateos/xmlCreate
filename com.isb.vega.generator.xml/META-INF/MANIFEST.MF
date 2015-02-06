@@ -17,6 +17,7 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Import-Package: com.isb.vega.externalization.generator.xml,
+ com.isb.vega.internal.wrapper.rigel.core,
  com.isb.vega.model.component.pl,
  com.isb.vega.model.core,
  com.isb.vega.model.descriptors.external.externalization,

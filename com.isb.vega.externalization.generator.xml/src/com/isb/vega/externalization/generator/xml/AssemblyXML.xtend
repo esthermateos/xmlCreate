@@ -8,7 +8,11 @@ class AssemblyXML {
 	def static doGenerateAssembly(Ensamblado ensamblado, List<String> listPort, List<String>listModules) 
 		
     '''
-	<assembly defaultBankChannel="«»" name="«ensamblado.name»"> 
+	«IF ((ensamblado.defaultBankChannel!=null && !ensamblado.defaultBankChannel.toString.equals("")) || (ensamblado.name!=null && !ensamblado.name.toString.equals("")))»
+	<assembly defaultBankChannel="«ensamblado.defaultBankChannel»" name="«ensamblado.name»">
+	«ELSE»
+	<assembly>
+	«ENDIF»
 		«IF ensamblado.ELogLevel!=null»
 		«AssemblyUtils.doGenerateLogLevel(ensamblado.ELogLevel)»
 		«ENDIF»

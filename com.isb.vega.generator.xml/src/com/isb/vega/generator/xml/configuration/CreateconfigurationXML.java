@@ -10,7 +10,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 
 import com.isb.vega.externalization.generator.xml.XmlGeneratorNew;
 import com.isb.vega.internal.model.assembly.AssemblyProject;
-import com.isb.vega.internal.model.component.externalization.XmlGenerator;
+import com.isb.vega.internal.wrapper.rigel.core.BKSConfigurationModel;
 import com.isb.vega.model.api.utils.UtilsProjectsApi;
 import com.isb.vega.model.assembly.IAssembly;
 import com.isb.vega.model.assembly.IAssemblyFile;
@@ -58,7 +58,8 @@ public class CreateconfigurationXML {
 			}
 			
 			Ensamblado ensamblado = dependencies.createEnsamblado();
-			ensamblado.setName(name);	
+			ensamblado.setName(name);
+			getDefaultBankChannel(ensamblado);
 			// a partir del objeto assembllyFileData creamos las entidades MULTIPROFILE y SECURITY
 			IAssemblyFileData assemblyFileData = assemblyFile.getAssemblyFileData();
 			CreateEntities.createMultiProfile(assemblyFileData,dependencies, ensamblado);
@@ -94,11 +95,27 @@ public class CreateconfigurationXML {
 				op.getEFachada().addAll(listFachadas);
 				}			 
 			}	
-	
-
 		
-			//Creamos el fichero de ruta dada
-			File configuration = new File(ruta, "configuration.xml");
+			//Creamos el fichero en la ruta dada
+			String rutaProject= iProject.getLocationURI().getPath().toString();
+			rutaProject = rutaProject.substring(0, rutaProject.lastIndexOf(name)-1);
+			if(!ruta.startsWith("/")){
+				ruta = "/".concat(ruta);
+			}
+			if(ruta.startsWith(name)){
+				ruta = ruta.replaceFirst(name, "");
+			}else{
+				if(ruta.startsWith("/".concat(name))){
+					ruta = ruta.replaceFirst("/".concat(name), "");
+				}
+			}
+			String rutaFinal = rutaProject.concat(ruta);
+			File filePath = new File(rutaFinal);
+			if(!filePath.exists()){
+				filePath.mkdirs();
+			}
+
+			File configuration = new File(rutaFinal, "configuration.xml");
 			try {
 				configuration.createNewFile();
 			} catch (IOException e) {
@@ -117,6 +134,15 @@ public class CreateconfigurationXML {
 			XmlGeneratorNew.compile(configuration, ensamblado,listPort, listModules);
 	
 	}
+
+	public void getDefaultBankChannel(Ensamblado ensamblado) {
+		BKSConfigurationModel bKSConfigurationModel = new BKSConfigurationModel();
+		String entity = bKSConfigurationModel.getCfgEnt();
+		String enviroment = bKSConfigurationModel.getCfgEnv();
+		String defaultBank = entity.concat("_").concat(enviroment);
+		ensamblado.setDefaultBankChannel(defaultBank);
+	}
+	
 
 
 }
