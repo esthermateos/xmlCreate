@@ -551,13 +551,16 @@ public class CreateEntities {
 		ISetting[] setting = advancedSettingContainer.getSettingsContainer().getSettings();
 		List<JMS> listJMS = new ArrayList<JMS>();
 		for (ISetting iSetting : setting) {
-			String value = iSetting.getValue();
-			String portName = MessagingServiceManager.getInstance().getListenerPortByAlias(value);
 			if (iSetting.getElementId().equals("jms.transactional")){
-				JMS jms = dependencies.createJMS();
-				jms.setJmsModules(value);
-				jms.setListenerPorts(portName);
-				listJMS.add(jms);
+				String value = iSetting.getValue();
+				String[] valueSplit= value.split(",");
+				for (String string : valueSplit) {
+					String portName = MessagingServiceManager.getInstance().getListenerPortByAlias(string);
+					JMS jms = dependencies.createJMS();
+					jms.setJmsModules(string);
+					jms.setListenerPorts(portName);
+					listJMS.add(jms);
+				}
 			}
 		}
 		ensamblado.getEJMS().addAll(listJMS);
