@@ -43,6 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dependencies.impl.EnsambladoImpl#getEChannelAdapter <em>EChannel Adapter</em>}</li>
  *   <li>{@link dependencies.impl.EnsambladoImpl#getEEnsamblado <em>EEnsamblado</em>}</li>
  *   <li>{@link dependencies.impl.EnsambladoImpl#getEOP <em>EOP</em>}</li>
+ *   <li>{@link dependencies.impl.EnsambladoImpl#getDefaultBankChannel <em>Default Bank Channel</em>}</li>
  * </ul>
  * </p>
  *
@@ -138,6 +139,26 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 	 * @ordered
 	 */
 	protected OP eOP;
+
+	/**
+	 * The default value of the '{@link #getDefaultBankChannel() <em>Default Bank Channel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultBankChannel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DEFAULT_BANK_CHANNEL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDefaultBankChannel() <em>Default Bank Channel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultBankChannel()
+	 * @generated
+	 * @ordered
+	 */
+	protected String defaultBankChannel = DEFAULT_BANK_CHANNEL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -392,6 +413,27 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getDefaultBankChannel() {
+		return defaultBankChannel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDefaultBankChannel(String newDefaultBankChannel) {
+		String oldDefaultBankChannel = defaultBankChannel;
+		defaultBankChannel = newDefaultBankChannel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.ENSAMBLADO__DEFAULT_BANK_CHANNEL, oldDefaultBankChannel, defaultBankChannel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -437,6 +479,8 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 				return getEEnsamblado();
 			case DependenciesPackage.ENSAMBLADO__EOP:
 				return getEOP();
+			case DependenciesPackage.ENSAMBLADO__DEFAULT_BANK_CHANNEL:
+				return getDefaultBankChannel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -477,6 +521,9 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 			case DependenciesPackage.ENSAMBLADO__EOP:
 				setEOP((OP)newValue);
 				return;
+			case DependenciesPackage.ENSAMBLADO__DEFAULT_BANK_CHANNEL:
+				setDefaultBankChannel((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -513,6 +560,9 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 			case DependenciesPackage.ENSAMBLADO__EOP:
 				setEOP((OP)null);
 				return;
+			case DependenciesPackage.ENSAMBLADO__DEFAULT_BANK_CHANNEL:
+				setDefaultBankChannel(DEFAULT_BANK_CHANNEL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -541,6 +591,8 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 				return eEnsamblado != null;
 			case DependenciesPackage.ENSAMBLADO__EOP:
 				return eOP != null;
+			case DependenciesPackage.ENSAMBLADO__DEFAULT_BANK_CHANNEL:
+				return DEFAULT_BANK_CHANNEL_EDEFAULT == null ? defaultBankChannel != null : !DEFAULT_BANK_CHANNEL_EDEFAULT.equals(defaultBankChannel);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -557,6 +609,8 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", defaultBankChannel: ");
+		result.append(defaultBankChannel);
 		result.append(')');
 		return result.toString();
 	}

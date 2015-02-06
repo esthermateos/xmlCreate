@@ -375,6 +375,10 @@
         <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//Ensamblado/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_WiyncZ2DEeSbH_vgVaYtAQ"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_h4uTQK39EeSkwqA5QPl7NQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//Ensamblado/defaultBankChannel"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_h4uTQa39EeSkwqA5QPl7NQ"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_TikXtZ2DEeSbH_vgVaYtAQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_TikXtp2DEeSbH_vgVaYtAQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_TikXt52DEeSbH_vgVaYtAQ"/>
@@ -1021,7 +1025,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="__DMx8abBEeSekOnQTZtO6w" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="__DMx8qbBEeSekOnQTZtO6w" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="Dependencies.ecore#//Ensamblado/eLogLevel"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__DMx86bBEeSekOnQTZtO6w" points="[0, -5, -140, 194]$[0, -199, -140, 0]$[140, -199, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__DMx86bBEeSekOnQTZtO6w" points="[0, -7, -92, 197]$[0, -204, -92, 0]$[92, -204, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__DUtwKbBEeSekOnQTZtO6w" id="(0.5826086956521739,0.11764705882352941)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_D95xYKbCEeSekOnQTZtO6w" id="(0.005076142131979695,0.18487394957983194)"/>
   </edges>
@@ -1078,7 +1082,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_h8RMIabOEeSekOnQTZtO6w" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="Dependencies.ecore#//Ensamblado/eMultiProfile"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_h8RMIqbOEeSekOnQTZtO6w" points="[-4, 8, 0, -247]$[-4, 254, 0, -1]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h8U2gKbOEeSekOnQTZtO6w" id="(0.6956521739130435,0.9803921568627451)"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h8U2gKbOEeSekOnQTZtO6w" id="(0.3979591836734694,0.9411764705882353)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h8U2gabOEeSekOnQTZtO6w" id="(0.7450980392156863,0.0106951871657754)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_QUQXIKbPEeSekOnQTZtO6w" type="3002" source="_TikXsJ2DEeSbH_vgVaYtAQ" target="_a5yc0JvWEeSCPOWj8Tvrfg">
@@ -1091,8 +1095,8 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_QUQXIabPEeSekOnQTZtO6w" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_QUQXIqbPEeSekOnQTZtO6w" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="Dependencies.ecore#//Ensamblado/eHOST"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QUQXI6bPEeSekOnQTZtO6w" points="[0, 8, 330, -201]$[0, 209, 330, 0]$[-318, 209, 12, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QUUBgKbPEeSekOnQTZtO6w" id="(0.5304347826086957,0.8431372549019608)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QUQXI6bPEeSekOnQTZtO6w" points="[-1, 11, 383, -176]$[-27, 187, 357, 0]$[-372, 187, 12, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QUUBgKbPEeSekOnQTZtO6w" id="(0.3469387755102041,0.9852941176470589)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QUUokKbPEeSekOnQTZtO6w" id="(0.9423076923076923,0.1245674740484429)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_W_s7cKbPEeSekOnQTZtO6w" type="3002" source="_TikXsJ2DEeSbH_vgVaYtAQ" target="_nHQtMJwAEeSicsecIWx7Aw">
@@ -1146,7 +1150,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_2GiQkabPEeSekOnQTZtO6w" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_2GiQkqbPEeSekOnQTZtO6w" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="Dependencies.ecore#//Ensamblado/eOP"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2GiQk6bPEeSekOnQTZtO6w" points="[7, 8, -176, -143]$[183, 8, 0, -143]$[183, 143, 0, -8]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2GiQk6bPEeSekOnQTZtO6w" points="[12, 0, -95, -141]$[107, 0, 0, -141]$[107, 133, 0, -8]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2GmiAKbPEeSekOnQTZtO6w" id="(0.9391304347826087,0.5686274509803921)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2GmiAabPEeSekOnQTZtO6w" id="(0.26119402985074625,0.10588235294117647)"/>
   </edges>

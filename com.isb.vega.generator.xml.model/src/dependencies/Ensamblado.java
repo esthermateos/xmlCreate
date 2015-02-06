@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dependencies.Ensamblado#getEChannelAdapter <em>EChannel Adapter</em>}</li>
  *   <li>{@link dependencies.Ensamblado#getEEnsamblado <em>EEnsamblado</em>}</li>
  *   <li>{@link dependencies.Ensamblado#getEOP <em>EOP</em>}</li>
+ *   <li>{@link dependencies.Ensamblado#getDefaultBankChannel <em>Default Bank Channel</em>}</li>
  * </ul>
  * </p>
  *
@@ -207,5 +208,31 @@ public interface Ensamblado extends EObject {
 	 * @generated
 	 */
 	void setEOP(OP value);
+
+	/**
+	 * Returns the value of the '<em><b>Default Bank Channel</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Default Bank Channel</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Default Bank Channel</em>' attribute.
+	 * @see #setDefaultBankChannel(String)
+	 * @see dependencies.DependenciesPackage#getEnsamblado_DefaultBankChannel()
+	 * @model
+	 * @generated
+	 */
+	String getDefaultBankChannel();
+
+	/**
+	 * Sets the value of the '{@link dependencies.Ensamblado#getDefaultBankChannel <em>Default Bank Channel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Default Bank Channel</em>' attribute.
+	 * @see #getDefaultBankChannel()
+	 * @generated
+	 */
+	void setDefaultBankChannel(String value);
 
 } // Ensamblado

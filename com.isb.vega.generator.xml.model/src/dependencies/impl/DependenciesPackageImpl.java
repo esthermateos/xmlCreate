@@ -1154,6 +1154,15 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEnsamblado_DefaultBankChannel() {
+		return (EAttribute)ensambladoEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSecurity() {
 		return securityEClass;
 	}
@@ -2080,6 +2089,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		createEReference(ensambladoEClass, ENSAMBLADO__ECHANNEL_ADAPTER);
 		createEReference(ensambladoEClass, ENSAMBLADO__EENSAMBLADO);
 		createEReference(ensambladoEClass, ENSAMBLADO__EOP);
+		createEAttribute(ensambladoEClass, ENSAMBLADO__DEFAULT_BANK_CHANNEL);
 
 		securityEClass = createEClass(SECURITY);
 		createEAttribute(securityEClass, SECURITY__AUTENTICATION);
@@ -2323,6 +2333,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEReference(getEnsamblado_EChannelAdapter(), this.getChannelAdapter(), null, "eChannelAdapter", null, 0, -1, Ensamblado.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnsamblado_EEnsamblado(), this.getSecurity(), null, "eEnsamblado", null, 0, 1, Ensamblado.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnsamblado_EOP(), this.getOP(), null, "eOP", null, 0, 1, Ensamblado.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnsamblado_DefaultBankChannel(), ecorePackage.getEString(), "defaultBankChannel", null, 0, 1, Ensamblado.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(securityEClass, Security.class, "Security", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSecurity_Autentication(), ecorePackage.getEString(), "autentication", null, 0, 1, Security.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

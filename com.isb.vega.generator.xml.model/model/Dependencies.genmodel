@@ -108,6 +108,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Ensamblado/eChannelAdapter"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Ensamblado/eEnsamblado"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Ensamblado/eOP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Ensamblado/defaultBankChannel"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//Security">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Security/autentication"/>

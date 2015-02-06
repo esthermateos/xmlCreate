@@ -1076,13 +1076,22 @@ public interface DependenciesPackage extends EPackage {
 	int ENSAMBLADO__EOP = 7;
 
 	/**
+	 * The feature id for the '<em><b>Default Bank Channel</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENSAMBLADO__DEFAULT_BANK_CHANNEL = 8;
+
+	/**
 	 * The number of structural features of the '<em>Ensamblado</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENSAMBLADO_FEATURE_COUNT = 8;
+	int ENSAMBLADO_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Ensamblado</em>' class.
@@ -3277,6 +3286,17 @@ public interface DependenciesPackage extends EPackage {
 	EReference getEnsamblado_EOP();
 
 	/**
+	 * Returns the meta object for the attribute '{@link dependencies.Ensamblado#getDefaultBankChannel <em>Default Bank Channel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Default Bank Channel</em>'.
+	 * @see dependencies.Ensamblado#getDefaultBankChannel()
+	 * @see #getEnsamblado()
+	 * @generated
+	 */
+	EAttribute getEnsamblado_DefaultBankChannel();
+
+	/**
 	 * Returns the meta object for class '{@link dependencies.Security <em>Security</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5015,6 +5035,14 @@ public interface DependenciesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENSAMBLADO__EOP = eINSTANCE.getEnsamblado_EOP();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Bank Channel</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENSAMBLADO__DEFAULT_BANK_CHANNEL = eINSTANCE.getEnsamblado_DefaultBankChannel();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.SecurityImpl <em>Security</em>}' class.
