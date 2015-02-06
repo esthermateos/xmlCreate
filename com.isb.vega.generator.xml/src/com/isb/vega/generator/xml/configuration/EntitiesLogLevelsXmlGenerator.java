@@ -140,7 +140,7 @@ public class EntitiesLogLevelsXmlGenerator extends XmlGenerator implements IEnti
 	/**
 	 * Devuelve la signatura de un método con tipos java en sus parámetros
 	 */
-	protected String getMethodSignature(ILoggeable logEntity)
+	public static String getMethodSignature(ILoggeable logEntity)
 	{
 		String methodSig = ""; //$NON-NLS-1$
 		IVegaProject[] projects = logEntity.getVegaProject().getVegaProjectsOnXmlPath();
@@ -155,7 +155,7 @@ public class EntitiesLogLevelsXmlGenerator extends XmlGenerator implements IEnti
 	 * Devuelve el nombre del componente formateado segun las categorias de log
 	 * que espera runtime.
 	 */
-	protected String getFormatedComponentName(ILoggeable compEntity, boolean underScoreSeparator)
+	public static String getFormatedComponentName(ILoggeable compEntity, boolean underScoreSeparator)
 	{
 		if (compEntity.getType() == ILoggeable.COMPONENT_TYPE ||
 			compEntity.getType() == ILoggeable.FACADE_INTERFACE_TYPE)
@@ -182,7 +182,7 @@ public class EntitiesLogLevelsXmlGenerator extends XmlGenerator implements IEnti
 	 * Devuelve el identificador para cada uno de los tipos de operaciones q
 	 * espera runtime
 	 */
-	protected String getOperationID(ILoggeable operEntity)
+	public static String getOperationID(ILoggeable operEntity)
 	{
 		String operationID = ""; //$NON-NLS-1$
 		switch (operEntity.getType())
@@ -205,7 +205,7 @@ public class EntitiesLogLevelsXmlGenerator extends XmlGenerator implements IEnti
 	 * @param loggeable
 	 * @return String
 	 */
-	protected String generateNamesForLoggeableElements(ILoggeable loggeable)
+	public String generateNamesForLoggeableElements(ILoggeable loggeable)
 	{
 		String name = ""; //$NON-NLS-1$
 		switch (loggeable.getType()) 

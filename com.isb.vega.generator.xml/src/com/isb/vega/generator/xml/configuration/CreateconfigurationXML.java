@@ -91,7 +91,7 @@ public class CreateconfigurationXML {
 						fachada = CreateEntities.createFacades(dependencies, iState);
 						listFachadas.add(fachada);
 					}
-	//				op.getEFachada().addAll(listFachadas);
+				op.getEFachada().addAll(listFachadas);
 				}			 
 			}	
 	

@@ -5,12 +5,16 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import com.isb.vega.generator.xml.configuration.EntitiesLogLevelsXmlGenerator.EntityAndLogLevels;
 import com.isb.vega.internal.model.assembly.AssemblyChannelAdapterReference;
 import com.isb.vega.internal.model.component.externalization.ComponentMethodSignature;
 import com.isb.vega.model.applogs.IAssemblyLoggeableComponent;
 import com.isb.vega.model.applogs.IAssemblyLoggeableEntity;
 import com.isb.vega.model.applogs.IAssemblyLoggeableMethod;
+import com.isb.vega.model.applogs.IAssemblyLoggeableOperation;
 import com.isb.vega.model.assembly.IAppReference;
 import com.isb.vega.model.assembly.IAssemblyFileData;
 import com.isb.vega.model.assembly.IAssemblyNode;
@@ -29,6 +33,7 @@ import com.isb.vega.model.channeladapter.IChannelAdapterMethod;
 import com.isb.vega.model.component.IBaseComponent;
 import com.isb.vega.model.component.IBaseComponentData;
 import com.isb.vega.model.component.IBaseMethod;
+import com.isb.vega.model.component.IComponent;
 import com.isb.vega.model.component.IImplLogMethod;
 import com.isb.vega.model.component.IMethod;
 import com.isb.vega.model.component.IPhysicalComponentData;
@@ -36,13 +41,16 @@ import com.isb.vega.model.component.UtilsComponents;
 import com.isb.vega.model.component.facade.IFacadeInterfaceMethod;
 import com.isb.vega.model.component.pl.IPLPhysicalComponent;
 import com.isb.vega.model.core.IVegaElement;
+import com.isb.vega.model.core.IVegaProject;
 import com.isb.vega.model.descriptors.xml.generator.IEntitiesLogLevelsXmlGenerator;
+import com.isb.vega.model.loglevels.ILogLevel;
 import com.isb.vega.model.loglevels.ILogLevelsContainer;
 import com.isb.vega.model.loglevels.ILoggeable;
 import com.isb.vega.model.operation.flow.IFlowOperationData;
 import com.isb.vega.model.operation.flow.IState;
 import com.isb.vega.model.operation.flow.state.facade.IFacadeInterfaceState;
 import com.isb.vega.model.preassembly.util.UtilsPreAssembly;
+import com.isb.vega.model.vegabeans.IVegaBeanPackage;
 import com.isb.vega.runtime.wrapper.manager.MessagingServiceManager;
 
 import dependencies.ChannelAdapter;
@@ -305,12 +313,18 @@ public class CreateEntities {
 	
 	public static void createLogLevel(IAssemblyFileData assemblyFileData, DependenciesFactory dependencies, Ensamblado ensamblado) {
 		IAssemblyNode[] nodos=assemblyFileData.getAssemblyDiagram().getAssemblyNodeContainer().getNodes();
-		List<LogLevel> list = getLogLevels(nodos, dependencies);
+		List<LogLevel> list = getLogLevels(nodos, dependencies, assemblyFileData);
+		if(assemblyFileData.getLogLevelsContainer().getLogLevels().length>0){
+			EntityAndLogLevels logEntity = new EntityAndLogLevels(assemblyFileData,assemblyFileData.getLogLevelsContainer(),assemblyFileData.getName(),IEntitiesLogLevelsXmlGenerator.ASSEMBLY_PRIORITY) ;
+			LogLevel loglevel= LoggeableEntity(logEntity,assemblyFileData, dependencies);
+			if(loglevel!=null)
+				list.add(loglevel);
+		}
 		ensamblado.getELogLevel().addAll(list);
 	
 	}
 
-	private static List<LogLevel>  getLogLevels(IAssemblyNode[] nodos, DependenciesFactory dependencies) {
+	private static List<LogLevel>  getLogLevels(IAssemblyNode[] nodos, DependenciesFactory dependencies, IAssemblyFileData assemblyFileData) {
 		
 		List <LogLevel>	 listLogLevels = new ArrayList<LogLevel>();	
 		List<EntityAndLogLevels> assemblyLogLevelsList = new ArrayList<EntityAndLogLevels>();
@@ -518,27 +532,29 @@ public class CreateEntities {
 			for (Iterator<EntityAndLogLevels> it=assemblyLogLevelsList.iterator(); it.hasNext();)
 			{
 				EntityAndLogLevels entityAndLogLevels = (EntityAndLogLevels) it.next();
-				LogLevel loglevel = dependencies.createLogLevel();
-				//loglevel.setId(value);
-				IVegaElement[] levelContainer = entityAndLogLevels.getLogLevelsContainer().getChildren();
-				List<Levels> levels = new ArrayList<Levels>();
-				for (IVegaElement iVegaElement : levelContainer) {
-					String level =iVegaElement.getFieldValue("name").toString();
-					Levels elevels = dependencies.createLevels();
-					elevels.setNameLevel(level);
-					levels.add(elevels);					
-				}
-				
-				loglevel.getELevels().addAll(levels);
-				loglevel.setLevelPriority(entityAndLogLevels.getPriority());
-				if(entityAndLogLevels.getPropagateLog()){
-					loglevel.setPropagation("true");
-				}else{
-					loglevel.setPropagation("false");
-				}
-				
-				loglevel.setPropagationPriority(entityAndLogLevels.getPropagationPriority());
-				listLogLevels.add(loglevel);		
+//				LogLevel loglevel = dependencies.createLogLevel();
+//				//loglevel.setId(value);
+//				IVegaElement[] levelContainer = entityAndLogLevels.getLogLevelsContainer().getChildren();
+//				List<Levels> levels = new ArrayList<Levels>();
+//				for (IVegaElement iVegaElement : levelContainer) {
+//					String level =iVegaElement.getFieldValue("name").toString();
+//					Levels elevels = dependencies.createLevels();
+//					elevels.setNameLevel(level);
+//					levels.add(elevels);					
+//				}
+//				
+//				loglevel.getELevels().addAll(levels);
+//				loglevel.setLevelPriority(entityAndLogLevels.getPriority());
+//				if(entityAndLogLevels.getPropagateLog()){
+//					loglevel.setPropagation("true");
+//				}else{
+//					loglevel.setPropagation("false");
+//				}
+//				
+//				loglevel.setPropagationPriority(entityAndLogLevels.getPropagationPriority());
+//				listLogLevels.add(loglevel);	
+				LogLevel loglevel = LoggeableEntity(entityAndLogLevels, assemblyFileData, dependencies);
+				listLogLevels.add(loglevel);
 			}
 			
 			
@@ -619,5 +635,172 @@ public class CreateEntities {
 		}
 		
 		return null;
+	}
+	
+	public static LogLevel LoggeableEntity(EntityAndLogLevels entityAndLogLevels, IAssemblyFileData assemblyfiledata, DependenciesFactory dependencies)
+	{    
+	    ILogLevelsContainer logLevelsConts = entityAndLogLevels.getLogLevelsContainer();
+	    LogLevel logLevelen =null;
+	 
+	    ILoggeable logEntity = entityAndLogLevels.getEntity();    
+	    
+	    if(!logLevelsConts.hasChildren() && entityAndLogLevels.getPropagationPriority() == IEntitiesLogLevelsXmlGenerator.MIN_PRIORITY)
+	        return null;
+	    
+	    String moduleName= entityAndLogLevels.getParentName();   
+	    
+	    String id = ""; //$NON-NLS-1$
+	    String idUnderScore = ""; //$NON-NLS-1$
+	    
+	    //solo escribimos categorias para los metodos y operaciones
+	     if(logEntity.getType()==ILoggeable.INTERNAL_OPERATION_TYPE ||
+   		 		logEntity.getType()==ILoggeable.PRESENTATION_OPERATION_TYPE ||
+   		 		(logEntity.getType()==ILoggeable.ASSEMBLY_TYPE &&
+ 				 ((IAssemblyLoggeableEntity)logEntity).getAssemblyType()==IAssemblyLoggeableEntity.ASSEMBLY_OPERATION_TYPE))
+	    {
+        	id+=getOperationID(logEntity);        
+            id+=IEntitiesLogLevelsXmlGenerator.CATEGORY_SEPARATOR+UtilsPreAssembly.generateNamesForLoggeableElements(logEntity).replace(IEntitiesLogLevelsXmlGenerator.CATEGORY_SEPARATOR,IEntitiesLogLevelsXmlGenerator.ELEMENT_SEPARATOR);
+            
+            logLevelen= getLogLevels(entityAndLogLevels, dependencies, logLevelsConts, id);
+            
+	    
+	    }
+	    else if (logEntity.getType()==ILoggeable.METHOD_TYPE ||
+	    		 (logEntity.getType()==ILoggeable.ASSEMBLY_TYPE &&
+				  ((IAssemblyLoggeableEntity)logEntity).getAssemblyType()==IAssemblyLoggeableEntity.ASSEMBLY_METHOD_TYPE))
+	    {
+            ILoggeable component = (ILoggeable)logEntity.getParent().getParent();
+            
+            boolean isPLCompMethod = false;
+            if(logEntity.getType()==ILoggeable.ASSEMBLY_TYPE)
+            {
+            	ILoggeable oriComp = UtilsPreAssembly.findOriginalElement((IAssemblyLoggeableEntity)component);
+            	if(oriComp!=null)
+            		isPLCompMethod = ((IBaseComponent)oriComp.getParent()).getComponentType().equals(IPLPhysicalComponent.PL_PHYSICAL_COMPONENT_TYPE);
+            }else
+            {
+            	IBaseComponent baseComp = (IBaseComponent)component.getParent();
+            	isPLCompMethod = baseComp.getComponentType().equals(IPLPhysicalComponent.PL_PHYSICAL_COMPONENT_TYPE);
+            }
+            
+            String compCat = IEntitiesLogLevelsXmlGenerator.COMPONENT_CATEGORY;
+            if(isPLCompMethod)
+            	compCat = IEntitiesLogLevelsXmlGenerator.PL_COMPONENT_CATEGORY;
+            
+            id += compCat+IEntitiesLogLevelsXmlGenerator.CATEGORY_SEPARATOR+moduleName+IEntitiesLogLevelsXmlGenerator.ELEMENT_SEPARATOR+getFormatedComponentName(component,false)+IEntitiesLogLevelsXmlGenerator.CATEGORY_SEPARATOR;
+            idUnderScore += compCat+IEntitiesLogLevelsXmlGenerator.CATEGORY_SEPARATOR+moduleName+IEntitiesLogLevelsXmlGenerator.ELEMENT_SEPARATOR+getFormatedComponentName(component,true)+IEntitiesLogLevelsXmlGenerator.CATEGORY_SEPARATOR;
+            
+            id+=getMethodSignature(logEntity); 
+            getLogLevels(entityAndLogLevels, dependencies, logLevelsConts, id);
+            idUnderScore+=getMethodSignature(logEntity);
+            if(!isPLCompMethod)
+            	logLevelen=getLogLevels(entityAndLogLevels, dependencies, logLevelsConts, id);
+	    }
+        else if(logEntity.getType()==ILoggeable.ASSEMBLY_GLOBAL_TYPE )
+        {
+        	id += IEntitiesLogLevelsXmlGenerator.ASSEMBLY_CATEGORY;
+        	logLevelen= getLogLevels(entityAndLogLevels, dependencies, logLevelsConts, id);
+        }
+            return logLevelen;    
+	}
+
+	private static LogLevel getLogLevels(EntityAndLogLevels entityAndLogLevels,
+			DependenciesFactory dependencies,
+			ILogLevelsContainer logLevelsConts, String id) {
+		//Creamos el log del ensamblado
+            LogLevel logLevel = dependencies.createLogLevel();
+            logLevel.setId(id);
+            if(entityAndLogLevels.getPropagateLog()){
+            	logLevel.setPropagation("true");
+            }else{
+            	logLevel.setPropagation("false");
+            }
+            logLevel.setPropagationPriority(entityAndLogLevels.getPropagationPriority());
+            logLevel.setLevelPriority(entityAndLogLevels.getPriority());
+            
+            List<Levels> listLevel = new ArrayList<Levels>();
+            for ( ILogLevel logLevelsCont : logLevelsConts.getLogLevels()) {
+            	Levels level = dependencies.createLevels();
+            	level.setNameLevel(logLevelsCont.getName());
+            	listLevel.add(level);
+			}
+            logLevel.getELevels().addAll(listLevel);
+          return logLevel;
+	}
+	
+	public static String getOperationID(ILoggeable operEntity)
+	{
+		String operationID = ""; //$NON-NLS-1$
+		
+		if (operEntity.getType()==ILoggeable.ASSEMBLY_TYPE)
+		{
+			IAssemblyLoggeableOperation assOp = (IAssemblyLoggeableOperation) operEntity;
+			if (assOp.getOperationType().equals(IAssemblyLoggeableOperation.INTERNAL_OPERATION_TYPE))
+				operationID = IEntitiesLogLevelsXmlGenerator.OI_OPERATION_CATEGORY;
+			else if (assOp.getOperationType().equals(IAssemblyLoggeableOperation.PRESENTATION_OPERATION_TYPE))
+				operationID = IEntitiesLogLevelsXmlGenerator.OP_OPERATION_CATEGORY;
+			
+			return operationID;
+		}
+		else
+			return EntitiesLogLevelsXmlGenerator.getOperationID(operEntity);
+	}
+	
+	public static String getFormatedComponentName(ILoggeable compEntity, boolean underScoreSeparator)
+	{
+		if (compEntity.getType()==ILoggeable.ASSEMBLY_TYPE)
+		{
+			// si es un componente del ensamblado, 1º buscamos el original
+			String qualifiedComponentName = ((IAssemblyLoggeableComponent) compEntity).getName();
+			IVegaProject[] vegaProjects = compEntity.getVegaProject().getVegaProjectsOnXmlPath();
+			IComponent comp = UtilsComponents.findComponent(vegaProjects, qualifiedComponentName);
+
+			String compName = null;
+			String pkName = null;
+			if (comp != null)
+			{
+				// si existe, ya tenemos todo
+				compName = comp.getElementId();
+				pkName = comp.getParentVegaBeanPackage().getElementId();
+			}
+			else
+			{
+				// si no existe, obtenemos todo del identificador de la entidad
+				// del ensamblado
+				int index = qualifiedComponentName.lastIndexOf(IVegaBeanPackage.QUALIFIED_NAME_SEPARATOR);
+				compName = qualifiedComponentName.substring(index + 1);
+				pkName = qualifiedComponentName.substring(0, index - 1);
+			}
+			
+			if (underScoreSeparator)
+				return pkName.replace(IEntitiesLogLevelsXmlGenerator.CATEGORY_SEPARATOR, IEntitiesLogLevelsXmlGenerator.NAME_SEPARATOR) + 
+						IEntitiesLogLevelsXmlGenerator.NAME_SEPARATOR + 
+					   compName.replace(IEntitiesLogLevelsXmlGenerator.CATEGORY_SEPARATOR, IEntitiesLogLevelsXmlGenerator.NAME_SEPARATOR);
+			else
+				return pkName.replace(IEntitiesLogLevelsXmlGenerator.CATEGORY_SEPARATOR, IEntitiesLogLevelsXmlGenerator.NAME_SEPARATOR) + 
+						IEntitiesLogLevelsXmlGenerator.ELEMENT_SEPARATOR + 
+					   compName.replace(IEntitiesLogLevelsXmlGenerator.CATEGORY_SEPARATOR, IEntitiesLogLevelsXmlGenerator.NAME_SEPARATOR);
+		}
+		else
+			return EntitiesLogLevelsXmlGenerator.getFormatedComponentName(compEntity, underScoreSeparator);
+	}	
+	
+	public static String getMethodSignature(ILoggeable logEntity)
+	{
+		String methodSig = ""; //$NON-NLS-1$
+		IVegaProject[] projects = logEntity.getVegaProject().getVegaProjectsOnXmlPath();
+
+		if(logEntity.getType()!=ILoggeable.METHOD_TYPE)
+		{
+			ILoggeable method = UtilsPreAssembly.findOriginalElement((IAssemblyLoggeableEntity)logEntity);
+			if(method!=null)
+				methodSig = new ComponentMethodSignature((IImplLogMethod)method).toStringWithJavaTypes(projects);
+			else
+				methodSig = logEntity.getElementId();
+			
+			return methodSig.replace(IEntitiesLogLevelsXmlGenerator.CATEGORY_SEPARATOR,IEntitiesLogLevelsXmlGenerator.NAME_SEPARATOR);
+		}
+		else
+			return EntitiesLogLevelsXmlGenerator.getMethodSignature(logEntity);
 	}
 }
