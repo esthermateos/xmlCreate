@@ -1,10 +1,8 @@
 package com.isb.vega.externalization.generator.xml
 
 import dependencies.LogLevel
-import org.eclipse.emf.common.util.EList
-import dependencies.JMS
-import java.util.ArrayList
 import java.util.List
+import org.eclipse.emf.common.util.EList
 
 class AssemblyUtils {
 	

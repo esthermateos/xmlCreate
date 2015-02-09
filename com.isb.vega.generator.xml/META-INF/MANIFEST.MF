@@ -6,8 +6,6 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.isb.vega.generator.xml.activator.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- com.isb.san.vega.alm.support;bundle-version="4.1.2",
- com.isb.bks.provider.information;bundle-version="2.0.5",
  com.isb.vega.model.api,
  com.isb.vega.model.component,
  com.isb.vega.model.operation.flow.state.component,
