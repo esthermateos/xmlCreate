@@ -523,7 +523,7 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public static Writer compile(final File target, final Ensamblado ensamblado, final List<String> listPort, final List<String> listModules) {
+  public Writer compile(final File target, final Ensamblado ensamblado, final List<String> listPort, final List<String> listModules) {
     XmlGeneratorNew _xmlGeneratorNew = new XmlGeneratorNew(ensamblado, listPort, listModules);
     Writer _generate = _xmlGeneratorNew.generate(target);
     return _generate;

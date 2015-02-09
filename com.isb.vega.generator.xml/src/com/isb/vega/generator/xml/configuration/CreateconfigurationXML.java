@@ -45,7 +45,7 @@ public class CreateconfigurationXML {
 	List<Fachada> listFachadas = new ArrayList<Fachada>();
 	IAssemblyProject assemblyProject;
 	
-	public  void  getConfigurationXML(String name, String ruta) {
+	public void  getConfigurationXML(String name, String ruta) {
 			IProject iProject = ResourcesPlugin.getWorkspace().getRoot().getProject(name);
 			IVegaProject vegaProject = UtilsProjectsApi.findVegProjectInVegaCore(iProject);
 			
@@ -131,7 +131,8 @@ public class CreateconfigurationXML {
 				listModules.add(jms.getJmsModules());
 			}
 
-			XmlGeneratorNew.compile(configuration, ensamblado,listPort, listModules);
+			XmlGeneratorNew xmlGeneratorNew= new XmlGeneratorNew(ensamblado, listModules, listModules);
+			xmlGeneratorNew.compile(configuration, ensamblado,listPort, listModules);
 	
 	}
 

@@ -183,7 +183,7 @@ class XmlGeneratorNew {
 		'''
 		
 	
-	def static compile(File target, Ensamblado ensamblado, List<String> listPort, List<String>listModules) {
+	def compile(File target, Ensamblado ensamblado, List<String> listPort, List<String>listModules) {
 		new XmlGeneratorNew(ensamblado, listPort, listModules).generate(target);
 	}
 }
