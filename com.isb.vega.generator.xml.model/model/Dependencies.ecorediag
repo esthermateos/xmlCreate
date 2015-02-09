@@ -467,6 +467,10 @@
         <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//MultiProfile/catOrden"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_wRXMgZ2FEeSbH_vgVaYtAQ"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_hV-2wLBnEeSwZtcT6LkKWg" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Dependencies.ecore#//MultiProfile/mode"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_hV-2wbBnEeSwZtcT6LkKWg"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_zpy9ZZ2EEeSbH_vgVaYtAQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_zpy9Zp2EEeSbH_vgVaYtAQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_zpy9Z52EEeSbH_vgVaYtAQ"/>

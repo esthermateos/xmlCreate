@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link dependencies.impl.MultiProfileImpl#getCatEmpresaAsociada <em>Cat Empresa Asociada</em>}</li>
  *   <li>{@link dependencies.impl.MultiProfileImpl#getCatRender <em>Cat Render</em>}</li>
  *   <li>{@link dependencies.impl.MultiProfileImpl#getCatOrden <em>Cat Orden</em>}</li>
+ *   <li>{@link dependencies.impl.MultiProfileImpl#getMode <em>Mode</em>}</li>
  * </ul>
  * </p>
  *
@@ -213,6 +214,26 @@ public class MultiProfileImpl extends MinimalEObjectImpl.Container implements Mu
 	 * @ordered
 	 */
 	protected String catOrden = CAT_ORDEN_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMode() <em>Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMode()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MODE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMode() <em>Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMode()
+	 * @generated
+	 * @ordered
+	 */
+	protected String mode = MODE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -427,6 +448,27 @@ public class MultiProfileImpl extends MinimalEObjectImpl.Container implements Mu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getMode() {
+		return mode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMode(String newMode) {
+		String oldMode = mode;
+		mode = newMode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.MULTI_PROFILE__MODE, oldMode, mode));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -448,6 +490,8 @@ public class MultiProfileImpl extends MinimalEObjectImpl.Container implements Mu
 				return getCatRender();
 			case DependenciesPackage.MULTI_PROFILE__CAT_ORDEN:
 				return getCatOrden();
+			case DependenciesPackage.MULTI_PROFILE__MODE:
+				return getMode();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -486,6 +530,9 @@ public class MultiProfileImpl extends MinimalEObjectImpl.Container implements Mu
 				return;
 			case DependenciesPackage.MULTI_PROFILE__CAT_ORDEN:
 				setCatOrden((String)newValue);
+				return;
+			case DependenciesPackage.MULTI_PROFILE__MODE:
+				setMode((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -526,6 +573,9 @@ public class MultiProfileImpl extends MinimalEObjectImpl.Container implements Mu
 			case DependenciesPackage.MULTI_PROFILE__CAT_ORDEN:
 				setCatOrden(CAT_ORDEN_EDEFAULT);
 				return;
+			case DependenciesPackage.MULTI_PROFILE__MODE:
+				setMode(MODE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -556,6 +606,8 @@ public class MultiProfileImpl extends MinimalEObjectImpl.Container implements Mu
 				return CAT_RENDER_EDEFAULT == null ? catRender != null : !CAT_RENDER_EDEFAULT.equals(catRender);
 			case DependenciesPackage.MULTI_PROFILE__CAT_ORDEN:
 				return CAT_ORDEN_EDEFAULT == null ? catOrden != null : !CAT_ORDEN_EDEFAULT.equals(catOrden);
+			case DependenciesPackage.MULTI_PROFILE__MODE:
+				return MODE_EDEFAULT == null ? mode != null : !MODE_EDEFAULT.equals(mode);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -588,6 +640,8 @@ public class MultiProfileImpl extends MinimalEObjectImpl.Container implements Mu
 		result.append(catRender);
 		result.append(", catOrden: ");
 		result.append(catOrden);
+		result.append(", mode: ");
+		result.append(mode);
 		result.append(')');
 		return result.toString();
 	}

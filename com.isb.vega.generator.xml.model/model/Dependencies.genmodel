@@ -127,6 +127,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//MultiProfile/catEmpresaAsociada"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//MultiProfile/catRender"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//MultiProfile/catOrden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//MultiProfile/mode"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//Java">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Java/eFachada"/>

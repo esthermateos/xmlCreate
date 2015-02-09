@@ -1307,6 +1307,15 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMultiProfile_Mode() {
+		return (EAttribute)multiProfileEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getJava() {
 		return javaEClass;
 	}
@@ -2108,6 +2117,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		createEAttribute(multiProfileEClass, MULTI_PROFILE__CAT_EMPRESA_ASOCIADA);
 		createEAttribute(multiProfileEClass, MULTI_PROFILE__CAT_RENDER);
 		createEAttribute(multiProfileEClass, MULTI_PROFILE__CAT_ORDEN);
+		createEAttribute(multiProfileEClass, MULTI_PROFILE__MODE);
 
 		javaEClass = createEClass(JAVA);
 		createEReference(javaEClass, JAVA__EFACHADA);
@@ -2352,6 +2362,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEAttribute(getMultiProfile_CatEmpresaAsociada(), ecorePackage.getEString(), "catEmpresaAsociada", null, 0, 1, MultiProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMultiProfile_CatRender(), ecorePackage.getEString(), "catRender", null, 0, 1, MultiProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMultiProfile_CatOrden(), ecorePackage.getEString(), "catOrden", null, 0, 1, MultiProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMultiProfile_Mode(), ecorePackage.getEString(), "mode", null, 0, 1, MultiProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(javaEClass, Java.class, "Java", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getJava_EFachada(), this.getFachada(), null, "eFachada", null, 0, 1, Java.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

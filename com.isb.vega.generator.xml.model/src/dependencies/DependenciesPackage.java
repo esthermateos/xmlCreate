@@ -1267,13 +1267,22 @@ public interface DependenciesPackage extends EPackage {
 	int MULTI_PROFILE__CAT_ORDEN = 8;
 
 	/**
+	 * The feature id for the '<em><b>Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PROFILE__MODE = 9;
+
+	/**
 	 * The number of structural features of the '<em>Multi Profile</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_PROFILE_FEATURE_COUNT = 9;
+	int MULTI_PROFILE_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Multi Profile</em>' class.
@@ -3471,6 +3480,17 @@ public interface DependenciesPackage extends EPackage {
 	EAttribute getMultiProfile_CatOrden();
 
 	/**
+	 * Returns the meta object for the attribute '{@link dependencies.MultiProfile#getMode <em>Mode</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mode</em>'.
+	 * @see dependencies.MultiProfile#getMode()
+	 * @see #getMultiProfile()
+	 * @generated
+	 */
+	EAttribute getMultiProfile_Mode();
+
+	/**
 	 * Returns the meta object for class '{@link dependencies.Java <em>Java</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5175,6 +5195,14 @@ public interface DependenciesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MULTI_PROFILE__CAT_ORDEN = eINSTANCE.getMultiProfile_CatOrden();
+
+		/**
+		 * The meta object literal for the '<em><b>Mode</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MULTI_PROFILE__MODE = eINSTANCE.getMultiProfile_Mode();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.JavaImpl <em>Java</em>}' class.

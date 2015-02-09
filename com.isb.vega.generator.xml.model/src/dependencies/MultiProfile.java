@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dependencies.MultiProfile#getCatEmpresaAsociada <em>Cat Empresa Asociada</em>}</li>
  *   <li>{@link dependencies.MultiProfile#getCatRender <em>Cat Render</em>}</li>
  *   <li>{@link dependencies.MultiProfile#getCatOrden <em>Cat Orden</em>}</li>
+ *   <li>{@link dependencies.MultiProfile#getMode <em>Mode</em>}</li>
  * </ul>
  * </p>
  *
@@ -262,5 +263,31 @@ public interface MultiProfile extends EObject {
 	 * @generated
 	 */
 	void setCatOrden(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mode</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mode</em>' attribute.
+	 * @see #setMode(String)
+	 * @see dependencies.DependenciesPackage#getMultiProfile_Mode()
+	 * @model
+	 * @generated
+	 */
+	String getMode();
+
+	/**
+	 * Sets the value of the '{@link dependencies.MultiProfile#getMode <em>Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mode</em>' attribute.
+	 * @see #getMode()
+	 * @generated
+	 */
+	void setMode(String value);
 
 } // MultiProfile
