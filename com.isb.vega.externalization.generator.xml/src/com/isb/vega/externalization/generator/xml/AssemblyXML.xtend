@@ -47,7 +47,11 @@ class AssemblyXML {
 		«ENDIF»
 		«IF (ensamblado.EMultiProfile!=null)»
 		<aebMultis>
+			«IF ensamblado.EMultiProfile.mode!=null && !ensamblado.EMultiProfile.toString.equals("")»
+			<mode>«ensamblado.EMultiProfile.mode»</mode>
+			«ELSE»
 			<mode/>
+			«ENDIF»
 			«MultisCategories.doGenerateMultiCategories(ensamblado.EMultiProfile)»
 		</aebMultis>
 		«ELSE»

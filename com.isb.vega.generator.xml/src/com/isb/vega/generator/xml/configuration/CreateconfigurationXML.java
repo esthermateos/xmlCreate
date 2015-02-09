@@ -5,8 +5,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.soap.Node;
+
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import com.isb.vega.externalization.generator.xml.XmlGeneratorNew;
 import com.isb.vega.internal.model.assembly.AssemblyProject;
@@ -44,11 +53,15 @@ public class CreateconfigurationXML {
 	Fachada fachada;
 	List<Fachada> listFachadas = new ArrayList<Fachada>();
 	IAssemblyProject assemblyProject;
+	String scenaryName;
+
 	
 	public void  getConfigurationXML(String name, String ruta) {
 			IProject iProject = ResourcesPlugin.getWorkspace().getRoot().getProject(name);
 			IVegaProject vegaProject = UtilsProjectsApi.findVegProjectInVegaCore(iProject);
-			
+			if(vegaProject==null){
+				System.err.print("El ensamblado que se ha introducido no existe en el WorkSpace");
+			}else{
 			//a partir de la conversión del objeto vegaProject obtenemos el fichero de ensamblado, mediante el cual 
 			// vamos a ir cargando todo el ECORE
 			if (vegaProject instanceof AssemblyProject){ 
@@ -73,9 +86,14 @@ public class CreateconfigurationXML {
 			iscenarios = UtilsDependencies.getScenarios(vegaProject, iscenarios, assemblyFile);
 			for (IScenario scenario : iscenarios) 
 			{				
+				scenaryName = getScenaryName(scenario);				
 				ScenarioExternalizationContributor scenarioExternalizationContributor = new ScenarioExternalizationContributor();
 				operation = scenarioExternalizationContributor.contributeOperations(scenario);
+				
 			}
+			//Actualizamos el mode del modelo dentro de la entidad MultiProfile.
+			ensamblado.getEMultiProfile().setMode(getMode(scenaryName, iProject));
+			
 //	
 			List<IOperation> listOPs = UtilsDependencies.getlist(operation, UtilsOperations.OP_OPERATIONS);
 		//	List<IOperation> listOIs = UtilsDependencies.getlist(operation, UtilsOperations.OI_OPERATIONS);
@@ -97,6 +115,75 @@ public class CreateconfigurationXML {
 			}	
 		
 			//Creamos el fichero en la ruta dada
+			File configuration = createFile(name, ruta, iProject);
+			
+			if(configuration==null){
+				System.err.print("El ensamblado que se ha introducido no existe en el WorkSpace");
+			}else{
+				//Externalizamos los datos del modelo	
+				List <String> listPort = new ArrayList<String>();
+				List <String> listModules = new ArrayList<String>();
+				for (JMS jms : ensamblado.getEJMS()) {
+					listPort.add(jms.getListenerPorts());
+					listModules.add(jms.getJmsModules());
+				}
+	
+				XmlGeneratorNew xmlGeneratorNew= new XmlGeneratorNew(ensamblado, listModules, listModules);
+				xmlGeneratorNew.compile(configuration, ensamblado,listPort, listModules);
+			}
+			}
+	
+	}
+
+	private String getMode(String scenary, IProject iProject) {
+		String mode = null;
+		String rutaProject= iProject.getLocationURI().getPath().toString();
+		rutaProject= rutaProject.substring(0, rutaProject.lastIndexOf("/")+1).concat(scenary).concat("/JavaSource/").concat(scenary).concat("_descriptor.xml");
+		File file = new File(rutaProject);
+		if(file.exists()){
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db;
+			try {
+				db = dbf.newDocumentBuilder();
+				Document doc = db.parse(file);
+				doc.getDocumentElement().normalize();
+				NodeList nodeLst = doc.getElementsByTagName("init-param");
+				for (int s = 0; s < nodeLst.getLength(); s++) {
+					org.w3c.dom.Node fstNode = nodeLst.item(s);
+					Element fstElmnt = (Element) fstNode;
+				    NodeList fstNmElmntLst = fstElmnt.getElementsByTagName("param-name");
+				    Element fstNmElmnt = (Element) fstNmElmntLst.item(0);
+				    NodeList fstNm = fstNmElmnt.getChildNodes();
+				    if(fstNm.item(0).getNodeValue().equals("RigelProp_aeb_newMultisMode")){
+				    	NodeList lstNmElmntLst = fstElmnt.getElementsByTagName("param-value");
+				        Element lstNmElmnt = (Element) lstNmElmntLst.item(0);
+				        NodeList lstNm = lstNmElmnt.getChildNodes();
+				        mode = lstNm.item(0).getNodeValue();
+				        break;
+				    }
+				}
+				
+			} catch (ParserConfigurationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SAXException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}		
+		return mode;
+	}
+
+	private String getScenaryName(IScenario scenario) {
+		return scenario.getParent().getParent().getParent().getElementId().toString();
+	}
+
+	private File createFile(String name, String ruta, IProject iProject) {
+		if(iProject.getLocationURI()!=null){
 			String rutaProject= iProject.getLocationURI().getPath().toString();
 			rutaProject = rutaProject.substring(0, rutaProject.lastIndexOf(name)-1);
 			if(!ruta.startsWith("/")){
@@ -114,7 +201,7 @@ public class CreateconfigurationXML {
 			if(!filePath.exists()){
 				filePath.mkdirs();
 			}
-
+	
 			File configuration = new File(rutaFinal, "configuration.xml");
 			try {
 				configuration.createNewFile();
@@ -122,18 +209,9 @@ public class CreateconfigurationXML {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			//Externalizamos los datos del modelo	
-			List <String> listPort = new ArrayList<String>();
-			List <String> listModules = new ArrayList<String>();
-			for (JMS jms : ensamblado.getEJMS()) {
-				listPort.add(jms.getListenerPorts());
-				listModules.add(jms.getJmsModules());
-			}
-
-			XmlGeneratorNew xmlGeneratorNew= new XmlGeneratorNew(ensamblado, listModules, listModules);
-			xmlGeneratorNew.compile(configuration, ensamblado,listPort, listModules);
-	
+			return configuration;
+		}
+		return null;
 	}
 
 	public void getDefaultBankChannel(Ensamblado ensamblado) {

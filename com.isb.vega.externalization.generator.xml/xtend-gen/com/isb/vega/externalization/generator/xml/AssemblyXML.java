@@ -251,14 +251,40 @@ public class AssemblyXML {
         _builder.append("\t");
         _builder.append("<aebMultis>");
         _builder.newLine();
+        {
+          boolean _and_7 = false;
+          MultiProfile _eMultiProfile_1 = ensamblado.getEMultiProfile();
+          String _mode = _eMultiProfile_1.getMode();
+          boolean _notEquals_10 = (!Objects.equal(_mode, null));
+          if (!_notEquals_10) {
+            _and_7 = false;
+          } else {
+            MultiProfile _eMultiProfile_2 = ensamblado.getEMultiProfile();
+            String _string_12 = _eMultiProfile_2.toString();
+            boolean _equals_7 = _string_12.equals("");
+            boolean _not_7 = (!_equals_7);
+            _and_7 = (_notEquals_10 && _not_7);
+          }
+          if (_and_7) {
+            _builder.append("\t");
+            _builder.append("\t");
+            _builder.append("<mode>");
+            MultiProfile _eMultiProfile_3 = ensamblado.getEMultiProfile();
+            String _mode_1 = _eMultiProfile_3.getMode();
+            _builder.append(_mode_1, "		");
+            _builder.append("</mode>");
+            _builder.newLineIfNotEmpty();
+          } else {
+            _builder.append("\t");
+            _builder.append("\t");
+            _builder.append("<mode/>");
+            _builder.newLine();
+          }
+        }
         _builder.append("\t");
         _builder.append("\t");
-        _builder.append("<mode/>");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("\t");
-        MultiProfile _eMultiProfile_1 = ensamblado.getEMultiProfile();
-        CharSequence _doGenerateMultiCategories = MultisCategories.doGenerateMultiCategories(_eMultiProfile_1);
+        MultiProfile _eMultiProfile_4 = ensamblado.getEMultiProfile();
+        CharSequence _doGenerateMultiCategories = MultisCategories.doGenerateMultiCategories(_eMultiProfile_4);
         _builder.append(_doGenerateMultiCategories, "		");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
@@ -272,8 +298,8 @@ public class AssemblyXML {
     }
     {
       EList<JMS> _eJMS = ensamblado.getEJMS();
-      boolean _notEquals_10 = (!Objects.equal(_eJMS, null));
-      if (_notEquals_10) {
+      boolean _notEquals_11 = (!Objects.equal(_eJMS, null));
+      if (_notEquals_11) {
         _builder.append("\t");
         CharSequence _doGenerateJMS = AssemblyUtils.doGenerateJMS(listPort, listModules);
         _builder.append(_doGenerateJMS, "	");
