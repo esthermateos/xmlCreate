@@ -233,8 +233,6 @@ public class Connectors {
             _builder.append("<trxOpStates>");
             _builder.newLine();
             _builder.append("\t\t");
-            _builder.newLine();
-            _builder.append("\t\t");
             _builder.append("<trxOpState>");
             _builder.newLine();
             _builder.append("\t\t\t");
@@ -267,8 +265,6 @@ public class Connectors {
             _builder.newLine();
             _builder.append("\t\t");
             _builder.append("</trxOpState>");
-            _builder.newLine();
-            _builder.append("\t\t");
             _builder.newLine();
             _builder.append("\t");
             _builder.append("</trxOpStates>");
@@ -584,8 +580,6 @@ public class Connectors {
             _builder.append("<satStates>");
             _builder.newLine();
             _builder.append("\t\t");
-            _builder.newLine();
-            _builder.append("\t\t");
             _builder.append("<satState>");
             _builder.newLine();
             _builder.append("\t\t\t");
@@ -602,8 +596,6 @@ public class Connectors {
             _builder.newLineIfNotEmpty();
             _builder.append("\t\t");
             _builder.append("</satState>");
-            _builder.newLine();
-            _builder.append("\t\t");
             _builder.newLine();
             _builder.append("\t");
             _builder.append("</satStates>");
@@ -752,8 +744,6 @@ public class Connectors {
             _builder.append("<altairStates>");
             _builder.newLine();
             _builder.append("\t\t");
-            _builder.newLine();
-            _builder.append("\t\t");
             _builder.append("<altairState>");
             _builder.newLine();
             _builder.append("\t\t\t");
@@ -770,8 +760,6 @@ public class Connectors {
             _builder.newLineIfNotEmpty();
             _builder.append("\t\t");
             _builder.append("</altairState>\t\t\t\t");
-            _builder.newLine();
-            _builder.append("\t\t");
             _builder.newLine();
             _builder.append("\t");
             _builder.append("</altairStates>");
@@ -821,8 +809,6 @@ public class Connectors {
     _builder.append("<bbooStates>");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.newLine();
-    _builder.append("\t\t");
     _builder.append("<bbooState>");
     _builder.newLine();
     _builder.append("\t\t");
@@ -844,8 +830,6 @@ public class Connectors {
     _builder.append("\t\t");
     _builder.append("</bbooState>");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.newLine();
     _builder.append("\t");
     _builder.append("</bbooStates>");
     _builder.newLine();
@@ -860,8 +844,6 @@ public class Connectors {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("<siebelStates>");
-    _builder.newLine();
-    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("<siebelState>");
@@ -885,8 +867,6 @@ public class Connectors {
     _builder.append("\t\t");
     _builder.append("</siebelState>");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.newLine();
     _builder.append("\t");
     _builder.append("</siebelStates>");
     _builder.newLine();
@@ -901,8 +881,6 @@ public class Connectors {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("<tpStates>");
-    _builder.newLine();
-    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("<tpState>");
@@ -925,8 +903,6 @@ public class Connectors {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("</tpState>");
-    _builder.newLine();
-    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("</tpStates>");

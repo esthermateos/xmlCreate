@@ -47,8 +47,6 @@ class Connectors {
 				«ENDIF»			
 			</trxOpPyshicalChannels>
 			<trxOpStates>
-				«//FOR
-				»
 				<trxOpState>
 					«Utils.doGenerateFieldStatesHead»
 					<transaction>«»</transaction>
@@ -58,8 +56,6 @@ class Connectors {
 					<protocol>«»</protocol>
 					<transactionMode>«»</transactionMode>
 				</trxOpState>
-				«//ENDFOR
-				»
 			</trxOpStates>
 		</trxOp>
 		«ELSE»
@@ -135,15 +131,11 @@ class Connectors {
 				«ENDIF»
 			</satPyshicalChannels>
 			<satStates>
-				«//FOR
-				»
 				<satState>
 					«Utils.doGenerateFieldStatesHead»
 					<satName>«»</satName>
 					«Utils.doGenerateFieldStatesFoot»
 				</satState>
-				«//ENDFOR
-				»
 			</satStates>
 		</sat>
 		«ELSE»
@@ -189,15 +181,11 @@ class Connectors {
 			<altairAlias/>
 			«ENDIF»
 			<altairStates>
-				«//FOR
-				»
 				<altairState>
 					«Utils.doGenerateFieldStatesHead»
 					<transaction>«»</transaction>
 					«Utils.doGenerateFieldStatesFoot»
 				</altairState>				
-				«//ENDFOR
-				»
 			</altairStates>
 		</altair>
 		«ELSE»
@@ -220,16 +208,12 @@ class Connectors {
     '''
 	<bboo>
 		<bbooStates>
-			«//FOR
-			»
 			<bbooState>
 			«Utils.doGenerateFieldStatesHead»
 			<alias>«»</alias>
 			<document>«»</document>
 			<provider>«»</provider>
 			</bbooState>
-			«//ENDFOR
-			»
 		</bbooStates>
 	</bboo>	
 	'''
@@ -238,16 +222,12 @@ class Connectors {
     '''
 	<siebel>
 		<siebelStates>
-			«//FOR
-			»
 			<siebelState>
 				«Utils.doGenerateFieldStatesHead»
 				<server>«»</server>
 				<object>«»</type>
 				<request>«»</request>
 			</siebelState>
-			«//ENDFOR
-			»
 		</siebelStates>
 	</siebel>	
 	'''	
@@ -256,16 +236,12 @@ class Connectors {
     '''
 	<tp>
 		<tpStates>
-			«//FOR
-			»
 			<tpState>
 				«Utils.doGenerateFieldStatesHead»
 				<code>«»</code>
 				<type>«»</type>
 				<subtype>«»</subtype>
 			</tpState>
-			«//ENDFOR
-			»
 		</tpStates>
 	</tp>	
 	'''
