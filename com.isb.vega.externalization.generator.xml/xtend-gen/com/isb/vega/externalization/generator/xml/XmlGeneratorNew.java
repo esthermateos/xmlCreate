@@ -177,7 +177,7 @@ public class XmlGeneratorNew {
     _builder.newLine();
     _builder.append("<configuration>");
     _builder.newLine();
-    _builder.append("<appmetainf createBy=\"ALMSupport\" date=\"");
+    _builder.append("<appmetainf createdBy=\"ALMSupport\" date=\"");
     String _Date = GetDate.Date();
     _builder.append(_Date, "");
     _builder.append("\" version=\"2.0\">");
@@ -285,7 +285,7 @@ public class XmlGeneratorNew {
             {
               for(final ChannelAdapter channelAdapter : channelAdapters) {
                 _builder.append("\t");
-                _builder.append("<channelAdapters>");
+                _builder.append("<channelAdapter>");
                 _builder.newLine();
                 {
                   boolean _and = false;

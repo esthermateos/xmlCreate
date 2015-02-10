@@ -95,6 +95,10 @@ public class Global {
     _builder.append("<src>");
     _builder.append("</src>");
     _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<reference>");
+    _builder.append("</reference>");
+    _builder.newLine();
     _builder.append("\t");
     _builder.append("</clientArcRef>");
     _builder.newLine();

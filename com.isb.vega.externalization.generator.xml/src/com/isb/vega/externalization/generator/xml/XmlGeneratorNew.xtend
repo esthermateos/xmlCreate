@@ -77,7 +77,7 @@ class XmlGeneratorNew {
 		def doGenerateHeader() '''
 		<?xml version="1.0" encoding="ISO-8859-1"?>
 		<configuration>
-		<appmetainf createBy="ALMSupport" date="«GetDate.Date()»" version="2.0">
+		<appmetainf createdBy="ALMSupport" date="«GetDate.Date()»" version="2.0">
 	'''
 	
 		def doGenerateSQLComponents() '''
@@ -115,7 +115,7 @@ class XmlGeneratorNew {
 		«IF channelAdapters!=null»
 		<channelAdapters>
 			«FOR channelAdapter : channelAdapters»
-			<channelAdapters>
+			<channelAdapter>
 				«IF channelAdapter.name!=null && !channelAdapter.name.toString.equals("")»
 					<adapterName>«channelAdapter.name»</adapterName>
 				«ELSE»

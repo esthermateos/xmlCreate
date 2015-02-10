@@ -19,7 +19,7 @@ class AssemblyXML {
 		«IF (ensamblado.EEnsamblado!=null)»
 		<assemblySecurity>
 			«IF ensamblado.EEnsamblado.autentication!=null && !ensamblado.EEnsamblado.autentication.toString.equals("")»
-			<authenticationEnabled>«ensamblado.EEnsamblado.autentication.toString»</assemblySecurity>
+			<authenticationEnabled>«ensamblado.EEnsamblado.autentication.toString»</authenticationEnabled>
 			«ELSE»
 			<authenticationEnabled/>
 			«ENDIF»

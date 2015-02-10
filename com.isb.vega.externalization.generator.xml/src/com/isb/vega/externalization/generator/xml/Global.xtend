@@ -30,6 +30,7 @@ class Global {
 			<presentationOP>«»</presentationOP>
 			<version>«»</version>
 			<src>«»</src>
+			<reference>«»</reference>
 		</clientArcRef>
 	</clientArcReferences>
 	'''

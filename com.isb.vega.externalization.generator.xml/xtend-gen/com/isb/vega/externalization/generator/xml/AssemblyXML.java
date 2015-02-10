@@ -102,7 +102,7 @@ public class AssemblyXML {
             String _autentication_2 = _eEnsamblado_3.getAutentication();
             String _string_3 = _autentication_2.toString();
             _builder.append(_string_3, "		");
-            _builder.append("</assemblySecurity>");
+            _builder.append("</authenticationEnabled>");
             _builder.newLineIfNotEmpty();
           } else {
             _builder.append("\t");
