@@ -50,7 +50,7 @@ public class CreateEntities {
 
 
 	Fachada fachada;
-	UtilsDependencies utilsDependencies;
+	UtilsDependencies utilsDependencies = new UtilsDependencies();
 	/** Rellena la entidad fachada a partir del State proporcionado.
 	 * @param dependencies - Factoría de entidades del modelo
 	 * @param iState - estado de interfaz de fachada
@@ -60,14 +60,13 @@ public class CreateEntities {
 	public Fachada createFacades(DependenciesFactory dependencies,
 			IState iState) {
 		List<Fachada> listFachada = new ArrayList<Fachada>();
-		if(iState instanceof IFacadeInterfaceState){
 			IFacadeInterfaceState facadeState = (IFacadeInterfaceState)iState;					
 			fachada = dependencies.createFachada();
 			fachada.setFacadeName(facadeState.getFacade());
 			fachada.setMethodName(facadeState.getName());
 			fachada.setInterfazName(facadeState.getFacadeInterface());
 			listFachada.add(fachada);
-		}
+	 
 		return fachada;
 	}
 

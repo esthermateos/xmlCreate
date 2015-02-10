@@ -31,6 +31,7 @@ import com.isb.vega.model.operation.IOperationData;
 import com.isb.vega.model.operation.UtilsOperations;
 import com.isb.vega.model.operation.flow.IFlowOperationData;
 import com.isb.vega.model.operation.flow.IState;
+import com.isb.vega.model.operation.flow.state.facade.IFacadeInterfaceState;
 import com.isb.vega.model.scenario.IScenario;
 
 import dependencies.DependenciesFactory;
@@ -47,12 +48,12 @@ public class CreateconfigurationXML {
 	IOperation[] operation;
 	IScenario[] iscenarios;
 	DependenciesFactory dependencies = DependenciesFactory.eINSTANCE;
-	Fachada fachada;
+	
 	List<Fachada> listFachadas = new ArrayList<Fachada>();
 	IAssemblyProject assemblyProject;
 	String scenaryName;
-	CreateEntities createEntities;
-	UtilsDependencies utilsDependencies;
+	CreateEntities createEntities = new CreateEntities();
+	UtilsDependencies utilsDependencies = new UtilsDependencies();
 	public void  getConfigurationXML(String name, String ruta) {
 			IProject iProject = ResourcesPlugin.getWorkspace().getRoot().getProject(name);
 			IVegaProject vegaProject = UtilsProjectsApi.findVegProjectInVegaCore(iProject);
@@ -104,8 +105,10 @@ public class CreateconfigurationXML {
 					OP op = createEntities.createOPs(dependencies, iFlowOperationData, ensamblado);
 					IState[] lstStates = iFlowOperationData.getOperationFlow().getStateContainer().getStates();
 					for (IState iState : lstStates) {
-						fachada = createEntities.createFacades(dependencies, iState);
+						if(iState instanceof IFacadeInterfaceState){
+						Fachada fachada = createEntities.createFacades(dependencies, iState);
 						listFachadas.add(fachada);
+						}
 					}
 				op.getEFachada().addAll(listFachadas);
 				}			 
