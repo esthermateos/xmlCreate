@@ -8,7 +8,6 @@ import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.soap.Node;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -42,8 +41,6 @@ import dependencies.OP;
 
 
 public class CreateconfigurationXML {
-	
-	
 	List<Fachada> listFachada = new ArrayList<Fachada>();
 	List<OP> listOP = new ArrayList<OP>();
 	IAssemblyFile assemblyFile;
@@ -54,8 +51,8 @@ public class CreateconfigurationXML {
 	List<Fachada> listFachadas = new ArrayList<Fachada>();
 	IAssemblyProject assemblyProject;
 	String scenaryName;
-
-	
+	CreateEntities createEntities;
+	UtilsDependencies utilsDependencies;
 	public void  getConfigurationXML(String name, String ruta) {
 			IProject iProject = ResourcesPlugin.getWorkspace().getRoot().getProject(name);
 			IVegaProject vegaProject = UtilsProjectsApi.findVegProjectInVegaCore(iProject);
@@ -75,15 +72,15 @@ public class CreateconfigurationXML {
 			getDefaultBankChannel(ensamblado);
 			// a partir del objeto assembllyFileData creamos las entidades MULTIPROFILE y SECURITY
 			IAssemblyFileData assemblyFileData = assemblyFile.getAssemblyFileData();
-			CreateEntities.createMultiProfile(assemblyFileData,dependencies, ensamblado);
+			createEntities.createMultiProfile(assemblyFileData,dependencies, ensamblado);
 			
-			CreateEntities.createSecurity(assemblyFileData, dependencies, ensamblado);
-			CreateEntities.createLogLevel(assemblyFileData, dependencies, ensamblado);
-			CreateEntities.createJMS(assemblyFileData, dependencies, ensamblado);
+			createEntities.createSecurity(assemblyFileData, dependencies, ensamblado);
+			createEntities.createLogLevel(assemblyFileData, dependencies, ensamblado);
+			createEntities.createJMS(assemblyFileData, dependencies, ensamblado);
 			//Creamos el objeto ensamblado y obtenemos los posibles escenarios
-			CreateEntities.createChannelAdapter(assemblyProject, assemblyFileData, dependencies, ensamblado);
+			createEntities.createChannelAdapter(assemblyProject, assemblyFileData, dependencies, ensamblado);
 			
-			iscenarios = UtilsDependencies.getScenarios(vegaProject, iscenarios, assemblyFile);
+			iscenarios = utilsDependencies.getScenarios(vegaProject, iscenarios, assemblyFile);
 			for (IScenario scenario : iscenarios) 
 			{				
 				scenaryName = getScenaryName(scenario);				
@@ -95,7 +92,7 @@ public class CreateconfigurationXML {
 			ensamblado.getEMultiProfile().setMode(getMode(scenaryName, iProject));
 			
 //	
-			List<IOperation> listOPs = UtilsDependencies.getlist(operation, UtilsOperations.OP_OPERATIONS);
+			List<IOperation> listOPs = utilsDependencies.getlist(operation, UtilsOperations.OP_OPERATIONS);
 		//	List<IOperation> listOIs = UtilsDependencies.getlist(operation, UtilsOperations.OI_OPERATIONS);
 			
 			/*recorremos las OPS para crear las fachadas de OPS*/
@@ -104,10 +101,10 @@ public class CreateconfigurationXML {
 				IOperationData operationData = iOperationOP.getOperationData();
 				if  (operationData instanceof IFlowOperationData){
 					IFlowOperationData iFlowOperationData = (IFlowOperationData)operationData;
-					OP op = CreateEntities.createOPs(dependencies, iFlowOperationData, ensamblado);
+					OP op = createEntities.createOPs(dependencies, iFlowOperationData, ensamblado);
 					IState[] lstStates = iFlowOperationData.getOperationFlow().getStateContainer().getStates();
 					for (IState iState : lstStates) {
-						fachada = CreateEntities.createFacades(dependencies, iState);
+						fachada = createEntities.createFacades(dependencies, iState);
 						listFachadas.add(fachada);
 					}
 				op.getEFachada().addAll(listFachadas);
