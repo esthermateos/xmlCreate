@@ -41,7 +41,7 @@ import dependencies.JMS;
 import dependencies.OP;
 
 
-public class CreateconfigurationXML {
+public class CreateConfigurationXML{
 	List<Fachada> listFachada = new ArrayList<Fachada>();
 	List<OP> listOP = new ArrayList<OP>();
 	IAssemblyFile assemblyFile;
@@ -54,12 +54,11 @@ public class CreateconfigurationXML {
 	String scenaryName;
 	CreateEntities createEntities = new CreateEntities();
 	UtilsDependencies utilsDependencies = new UtilsDependencies();
-	public void  getConfigurationXML(String name, String ruta) {
+	
+	public void  getConfigurationXML(String name, String ruta) throws Exception, IOException{
 			IProject iProject = ResourcesPlugin.getWorkspace().getRoot().getProject(name);
 			IVegaProject vegaProject = UtilsProjectsApi.findVegProjectInVegaCore(iProject);
-			if(vegaProject==null){
-				System.err.print("El ensamblado que se ha introducido no existe en el WorkSpace");
-			}else{
+
 			//a partir de la conversión del objeto vegaProject obtenemos el fichero de ensamblado, mediante el cual 
 			// vamos a ir cargando todo el ECORE
 			if (vegaProject instanceof AssemblyProject){ 
@@ -117,25 +116,23 @@ public class CreateconfigurationXML {
 			//Creamos el fichero en la ruta dada
 			File configuration = createFile(name, ruta, iProject);
 			
-			if(configuration==null){
-				System.err.print("El ensamblado que se ha introducido no existe en el WorkSpace");
-			}else{
-				//Externalizamos los datos del modelo	
-				List <String> listPort = new ArrayList<String>();
-				List <String> listModules = new ArrayList<String>();
-				for (JMS jms : ensamblado.getEJMS()) {
-					listPort.add(jms.getListenerPorts());
-					listModules.add(jms.getJmsModules());
-				}
+			//Externalizamos los datos del modelo	
+			List <String> listPort = new ArrayList<String>();
+			List <String> listModules = new ArrayList<String>();
+			for (JMS jms : ensamblado.getEJMS()) {
+				listPort.add(jms.getListenerPorts());
+				listModules.add(jms.getJmsModules());
+			}
+
+				XmlGeneratorNew xmlGeneratorNew= new XmlGeneratorNew(ensamblado, listModules, listModules);				
+				xmlGeneratorNew.compile(configuration, ensamblado,listPort, listModules);					
+			
 	
-				XmlGeneratorNew xmlGeneratorNew= new XmlGeneratorNew(ensamblado, listModules, listModules);
-				xmlGeneratorNew.compile(configuration, ensamblado,listPort, listModules);
-			}
-			}
+
 	
 	}
 
-	private String getMode(String scenary, IProject iProject) {
+	private String getMode(String scenary, IProject iProject) throws IOException {
 		String mode = null;
 		String rutaProject= iProject.getLocationURI().getPath().toString();
 		rutaProject= rutaProject.substring(0, rutaProject.lastIndexOf("/")+1).concat(scenary).concat("/JavaSource/").concat(scenary).concat("_descriptor.xml");
@@ -161,15 +158,11 @@ public class CreateconfigurationXML {
 				        mode = lstNm.item(0).getNodeValue();
 				        break;
 				    }
-				}
-				
+				}				
 			} catch (ParserConfigurationException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (SAXException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -182,7 +175,7 @@ public class CreateconfigurationXML {
 		return scenario.getParent().getParent().getParent().getElementId().toString();
 	}
 
-	private File createFile(String name, String ruta, IProject iProject) {
+	private File createFile(String name, String ruta, IProject iProject) throws IOException {
 		if(iProject.getLocationURI()!=null){
 			String rutaProject= iProject.getLocationURI().getPath().toString();
 			rutaProject = rutaProject.substring(0, rutaProject.lastIndexOf(name)-1);
@@ -203,12 +196,8 @@ public class CreateconfigurationXML {
 			}
 	
 			File configuration = new File(rutaFinal, "configuration.xml");
-			try {
-				configuration.createNewFile();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			configuration.createNewFile();
+
 			return configuration;
 		}
 		return null;
