@@ -609,7 +609,9 @@ public class UtilsDependencies {
 			{
 				EntityAndLogLevels entityAndLogLevels = (EntityAndLogLevels) it.next();
 				LogLevel loglevel = LoggeableEntity(entityAndLogLevels, assemblyFileData, dependencies);
-				listLogLevels.add(loglevel);
+				if(loglevel!=null){
+					listLogLevels.add(loglevel);
+				}
 			}
 		}
 		return listLogLevels;
