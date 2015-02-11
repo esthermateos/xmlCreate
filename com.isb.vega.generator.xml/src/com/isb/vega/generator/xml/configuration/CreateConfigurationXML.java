@@ -105,11 +105,11 @@ public class CreateConfigurationXML{
 					IState[] lstStates = iFlowOperationData.getOperationFlow().getStateContainer().getStates();
 					for (IState iState : lstStates) {
 						if(iState instanceof IFacadeInterfaceState){
-						Fachada fachada = createEntities.createFacades(dependencies, iState);
-						listFachadas.add(fachada);
+							Fachada fachada = createEntities.createFacades(dependencies, iState);
+							if (fachada!=null) listFachadas.add(fachada);
 						}
 					}
-				op.getEFachada().addAll(listFachadas);
+				if (listFachadas!=null) op.getEFachada().addAll(listFachadas);
 				}			 
 			}	
 		
@@ -120,8 +120,8 @@ public class CreateConfigurationXML{
 			List <String> listPort = new ArrayList<String>();
 			List <String> listModules = new ArrayList<String>();
 			for (JMS jms : ensamblado.getEJMS()) {
-				listPort.add(jms.getListenerPorts());
-				listModules.add(jms.getJmsModules());
+				if(jms.getListenerPorts()!=null) listPort.add(jms.getListenerPorts());
+				if(jms.getJmsModules()!=null) listModules.add(jms.getJmsModules());
 			}
 
 				XmlGeneratorNew xmlGeneratorNew= new XmlGeneratorNew(ensamblado, listModules, listModules);				

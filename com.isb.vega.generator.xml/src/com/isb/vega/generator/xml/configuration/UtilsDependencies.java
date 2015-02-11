@@ -85,7 +85,7 @@ public class UtilsDependencies {
 		List<IOperation> list = new ArrayList<IOperation>();
 		for (IOperation iOperation : operations) {
 			if(iOperation.getOperationType() == operation){
-				list.add(iOperation);					
+				if (iOperation!=null) list.add(iOperation);					
 			}	
 		}
 		return list;
@@ -286,9 +286,9 @@ public class UtilsDependencies {
 		for ( ILogLevel logLevelsCont : logLevelsConts.getLogLevels()) {
 			Levels level = dependencies.createLevels();
 			level.setNameLevel(logLevelsCont.getName());
-			listLevel.add(level);
+			if (level!= null) listLevel.add(level);
 		}
-		logLevel.getELevels().addAll(listLevel);
+		if (listLevel!= null) logLevel.getELevels().addAll(listLevel);
 		return logLevel;
 	}
 	public String getOperationID(ILoggeable operEntity)
@@ -436,7 +436,7 @@ public class UtilsDependencies {
 					{
 						EntityAndLogLevels entity = new EntityAndLogLevels(assEntity , assEntity.getLogLevelsContainer(), referenceName, IEntitiesLogLevelsXmlGenerator.ASS_OPERATION_PRIORITY);
 						checkPropagationPriority(entity, IEntitiesLogLevelsXmlGenerator.ASS_OPERATION_PRIORITY);
-						assemblyLogLevelsList.add(entity);
+						if (entity!= null) assemblyLogLevelsList.add(entity);
 					}
 				}
 			}
@@ -486,7 +486,7 @@ public class UtilsDependencies {
 								// de log, se asigna prioridad de propagación mínima.
 								if (assLoggeable.getPropagateLog() == implMethod.getPropagateLog())
 									logEntity.setPropagationPriority(IEntitiesLogLevelsXmlGenerator.MIN_PRIORITY) ;
-								assemblyLogLevelsList.add (logEntity) ;				    		
+									if (logEntity!=null) assemblyLogLevelsList.add (logEntity) ;				    		
 							}
 							else
 								if(implMethod.getLogLevelsContainer().hasChildren())
@@ -522,7 +522,7 @@ public class UtilsDependencies {
 							if(!assEntity.getOwnLogLevelsContainer().hasChildren())
 								logEntity.setPriority(IEntitiesLogLevelsXmlGenerator.MIN_PRIORITY);
 							checkPropagationPriority(logEntity, IEntitiesLogLevelsXmlGenerator.ASS_OPERATION_PRIORITY) ;
-							assemblyLogLevelsList.add(logEntity);
+							if (logEntity!=null) assemblyLogLevelsList.add(logEntity);
 						}
 						//para componentes en el ensamblado
 						else if(assEntity.getAssemblyType()==IAssemblyLoggeableEntity.ASSEMBLY_COMPONENT_TYPE)
@@ -589,7 +589,7 @@ public class UtilsDependencies {
 								{
 									EntityAndLogLevels logEntity = new EntityAndLogLevels(assMethods[k],logLevelsCont,modRef.getModuleName(), priority) ;
 									checkPropagationPriority(logEntity, priority) ;
-									assemblyLogLevelsList.add(logEntity) ;
+									if (logEntity!=null) assemblyLogLevelsList.add(logEntity) ;
 								}
 							}
 						}

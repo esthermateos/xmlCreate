@@ -65,7 +65,7 @@ public class CreateEntities {
 			fachada.setFacadeName(facadeState.getFacade());
 			fachada.setMethodName(facadeState.getName());
 			fachada.setInterfazName(facadeState.getFacadeInterface());
-			listFachada.add(fachada);
+			if(fachada!=null) listFachada.add(fachada);
 	 
 		return fachada;
 	}
@@ -83,7 +83,7 @@ public class CreateEntities {
 		op.setOpName(iFlowOperationData.getName());
 		op.setVersion(iFlowOperationData.getVersion());
 		op.setLpName(iFlowOperationData.getParent().getParent().getParent().getElementId());
-		listOP.add(op);
+		if (op !=null) listOP.add(op);
 		ensamblado.setEOP(op);
 		return op;
 	}
