@@ -2,6 +2,8 @@
  */
 package dependencies;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link dependencies.AppAdapter#getEFachada <em>EFachada</em>}</li>
  *   <li>{@link dependencies.AppAdapter#getECache <em>ECache</em>}</li>
+ *   <li>{@link dependencies.AppAdapter#getEFTP <em>EFTP</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +76,21 @@ public interface AppAdapter extends EObject {
 	 * @generated
 	 */
 	void setECache(Cache value);
+
+	/**
+	 * Returns the value of the '<em><b>EFTP</b></em>' containment reference list.
+	 * The list contents are of type {@link dependencies.FTP}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>EFTP</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>EFTP</em>' containment reference list.
+	 * @see dependencies.DependenciesPackage#getAppAdapter_EFTP()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<FTP> getEFTP();
 
 } // AppAdapter

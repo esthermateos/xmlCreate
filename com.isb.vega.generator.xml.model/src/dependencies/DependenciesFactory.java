@@ -301,6 +301,15 @@ public interface DependenciesFactory extends EFactory {
 	Levels createLevels();
 
 	/**
+	 * Returns a new object of class '<em>FTP</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>FTP</em>'.
+	 * @generated
+	 */
+	FTP createFTP();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

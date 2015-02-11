@@ -261,6 +261,13 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	private EClass levelsEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ftpEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -1343,6 +1350,15 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getJava_EFTP() {
+		return (EReference)javaEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAppAdapter() {
 		return appAdapterEClass;
 	}
@@ -1363,6 +1379,15 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 */
 	public EReference getAppAdapter_ECache() {
 		return (EReference)appAdapterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAppAdapter_EFTP() {
+		return (EReference)appAdapterEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1651,6 +1676,15 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 */
 	public EReference getSQLComponent_ECache() {
 		return (EReference)sqlComponentEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSQLComponent_EFTP() {
+		return (EReference)sqlComponentEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1973,6 +2007,51 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getFTP() {
+		return ftpEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFTP_Module() {
+		return (EAttribute)ftpEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFTP_Package() {
+		return (EAttribute)ftpEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFTP_Name() {
+		return (EAttribute)ftpEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFTP_Alias() {
+		return (EAttribute)ftpEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DependenciesFactory getDependenciesFactory() {
 		return (DependenciesFactory)getEFactoryInstance();
 	}
@@ -2122,10 +2201,12 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		javaEClass = createEClass(JAVA);
 		createEReference(javaEClass, JAVA__EFACHADA);
 		createEReference(javaEClass, JAVA__ECACHE);
+		createEReference(javaEClass, JAVA__EFTP);
 
 		appAdapterEClass = createEClass(APP_ADAPTER);
 		createEReference(appAdapterEClass, APP_ADAPTER__EFACHADA);
 		createEReference(appAdapterEClass, APP_ADAPTER__ECACHE);
+		createEReference(appAdapterEClass, APP_ADAPTER__EFTP);
 
 		jspEClass = createEClass(JSP);
 		createEAttribute(jspEClass, JSP__NAME);
@@ -2164,6 +2245,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		createEAttribute(sqlComponentEClass, SQL_COMPONENT__PAGE_MAX_SIZE);
 		createEReference(sqlComponentEClass, SQL_COMPONENT__ESQL_SENTENCE);
 		createEReference(sqlComponentEClass, SQL_COMPONENT__ECACHE);
+		createEReference(sqlComponentEClass, SQL_COMPONENT__EFTP);
 
 		eFachadaEClass = createEClass(EFACHADA);
 		createEAttribute(eFachadaEClass, EFACHADA__NAME);
@@ -2209,6 +2291,12 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 
 		levelsEClass = createEClass(LEVELS);
 		createEAttribute(levelsEClass, LEVELS__NAME_LEVEL);
+
+		ftpEClass = createEClass(FTP);
+		createEAttribute(ftpEClass, FTP__MODULE);
+		createEAttribute(ftpEClass, FTP__PACKAGE);
+		createEAttribute(ftpEClass, FTP__NAME);
+		createEAttribute(ftpEClass, FTP__ALIAS);
 	}
 
 	/**
@@ -2367,10 +2455,12 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEClass(javaEClass, Java.class, "Java", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getJava_EFachada(), this.getFachada(), null, "eFachada", null, 0, 1, Java.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJava_ECache(), this.getCache(), null, "eCache", null, 0, 1, Java.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJava_EFTP(), this.getFTP(), null, "eFTP", null, 0, -1, Java.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(appAdapterEClass, AppAdapter.class, "AppAdapter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAppAdapter_EFachada(), this.getFachada(), null, "eFachada", null, 0, 1, AppAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAppAdapter_ECache(), this.getCache(), null, "eCache", null, 0, 1, AppAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAppAdapter_EFTP(), this.getFTP(), null, "eFTP", null, 0, -1, AppAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(jspEClass, dependencies.JSP.class, "JSP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJSP_Name(), ecorePackage.getEString(), "name", null, 0, 1, dependencies.JSP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2409,6 +2499,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEAttribute(getSQLComponent_PageMaxSize(), ecorePackage.getEString(), "pageMaxSize", null, 0, 1, SQLComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSQLComponent_ESQLSentence(), this.geteFachada(), null, "eSQLSentence", null, 1, -1, SQLComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSQLComponent_ECache(), this.getCache(), null, "eCache", null, 0, 1, SQLComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSQLComponent_EFTP(), this.getFTP(), null, "eFTP", null, 0, -1, SQLComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eFachadaEClass, eFachada.class, "eFachada", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(geteFachada_Name(), ecorePackage.getEString(), "name", null, 0, 1, eFachada.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2454,6 +2545,12 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 
 		initEClass(levelsEClass, Levels.class, "Levels", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLevels_NameLevel(), ecorePackage.getEString(), "nameLevel", null, 0, 1, Levels.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ftpEClass, dependencies.FTP.class, "FTP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFTP_Module(), ecorePackage.getEString(), "module", null, 0, 1, dependencies.FTP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFTP_Package(), ecorePackage.getEString(), "package", null, 0, 1, dependencies.FTP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFTP_Name(), ecorePackage.getEString(), "name", null, 0, 1, dependencies.FTP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFTP_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, dependencies.FTP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

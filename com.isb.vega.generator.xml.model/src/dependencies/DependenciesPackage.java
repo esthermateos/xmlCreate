@@ -1322,13 +1322,22 @@ public interface DependenciesPackage extends EPackage {
 	int JAVA__ECACHE = 1;
 
 	/**
+	 * The feature id for the '<em><b>EFTP</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA__EFTP = 2;
+
+	/**
 	 * The number of structural features of the '<em>Java</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_FEATURE_COUNT = 2;
+	int JAVA_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Java</em>' class.
@@ -1368,13 +1377,22 @@ public interface DependenciesPackage extends EPackage {
 	int APP_ADAPTER__ECACHE = 1;
 
 	/**
+	 * The feature id for the '<em><b>EFTP</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ADAPTER__EFTP = 2;
+
+	/**
 	 * The number of structural features of the '<em>App Adapter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_ADAPTER_FEATURE_COUNT = 2;
+	int APP_ADAPTER_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>App Adapter</em>' class.
@@ -1770,13 +1788,22 @@ public interface DependenciesPackage extends EPackage {
 	int SQL_COMPONENT__ECACHE = 6;
 
 	/**
+	 * The feature id for the '<em><b>EFTP</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SQL_COMPONENT__EFTP = 7;
+
+	/**
 	 * The number of structural features of the '<em>SQL Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_COMPONENT_FEATURE_COUNT = 7;
+	int SQL_COMPONENT_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>SQL Component</em>' class.
@@ -2291,6 +2318,70 @@ public interface DependenciesPackage extends EPackage {
 	 * @ordered
 	 */
 	int LEVELS_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link dependencies.impl.FTPImpl <em>FTP</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dependencies.impl.FTPImpl
+	 * @see dependencies.impl.DependenciesPackageImpl#getFTP()
+	 * @generated
+	 */
+	int FTP = 31;
+
+	/**
+	 * The feature id for the '<em><b>Module</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP__MODULE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Package</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP__PACKAGE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP__NAME = 2;
+
+	/**
+	 * The feature id for the '<em><b>Alias</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP__ALIAS = 3;
+
+	/**
+	 * The number of structural features of the '<em>FTP</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>FTP</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_OPERATION_COUNT = 0;
 
 
 	/**
@@ -3523,6 +3614,17 @@ public interface DependenciesPackage extends EPackage {
 	EReference getJava_ECache();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link dependencies.Java#getEFTP <em>EFTP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>EFTP</em>'.
+	 * @see dependencies.Java#getEFTP()
+	 * @see #getJava()
+	 * @generated
+	 */
+	EReference getJava_EFTP();
+
+	/**
 	 * Returns the meta object for class '{@link dependencies.AppAdapter <em>App Adapter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3553,6 +3655,17 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAppAdapter_ECache();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dependencies.AppAdapter#getEFTP <em>EFTP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>EFTP</em>'.
+	 * @see dependencies.AppAdapter#getEFTP()
+	 * @see #getAppAdapter()
+	 * @generated
+	 */
+	EReference getAppAdapter_EFTP();
 
 	/**
 	 * Returns the meta object for class '{@link dependencies.JSP <em>JSP</em>}'.
@@ -3899,6 +4012,17 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSQLComponent_ECache();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dependencies.SQLComponent#getEFTP <em>EFTP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>EFTP</em>'.
+	 * @see dependencies.SQLComponent#getEFTP()
+	 * @see #getSQLComponent()
+	 * @generated
+	 */
+	EReference getSQLComponent_EFTP();
 
 	/**
 	 * Returns the meta object for class '{@link dependencies.eFachada <em>eFachada</em>}'.
@@ -4274,6 +4398,60 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLevels_NameLevel();
+
+	/**
+	 * Returns the meta object for class '{@link dependencies.FTP <em>FTP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>FTP</em>'.
+	 * @see dependencies.FTP
+	 * @generated
+	 */
+	EClass getFTP();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dependencies.FTP#getModule <em>Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Module</em>'.
+	 * @see dependencies.FTP#getModule()
+	 * @see #getFTP()
+	 * @generated
+	 */
+	EAttribute getFTP_Module();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dependencies.FTP#getPackage <em>Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Package</em>'.
+	 * @see dependencies.FTP#getPackage()
+	 * @see #getFTP()
+	 * @generated
+	 */
+	EAttribute getFTP_Package();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dependencies.FTP#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see dependencies.FTP#getName()
+	 * @see #getFTP()
+	 * @generated
+	 */
+	EAttribute getFTP_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dependencies.FTP#getAlias <em>Alias</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Alias</em>'.
+	 * @see dependencies.FTP#getAlias()
+	 * @see #getFTP()
+	 * @generated
+	 */
+	EAttribute getFTP_Alias();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -5231,6 +5409,14 @@ public interface DependenciesPackage extends EPackage {
 		EReference JAVA__ECACHE = eINSTANCE.getJava_ECache();
 
 		/**
+		 * The meta object literal for the '<em><b>EFTP</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JAVA__EFTP = eINSTANCE.getJava_EFTP();
+
+		/**
 		 * The meta object literal for the '{@link dependencies.impl.AppAdapterImpl <em>App Adapter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5255,6 +5441,14 @@ public interface DependenciesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference APP_ADAPTER__ECACHE = eINSTANCE.getAppAdapter_ECache();
+
+		/**
+		 * The meta object literal for the '<em><b>EFTP</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APP_ADAPTER__EFTP = eINSTANCE.getAppAdapter_EFTP();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.JSPImpl <em>JSP</em>}' class.
@@ -5523,6 +5717,14 @@ public interface DependenciesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SQL_COMPONENT__ECACHE = eINSTANCE.getSQLComponent_ECache();
+
+		/**
+		 * The meta object literal for the '<em><b>EFTP</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SQL_COMPONENT__EFTP = eINSTANCE.getSQLComponent_EFTP();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.eFachadaImpl <em>eFachada</em>}' class.
@@ -5823,6 +6025,48 @@ public interface DependenciesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LEVELS__NAME_LEVEL = eINSTANCE.getLevels_NameLevel();
+
+		/**
+		 * The meta object literal for the '{@link dependencies.impl.FTPImpl <em>FTP</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dependencies.impl.FTPImpl
+		 * @see dependencies.impl.DependenciesPackageImpl#getFTP()
+		 * @generated
+		 */
+		EClass FTP = eINSTANCE.getFTP();
+
+		/**
+		 * The meta object literal for the '<em><b>Module</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FTP__MODULE = eINSTANCE.getFTP_Module();
+
+		/**
+		 * The meta object literal for the '<em><b>Package</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FTP__PACKAGE = eINSTANCE.getFTP_Package();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FTP__NAME = eINSTANCE.getFTP_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Alias</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FTP__ALIAS = eINSTANCE.getFTP_Alias();
 
 	}
 

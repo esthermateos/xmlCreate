@@ -192,6 +192,10 @@ public class DependenciesAdapterFactory extends AdapterFactoryImpl {
 				return createLevelsAdapter();
 			}
 			@Override
+			public Adapter caseFTP(FTP object) {
+				return createFTPAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -642,6 +646,20 @@ public class DependenciesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLevelsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dependencies.FTP <em>FTP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dependencies.FTP
+	 * @generated
+	 */
+	public Adapter createFTPAdapter() {
 		return null;
 	}
 

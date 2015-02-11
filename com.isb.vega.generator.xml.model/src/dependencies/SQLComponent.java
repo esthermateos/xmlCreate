@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dependencies.SQLComponent#getPageMaxSize <em>Page Max Size</em>}</li>
  *   <li>{@link dependencies.SQLComponent#getESQLSentence <em>ESQL Sentence</em>}</li>
  *   <li>{@link dependencies.SQLComponent#getECache <em>ECache</em>}</li>
+ *   <li>{@link dependencies.SQLComponent#getEFTP <em>EFTP</em>}</li>
  * </ul>
  * </p>
  *
@@ -200,5 +201,21 @@ public interface SQLComponent extends EObject {
 	 * @generated
 	 */
 	void setECache(Cache value);
+
+	/**
+	 * Returns the value of the '<em><b>EFTP</b></em>' containment reference list.
+	 * The list contents are of type {@link dependencies.FTP}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>EFTP</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>EFTP</em>' containment reference list.
+	 * @see dependencies.DependenciesPackage#getSQLComponent_EFTP()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<FTP> getEFTP();
 
 } // SQLComponent

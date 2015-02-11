@@ -5,16 +5,24 @@ package dependencies.impl;
 import dependencies.AppAdapter;
 import dependencies.Cache;
 import dependencies.DependenciesPackage;
+import dependencies.FTP;
 import dependencies.Fachada;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +33,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link dependencies.impl.AppAdapterImpl#getEFachada <em>EFachada</em>}</li>
  *   <li>{@link dependencies.impl.AppAdapterImpl#getECache <em>ECache</em>}</li>
+ *   <li>{@link dependencies.impl.AppAdapterImpl#getEFTP <em>EFTP</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,6 +59,16 @@ public class AppAdapterImpl extends MinimalEObjectImpl.Container implements AppA
 	 * @ordered
 	 */
 	protected Cache eCache;
+
+	/**
+	 * The cached value of the '{@link #getEFTP() <em>EFTP</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEFTP()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FTP> eFTP;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,11 +175,25 @@ public class AppAdapterImpl extends MinimalEObjectImpl.Container implements AppA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<FTP> getEFTP() {
+		if (eFTP == null) {
+			eFTP = new EObjectContainmentEList<FTP>(FTP.class, this, DependenciesPackage.APP_ADAPTER__EFTP);
+		}
+		return eFTP;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DependenciesPackage.APP_ADAPTER__ECACHE:
 				return basicSetECache(null, msgs);
+			case DependenciesPackage.APP_ADAPTER__EFTP:
+				return ((InternalEList<?>)getEFTP()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -178,6 +211,8 @@ public class AppAdapterImpl extends MinimalEObjectImpl.Container implements AppA
 				return basicGetEFachada();
 			case DependenciesPackage.APP_ADAPTER__ECACHE:
 				return getECache();
+			case DependenciesPackage.APP_ADAPTER__EFTP:
+				return getEFTP();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -187,6 +222,7 @@ public class AppAdapterImpl extends MinimalEObjectImpl.Container implements AppA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -195,6 +231,10 @@ public class AppAdapterImpl extends MinimalEObjectImpl.Container implements AppA
 				return;
 			case DependenciesPackage.APP_ADAPTER__ECACHE:
 				setECache((Cache)newValue);
+				return;
+			case DependenciesPackage.APP_ADAPTER__EFTP:
+				getEFTP().clear();
+				getEFTP().addAll((Collection<? extends FTP>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -214,6 +254,9 @@ public class AppAdapterImpl extends MinimalEObjectImpl.Container implements AppA
 			case DependenciesPackage.APP_ADAPTER__ECACHE:
 				setECache((Cache)null);
 				return;
+			case DependenciesPackage.APP_ADAPTER__EFTP:
+				getEFTP().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -230,6 +273,8 @@ public class AppAdapterImpl extends MinimalEObjectImpl.Container implements AppA
 				return eFachada != null;
 			case DependenciesPackage.APP_ADAPTER__ECACHE:
 				return eCache != null;
+			case DependenciesPackage.APP_ADAPTER__EFTP:
+				return eFTP != null && !eFTP.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

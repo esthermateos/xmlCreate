@@ -87,6 +87,7 @@ public class DependenciesFactoryImpl extends EFactoryImpl implements Dependencie
 			case DependenciesPackage.SAT_PHYSICAL_CHANNEL: return createSATPhysicalChannel();
 			case DependenciesPackage.CACHE: return createCache();
 			case DependenciesPackage.LEVELS: return createLevels();
+			case DependenciesPackage.FTP: return createFTP();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -400,6 +401,16 @@ public class DependenciesFactoryImpl extends EFactoryImpl implements Dependencie
 	public Levels createLevels() {
 		LevelsImpl levels = new LevelsImpl();
 		return levels;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FTP createFTP() {
+		FTPImpl ftp = new FTPImpl();
+		return ftp;
 	}
 
 	/**

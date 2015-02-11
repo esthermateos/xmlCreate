@@ -4,6 +4,7 @@ package dependencies.impl;
 
 import dependencies.Cache;
 import dependencies.DependenciesPackage;
+import dependencies.FTP;
 import dependencies.SQLComponent;
 import dependencies.eFachada;
 
@@ -37,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dependencies.impl.SQLComponentImpl#getPageMaxSize <em>Page Max Size</em>}</li>
  *   <li>{@link dependencies.impl.SQLComponentImpl#getESQLSentence <em>ESQL Sentence</em>}</li>
  *   <li>{@link dependencies.impl.SQLComponentImpl#getECache <em>ECache</em>}</li>
+ *   <li>{@link dependencies.impl.SQLComponentImpl#getEFTP <em>EFTP</em>}</li>
  * </ul>
  * </p>
  *
@@ -162,6 +164,16 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	 * @ordered
 	 */
 	protected Cache eCache;
+
+	/**
+	 * The cached value of the '{@link #getEFTP() <em>EFTP</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEFTP()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FTP> eFTP;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -347,6 +359,18 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<FTP> getEFTP() {
+		if (eFTP == null) {
+			eFTP = new EObjectContainmentEList<FTP>(FTP.class, this, DependenciesPackage.SQL_COMPONENT__EFTP);
+		}
+		return eFTP;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -354,6 +378,8 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 				return ((InternalEList<?>)getESQLSentence()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.SQL_COMPONENT__ECACHE:
 				return basicSetECache(null, msgs);
+			case DependenciesPackage.SQL_COMPONENT__EFTP:
+				return ((InternalEList<?>)getEFTP()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -380,6 +406,8 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 				return getESQLSentence();
 			case DependenciesPackage.SQL_COMPONENT__ECACHE:
 				return getECache();
+			case DependenciesPackage.SQL_COMPONENT__EFTP:
+				return getEFTP();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -415,6 +443,10 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 			case DependenciesPackage.SQL_COMPONENT__ECACHE:
 				setECache((Cache)newValue);
 				return;
+			case DependenciesPackage.SQL_COMPONENT__EFTP:
+				getEFTP().clear();
+				getEFTP().addAll((Collection<? extends FTP>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -448,6 +480,9 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 			case DependenciesPackage.SQL_COMPONENT__ECACHE:
 				setECache((Cache)null);
 				return;
+			case DependenciesPackage.SQL_COMPONENT__EFTP:
+				getEFTP().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -474,6 +509,8 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 				return eSQLSentence != null && !eSQLSentence.isEmpty();
 			case DependenciesPackage.SQL_COMPONENT__ECACHE:
 				return eCache != null;
+			case DependenciesPackage.SQL_COMPONENT__EFTP:
+				return eFTP != null && !eFTP.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

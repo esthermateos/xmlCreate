@@ -153,10 +153,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="eFachada" eType="#//Fachada"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eCache" eType="#//Cache"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eFTP" upperBound="-1" eType="#//FTP"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AppAdapter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="eFachada" eType="#//Fachada"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eCache" eType="#//Cache"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eFTP" upperBound="-1" eType="#//FTP"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JSP">
@@ -200,6 +204,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="eSQLSentence" lowerBound="1"
         upperBound="-1" eType="#//eFachada" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eCache" eType="#//Cache"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eFTP" upperBound="-1" eType="#//FTP"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="eFachada">
@@ -247,5 +253,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Levels">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FTP">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="module" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="package" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
