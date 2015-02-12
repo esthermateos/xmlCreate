@@ -7,7 +7,6 @@ import dependencies.Fachada;
 import dependencies.JSP;
 import dependencies.OI;
 import dependencies.OP;
-import dependencies.Webservice;
 
 import java.util.Collection;
 
@@ -38,7 +37,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dependencies.impl.OPImpl#getLpName <em>Lp Name</em>}</li>
  *   <li>{@link dependencies.impl.OPImpl#getOpName <em>Op Name</em>}</li>
  *   <li>{@link dependencies.impl.OPImpl#getVersion <em>Version</em>}</li>
- *   <li>{@link dependencies.impl.OPImpl#getEWebService <em>EWeb Service</em>}</li>
  *   <li>{@link dependencies.impl.OPImpl#getEOI <em>EOI</em>}</li>
  *   <li>{@link dependencies.impl.OPImpl#getEFachada <em>EFachada</em>}</li>
  * </ul>
@@ -126,16 +124,6 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 	 * @ordered
 	 */
 	protected String version = VERSION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getEWebService() <em>EWeb Service</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEWebService()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Webservice> eWebService;
 
 	/**
 	 * The cached value of the '{@link #getEOI() <em>EOI</em>}' reference list.
@@ -268,18 +256,6 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Webservice> getEWebService() {
-		if (eWebService == null) {
-			eWebService = new EObjectContainmentEList<Webservice>(Webservice.class, this, DependenciesPackage.OP__EWEB_SERVICE);
-		}
-		return eWebService;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<OI> getEOI() {
 		if (eOI == null) {
 			eOI = new EObjectResolvingEList<OI>(OI.class, this, DependenciesPackage.OP__EOI);
@@ -309,8 +285,6 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 		switch (featureID) {
 			case DependenciesPackage.OP__ERJSP:
 				return ((InternalEList<?>)getERJSP()).basicRemove(otherEnd, msgs);
-			case DependenciesPackage.OP__EWEB_SERVICE:
-				return ((InternalEList<?>)getEWebService()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.OP__EFACHADA:
 				return ((InternalEList<?>)getEFachada()).basicRemove(otherEnd, msgs);
 		}
@@ -335,8 +309,6 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 				return getOpName();
 			case DependenciesPackage.OP__VERSION:
 				return getVersion();
-			case DependenciesPackage.OP__EWEB_SERVICE:
-				return getEWebService();
 			case DependenciesPackage.OP__EOI:
 				return getEOI();
 			case DependenciesPackage.OP__EFACHADA:
@@ -370,10 +342,6 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 				return;
 			case DependenciesPackage.OP__VERSION:
 				setVersion((String)newValue);
-				return;
-			case DependenciesPackage.OP__EWEB_SERVICE:
-				getEWebService().clear();
-				getEWebService().addAll((Collection<? extends Webservice>)newValue);
 				return;
 			case DependenciesPackage.OP__EOI:
 				getEOI().clear();
@@ -410,9 +378,6 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 			case DependenciesPackage.OP__VERSION:
 				setVersion(VERSION_EDEFAULT);
 				return;
-			case DependenciesPackage.OP__EWEB_SERVICE:
-				getEWebService().clear();
-				return;
 			case DependenciesPackage.OP__EOI:
 				getEOI().clear();
 				return;
@@ -441,8 +406,6 @@ public class OPImpl extends MinimalEObjectImpl.Container implements OP {
 				return OP_NAME_EDEFAULT == null ? opName != null : !OP_NAME_EDEFAULT.equals(opName);
 			case DependenciesPackage.OP__VERSION:
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
-			case DependenciesPackage.OP__EWEB_SERVICE:
-				return eWebService != null && !eWebService.isEmpty();
 			case DependenciesPackage.OP__EOI:
 				return eOI != null && !eOI.isEmpty();
 			case DependenciesPackage.OP__EFACHADA:

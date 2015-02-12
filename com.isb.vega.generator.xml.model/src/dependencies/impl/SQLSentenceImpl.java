@@ -4,7 +4,7 @@ package dependencies.impl;
 
 import dependencies.DependenciesPackage;
 import dependencies.Fachada;
-import dependencies.eFachada;
+import dependencies.SQLSentence;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -16,21 +16,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>eFachada</b></em>'.
+ * An implementation of the model object '<em><b>SQL Sentence</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link dependencies.impl.eFachadaImpl#getName <em>Name</em>}</li>
- *   <li>{@link dependencies.impl.eFachadaImpl#getType <em>Type</em>}</li>
- *   <li>{@link dependencies.impl.eFachadaImpl#getSql <em>Sql</em>}</li>
- *   <li>{@link dependencies.impl.eFachadaImpl#getEFachada <em>EFachada</em>}</li>
+ *   <li>{@link dependencies.impl.SQLSentenceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link dependencies.impl.SQLSentenceImpl#getType <em>Type</em>}</li>
+ *   <li>{@link dependencies.impl.SQLSentenceImpl#getSql <em>Sql</em>}</li>
+ *   <li>{@link dependencies.impl.SQLSentenceImpl#getEFachada <em>EFachada</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class eFachadaImpl extends MinimalEObjectImpl.Container implements eFachada {
+public class SQLSentenceImpl extends MinimalEObjectImpl.Container implements SQLSentence {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -106,7 +106,7 @@ public class eFachadaImpl extends MinimalEObjectImpl.Container implements eFacha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected eFachadaImpl() {
+	protected SQLSentenceImpl() {
 		super();
 	}
 
@@ -117,7 +117,7 @@ public class eFachadaImpl extends MinimalEObjectImpl.Container implements eFacha
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DependenciesPackage.Literals.EFACHADA;
+		return DependenciesPackage.Literals.SQL_SENTENCE;
 	}
 
 	/**
@@ -138,7 +138,7 @@ public class eFachadaImpl extends MinimalEObjectImpl.Container implements eFacha
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.EFACHADA__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SQL_SENTENCE__NAME, oldName, name));
 	}
 
 	/**
@@ -159,7 +159,7 @@ public class eFachadaImpl extends MinimalEObjectImpl.Container implements eFacha
 		String oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.EFACHADA__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SQL_SENTENCE__TYPE, oldType, type));
 	}
 
 	/**
@@ -180,7 +180,7 @@ public class eFachadaImpl extends MinimalEObjectImpl.Container implements eFacha
 		String oldSql = sql;
 		sql = newSql;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.EFACHADA__SQL, oldSql, sql));
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SQL_SENTENCE__SQL, oldSql, sql));
 	}
 
 	/**
@@ -194,7 +194,7 @@ public class eFachadaImpl extends MinimalEObjectImpl.Container implements eFacha
 			eFachada = (Fachada)eResolveProxy(oldEFachada);
 			if (eFachada != oldEFachada) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DependenciesPackage.EFACHADA__EFACHADA, oldEFachada, eFachada));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DependenciesPackage.SQL_SENTENCE__EFACHADA, oldEFachada, eFachada));
 			}
 		}
 		return eFachada;
@@ -218,7 +218,7 @@ public class eFachadaImpl extends MinimalEObjectImpl.Container implements eFacha
 		Fachada oldEFachada = eFachada;
 		eFachada = newEFachada;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.EFACHADA__EFACHADA, oldEFachada, eFachada));
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SQL_SENTENCE__EFACHADA, oldEFachada, eFachada));
 	}
 
 	/**
@@ -229,13 +229,13 @@ public class eFachadaImpl extends MinimalEObjectImpl.Container implements eFacha
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DependenciesPackage.EFACHADA__NAME:
+			case DependenciesPackage.SQL_SENTENCE__NAME:
 				return getName();
-			case DependenciesPackage.EFACHADA__TYPE:
+			case DependenciesPackage.SQL_SENTENCE__TYPE:
 				return getType();
-			case DependenciesPackage.EFACHADA__SQL:
+			case DependenciesPackage.SQL_SENTENCE__SQL:
 				return getSql();
-			case DependenciesPackage.EFACHADA__EFACHADA:
+			case DependenciesPackage.SQL_SENTENCE__EFACHADA:
 				if (resolve) return getEFachada();
 				return basicGetEFachada();
 		}
@@ -250,16 +250,16 @@ public class eFachadaImpl extends MinimalEObjectImpl.Container implements eFacha
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DependenciesPackage.EFACHADA__NAME:
+			case DependenciesPackage.SQL_SENTENCE__NAME:
 				setName((String)newValue);
 				return;
-			case DependenciesPackage.EFACHADA__TYPE:
+			case DependenciesPackage.SQL_SENTENCE__TYPE:
 				setType((String)newValue);
 				return;
-			case DependenciesPackage.EFACHADA__SQL:
+			case DependenciesPackage.SQL_SENTENCE__SQL:
 				setSql((String)newValue);
 				return;
-			case DependenciesPackage.EFACHADA__EFACHADA:
+			case DependenciesPackage.SQL_SENTENCE__EFACHADA:
 				setEFachada((Fachada)newValue);
 				return;
 		}
@@ -274,16 +274,16 @@ public class eFachadaImpl extends MinimalEObjectImpl.Container implements eFacha
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DependenciesPackage.EFACHADA__NAME:
+			case DependenciesPackage.SQL_SENTENCE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case DependenciesPackage.EFACHADA__TYPE:
+			case DependenciesPackage.SQL_SENTENCE__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
-			case DependenciesPackage.EFACHADA__SQL:
+			case DependenciesPackage.SQL_SENTENCE__SQL:
 				setSql(SQL_EDEFAULT);
 				return;
-			case DependenciesPackage.EFACHADA__EFACHADA:
+			case DependenciesPackage.SQL_SENTENCE__EFACHADA:
 				setEFachada((Fachada)null);
 				return;
 		}
@@ -298,13 +298,13 @@ public class eFachadaImpl extends MinimalEObjectImpl.Container implements eFacha
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DependenciesPackage.EFACHADA__NAME:
+			case DependenciesPackage.SQL_SENTENCE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DependenciesPackage.EFACHADA__TYPE:
+			case DependenciesPackage.SQL_SENTENCE__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-			case DependenciesPackage.EFACHADA__SQL:
+			case DependenciesPackage.SQL_SENTENCE__SQL:
 				return SQL_EDEFAULT == null ? sql != null : !SQL_EDEFAULT.equals(sql);
-			case DependenciesPackage.EFACHADA__EFACHADA:
+			case DependenciesPackage.SQL_SENTENCE__EFACHADA:
 				return eFachada != null;
 		}
 		return super.eIsSet(featureID);
@@ -330,4 +330,4 @@ public class eFachadaImpl extends MinimalEObjectImpl.Container implements eFacha
 		return result.toString();
 	}
 
-} //eFachadaImpl
+} //SQLSentenceImpl

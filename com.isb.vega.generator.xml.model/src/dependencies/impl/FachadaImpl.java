@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link dependencies.impl.FachadaImpl#getFacadeName <em>Facade Name</em>}</li>
  *   <li>{@link dependencies.impl.FachadaImpl#getInterfazName <em>Interfaz Name</em>}</li>
  *   <li>{@link dependencies.impl.FachadaImpl#getMethodName <em>Method Name</em>}</li>
+ *   <li>{@link dependencies.impl.FachadaImpl#getMethodID <em>Method ID</em>}</li>
  * </ul>
  * </p>
  *
@@ -87,6 +88,26 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 	 * @ordered
 	 */
 	protected String methodName = METHOD_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMethodID() <em>Method ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMethodID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String METHOD_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMethodID() <em>Method ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMethodID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String methodID = METHOD_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,6 +196,27 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getMethodID() {
+		return methodID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMethodID(String newMethodID) {
+		String oldMethodID = methodID;
+		methodID = newMethodID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.FACHADA__METHOD_ID, oldMethodID, methodID));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -184,6 +226,8 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 				return getInterfazName();
 			case DependenciesPackage.FACHADA__METHOD_NAME:
 				return getMethodName();
+			case DependenciesPackage.FACHADA__METHOD_ID:
+				return getMethodID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,6 +248,9 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 				return;
 			case DependenciesPackage.FACHADA__METHOD_NAME:
 				setMethodName((String)newValue);
+				return;
+			case DependenciesPackage.FACHADA__METHOD_ID:
+				setMethodID((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,6 +273,9 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 			case DependenciesPackage.FACHADA__METHOD_NAME:
 				setMethodName(METHOD_NAME_EDEFAULT);
 				return;
+			case DependenciesPackage.FACHADA__METHOD_ID:
+				setMethodID(METHOD_ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -244,6 +294,8 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 				return INTERFAZ_NAME_EDEFAULT == null ? interfazName != null : !INTERFAZ_NAME_EDEFAULT.equals(interfazName);
 			case DependenciesPackage.FACHADA__METHOD_NAME:
 				return METHOD_NAME_EDEFAULT == null ? methodName != null : !METHOD_NAME_EDEFAULT.equals(methodName);
+			case DependenciesPackage.FACHADA__METHOD_ID:
+				return METHOD_ID_EDEFAULT == null ? methodID != null : !METHOD_ID_EDEFAULT.equals(methodID);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -264,6 +316,8 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 		result.append(interfazName);
 		result.append(", methodName: ");
 		result.append(methodName);
+		result.append(", methodID: ");
+		result.append(methodID);
 		result.append(')');
 		return result.toString();
 	}

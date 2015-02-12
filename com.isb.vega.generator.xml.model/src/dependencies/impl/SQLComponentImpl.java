@@ -6,7 +6,7 @@ import dependencies.Cache;
 import dependencies.DependenciesPackage;
 import dependencies.FTP;
 import dependencies.SQLComponent;
-import dependencies.eFachada;
+import dependencies.SQLSentence;
 
 import java.util.Collection;
 
@@ -153,7 +153,7 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<eFachada> eSQLSentence;
+	protected EList<SQLSentence> eSQLSentence;
 
 	/**
 	 * The cached value of the '{@link #getECache() <em>ECache</em>}' containment reference.
@@ -304,9 +304,9 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<eFachada> getESQLSentence() {
+	public EList<SQLSentence> getESQLSentence() {
 		if (eSQLSentence == null) {
-			eSQLSentence = new EObjectContainmentEList<eFachada>(eFachada.class, this, DependenciesPackage.SQL_COMPONENT__ESQL_SENTENCE);
+			eSQLSentence = new EObjectContainmentEList<SQLSentence>(SQLSentence.class, this, DependenciesPackage.SQL_COMPONENT__ESQL_SENTENCE);
 		}
 		return eSQLSentence;
 	}
@@ -438,7 +438,7 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 				return;
 			case DependenciesPackage.SQL_COMPONENT__ESQL_SENTENCE:
 				getESQLSentence().clear();
-				getESQLSentence().addAll((Collection<? extends eFachada>)newValue);
+				getESQLSentence().addAll((Collection<? extends SQLSentence>)newValue);
 				return;
 			case DependenciesPackage.SQL_COMPONENT__ECACHE:
 				setECache((Cache)newValue);

@@ -152,8 +152,8 @@ public class DependenciesAdapterFactory extends AdapterFactoryImpl {
 				return createSQLComponentAdapter();
 			}
 			@Override
-			public Adapter caseeFachada(eFachada object) {
-				return createeFachadaAdapter();
+			public Adapter caseSQLSentence(SQLSentence object) {
+				return createSQLSentenceAdapter();
 			}
 			@Override
 			public Adapter caseClientArcReferences(ClientArcReferences object) {
@@ -510,16 +510,16 @@ public class DependenciesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dependencies.eFachada <em>eFachada</em>}'.
+	 * Creates a new adapter for an object of class '{@link dependencies.SQLSentence <em>SQL Sentence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dependencies.eFachada
+	 * @see dependencies.SQLSentence
 	 * @generated
 	 */
-	public Adapter createeFachadaAdapter() {
+	public Adapter createSQLSentenceAdapter() {
 		return null;
 	}
 
