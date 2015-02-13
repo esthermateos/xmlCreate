@@ -330,7 +330,7 @@ public interface DependenciesPackage extends EPackage {
 	int OI__ESTADO_LLAMADA_OI = 0;
 
 	/**
-	 * The feature id for the '<em><b>ER App Adapter</b></em>' containment reference.
+	 * The feature id for the '<em><b>ER App Adapter</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -366,22 +366,13 @@ public interface DependenciesPackage extends EPackage {
 	int OI__VERSION = 4;
 
 	/**
-	 * The feature id for the '<em><b>EReference1</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OI__EREFERENCE1 = 5;
-
-	/**
 	 * The feature id for the '<em><b>ETp</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OI__ETP = 6;
+	int OI__ETP = 5;
 
 	/**
 	 * The feature id for the '<em><b>EBBOO</b></em>' containment reference list.
@@ -390,7 +381,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__EBBOO = 7;
+	int OI__EBBOO = 6;
 
 	/**
 	 * The feature id for the '<em><b>ESiebel</b></em>' containment reference list.
@@ -399,7 +390,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__ESIEBEL = 8;
+	int OI__ESIEBEL = 7;
 
 	/**
 	 * The feature id for the '<em><b>ESQL Component</b></em>' containment reference.
@@ -408,16 +399,16 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__ESQL_COMPONENT = 9;
+	int OI__ESQL_COMPONENT = 8;
 
 	/**
-	 * The feature id for the '<em><b>EJava</b></em>' reference.
+	 * The feature id for the '<em><b>EJava</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OI__EJAVA = 10;
+	int OI__EJAVA = 9;
 
 	/**
 	 * The feature id for the '<em><b>EAltair</b></em>' containment reference list.
@@ -426,7 +417,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__EALTAIR = 11;
+	int OI__EALTAIR = 10;
 
 	/**
 	 * The feature id for the '<em><b>ETrx OP</b></em>' containment reference list.
@@ -435,7 +426,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__ETRX_OP = 12;
+	int OI__ETRX_OP = 11;
 
 	/**
 	 * The feature id for the '<em><b>ESAT</b></em>' containment reference list.
@@ -444,7 +435,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__ESAT = 13;
+	int OI__ESAT = 12;
 
 	/**
 	 * The feature id for the '<em><b>EFachada</b></em>' containment reference list.
@@ -453,7 +444,16 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__EFACHADA = 14;
+	int OI__EFACHADA = 13;
+
+	/**
+	 * The feature id for the '<em><b>EWeb Service</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OI__EWEB_SERVICE = 14;
 
 	/**
 	 * The number of structural features of the '<em>OI</em>' class.
@@ -520,13 +520,22 @@ public interface DependenciesPackage extends EPackage {
 	int FACHADA__METHOD_ID = 3;
 
 	/**
+	 * The feature id for the '<em><b>EOI</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACHADA__EOI = 4;
+
+	/**
 	 * The number of structural features of the '<em>Fachada</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FACHADA_FEATURE_COUNT = 4;
+	int FACHADA_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Fachada</em>' class.
@@ -785,22 +794,13 @@ public interface DependenciesPackage extends EPackage {
 	int WEBSERVICE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Associated Logics</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSERVICE__ASSOCIATED_LOGICS = 0;
-
-	/**
 	 * The feature id for the '<em><b>State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSERVICE__STATE = 1;
+	int WEBSERVICE__STATE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Alias</b></em>' attribute.
@@ -809,7 +809,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSERVICE__ALIAS = 2;
+	int WEBSERVICE__ALIAS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Transport</b></em>' attribute.
@@ -818,7 +818,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSERVICE__TRANSPORT = 3;
+	int WEBSERVICE__TRANSPORT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Synchrony</b></em>' attribute.
@@ -827,7 +827,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSERVICE__SYNCHRONY = 4;
+	int WEBSERVICE__SYNCHRONY = 3;
 
 	/**
 	 * The feature id for the '<em><b>Wsdl</b></em>' attribute.
@@ -836,7 +836,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSERVICE__WSDL = 5;
+	int WEBSERVICE__WSDL = 4;
 
 	/**
 	 * The feature id for the '<em><b>Ws Op</b></em>' attribute.
@@ -845,7 +845,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSERVICE__WS_OP = 6;
+	int WEBSERVICE__WS_OP = 5;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' attribute.
@@ -854,7 +854,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSERVICE__NAMESPACE = 7;
+	int WEBSERVICE__NAMESPACE = 6;
 
 	/**
 	 * The number of structural features of the '<em>Webservice</em>' class.
@@ -863,7 +863,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSERVICE_FEATURE_COUNT = 8;
+	int WEBSERVICE_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Webservice</em>' class.
@@ -1067,7 +1067,7 @@ public interface DependenciesPackage extends EPackage {
 	int ENSAMBLADO__EENSAMBLADO = 6;
 
 	/**
-	 * The feature id for the '<em><b>EOP</b></em>' containment reference.
+	 * The feature id for the '<em><b>EOP</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1304,7 +1304,7 @@ public interface DependenciesPackage extends EPackage {
 	int JAVA = 13;
 
 	/**
-	 * The feature id for the '<em><b>EFachada</b></em>' reference.
+	 * The feature id for the '<em><b>EFachada</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1313,7 +1313,7 @@ public interface DependenciesPackage extends EPackage {
 	int JAVA__EFACHADA = 0;
 
 	/**
-	 * The feature id for the '<em><b>ECache</b></em>' containment reference.
+	 * The feature id for the '<em><b>ECache</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1359,7 +1359,7 @@ public interface DependenciesPackage extends EPackage {
 	int APP_ADAPTER = 14;
 
 	/**
-	 * The feature id for the '<em><b>EFachada</b></em>' reference.
+	 * The feature id for the '<em><b>EFachada</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1368,7 +1368,7 @@ public interface DependenciesPackage extends EPackage {
 	int APP_ADAPTER__EFACHADA = 0;
 
 	/**
-	 * The feature id for the '<em><b>ECache</b></em>' containment reference.
+	 * The feature id for the '<em><b>ECache</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1779,7 +1779,7 @@ public interface DependenciesPackage extends EPackage {
 	int SQL_COMPONENT__ESQL_SENTENCE = 5;
 
 	/**
-	 * The feature id for the '<em><b>ECache</b></em>' containment reference.
+	 * The feature id for the '<em><b>ECache</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2668,10 +2668,10 @@ public interface DependenciesPackage extends EPackage {
 	EReference getOI_EstadoLlamadaOI();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link dependencies.OI#getERAppAdapter <em>ER App Adapter</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dependencies.OI#getERAppAdapter <em>ER App Adapter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>ER App Adapter</em>'.
+	 * @return the meta object for the containment reference list '<em>ER App Adapter</em>'.
 	 * @see dependencies.OI#getERAppAdapter()
 	 * @see #getOI()
 	 * @generated
@@ -2710,17 +2710,6 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getOI_Version();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dependencies.OI#getEReference1 <em>EReference1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>EReference1</em>'.
-	 * @see dependencies.OI#getEReference1()
-	 * @see #getOI()
-	 * @generated
-	 */
-	EReference getOI_EReference1();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link dependencies.OI#getETp <em>ETp</em>}'.
@@ -2767,10 +2756,10 @@ public interface DependenciesPackage extends EPackage {
 	EReference getOI_ESQLComponent();
 
 	/**
-	 * Returns the meta object for the reference '{@link dependencies.OI#getEJava <em>EJava</em>}'.
+	 * Returns the meta object for the reference list '{@link dependencies.OI#getEJava <em>EJava</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EJava</em>'.
+	 * @return the meta object for the reference list '<em>EJava</em>'.
 	 * @see dependencies.OI#getEJava()
 	 * @see #getOI()
 	 * @generated
@@ -2820,6 +2809,17 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOI_EFachada();
+
+	/**
+	 * Returns the meta object for the reference list '{@link dependencies.OI#getEWebService <em>EWeb Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>EWeb Service</em>'.
+	 * @see dependencies.OI#getEWebService()
+	 * @see #getOI()
+	 * @generated
+	 */
+	EReference getOI_EWebService();
 
 	/**
 	 * Returns the meta object for class '{@link dependencies.Fachada <em>Fachada</em>}'.
@@ -2874,6 +2874,17 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFachada_MethodID();
+
+	/**
+	 * Returns the meta object for the reference '{@link dependencies.Fachada#getEOI <em>EOI</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>EOI</em>'.
+	 * @see dependencies.Fachada#getEOI()
+	 * @see #getFachada()
+	 * @generated
+	 */
+	EReference getFachada_EOI();
 
 	/**
 	 * Returns the meta object for class '{@link dependencies.TrxOP <em>Trx OP</em>}'.
@@ -3101,17 +3112,6 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getWebservice();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dependencies.Webservice#getAssociatedLogics <em>Associated Logics</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Associated Logics</em>'.
-	 * @see dependencies.Webservice#getAssociatedLogics()
-	 * @see #getWebservice()
-	 * @generated
-	 */
-	EAttribute getWebservice_AssociatedLogics();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dependencies.Webservice#getState <em>State</em>}'.
@@ -3375,10 +3375,10 @@ public interface DependenciesPackage extends EPackage {
 	EReference getEnsamblado_EEnsamblado();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link dependencies.Ensamblado#getEOP <em>EOP</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dependencies.Ensamblado#getEOP <em>EOP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>EOP</em>'.
+	 * @return the meta object for the containment reference list '<em>EOP</em>'.
 	 * @see dependencies.Ensamblado#getEOP()
 	 * @see #getEnsamblado()
 	 * @generated
@@ -3592,10 +3592,10 @@ public interface DependenciesPackage extends EPackage {
 	EClass getJava();
 
 	/**
-	 * Returns the meta object for the reference '{@link dependencies.Java#getEFachada <em>EFachada</em>}'.
+	 * Returns the meta object for the reference list '{@link dependencies.Java#getEFachada <em>EFachada</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EFachada</em>'.
+	 * @return the meta object for the reference list '<em>EFachada</em>'.
 	 * @see dependencies.Java#getEFachada()
 	 * @see #getJava()
 	 * @generated
@@ -3603,10 +3603,10 @@ public interface DependenciesPackage extends EPackage {
 	EReference getJava_EFachada();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link dependencies.Java#getECache <em>ECache</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dependencies.Java#getECache <em>ECache</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>ECache</em>'.
+	 * @return the meta object for the containment reference list '<em>ECache</em>'.
 	 * @see dependencies.Java#getECache()
 	 * @see #getJava()
 	 * @generated
@@ -3635,10 +3635,10 @@ public interface DependenciesPackage extends EPackage {
 	EClass getAppAdapter();
 
 	/**
-	 * Returns the meta object for the reference '{@link dependencies.AppAdapter#getEFachada <em>EFachada</em>}'.
+	 * Returns the meta object for the reference list '{@link dependencies.AppAdapter#getEFachada <em>EFachada</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EFachada</em>'.
+	 * @return the meta object for the reference list '<em>EFachada</em>'.
 	 * @see dependencies.AppAdapter#getEFachada()
 	 * @see #getAppAdapter()
 	 * @generated
@@ -3646,10 +3646,10 @@ public interface DependenciesPackage extends EPackage {
 	EReference getAppAdapter_EFachada();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link dependencies.AppAdapter#getECache <em>ECache</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dependencies.AppAdapter#getECache <em>ECache</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>ECache</em>'.
+	 * @return the meta object for the containment reference list '<em>ECache</em>'.
 	 * @see dependencies.AppAdapter#getECache()
 	 * @see #getAppAdapter()
 	 * @generated
@@ -4003,10 +4003,10 @@ public interface DependenciesPackage extends EPackage {
 	EReference getSQLComponent_ESQLSentence();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link dependencies.SQLComponent#getECache <em>ECache</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dependencies.SQLComponent#getECache <em>ECache</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>ECache</em>'.
+	 * @return the meta object for the containment reference list '<em>ECache</em>'.
 	 * @see dependencies.SQLComponent#getECache()
 	 * @see #getSQLComponent()
 	 * @generated
@@ -4691,7 +4691,7 @@ public interface DependenciesPackage extends EPackage {
 		EReference OI__ESTADO_LLAMADA_OI = eINSTANCE.getOI_EstadoLlamadaOI();
 
 		/**
-		 * The meta object literal for the '<em><b>ER App Adapter</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>ER App Adapter</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -4721,14 +4721,6 @@ public interface DependenciesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OI__VERSION = eINSTANCE.getOI_Version();
-
-		/**
-		 * The meta object literal for the '<em><b>EReference1</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OI__EREFERENCE1 = eINSTANCE.getOI_EReference1();
 
 		/**
 		 * The meta object literal for the '<em><b>ETp</b></em>' containment reference list feature.
@@ -4763,7 +4755,7 @@ public interface DependenciesPackage extends EPackage {
 		EReference OI__ESQL_COMPONENT = eINSTANCE.getOI_ESQLComponent();
 
 		/**
-		 * The meta object literal for the '<em><b>EJava</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>EJava</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -4801,6 +4793,14 @@ public interface DependenciesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OI__EFACHADA = eINSTANCE.getOI_EFachada();
+
+		/**
+		 * The meta object literal for the '<em><b>EWeb Service</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OI__EWEB_SERVICE = eINSTANCE.getOI_EWebService();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.FachadaImpl <em>Fachada</em>}' class.
@@ -4843,6 +4843,14 @@ public interface DependenciesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FACHADA__METHOD_ID = eINSTANCE.getFachada_MethodID();
+
+		/**
+		 * The meta object literal for the '<em><b>EOI</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FACHADA__EOI = eINSTANCE.getFachada_EOI();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.TrxOPImpl <em>Trx OP</em>}' class.
@@ -5019,14 +5027,6 @@ public interface DependenciesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass WEBSERVICE = eINSTANCE.getWebservice();
-
-		/**
-		 * The meta object literal for the '<em><b>Associated Logics</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSERVICE__ASSOCIATED_LOGICS = eINSTANCE.getWebservice_AssociatedLogics();
 
 		/**
 		 * The meta object literal for the '<em><b>State</b></em>' attribute feature.
@@ -5227,7 +5227,7 @@ public interface DependenciesPackage extends EPackage {
 		EReference ENSAMBLADO__EENSAMBLADO = eINSTANCE.getEnsamblado_EEnsamblado();
 
 		/**
-		 * The meta object literal for the '<em><b>EOP</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>EOP</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5393,7 +5393,7 @@ public interface DependenciesPackage extends EPackage {
 		EClass JAVA = eINSTANCE.getJava();
 
 		/**
-		 * The meta object literal for the '<em><b>EFachada</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>EFachada</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5401,7 +5401,7 @@ public interface DependenciesPackage extends EPackage {
 		EReference JAVA__EFACHADA = eINSTANCE.getJava_EFachada();
 
 		/**
-		 * The meta object literal for the '<em><b>ECache</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>ECache</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5427,7 +5427,7 @@ public interface DependenciesPackage extends EPackage {
 		EClass APP_ADAPTER = eINSTANCE.getAppAdapter();
 
 		/**
-		 * The meta object literal for the '<em><b>EFachada</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>EFachada</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5435,7 +5435,7 @@ public interface DependenciesPackage extends EPackage {
 		EReference APP_ADAPTER__EFACHADA = eINSTANCE.getAppAdapter_EFachada();
 
 		/**
-		 * The meta object literal for the '<em><b>ECache</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>ECache</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5711,7 +5711,7 @@ public interface DependenciesPackage extends EPackage {
 		EReference SQL_COMPONENT__ESQL_SENTENCE = eINSTANCE.getSQLComponent_ESQLSentence();
 
 		/**
-		 * The meta object literal for the '<em><b>ECache</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>ECache</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

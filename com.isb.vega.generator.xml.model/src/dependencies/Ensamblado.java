@@ -184,30 +184,20 @@ public interface Ensamblado extends EObject {
 	void setEEnsamblado(Security value);
 
 	/**
-	 * Returns the value of the '<em><b>EOP</b></em>' containment reference.
+	 * Returns the value of the '<em><b>EOP</b></em>' containment reference list.
+	 * The list contents are of type {@link dependencies.OP}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EOP</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>EOP</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EOP</em>' containment reference.
-	 * @see #setEOP(OP)
+	 * @return the value of the '<em>EOP</em>' containment reference list.
 	 * @see dependencies.DependenciesPackage#getEnsamblado_EOP()
 	 * @model containment="true"
 	 * @generated
 	 */
-	OP getEOP();
-
-	/**
-	 * Sets the value of the '{@link dependencies.Ensamblado#getEOP <em>EOP</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EOP</em>' containment reference.
-	 * @see #getEOP()
-	 * @generated
-	 */
-	void setEOP(OP value);
+	EList<OP> getEOP();
 
 	/**
 	 * Returns the value of the '<em><b>Default Bank Channel</b></em>' attribute.

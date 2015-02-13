@@ -45,7 +45,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dependencies.impl.OIImpl#getLnName <em>Ln Name</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getOiName <em>Oi Name</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getVersion <em>Version</em>}</li>
- *   <li>{@link dependencies.impl.OIImpl#getEReference1 <em>EReference1</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getETp <em>ETp</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getEBBOO <em>EBBOO</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getESiebel <em>ESiebel</em>}</li>
@@ -55,6 +54,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dependencies.impl.OIImpl#getETrxOP <em>ETrx OP</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getESAT <em>ESAT</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getEFachada <em>EFachada</em>}</li>
+ *   <li>{@link dependencies.impl.OIImpl#getEWebService <em>EWeb Service</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,14 +72,14 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	protected EList<OI> estadoLlamadaOI;
 
 	/**
-	 * The cached value of the '{@link #getERAppAdapter() <em>ER App Adapter</em>}' containment reference.
+	 * The cached value of the '{@link #getERAppAdapter() <em>ER App Adapter</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getERAppAdapter()
 	 * @generated
 	 * @ordered
 	 */
-	protected AppAdapter erAppAdapter;
+	protected EList<AppAdapter> erAppAdapter;
 
 	/**
 	 * The default value of the '{@link #getLnName() <em>Ln Name</em>}' attribute.
@@ -142,16 +142,6 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	protected String version = VERSION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEReference1() <em>EReference1</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEReference1()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Webservice> eReference1;
-
-	/**
 	 * The cached value of the '{@link #getETp() <em>ETp</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -192,14 +182,14 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	protected SQLComponent eSQLComponent;
 
 	/**
-	 * The cached value of the '{@link #getEJava() <em>EJava</em>}' reference.
+	 * The cached value of the '{@link #getEJava() <em>EJava</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEJava()
 	 * @generated
 	 * @ordered
 	 */
-	protected Java eJava;
+	protected EList<Java> eJava;
 
 	/**
 	 * The cached value of the '{@link #getEAltair() <em>EAltair</em>}' containment reference list.
@@ -242,6 +232,16 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	protected EList<Fachada> eFachada;
 
 	/**
+	 * The cached value of the '{@link #getEWebService() <em>EWeb Service</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEWebService()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Webservice> eWebService;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -277,42 +277,11 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AppAdapter getERAppAdapter() {
+	public EList<AppAdapter> getERAppAdapter() {
+		if (erAppAdapter == null) {
+			erAppAdapter = new EObjectContainmentEList<AppAdapter>(AppAdapter.class, this, DependenciesPackage.OI__ER_APP_ADAPTER);
+		}
 		return erAppAdapter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetERAppAdapter(AppAdapter newERAppAdapter, NotificationChain msgs) {
-		AppAdapter oldERAppAdapter = erAppAdapter;
-		erAppAdapter = newERAppAdapter;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.OI__ER_APP_ADAPTER, oldERAppAdapter, newERAppAdapter);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setERAppAdapter(AppAdapter newERAppAdapter) {
-		if (newERAppAdapter != erAppAdapter) {
-			NotificationChain msgs = null;
-			if (erAppAdapter != null)
-				msgs = ((InternalEObject)erAppAdapter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.OI__ER_APP_ADAPTER, null, msgs);
-			if (newERAppAdapter != null)
-				msgs = ((InternalEObject)newERAppAdapter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.OI__ER_APP_ADAPTER, null, msgs);
-			msgs = basicSetERAppAdapter(newERAppAdapter, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.OI__ER_APP_ADAPTER, newERAppAdapter, newERAppAdapter));
 	}
 
 	/**
@@ -376,18 +345,6 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 		version = newVersion;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.OI__VERSION, oldVersion, version));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Webservice> getEReference1() {
-		if (eReference1 == null) {
-			eReference1 = new EObjectContainmentEList<Webservice>(Webservice.class, this, DependenciesPackage.OI__EREFERENCE1);
-		}
-		return eReference1;
 	}
 
 	/**
@@ -474,37 +431,11 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Java getEJava() {
-		if (eJava != null && eJava.eIsProxy()) {
-			InternalEObject oldEJava = (InternalEObject)eJava;
-			eJava = (Java)eResolveProxy(oldEJava);
-			if (eJava != oldEJava) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DependenciesPackage.OI__EJAVA, oldEJava, eJava));
-			}
+	public EList<Java> getEJava() {
+		if (eJava == null) {
+			eJava = new EObjectResolvingEList<Java>(Java.class, this, DependenciesPackage.OI__EJAVA);
 		}
 		return eJava;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Java basicGetEJava() {
-		return eJava;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEJava(Java newEJava) {
-		Java oldEJava = eJava;
-		eJava = newEJava;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.OI__EJAVA, oldEJava, eJava));
 	}
 
 	/**
@@ -560,13 +491,23 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Webservice> getEWebService() {
+		if (eWebService == null) {
+			eWebService = new EObjectResolvingEList<Webservice>(Webservice.class, this, DependenciesPackage.OI__EWEB_SERVICE);
+		}
+		return eWebService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DependenciesPackage.OI__ER_APP_ADAPTER:
-				return basicSetERAppAdapter(null, msgs);
-			case DependenciesPackage.OI__EREFERENCE1:
-				return ((InternalEList<?>)getEReference1()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getERAppAdapter()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.OI__ETP:
 				return ((InternalEList<?>)getETp()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.OI__EBBOO:
@@ -605,8 +546,6 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				return getOiName();
 			case DependenciesPackage.OI__VERSION:
 				return getVersion();
-			case DependenciesPackage.OI__EREFERENCE1:
-				return getEReference1();
 			case DependenciesPackage.OI__ETP:
 				return getETp();
 			case DependenciesPackage.OI__EBBOO:
@@ -616,8 +555,7 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 			case DependenciesPackage.OI__ESQL_COMPONENT:
 				return getESQLComponent();
 			case DependenciesPackage.OI__EJAVA:
-				if (resolve) return getEJava();
-				return basicGetEJava();
+				return getEJava();
 			case DependenciesPackage.OI__EALTAIR:
 				return getEAltair();
 			case DependenciesPackage.OI__ETRX_OP:
@@ -626,6 +564,8 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				return getESAT();
 			case DependenciesPackage.OI__EFACHADA:
 				return getEFachada();
+			case DependenciesPackage.OI__EWEB_SERVICE:
+				return getEWebService();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -644,7 +584,8 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				getEstadoLlamadaOI().addAll((Collection<? extends OI>)newValue);
 				return;
 			case DependenciesPackage.OI__ER_APP_ADAPTER:
-				setERAppAdapter((AppAdapter)newValue);
+				getERAppAdapter().clear();
+				getERAppAdapter().addAll((Collection<? extends AppAdapter>)newValue);
 				return;
 			case DependenciesPackage.OI__LN_NAME:
 				setLnName((String)newValue);
@@ -654,10 +595,6 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				return;
 			case DependenciesPackage.OI__VERSION:
 				setVersion((String)newValue);
-				return;
-			case DependenciesPackage.OI__EREFERENCE1:
-				getEReference1().clear();
-				getEReference1().addAll((Collection<? extends Webservice>)newValue);
 				return;
 			case DependenciesPackage.OI__ETP:
 				getETp().clear();
@@ -675,7 +612,8 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				setESQLComponent((SQLComponent)newValue);
 				return;
 			case DependenciesPackage.OI__EJAVA:
-				setEJava((Java)newValue);
+				getEJava().clear();
+				getEJava().addAll((Collection<? extends Java>)newValue);
 				return;
 			case DependenciesPackage.OI__EALTAIR:
 				getEAltair().clear();
@@ -693,6 +631,10 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				getEFachada().clear();
 				getEFachada().addAll((Collection<? extends Fachada>)newValue);
 				return;
+			case DependenciesPackage.OI__EWEB_SERVICE:
+				getEWebService().clear();
+				getEWebService().addAll((Collection<? extends Webservice>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -709,7 +651,7 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				getEstadoLlamadaOI().clear();
 				return;
 			case DependenciesPackage.OI__ER_APP_ADAPTER:
-				setERAppAdapter((AppAdapter)null);
+				getERAppAdapter().clear();
 				return;
 			case DependenciesPackage.OI__LN_NAME:
 				setLnName(LN_NAME_EDEFAULT);
@@ -719,9 +661,6 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				return;
 			case DependenciesPackage.OI__VERSION:
 				setVersion(VERSION_EDEFAULT);
-				return;
-			case DependenciesPackage.OI__EREFERENCE1:
-				getEReference1().clear();
 				return;
 			case DependenciesPackage.OI__ETP:
 				getETp().clear();
@@ -736,7 +675,7 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				setESQLComponent((SQLComponent)null);
 				return;
 			case DependenciesPackage.OI__EJAVA:
-				setEJava((Java)null);
+				getEJava().clear();
 				return;
 			case DependenciesPackage.OI__EALTAIR:
 				getEAltair().clear();
@@ -749,6 +688,9 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				return;
 			case DependenciesPackage.OI__EFACHADA:
 				getEFachada().clear();
+				return;
+			case DependenciesPackage.OI__EWEB_SERVICE:
+				getEWebService().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -765,15 +707,13 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 			case DependenciesPackage.OI__ESTADO_LLAMADA_OI:
 				return estadoLlamadaOI != null && !estadoLlamadaOI.isEmpty();
 			case DependenciesPackage.OI__ER_APP_ADAPTER:
-				return erAppAdapter != null;
+				return erAppAdapter != null && !erAppAdapter.isEmpty();
 			case DependenciesPackage.OI__LN_NAME:
 				return LN_NAME_EDEFAULT == null ? lnName != null : !LN_NAME_EDEFAULT.equals(lnName);
 			case DependenciesPackage.OI__OI_NAME:
 				return OI_NAME_EDEFAULT == null ? oiName != null : !OI_NAME_EDEFAULT.equals(oiName);
 			case DependenciesPackage.OI__VERSION:
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
-			case DependenciesPackage.OI__EREFERENCE1:
-				return eReference1 != null && !eReference1.isEmpty();
 			case DependenciesPackage.OI__ETP:
 				return eTp != null && !eTp.isEmpty();
 			case DependenciesPackage.OI__EBBOO:
@@ -783,7 +723,7 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 			case DependenciesPackage.OI__ESQL_COMPONENT:
 				return eSQLComponent != null;
 			case DependenciesPackage.OI__EJAVA:
-				return eJava != null;
+				return eJava != null && !eJava.isEmpty();
 			case DependenciesPackage.OI__EALTAIR:
 				return eAltair != null && !eAltair.isEmpty();
 			case DependenciesPackage.OI__ETRX_OP:
@@ -792,6 +732,8 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				return eSAT != null && !eSAT.isEmpty();
 			case DependenciesPackage.OI__EFACHADA:
 				return eFachada != null && !eFachada.isEmpty();
+			case DependenciesPackage.OI__EWEB_SERVICE:
+				return eWebService != null && !eWebService.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

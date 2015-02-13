@@ -38,7 +38,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//OI/lnName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//OI/oiName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//OI/version"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/EReference1"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eTp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eBBOO"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eSiebel"/>
@@ -48,12 +47,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eTrxOP"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eSAT"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eFachada"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eWebService"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//Fachada">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Fachada/facadeName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Fachada/interfazName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Fachada/methodName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Fachada/methodID"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Fachada/eOI"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//TrxOP">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//TrxOP/state"/>
@@ -79,7 +80,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Altair/mode"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//Webservice">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Webservice/associatedLogics"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Webservice/state"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Webservice/alias"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Webservice/transport"/>

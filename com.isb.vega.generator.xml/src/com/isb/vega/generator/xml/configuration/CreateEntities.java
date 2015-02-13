@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.isb.vega.generator.xml.configuration.EntitiesLogLevelsXmlGenerator.EntityAndLogLevels;
 import com.isb.vega.internal.model.assembly.AssemblyChannelAdapterReference;
+import com.isb.vega.internal.model.operation.flow.state.connector.wscaller.WSCallerState;
 import com.isb.vega.model.assembly.IAssemblyFileData;
 import com.isb.vega.model.assembly.IAssemblyNode;
 import com.isb.vega.model.assembly.IAssemblyProject;
@@ -23,6 +24,7 @@ import com.isb.vega.model.core.IVegaElement;
 import com.isb.vega.model.descriptors.xml.generator.IEntitiesLogLevelsXmlGenerator;
 import com.isb.vega.model.operation.flow.IFlowOperationData;
 import com.isb.vega.model.operation.flow.IState;
+import com.isb.vega.model.operation.flow.state.connector.wscaller.IWSCallerState;
 import com.isb.vega.model.operation.flow.state.facade.IFacadeInterfaceState;
 import com.isb.vega.runtime.wrapper.manager.MessagingServiceManager;
 
@@ -40,8 +42,9 @@ import dependencies.SATPhysicalChannel;
 import dependencies.Security;
 import dependencies.TrxOPLogicalChannel;
 import dependencies.TrxOPPhysicalChannel;
+import dependencies.Webservice;
 
-public class CreateEntities {
+public class CreateEntities  {
 
 	static String logicalChannel = ".LogicalChannel";
 	static String physicalChannel = ".PhysicalChannel";
@@ -50,7 +53,9 @@ public class CreateEntities {
 
 
 	Fachada fachada;
+	Webservice webService;
 	UtilsDependencies utilsDependencies = new UtilsDependencies();
+	
 	/** Rellena la entidad fachada a partir del State proporcionado.
 	 * @param dependencies - Factoría de entidades del modelo
 	 * @param iState - estado de interfaz de fachada
@@ -68,6 +73,31 @@ public class CreateEntities {
 			if(fachada!=null) listFachada.add(fachada);
 	 
 		return fachada;
+	}
+	
+	/** Rellena la entidad fachada a partir del State proporcionado.
+	 * @param dependencies - Factoría de entidades del modelo
+	 * @param iState - estado de interfaz de fachada
+	 * @return 
+	 * @return listFachada - lista de fachadas cargadas
+	 */
+	public Webservice createWebservice(DependenciesFactory dependencies,
+			IState iState) {
+			List<Webservice> listWebservice = new ArrayList<Webservice>();
+			WSCallerState wsState = (WSCallerState)iState;		
+			webService = dependencies.createWebservice();
+			webService.setAlias(wsState.getAlias());
+			webService.setNamespace(wsState.getNameSpace());
+			webService.setState(wsState.getStateType());
+			int syn = wsState.getMessageType();
+			 
+			webService.setSynchrony((syn== 1) ? "true": "false");
+			webService.setWsdl(wsState.getWsdl());
+			webService.setWsOp(wsState.getOperation());
+			webService.setTransport(wsState.getTransport());
+			if(webService!=null) listWebservice.add(webService);
+		
+		return webService;
 	}
 
 	/** Rellena la entidad OP a partir del IFlowOperationData proporcionado.

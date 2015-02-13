@@ -4,10 +4,12 @@ package dependencies.impl;
 
 import dependencies.DependenciesPackage;
 import dependencies.Fachada;
+import dependencies.OI;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -23,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link dependencies.impl.FachadaImpl#getInterfazName <em>Interfaz Name</em>}</li>
  *   <li>{@link dependencies.impl.FachadaImpl#getMethodName <em>Method Name</em>}</li>
  *   <li>{@link dependencies.impl.FachadaImpl#getMethodID <em>Method ID</em>}</li>
+ *   <li>{@link dependencies.impl.FachadaImpl#getEOI <em>EOI</em>}</li>
  * </ul>
  * </p>
  *
@@ -108,6 +111,16 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 	 * @ordered
 	 */
 	protected String methodID = METHOD_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getEOI() <em>EOI</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEOI()
+	 * @generated
+	 * @ordered
+	 */
+	protected OI eOI;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,6 +230,44 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public OI getEOI() {
+		if (eOI != null && eOI.eIsProxy()) {
+			InternalEObject oldEOI = (InternalEObject)eOI;
+			eOI = (OI)eResolveProxy(oldEOI);
+			if (eOI != oldEOI) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DependenciesPackage.FACHADA__EOI, oldEOI, eOI));
+			}
+		}
+		return eOI;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OI basicGetEOI() {
+		return eOI;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEOI(OI newEOI) {
+		OI oldEOI = eOI;
+		eOI = newEOI;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.FACHADA__EOI, oldEOI, eOI));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -228,6 +279,9 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 				return getMethodName();
 			case DependenciesPackage.FACHADA__METHOD_ID:
 				return getMethodID();
+			case DependenciesPackage.FACHADA__EOI:
+				if (resolve) return getEOI();
+				return basicGetEOI();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -251,6 +305,9 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 				return;
 			case DependenciesPackage.FACHADA__METHOD_ID:
 				setMethodID((String)newValue);
+				return;
+			case DependenciesPackage.FACHADA__EOI:
+				setEOI((OI)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -276,6 +333,9 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 			case DependenciesPackage.FACHADA__METHOD_ID:
 				setMethodID(METHOD_ID_EDEFAULT);
 				return;
+			case DependenciesPackage.FACHADA__EOI:
+				setEOI((OI)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -296,6 +356,8 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 				return METHOD_NAME_EDEFAULT == null ? methodName != null : !METHOD_NAME_EDEFAULT.equals(methodName);
 			case DependenciesPackage.FACHADA__METHOD_ID:
 				return METHOD_ID_EDEFAULT == null ? methodID != null : !METHOD_ID_EDEFAULT.equals(methodID);
+			case DependenciesPackage.FACHADA__EOI:
+				return eOI != null;
 		}
 		return super.eIsSet(featureID);
 	}

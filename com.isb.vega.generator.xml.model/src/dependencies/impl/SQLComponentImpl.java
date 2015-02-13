@@ -156,14 +156,14 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	protected EList<SQLSentence> eSQLSentence;
 
 	/**
-	 * The cached value of the '{@link #getECache() <em>ECache</em>}' containment reference.
+	 * The cached value of the '{@link #getECache() <em>ECache</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getECache()
 	 * @generated
 	 * @ordered
 	 */
-	protected Cache eCache;
+	protected EList<Cache> eCache;
 
 	/**
 	 * The cached value of the '{@link #getEFTP() <em>EFTP</em>}' containment reference list.
@@ -316,42 +316,11 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Cache getECache() {
+	public EList<Cache> getECache() {
+		if (eCache == null) {
+			eCache = new EObjectContainmentEList<Cache>(Cache.class, this, DependenciesPackage.SQL_COMPONENT__ECACHE);
+		}
 		return eCache;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetECache(Cache newECache, NotificationChain msgs) {
-		Cache oldECache = eCache;
-		eCache = newECache;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.SQL_COMPONENT__ECACHE, oldECache, newECache);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setECache(Cache newECache) {
-		if (newECache != eCache) {
-			NotificationChain msgs = null;
-			if (eCache != null)
-				msgs = ((InternalEObject)eCache).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.SQL_COMPONENT__ECACHE, null, msgs);
-			if (newECache != null)
-				msgs = ((InternalEObject)newECache).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.SQL_COMPONENT__ECACHE, null, msgs);
-			msgs = basicSetECache(newECache, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SQL_COMPONENT__ECACHE, newECache, newECache));
 	}
 
 	/**
@@ -377,7 +346,7 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 			case DependenciesPackage.SQL_COMPONENT__ESQL_SENTENCE:
 				return ((InternalEList<?>)getESQLSentence()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.SQL_COMPONENT__ECACHE:
-				return basicSetECache(null, msgs);
+				return ((InternalEList<?>)getECache()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.SQL_COMPONENT__EFTP:
 				return ((InternalEList<?>)getEFTP()).basicRemove(otherEnd, msgs);
 		}
@@ -441,7 +410,8 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 				getESQLSentence().addAll((Collection<? extends SQLSentence>)newValue);
 				return;
 			case DependenciesPackage.SQL_COMPONENT__ECACHE:
-				setECache((Cache)newValue);
+				getECache().clear();
+				getECache().addAll((Collection<? extends Cache>)newValue);
 				return;
 			case DependenciesPackage.SQL_COMPONENT__EFTP:
 				getEFTP().clear();
@@ -478,7 +448,7 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 				getESQLSentence().clear();
 				return;
 			case DependenciesPackage.SQL_COMPONENT__ECACHE:
-				setECache((Cache)null);
+				getECache().clear();
 				return;
 			case DependenciesPackage.SQL_COMPONENT__EFTP:
 				getEFTP().clear();
@@ -508,7 +478,7 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 			case DependenciesPackage.SQL_COMPONENT__ESQL_SENTENCE:
 				return eSQLSentence != null && !eSQLSentence.isEmpty();
 			case DependenciesPackage.SQL_COMPONENT__ECACHE:
-				return eCache != null;
+				return eCache != null && !eCache.isEmpty();
 			case DependenciesPackage.SQL_COMPONENT__EFTP:
 				return eFTP != null && !eFTP.isEmpty();
 		}

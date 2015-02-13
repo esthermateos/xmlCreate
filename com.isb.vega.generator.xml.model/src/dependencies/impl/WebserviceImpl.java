@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link dependencies.impl.WebserviceImpl#getAssociatedLogics <em>Associated Logics</em>}</li>
  *   <li>{@link dependencies.impl.WebserviceImpl#getState <em>State</em>}</li>
  *   <li>{@link dependencies.impl.WebserviceImpl#getAlias <em>Alias</em>}</li>
  *   <li>{@link dependencies.impl.WebserviceImpl#getTransport <em>Transport</em>}</li>
@@ -33,26 +32,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class WebserviceImpl extends MinimalEObjectImpl.Container implements Webservice {
-	/**
-	 * The default value of the '{@link #getAssociatedLogics() <em>Associated Logics</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAssociatedLogics()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ASSOCIATED_LOGICS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAssociatedLogics() <em>Associated Logics</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAssociatedLogics()
-	 * @generated
-	 * @ordered
-	 */
-	protected String associatedLogics = ASSOCIATED_LOGICS_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -217,27 +196,6 @@ public class WebserviceImpl extends MinimalEObjectImpl.Container implements Webs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getAssociatedLogics() {
-		return associatedLogics;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAssociatedLogics(String newAssociatedLogics) {
-		String oldAssociatedLogics = associatedLogics;
-		associatedLogics = newAssociatedLogics;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.WEBSERVICE__ASSOCIATED_LOGICS, oldAssociatedLogics, associatedLogics));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getState() {
 		return state;
 	}
@@ -388,8 +346,6 @@ public class WebserviceImpl extends MinimalEObjectImpl.Container implements Webs
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DependenciesPackage.WEBSERVICE__ASSOCIATED_LOGICS:
-				return getAssociatedLogics();
 			case DependenciesPackage.WEBSERVICE__STATE:
 				return getState();
 			case DependenciesPackage.WEBSERVICE__ALIAS:
@@ -416,9 +372,6 @@ public class WebserviceImpl extends MinimalEObjectImpl.Container implements Webs
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DependenciesPackage.WEBSERVICE__ASSOCIATED_LOGICS:
-				setAssociatedLogics((String)newValue);
-				return;
 			case DependenciesPackage.WEBSERVICE__STATE:
 				setState((String)newValue);
 				return;
@@ -452,9 +405,6 @@ public class WebserviceImpl extends MinimalEObjectImpl.Container implements Webs
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DependenciesPackage.WEBSERVICE__ASSOCIATED_LOGICS:
-				setAssociatedLogics(ASSOCIATED_LOGICS_EDEFAULT);
-				return;
 			case DependenciesPackage.WEBSERVICE__STATE:
 				setState(STATE_EDEFAULT);
 				return;
@@ -488,8 +438,6 @@ public class WebserviceImpl extends MinimalEObjectImpl.Container implements Webs
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DependenciesPackage.WEBSERVICE__ASSOCIATED_LOGICS:
-				return ASSOCIATED_LOGICS_EDEFAULT == null ? associatedLogics != null : !ASSOCIATED_LOGICS_EDEFAULT.equals(associatedLogics);
 			case DependenciesPackage.WEBSERVICE__STATE:
 				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
 			case DependenciesPackage.WEBSERVICE__ALIAS:
@@ -518,9 +466,7 @@ public class WebserviceImpl extends MinimalEObjectImpl.Container implements Webs
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (associatedLogics: ");
-		result.append(associatedLogics);
-		result.append(", state: ");
+		result.append(" (state: ");
 		result.append(state);
 		result.append(", alias: ");
 		result.append(alias);

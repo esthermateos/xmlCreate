@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link dependencies.Webservice#getAssociatedLogics <em>Associated Logics</em>}</li>
  *   <li>{@link dependencies.Webservice#getState <em>State</em>}</li>
  *   <li>{@link dependencies.Webservice#getAlias <em>Alias</em>}</li>
  *   <li>{@link dependencies.Webservice#getTransport <em>Transport</em>}</li>
@@ -28,32 +27,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Webservice extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Associated Logics</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Associated Logics</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Associated Logics</em>' attribute.
-	 * @see #setAssociatedLogics(String)
-	 * @see dependencies.DependenciesPackage#getWebservice_AssociatedLogics()
-	 * @model
-	 * @generated
-	 */
-	String getAssociatedLogics();
-
-	/**
-	 * Sets the value of the '{@link dependencies.Webservice#getAssociatedLogics <em>Associated Logics</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Associated Logics</em>' attribute.
-	 * @see #getAssociatedLogics()
-	 * @generated
-	 */
-	void setAssociatedLogics(String value);
-
 	/**
 	 * Returns the value of the '<em><b>State</b></em>' attribute.
 	 * <!-- begin-user-doc -->

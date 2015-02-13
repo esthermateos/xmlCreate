@@ -37,13 +37,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="OI">
     <eStructuralFeatures xsi:type="ecore:EReference" name="estadoLlamadaOI" upperBound="-1"
         eType="#//OI"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ERAppAdapter" eType="#//AppAdapter"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ERAppAdapter" upperBound="-1"
+        eType="#//AppAdapter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="oiName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" upperBound="-1"
-        eType="#//Webservice" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eTp" upperBound="-1" eType="#//Tp"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eBBOO" upperBound="-1"
@@ -52,7 +50,8 @@
         eType="#//Siebel" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eSQLComponent" eType="#//SQLComponent"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eJava" eType="#//Java"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eJava" upperBound="-1"
+        eType="#//Java"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eAltair" upperBound="-1"
         eType="#//Altair" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eTrxOP" upperBound="-1"
@@ -61,12 +60,15 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eFachada" upperBound="-1"
         eType="#//Fachada" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eWebService" upperBound="-1"
+        eType="#//Webservice"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Fachada">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="facadeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfazName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="methodName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="methodID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eOI" lowerBound="1" eType="#//OI"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TrxOP">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -92,7 +94,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Webservice">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="associatedLogics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transport" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -126,7 +127,8 @@
         eType="#//ChannelAdapter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eEnsamblado" eType="#//Security"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eOP" eType="#//OP" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eOP" upperBound="-1" eType="#//OP"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultBankChannel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Security">
@@ -149,16 +151,18 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Java">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eFachada" eType="#//Fachada"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eCache" eType="#//Cache"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eFachada" upperBound="-1"
+        eType="#//Fachada"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eCache" upperBound="-1"
+        eType="#//Cache" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eFTP" upperBound="-1" eType="#//FTP"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AppAdapter">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eFachada" eType="#//Fachada"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eCache" eType="#//Cache"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eFachada" upperBound="-1"
+        eType="#//Fachada"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eCache" upperBound="-1"
+        eType="#//Cache" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eFTP" upperBound="-1" eType="#//FTP"
         containment="true"/>
   </eClassifiers>
@@ -202,8 +206,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pageMaxSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eSQLSentence" lowerBound="1"
         upperBound="-1" eType="#//SQLSentence" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eCache" eType="#//Cache"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eCache" upperBound="-1"
+        eType="#//Cache" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eFTP" upperBound="-1" eType="#//FTP"
         containment="true"/>
   </eClassifiers>

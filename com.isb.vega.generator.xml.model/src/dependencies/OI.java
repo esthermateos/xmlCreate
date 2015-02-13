@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dependencies.OI#getLnName <em>Ln Name</em>}</li>
  *   <li>{@link dependencies.OI#getOiName <em>Oi Name</em>}</li>
  *   <li>{@link dependencies.OI#getVersion <em>Version</em>}</li>
- *   <li>{@link dependencies.OI#getEReference1 <em>EReference1</em>}</li>
  *   <li>{@link dependencies.OI#getETp <em>ETp</em>}</li>
  *   <li>{@link dependencies.OI#getEBBOO <em>EBBOO</em>}</li>
  *   <li>{@link dependencies.OI#getESiebel <em>ESiebel</em>}</li>
@@ -29,6 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dependencies.OI#getETrxOP <em>ETrx OP</em>}</li>
  *   <li>{@link dependencies.OI#getESAT <em>ESAT</em>}</li>
  *   <li>{@link dependencies.OI#getEFachada <em>EFachada</em>}</li>
+ *   <li>{@link dependencies.OI#getEWebService <em>EWeb Service</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,30 +54,20 @@ public interface OI extends EObject {
 	EList<OI> getEstadoLlamadaOI();
 
 	/**
-	 * Returns the value of the '<em><b>ER App Adapter</b></em>' containment reference.
+	 * Returns the value of the '<em><b>ER App Adapter</b></em>' containment reference list.
+	 * The list contents are of type {@link dependencies.AppAdapter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>ER App Adapter</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>ER App Adapter</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>ER App Adapter</em>' containment reference.
-	 * @see #setERAppAdapter(AppAdapter)
+	 * @return the value of the '<em>ER App Adapter</em>' containment reference list.
 	 * @see dependencies.DependenciesPackage#getOI_ERAppAdapter()
 	 * @model containment="true"
 	 * @generated
 	 */
-	AppAdapter getERAppAdapter();
-
-	/**
-	 * Sets the value of the '{@link dependencies.OI#getERAppAdapter <em>ER App Adapter</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>ER App Adapter</em>' containment reference.
-	 * @see #getERAppAdapter()
-	 * @generated
-	 */
-	void setERAppAdapter(AppAdapter value);
+	EList<AppAdapter> getERAppAdapter();
 
 	/**
 	 * Returns the value of the '<em><b>Ln Name</b></em>' attribute.
@@ -158,22 +148,6 @@ public interface OI extends EObject {
 	void setVersion(String value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference1</b></em>' containment reference list.
-	 * The list contents are of type {@link dependencies.Webservice}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>EReference1</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference1</em>' containment reference list.
-	 * @see dependencies.DependenciesPackage#getOI_EReference1()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Webservice> getEReference1();
-
-	/**
 	 * Returns the value of the '<em><b>ETp</b></em>' containment reference list.
 	 * The list contents are of type {@link dependencies.Tp}.
 	 * <!-- begin-user-doc -->
@@ -248,30 +222,20 @@ public interface OI extends EObject {
 	void setESQLComponent(SQLComponent value);
 
 	/**
-	 * Returns the value of the '<em><b>EJava</b></em>' reference.
+	 * Returns the value of the '<em><b>EJava</b></em>' reference list.
+	 * The list contents are of type {@link dependencies.Java}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EJava</em>' reference isn't clear,
+	 * If the meaning of the '<em>EJava</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EJava</em>' reference.
-	 * @see #setEJava(Java)
+	 * @return the value of the '<em>EJava</em>' reference list.
 	 * @see dependencies.DependenciesPackage#getOI_EJava()
 	 * @model
 	 * @generated
 	 */
-	Java getEJava();
-
-	/**
-	 * Sets the value of the '{@link dependencies.OI#getEJava <em>EJava</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EJava</em>' reference.
-	 * @see #getEJava()
-	 * @generated
-	 */
-	void setEJava(Java value);
+	EList<Java> getEJava();
 
 	/**
 	 * Returns the value of the '<em><b>EAltair</b></em>' containment reference list.
@@ -336,5 +300,21 @@ public interface OI extends EObject {
 	 * @generated
 	 */
 	EList<Fachada> getEFachada();
+
+	/**
+	 * Returns the value of the '<em><b>EWeb Service</b></em>' reference list.
+	 * The list contents are of type {@link dependencies.Webservice}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>EWeb Service</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>EWeb Service</em>' reference list.
+	 * @see dependencies.DependenciesPackage#getOI_EWebService()
+	 * @model
+	 * @generated
+	 */
+	EList<Webservice> getEWebService();
 
 } // OI

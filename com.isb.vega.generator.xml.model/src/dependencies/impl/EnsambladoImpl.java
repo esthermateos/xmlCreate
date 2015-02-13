@@ -131,14 +131,14 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 	protected Security eEnsamblado;
 
 	/**
-	 * The cached value of the '{@link #getEOP() <em>EOP</em>}' containment reference.
+	 * The cached value of the '{@link #getEOP() <em>EOP</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEOP()
 	 * @generated
 	 * @ordered
 	 */
-	protected OP eOP;
+	protected EList<OP> eOP;
 
 	/**
 	 * The default value of the '{@link #getDefaultBankChannel() <em>Default Bank Channel</em>}' attribute.
@@ -370,42 +370,11 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OP getEOP() {
+	public EList<OP> getEOP() {
+		if (eOP == null) {
+			eOP = new EObjectContainmentEList<OP>(OP.class, this, DependenciesPackage.ENSAMBLADO__EOP);
+		}
 		return eOP;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetEOP(OP newEOP, NotificationChain msgs) {
-		OP oldEOP = eOP;
-		eOP = newEOP;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.ENSAMBLADO__EOP, oldEOP, newEOP);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEOP(OP newEOP) {
-		if (newEOP != eOP) {
-			NotificationChain msgs = null;
-			if (eOP != null)
-				msgs = ((InternalEObject)eOP).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.ENSAMBLADO__EOP, null, msgs);
-			if (newEOP != null)
-				msgs = ((InternalEObject)newEOP).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.ENSAMBLADO__EOP, null, msgs);
-			msgs = basicSetEOP(newEOP, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.ENSAMBLADO__EOP, newEOP, newEOP));
 	}
 
 	/**
@@ -450,7 +419,7 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 			case DependenciesPackage.ENSAMBLADO__EENSAMBLADO:
 				return basicSetEEnsamblado(null, msgs);
 			case DependenciesPackage.ENSAMBLADO__EOP:
-				return basicSetEOP(null, msgs);
+				return ((InternalEList<?>)getEOP()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -519,7 +488,8 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 				setEEnsamblado((Security)newValue);
 				return;
 			case DependenciesPackage.ENSAMBLADO__EOP:
-				setEOP((OP)newValue);
+				getEOP().clear();
+				getEOP().addAll((Collection<? extends OP>)newValue);
 				return;
 			case DependenciesPackage.ENSAMBLADO__DEFAULT_BANK_CHANNEL:
 				setDefaultBankChannel((String)newValue);
@@ -558,7 +528,7 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 				setEEnsamblado((Security)null);
 				return;
 			case DependenciesPackage.ENSAMBLADO__EOP:
-				setEOP((OP)null);
+				getEOP().clear();
 				return;
 			case DependenciesPackage.ENSAMBLADO__DEFAULT_BANK_CHANNEL:
 				setDefaultBankChannel(DEFAULT_BANK_CHANNEL_EDEFAULT);
@@ -590,7 +560,7 @@ public class EnsambladoImpl extends MinimalEObjectImpl.Container implements Ensa
 			case DependenciesPackage.ENSAMBLADO__EENSAMBLADO:
 				return eEnsamblado != null;
 			case DependenciesPackage.ENSAMBLADO__EOP:
-				return eOP != null;
+				return eOP != null && !eOP.isEmpty();
 			case DependenciesPackage.ENSAMBLADO__DEFAULT_BANK_CHANNEL:
 				return DEFAULT_BANK_CHANNEL_EDEFAULT == null ? defaultBankChannel != null : !DEFAULT_BANK_CHANNEL_EDEFAULT.equals(defaultBankChannel);
 		}

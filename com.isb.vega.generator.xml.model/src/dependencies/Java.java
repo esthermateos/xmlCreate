@@ -26,56 +26,36 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Java extends EObject {
 	/**
-	 * Returns the value of the '<em><b>EFachada</b></em>' reference.
+	 * Returns the value of the '<em><b>EFachada</b></em>' reference list.
+	 * The list contents are of type {@link dependencies.Fachada}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EFachada</em>' reference isn't clear,
+	 * If the meaning of the '<em>EFachada</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EFachada</em>' reference.
-	 * @see #setEFachada(Fachada)
+	 * @return the value of the '<em>EFachada</em>' reference list.
 	 * @see dependencies.DependenciesPackage#getJava_EFachada()
 	 * @model
 	 * @generated
 	 */
-	Fachada getEFachada();
+	EList<Fachada> getEFachada();
 
 	/**
-	 * Sets the value of the '{@link dependencies.Java#getEFachada <em>EFachada</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EFachada</em>' reference.
-	 * @see #getEFachada()
-	 * @generated
-	 */
-	void setEFachada(Fachada value);
-
-	/**
-	 * Returns the value of the '<em><b>ECache</b></em>' containment reference.
+	 * Returns the value of the '<em><b>ECache</b></em>' containment reference list.
+	 * The list contents are of type {@link dependencies.Cache}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>ECache</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>ECache</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>ECache</em>' containment reference.
-	 * @see #setECache(Cache)
+	 * @return the value of the '<em>ECache</em>' containment reference list.
 	 * @see dependencies.DependenciesPackage#getJava_ECache()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Cache getECache();
-
-	/**
-	 * Sets the value of the '{@link dependencies.Java#getECache <em>ECache</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>ECache</em>' containment reference.
-	 * @see #getECache()
-	 * @generated
-	 */
-	void setECache(Cache value);
+	EList<Cache> getECache();
 
 	/**
 	 * Returns the value of the '<em><b>EFTP</b></em>' containment reference list.
