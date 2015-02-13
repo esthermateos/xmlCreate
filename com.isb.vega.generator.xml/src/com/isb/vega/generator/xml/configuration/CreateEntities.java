@@ -84,7 +84,7 @@ public class CreateEntities {
 		op.setVersion(iFlowOperationData.getVersion());
 		op.setLpName(iFlowOperationData.getParent().getParent().getParent().getElementId());
 		if (op !=null) listOP.add(op);
-		ensamblado.setEOP(op);
+	//	ensamblado.setEOP(op);
 		return op;
 	}
 
@@ -109,8 +109,7 @@ public class CreateEntities {
 	 * @param iAssemblyCategoryProfile - objeto que proporciona el contenedor del perfil múltiple de vega.
 	 * @param multiprofile - entidad MULTIPROFILE
 	 */
-	public void setValuesMultiProfiles(IAssemblyCategoryProfile iAssemblyCategoryProfile,
-											  MultiProfile multiprofile) {
+	public void setValuesMultiProfiles(IAssemblyCategoryProfile iAssemblyCategoryProfile, MultiProfile multiprofile) {
 		IAssemblyValueCategory[] assemblyValueCategory = iAssemblyCategoryProfile.getAssemblyValueCategoryContainer().getValues();
 		if (iAssemblyCategoryProfile.getName().equals( "CanalMarco")){
 			multiprofile.setCatCanalMarco(utilsDependencies.obtenerValor(assemblyValueCategory));
