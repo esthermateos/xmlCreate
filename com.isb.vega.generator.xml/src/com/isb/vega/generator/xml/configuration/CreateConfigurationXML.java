@@ -18,8 +18,6 @@ import org.xml.sax.SAXException;
 
 import com.isb.vega.externalization.generator.xml.XmlGeneratorNew;
 import com.isb.vega.internal.model.assembly.AssemblyProject;
-import com.isb.vega.internal.model.operation.flow.InternalOperationData;
-import com.isb.vega.internal.model.operation.flow.state.connector.wscaller.WSCallerState;
 import com.isb.vega.internal.wrapper.rigel.core.BKSConfigurationModel;
 import com.isb.vega.model.api.utils.UtilsProjectsApi;
 import com.isb.vega.model.assembly.IAssembly;
@@ -27,14 +25,11 @@ import com.isb.vega.model.assembly.IAssemblyFile;
 import com.isb.vega.model.assembly.IAssemblyFileData;
 import com.isb.vega.model.assembly.IAssemblyProject;
 import com.isb.vega.model.assembly.ScenarioExternalizationContributor;
-import com.isb.vega.model.core.IVegaModel;
 import com.isb.vega.model.core.IVegaProject;
-import com.isb.vega.model.core.IVegaRootElementContainer;
 import com.isb.vega.model.operation.IOperation;
 import com.isb.vega.model.operation.IOperationData;
 import com.isb.vega.model.operation.UtilsOperations;
 import com.isb.vega.model.operation.flow.IFlowOperationData;
-import com.isb.vega.model.operation.flow.IInternalOperationData;
 import com.isb.vega.model.operation.flow.IState;
 import com.isb.vega.model.operation.flow.state.facade.IFacadeInterfaceState;
 import com.isb.vega.model.scenario.IScenario;
@@ -44,7 +39,6 @@ import dependencies.Ensamblado;
 import dependencies.Fachada;
 import dependencies.JMS;
 import dependencies.OP;
-import dependencies.Webservice;
 
 
 public class CreateConfigurationXML{
@@ -99,7 +93,7 @@ public class CreateConfigurationXML{
 			
 //	
 			List<IOperation> listOPs = utilsDependencies.getlist(operation, UtilsOperations.OP_OPERATIONS);
-			List<IOperation> listOIs = utilsDependencies.getlist(operation, UtilsOperations.OI_OPERATIONS);
+		//	List<IOperation> listOIs = UtilsDependencies.getlist(operation, UtilsOperations.OI_OPERATIONS);
 			
 			/*recorremos las OPS para crear las fachadas de OPS*/
 			
@@ -118,24 +112,7 @@ public class CreateConfigurationXML{
 				if (listFachadas!=null) op.getEFachada().addAll(listFachadas);
 				}			 
 			}	
-			/*Codigo provisional para cargar los webservices de las OIS*/
-			for (IOperation iOperationOI : listOIs) {			
-				IOperationData operationData = iOperationOI.getOperationData();
-				if  (operationData instanceof IInternalOperationData){
-					InternalOperationData iFlowOperationData = (InternalOperationData)operationData;
-					IState[] lstStates = iFlowOperationData.getOperationFlow().getStateContainer().getStates();
-					for (IState iState : lstStates) {
-						if(iState instanceof WSCallerState){
-							Webservice webService = createEntities.createWebservice(dependencies, iState);
-							
-						}
-					}
-				
-				}			 
-			}
-			
-			
-			/**/
+		
 			//Creamos el fichero en la ruta dada
 			File configuration = createFile(name, ruta, iProject);
 			
