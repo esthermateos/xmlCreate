@@ -180,7 +180,7 @@ public class XmlGeneratorNew {
     _builder.append("<appmetainf createdBy=\"ALMSupport\" date=\"");
     String _Date = GetDate.Date();
     _builder.append(_Date, "");
-    _builder.append("\" version=\"2.0\">");
+    _builder.append("\" version=\"2.0\"/>");
     _builder.newLineIfNotEmpty();
     return _builder;
   }

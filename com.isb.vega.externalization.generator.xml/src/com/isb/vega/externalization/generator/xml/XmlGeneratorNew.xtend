@@ -77,7 +77,7 @@ class XmlGeneratorNew {
 		def doGenerateHeader() '''
 		<?xml version="1.0" encoding="ISO-8859-1"?>
 		<configuration>
-		<appmetainf createdBy="ALMSupport" date="«GetDate.Date()»" version="2.0">
+		<appmetainf createdBy="ALMSupport" date="«GetDate.Date()»" version="2.0"/>
 	'''
 	
 		def doGenerateSQLComponents() '''

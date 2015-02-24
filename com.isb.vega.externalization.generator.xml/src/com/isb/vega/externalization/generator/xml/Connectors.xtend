@@ -9,7 +9,7 @@ class Connectors {
     «var host =  ensamblado.EHOST»
 	«IF host!=null»
 		«IF host.trxprotocol!=null || host.trxOPDefaultMode!=null || host.redProtocol!=null || host.trxOPTCPAlias!=null || host.EOPLogicalChannel!=null || host.EPhysicalChannel!=null »
-		<trxOP>
+		<trxOp>
 			«IF host.trxprotocol!=null && !host.trxprotocol.toString.equals("")»
 			<trxOpProtocol>«host.trxprotocol.toString»</trxOpProtocol>
 			«ELSE»
@@ -59,7 +59,7 @@ class Connectors {
 			</trxOpStates>
 		</trxOp>
 		«ELSE»
-		<trxOP>
+		<trxOp>
 			<trxOpProtocol/>
 			<trxOpDefaultMode/>
 			<trxOpRedGProtocol/>
@@ -70,7 +70,7 @@ class Connectors {
 		</trxOp>
 		«ENDIF»
 	«ELSE»
-		<trxOP>
+		<trxOp>
 			<trxOpProtocol/>
 			<trxOpDefaultMode/>
 			<trxOpRedGProtocol/>
@@ -225,7 +225,7 @@ class Connectors {
 			<siebelState>
 				«Utils.doGenerateFieldStatesHead»
 				<server>«»</server>
-				<object>«»</type>
+				<object>«»</object>
 				<request>«»</request>
 			</siebelState>
 		</siebelStates>

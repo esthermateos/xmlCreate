@@ -65,7 +65,7 @@ public class Connectors {
             _or = (_or_1 || _notEquals_6);
           }
           if (_or) {
-            _builder.append("<trxOP>");
+            _builder.append("<trxOp>");
             _builder.newLine();
             {
               boolean _and = false;
@@ -272,7 +272,7 @@ public class Connectors {
             _builder.append("</trxOp>");
             _builder.newLine();
           } else {
-            _builder.append("<trxOP>");
+            _builder.append("<trxOp>");
             _builder.newLine();
             _builder.append("\t");
             _builder.append("<trxOpProtocol/>");
@@ -300,7 +300,7 @@ public class Connectors {
           }
         }
       } else {
-        _builder.append("<trxOP>");
+        _builder.append("<trxOp>");
         _builder.newLine();
         _builder.append("\t");
         _builder.append("<trxOpProtocol/>");
@@ -858,7 +858,7 @@ public class Connectors {
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("<object>");
-    _builder.append("</type>");
+    _builder.append("</object>");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("<request>");
