@@ -34,20 +34,20 @@
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//OI">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/estadoLlamadaOI"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/ERAppAdapter"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//OI/lnName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//OI/oiName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//OI/version"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eTp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eBBOO"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eSiebel"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eSQLComponent"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eJava"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eComponentSQL"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eAltair"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eTrxOP"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eSAT"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eFachada"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eWebService"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eJava"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//OI/eAppAdapter"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//Fachada">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Fachada/facadeName"/>
@@ -55,6 +55,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Fachada/methodName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Fachada/methodID"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Fachada/eOI"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Fachada/eComponentSQL"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Fachada/eJava"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Fachada/eAppAdapter"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//TrxOP">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//TrxOP/state"/>
@@ -130,14 +133,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//MultiProfile/mode"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//Java">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Java/eFachada"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Java/package"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//Java/componentName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Java/eCache"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//Java/eFTP"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//AppAdapter">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dependencies.ecore#//AppAdapter/eFachada"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//AppAdapter/eCache"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//AppAdapter/eFTP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//AppAdapter/package"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//AppAdapter/componentName"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//JSP">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//JSP/name"/>
@@ -168,15 +173,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//TableParameters/cacheado"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//TableParameters/eClientArcReferences"/>
     </genClasses>
-    <genClasses ecoreClass="Dependencies.ecore#//SQLComponent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SQLComponent/implementationType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SQLComponent/datasource"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SQLComponent/dataSourceAlias"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SQLComponent/maxRows"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SQLComponent/pageMaxSize"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//SQLComponent/eSQLSentence"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//SQLComponent/eCache"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//SQLComponent/eFTP"/>
+    <genClasses ecoreClass="Dependencies.ecore#//ComponentSQL">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//ComponentSQL/implementationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//ComponentSQL/datasource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//ComponentSQL/dataSourceAlias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//ComponentSQL/maxRows"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//ComponentSQL/pageMaxSize"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//ComponentSQL/eSQLSentence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//ComponentSQL/eCache"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dependencies.ecore#//ComponentSQL/eFTP"/>
     </genClasses>
     <genClasses ecoreClass="Dependencies.ecore#//SQLSentence">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dependencies.ecore#//SQLSentence/name"/>
