@@ -148,8 +148,8 @@ public class DependenciesAdapterFactory extends AdapterFactoryImpl {
 				return createTableParametersAdapter();
 			}
 			@Override
-			public Adapter caseSQLComponent(SQLComponent object) {
-				return createSQLComponentAdapter();
+			public Adapter caseComponentSQL(ComponentSQL object) {
+				return createComponentSQLAdapter();
 			}
 			@Override
 			public Adapter caseSQLSentence(SQLSentence object) {
@@ -496,16 +496,16 @@ public class DependenciesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dependencies.SQLComponent <em>SQL Component</em>}'.
+	 * Creates a new adapter for an object of class '{@link dependencies.ComponentSQL <em>Component SQL</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dependencies.SQLComponent
+	 * @see dependencies.ComponentSQL
 	 * @generated
 	 */
-	public Adapter createSQLComponentAdapter() {
+	public Adapter createComponentSQLAdapter() {
 		return null;
 	}
 

@@ -17,6 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dependencies.Fachada#getMethodName <em>Method Name</em>}</li>
  *   <li>{@link dependencies.Fachada#getMethodID <em>Method ID</em>}</li>
  *   <li>{@link dependencies.Fachada#getEOI <em>EOI</em>}</li>
+ *   <li>{@link dependencies.Fachada#getEComponentSQL <em>EComponent SQL</em>}</li>
+ *   <li>{@link dependencies.Fachada#getEJava <em>EJava</em>}</li>
+ *   <li>{@link dependencies.Fachada#getEAppAdapter <em>EApp Adapter</em>}</li>
  * </ul>
  * </p>
  *
@@ -154,5 +157,83 @@ public interface Fachada extends EObject {
 	 * @generated
 	 */
 	void setEOI(OI value);
+
+	/**
+	 * Returns the value of the '<em><b>EComponent SQL</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>EComponent SQL</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>EComponent SQL</em>' containment reference.
+	 * @see #setEComponentSQL(ComponentSQL)
+	 * @see dependencies.DependenciesPackage#getFachada_EComponentSQL()
+	 * @model containment="true"
+	 * @generated
+	 */
+	ComponentSQL getEComponentSQL();
+
+	/**
+	 * Sets the value of the '{@link dependencies.Fachada#getEComponentSQL <em>EComponent SQL</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>EComponent SQL</em>' containment reference.
+	 * @see #getEComponentSQL()
+	 * @generated
+	 */
+	void setEComponentSQL(ComponentSQL value);
+
+	/**
+	 * Returns the value of the '<em><b>EJava</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>EJava</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>EJava</em>' containment reference.
+	 * @see #setEJava(Java)
+	 * @see dependencies.DependenciesPackage#getFachada_EJava()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Java getEJava();
+
+	/**
+	 * Sets the value of the '{@link dependencies.Fachada#getEJava <em>EJava</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>EJava</em>' containment reference.
+	 * @see #getEJava()
+	 * @generated
+	 */
+	void setEJava(Java value);
+
+	/**
+	 * Returns the value of the '<em><b>EApp Adapter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>EApp Adapter</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>EApp Adapter</em>' containment reference.
+	 * @see #setEAppAdapter(AppAdapter)
+	 * @see dependencies.DependenciesPackage#getFachada_EAppAdapter()
+	 * @model containment="true"
+	 * @generated
+	 */
+	AppAdapter getEAppAdapter();
+
+	/**
+	 * Sets the value of the '{@link dependencies.Fachada#getEAppAdapter <em>EApp Adapter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>EApp Adapter</em>' containment reference.
+	 * @see #getEAppAdapter()
+	 * @generated
+	 */
+	void setEAppAdapter(AppAdapter value);
 
 } // Fachada

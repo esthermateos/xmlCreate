@@ -202,13 +202,13 @@ public interface DependenciesFactory extends EFactory {
 	TableParameters createTableParameters();
 
 	/**
-	 * Returns a new object of class '<em>SQL Component</em>'.
+	 * Returns a new object of class '<em>Component SQL</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>SQL Component</em>'.
+	 * @return a new object of class '<em>Component SQL</em>'.
 	 * @generated
 	 */
-	SQLComponent createSQLComponent();
+	ComponentSQL createComponentSQL();
 
 	/**
 	 * Returns a new object of class '<em>SQL Sentence</em>'.

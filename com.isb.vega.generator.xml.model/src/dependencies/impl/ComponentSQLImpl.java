@@ -3,9 +3,9 @@
 package dependencies.impl;
 
 import dependencies.Cache;
+import dependencies.ComponentSQL;
 import dependencies.DependenciesPackage;
 import dependencies.FTP;
-import dependencies.SQLComponent;
 import dependencies.SQLSentence;
 
 import java.util.Collection;
@@ -26,25 +26,25 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>SQL Component</b></em>'.
+ * An implementation of the model object '<em><b>Component SQL</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link dependencies.impl.SQLComponentImpl#getImplementationType <em>Implementation Type</em>}</li>
- *   <li>{@link dependencies.impl.SQLComponentImpl#getDatasource <em>Datasource</em>}</li>
- *   <li>{@link dependencies.impl.SQLComponentImpl#getDataSourceAlias <em>Data Source Alias</em>}</li>
- *   <li>{@link dependencies.impl.SQLComponentImpl#getMaxRows <em>Max Rows</em>}</li>
- *   <li>{@link dependencies.impl.SQLComponentImpl#getPageMaxSize <em>Page Max Size</em>}</li>
- *   <li>{@link dependencies.impl.SQLComponentImpl#getESQLSentence <em>ESQL Sentence</em>}</li>
- *   <li>{@link dependencies.impl.SQLComponentImpl#getECache <em>ECache</em>}</li>
- *   <li>{@link dependencies.impl.SQLComponentImpl#getEFTP <em>EFTP</em>}</li>
+ *   <li>{@link dependencies.impl.ComponentSQLImpl#getImplementationType <em>Implementation Type</em>}</li>
+ *   <li>{@link dependencies.impl.ComponentSQLImpl#getDatasource <em>Datasource</em>}</li>
+ *   <li>{@link dependencies.impl.ComponentSQLImpl#getDataSourceAlias <em>Data Source Alias</em>}</li>
+ *   <li>{@link dependencies.impl.ComponentSQLImpl#getMaxRows <em>Max Rows</em>}</li>
+ *   <li>{@link dependencies.impl.ComponentSQLImpl#getPageMaxSize <em>Page Max Size</em>}</li>
+ *   <li>{@link dependencies.impl.ComponentSQLImpl#getESQLSentence <em>ESQL Sentence</em>}</li>
+ *   <li>{@link dependencies.impl.ComponentSQLImpl#getECache <em>ECache</em>}</li>
+ *   <li>{@link dependencies.impl.ComponentSQLImpl#getEFTP <em>EFTP</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQLComponent {
+public class ComponentSQLImpl extends MinimalEObjectImpl.Container implements ComponentSQL {
 	/**
 	 * The default value of the '{@link #getImplementationType() <em>Implementation Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -156,31 +156,31 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	protected EList<SQLSentence> eSQLSentence;
 
 	/**
-	 * The cached value of the '{@link #getECache() <em>ECache</em>}' containment reference list.
+	 * The cached value of the '{@link #getECache() <em>ECache</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getECache()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Cache> eCache;
+	protected Cache eCache;
 
 	/**
-	 * The cached value of the '{@link #getEFTP() <em>EFTP</em>}' containment reference list.
+	 * The cached value of the '{@link #getEFTP() <em>EFTP</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEFTP()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<FTP> eFTP;
+	protected FTP eFTP;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SQLComponentImpl() {
+	protected ComponentSQLImpl() {
 		super();
 	}
 
@@ -191,7 +191,7 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DependenciesPackage.Literals.SQL_COMPONENT;
+		return DependenciesPackage.Literals.COMPONENT_SQL;
 	}
 
 	/**
@@ -212,7 +212,7 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 		String oldImplementationType = implementationType;
 		implementationType = newImplementationType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SQL_COMPONENT__IMPLEMENTATION_TYPE, oldImplementationType, implementationType));
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.COMPONENT_SQL__IMPLEMENTATION_TYPE, oldImplementationType, implementationType));
 	}
 
 	/**
@@ -233,7 +233,7 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 		String oldDatasource = datasource;
 		datasource = newDatasource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SQL_COMPONENT__DATASOURCE, oldDatasource, datasource));
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.COMPONENT_SQL__DATASOURCE, oldDatasource, datasource));
 	}
 
 	/**
@@ -254,7 +254,7 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 		String oldDataSourceAlias = dataSourceAlias;
 		dataSourceAlias = newDataSourceAlias;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SQL_COMPONENT__DATA_SOURCE_ALIAS, oldDataSourceAlias, dataSourceAlias));
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.COMPONENT_SQL__DATA_SOURCE_ALIAS, oldDataSourceAlias, dataSourceAlias));
 	}
 
 	/**
@@ -275,7 +275,7 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 		String oldMaxRows = maxRows;
 		maxRows = newMaxRows;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SQL_COMPONENT__MAX_ROWS, oldMaxRows, maxRows));
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.COMPONENT_SQL__MAX_ROWS, oldMaxRows, maxRows));
 	}
 
 	/**
@@ -296,7 +296,7 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 		String oldPageMaxSize = pageMaxSize;
 		pageMaxSize = newPageMaxSize;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.SQL_COMPONENT__PAGE_MAX_SIZE, oldPageMaxSize, pageMaxSize));
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.COMPONENT_SQL__PAGE_MAX_SIZE, oldPageMaxSize, pageMaxSize));
 	}
 
 	/**
@@ -306,7 +306,7 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	 */
 	public EList<SQLSentence> getESQLSentence() {
 		if (eSQLSentence == null) {
-			eSQLSentence = new EObjectContainmentEList<SQLSentence>(SQLSentence.class, this, DependenciesPackage.SQL_COMPONENT__ESQL_SENTENCE);
+			eSQLSentence = new EObjectContainmentEList<SQLSentence>(SQLSentence.class, this, DependenciesPackage.COMPONENT_SQL__ESQL_SENTENCE);
 		}
 		return eSQLSentence;
 	}
@@ -316,10 +316,7 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Cache> getECache() {
-		if (eCache == null) {
-			eCache = new EObjectContainmentEList<Cache>(Cache.class, this, DependenciesPackage.SQL_COMPONENT__ECACHE);
-		}
+	public Cache getECache() {
 		return eCache;
 	}
 
@@ -328,11 +325,76 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FTP> getEFTP() {
-		if (eFTP == null) {
-			eFTP = new EObjectContainmentEList<FTP>(FTP.class, this, DependenciesPackage.SQL_COMPONENT__EFTP);
+	public NotificationChain basicSetECache(Cache newECache, NotificationChain msgs) {
+		Cache oldECache = eCache;
+		eCache = newECache;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.COMPONENT_SQL__ECACHE, oldECache, newECache);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setECache(Cache newECache) {
+		if (newECache != eCache) {
+			NotificationChain msgs = null;
+			if (eCache != null)
+				msgs = ((InternalEObject)eCache).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.COMPONENT_SQL__ECACHE, null, msgs);
+			if (newECache != null)
+				msgs = ((InternalEObject)newECache).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.COMPONENT_SQL__ECACHE, null, msgs);
+			msgs = basicSetECache(newECache, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.COMPONENT_SQL__ECACHE, newECache, newECache));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FTP getEFTP() {
 		return eFTP;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEFTP(FTP newEFTP, NotificationChain msgs) {
+		FTP oldEFTP = eFTP;
+		eFTP = newEFTP;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.COMPONENT_SQL__EFTP, oldEFTP, newEFTP);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEFTP(FTP newEFTP) {
+		if (newEFTP != eFTP) {
+			NotificationChain msgs = null;
+			if (eFTP != null)
+				msgs = ((InternalEObject)eFTP).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.COMPONENT_SQL__EFTP, null, msgs);
+			if (newEFTP != null)
+				msgs = ((InternalEObject)newEFTP).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.COMPONENT_SQL__EFTP, null, msgs);
+			msgs = basicSetEFTP(newEFTP, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.COMPONENT_SQL__EFTP, newEFTP, newEFTP));
 	}
 
 	/**
@@ -343,12 +405,12 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DependenciesPackage.SQL_COMPONENT__ESQL_SENTENCE:
+			case DependenciesPackage.COMPONENT_SQL__ESQL_SENTENCE:
 				return ((InternalEList<?>)getESQLSentence()).basicRemove(otherEnd, msgs);
-			case DependenciesPackage.SQL_COMPONENT__ECACHE:
-				return ((InternalEList<?>)getECache()).basicRemove(otherEnd, msgs);
-			case DependenciesPackage.SQL_COMPONENT__EFTP:
-				return ((InternalEList<?>)getEFTP()).basicRemove(otherEnd, msgs);
+			case DependenciesPackage.COMPONENT_SQL__ECACHE:
+				return basicSetECache(null, msgs);
+			case DependenciesPackage.COMPONENT_SQL__EFTP:
+				return basicSetEFTP(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -361,21 +423,21 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DependenciesPackage.SQL_COMPONENT__IMPLEMENTATION_TYPE:
+			case DependenciesPackage.COMPONENT_SQL__IMPLEMENTATION_TYPE:
 				return getImplementationType();
-			case DependenciesPackage.SQL_COMPONENT__DATASOURCE:
+			case DependenciesPackage.COMPONENT_SQL__DATASOURCE:
 				return getDatasource();
-			case DependenciesPackage.SQL_COMPONENT__DATA_SOURCE_ALIAS:
+			case DependenciesPackage.COMPONENT_SQL__DATA_SOURCE_ALIAS:
 				return getDataSourceAlias();
-			case DependenciesPackage.SQL_COMPONENT__MAX_ROWS:
+			case DependenciesPackage.COMPONENT_SQL__MAX_ROWS:
 				return getMaxRows();
-			case DependenciesPackage.SQL_COMPONENT__PAGE_MAX_SIZE:
+			case DependenciesPackage.COMPONENT_SQL__PAGE_MAX_SIZE:
 				return getPageMaxSize();
-			case DependenciesPackage.SQL_COMPONENT__ESQL_SENTENCE:
+			case DependenciesPackage.COMPONENT_SQL__ESQL_SENTENCE:
 				return getESQLSentence();
-			case DependenciesPackage.SQL_COMPONENT__ECACHE:
+			case DependenciesPackage.COMPONENT_SQL__ECACHE:
 				return getECache();
-			case DependenciesPackage.SQL_COMPONENT__EFTP:
+			case DependenciesPackage.COMPONENT_SQL__EFTP:
 				return getEFTP();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -390,32 +452,30 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DependenciesPackage.SQL_COMPONENT__IMPLEMENTATION_TYPE:
+			case DependenciesPackage.COMPONENT_SQL__IMPLEMENTATION_TYPE:
 				setImplementationType((String)newValue);
 				return;
-			case DependenciesPackage.SQL_COMPONENT__DATASOURCE:
+			case DependenciesPackage.COMPONENT_SQL__DATASOURCE:
 				setDatasource((String)newValue);
 				return;
-			case DependenciesPackage.SQL_COMPONENT__DATA_SOURCE_ALIAS:
+			case DependenciesPackage.COMPONENT_SQL__DATA_SOURCE_ALIAS:
 				setDataSourceAlias((String)newValue);
 				return;
-			case DependenciesPackage.SQL_COMPONENT__MAX_ROWS:
+			case DependenciesPackage.COMPONENT_SQL__MAX_ROWS:
 				setMaxRows((String)newValue);
 				return;
-			case DependenciesPackage.SQL_COMPONENT__PAGE_MAX_SIZE:
+			case DependenciesPackage.COMPONENT_SQL__PAGE_MAX_SIZE:
 				setPageMaxSize((String)newValue);
 				return;
-			case DependenciesPackage.SQL_COMPONENT__ESQL_SENTENCE:
+			case DependenciesPackage.COMPONENT_SQL__ESQL_SENTENCE:
 				getESQLSentence().clear();
 				getESQLSentence().addAll((Collection<? extends SQLSentence>)newValue);
 				return;
-			case DependenciesPackage.SQL_COMPONENT__ECACHE:
-				getECache().clear();
-				getECache().addAll((Collection<? extends Cache>)newValue);
+			case DependenciesPackage.COMPONENT_SQL__ECACHE:
+				setECache((Cache)newValue);
 				return;
-			case DependenciesPackage.SQL_COMPONENT__EFTP:
-				getEFTP().clear();
-				getEFTP().addAll((Collection<? extends FTP>)newValue);
+			case DependenciesPackage.COMPONENT_SQL__EFTP:
+				setEFTP((FTP)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -429,29 +489,29 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DependenciesPackage.SQL_COMPONENT__IMPLEMENTATION_TYPE:
+			case DependenciesPackage.COMPONENT_SQL__IMPLEMENTATION_TYPE:
 				setImplementationType(IMPLEMENTATION_TYPE_EDEFAULT);
 				return;
-			case DependenciesPackage.SQL_COMPONENT__DATASOURCE:
+			case DependenciesPackage.COMPONENT_SQL__DATASOURCE:
 				setDatasource(DATASOURCE_EDEFAULT);
 				return;
-			case DependenciesPackage.SQL_COMPONENT__DATA_SOURCE_ALIAS:
+			case DependenciesPackage.COMPONENT_SQL__DATA_SOURCE_ALIAS:
 				setDataSourceAlias(DATA_SOURCE_ALIAS_EDEFAULT);
 				return;
-			case DependenciesPackage.SQL_COMPONENT__MAX_ROWS:
+			case DependenciesPackage.COMPONENT_SQL__MAX_ROWS:
 				setMaxRows(MAX_ROWS_EDEFAULT);
 				return;
-			case DependenciesPackage.SQL_COMPONENT__PAGE_MAX_SIZE:
+			case DependenciesPackage.COMPONENT_SQL__PAGE_MAX_SIZE:
 				setPageMaxSize(PAGE_MAX_SIZE_EDEFAULT);
 				return;
-			case DependenciesPackage.SQL_COMPONENT__ESQL_SENTENCE:
+			case DependenciesPackage.COMPONENT_SQL__ESQL_SENTENCE:
 				getESQLSentence().clear();
 				return;
-			case DependenciesPackage.SQL_COMPONENT__ECACHE:
-				getECache().clear();
+			case DependenciesPackage.COMPONENT_SQL__ECACHE:
+				setECache((Cache)null);
 				return;
-			case DependenciesPackage.SQL_COMPONENT__EFTP:
-				getEFTP().clear();
+			case DependenciesPackage.COMPONENT_SQL__EFTP:
+				setEFTP((FTP)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -465,22 +525,22 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DependenciesPackage.SQL_COMPONENT__IMPLEMENTATION_TYPE:
+			case DependenciesPackage.COMPONENT_SQL__IMPLEMENTATION_TYPE:
 				return IMPLEMENTATION_TYPE_EDEFAULT == null ? implementationType != null : !IMPLEMENTATION_TYPE_EDEFAULT.equals(implementationType);
-			case DependenciesPackage.SQL_COMPONENT__DATASOURCE:
+			case DependenciesPackage.COMPONENT_SQL__DATASOURCE:
 				return DATASOURCE_EDEFAULT == null ? datasource != null : !DATASOURCE_EDEFAULT.equals(datasource);
-			case DependenciesPackage.SQL_COMPONENT__DATA_SOURCE_ALIAS:
+			case DependenciesPackage.COMPONENT_SQL__DATA_SOURCE_ALIAS:
 				return DATA_SOURCE_ALIAS_EDEFAULT == null ? dataSourceAlias != null : !DATA_SOURCE_ALIAS_EDEFAULT.equals(dataSourceAlias);
-			case DependenciesPackage.SQL_COMPONENT__MAX_ROWS:
+			case DependenciesPackage.COMPONENT_SQL__MAX_ROWS:
 				return MAX_ROWS_EDEFAULT == null ? maxRows != null : !MAX_ROWS_EDEFAULT.equals(maxRows);
-			case DependenciesPackage.SQL_COMPONENT__PAGE_MAX_SIZE:
+			case DependenciesPackage.COMPONENT_SQL__PAGE_MAX_SIZE:
 				return PAGE_MAX_SIZE_EDEFAULT == null ? pageMaxSize != null : !PAGE_MAX_SIZE_EDEFAULT.equals(pageMaxSize);
-			case DependenciesPackage.SQL_COMPONENT__ESQL_SENTENCE:
+			case DependenciesPackage.COMPONENT_SQL__ESQL_SENTENCE:
 				return eSQLSentence != null && !eSQLSentence.isEmpty();
-			case DependenciesPackage.SQL_COMPONENT__ECACHE:
-				return eCache != null && !eCache.isEmpty();
-			case DependenciesPackage.SQL_COMPONENT__EFTP:
-				return eFTP != null && !eFTP.isEmpty();
+			case DependenciesPackage.COMPONENT_SQL__ECACHE:
+				return eCache != null;
+			case DependenciesPackage.COMPONENT_SQL__EFTP:
+				return eFTP != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -509,4 +569,4 @@ public class SQLComponentImpl extends MinimalEObjectImpl.Container implements SQ
 		return result.toString();
 	}
 
-} //SQLComponentImpl
+} //ComponentSQLImpl

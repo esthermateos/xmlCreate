@@ -2,11 +2,15 @@
  */
 package dependencies.impl;
 
+import dependencies.AppAdapter;
+import dependencies.ComponentSQL;
 import dependencies.DependenciesPackage;
 import dependencies.Fachada;
+import dependencies.Java;
 import dependencies.OI;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -26,6 +30,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link dependencies.impl.FachadaImpl#getMethodName <em>Method Name</em>}</li>
  *   <li>{@link dependencies.impl.FachadaImpl#getMethodID <em>Method ID</em>}</li>
  *   <li>{@link dependencies.impl.FachadaImpl#getEOI <em>EOI</em>}</li>
+ *   <li>{@link dependencies.impl.FachadaImpl#getEComponentSQL <em>EComponent SQL</em>}</li>
+ *   <li>{@link dependencies.impl.FachadaImpl#getEJava <em>EJava</em>}</li>
+ *   <li>{@link dependencies.impl.FachadaImpl#getEAppAdapter <em>EApp Adapter</em>}</li>
  * </ul>
  * </p>
  *
@@ -121,6 +128,36 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 	 * @ordered
 	 */
 	protected OI eOI;
+
+	/**
+	 * The cached value of the '{@link #getEComponentSQL() <em>EComponent SQL</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEComponentSQL()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComponentSQL eComponentSQL;
+
+	/**
+	 * The cached value of the '{@link #getEJava() <em>EJava</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEJava()
+	 * @generated
+	 * @ordered
+	 */
+	protected Java eJava;
+
+	/**
+	 * The cached value of the '{@link #getEAppAdapter() <em>EApp Adapter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEAppAdapter()
+	 * @generated
+	 * @ordered
+	 */
+	protected AppAdapter eAppAdapter;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,6 +305,153 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ComponentSQL getEComponentSQL() {
+		return eComponentSQL;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEComponentSQL(ComponentSQL newEComponentSQL, NotificationChain msgs) {
+		ComponentSQL oldEComponentSQL = eComponentSQL;
+		eComponentSQL = newEComponentSQL;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.FACHADA__ECOMPONENT_SQL, oldEComponentSQL, newEComponentSQL);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEComponentSQL(ComponentSQL newEComponentSQL) {
+		if (newEComponentSQL != eComponentSQL) {
+			NotificationChain msgs = null;
+			if (eComponentSQL != null)
+				msgs = ((InternalEObject)eComponentSQL).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.FACHADA__ECOMPONENT_SQL, null, msgs);
+			if (newEComponentSQL != null)
+				msgs = ((InternalEObject)newEComponentSQL).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.FACHADA__ECOMPONENT_SQL, null, msgs);
+			msgs = basicSetEComponentSQL(newEComponentSQL, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.FACHADA__ECOMPONENT_SQL, newEComponentSQL, newEComponentSQL));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Java getEJava() {
+		return eJava;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEJava(Java newEJava, NotificationChain msgs) {
+		Java oldEJava = eJava;
+		eJava = newEJava;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.FACHADA__EJAVA, oldEJava, newEJava);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEJava(Java newEJava) {
+		if (newEJava != eJava) {
+			NotificationChain msgs = null;
+			if (eJava != null)
+				msgs = ((InternalEObject)eJava).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.FACHADA__EJAVA, null, msgs);
+			if (newEJava != null)
+				msgs = ((InternalEObject)newEJava).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.FACHADA__EJAVA, null, msgs);
+			msgs = basicSetEJava(newEJava, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.FACHADA__EJAVA, newEJava, newEJava));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AppAdapter getEAppAdapter() {
+		return eAppAdapter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEAppAdapter(AppAdapter newEAppAdapter, NotificationChain msgs) {
+		AppAdapter oldEAppAdapter = eAppAdapter;
+		eAppAdapter = newEAppAdapter;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.FACHADA__EAPP_ADAPTER, oldEAppAdapter, newEAppAdapter);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEAppAdapter(AppAdapter newEAppAdapter) {
+		if (newEAppAdapter != eAppAdapter) {
+			NotificationChain msgs = null;
+			if (eAppAdapter != null)
+				msgs = ((InternalEObject)eAppAdapter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.FACHADA__EAPP_ADAPTER, null, msgs);
+			if (newEAppAdapter != null)
+				msgs = ((InternalEObject)newEAppAdapter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.FACHADA__EAPP_ADAPTER, null, msgs);
+			msgs = basicSetEAppAdapter(newEAppAdapter, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.FACHADA__EAPP_ADAPTER, newEAppAdapter, newEAppAdapter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DependenciesPackage.FACHADA__ECOMPONENT_SQL:
+				return basicSetEComponentSQL(null, msgs);
+			case DependenciesPackage.FACHADA__EJAVA:
+				return basicSetEJava(null, msgs);
+			case DependenciesPackage.FACHADA__EAPP_ADAPTER:
+				return basicSetEAppAdapter(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -282,6 +466,12 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 			case DependenciesPackage.FACHADA__EOI:
 				if (resolve) return getEOI();
 				return basicGetEOI();
+			case DependenciesPackage.FACHADA__ECOMPONENT_SQL:
+				return getEComponentSQL();
+			case DependenciesPackage.FACHADA__EJAVA:
+				return getEJava();
+			case DependenciesPackage.FACHADA__EAPP_ADAPTER:
+				return getEAppAdapter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -308,6 +498,15 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 				return;
 			case DependenciesPackage.FACHADA__EOI:
 				setEOI((OI)newValue);
+				return;
+			case DependenciesPackage.FACHADA__ECOMPONENT_SQL:
+				setEComponentSQL((ComponentSQL)newValue);
+				return;
+			case DependenciesPackage.FACHADA__EJAVA:
+				setEJava((Java)newValue);
+				return;
+			case DependenciesPackage.FACHADA__EAPP_ADAPTER:
+				setEAppAdapter((AppAdapter)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -336,6 +535,15 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 			case DependenciesPackage.FACHADA__EOI:
 				setEOI((OI)null);
 				return;
+			case DependenciesPackage.FACHADA__ECOMPONENT_SQL:
+				setEComponentSQL((ComponentSQL)null);
+				return;
+			case DependenciesPackage.FACHADA__EJAVA:
+				setEJava((Java)null);
+				return;
+			case DependenciesPackage.FACHADA__EAPP_ADAPTER:
+				setEAppAdapter((AppAdapter)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -358,6 +566,12 @@ public class FachadaImpl extends MinimalEObjectImpl.Container implements Fachada
 				return METHOD_ID_EDEFAULT == null ? methodID != null : !METHOD_ID_EDEFAULT.equals(methodID);
 			case DependenciesPackage.FACHADA__EOI:
 				return eOI != null;
+			case DependenciesPackage.FACHADA__ECOMPONENT_SQL:
+				return eComponentSQL != null;
+			case DependenciesPackage.FACHADA__EJAVA:
+				return eJava != null;
+			case DependenciesPackage.FACHADA__EAPP_ADAPTER:
+				return eAppAdapter != null;
 		}
 		return super.eIsSet(featureID);
 	}

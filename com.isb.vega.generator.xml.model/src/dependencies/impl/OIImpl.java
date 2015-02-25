@@ -5,12 +5,12 @@ package dependencies.impl;
 import dependencies.Altair;
 import dependencies.AppAdapter;
 import dependencies.BBOO;
+import dependencies.ComponentSQL;
 import dependencies.DependenciesPackage;
 import dependencies.Fachada;
 import dependencies.Java;
 import dependencies.OI;
 import dependencies.SAT;
-import dependencies.SQLComponent;
 import dependencies.Siebel;
 import dependencies.Tp;
 import dependencies.TrxOP;
@@ -41,20 +41,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link dependencies.impl.OIImpl#getEstadoLlamadaOI <em>Estado Llamada OI</em>}</li>
- *   <li>{@link dependencies.impl.OIImpl#getERAppAdapter <em>ER App Adapter</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getLnName <em>Ln Name</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getOiName <em>Oi Name</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getETp <em>ETp</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getEBBOO <em>EBBOO</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getESiebel <em>ESiebel</em>}</li>
- *   <li>{@link dependencies.impl.OIImpl#getESQLComponent <em>ESQL Component</em>}</li>
- *   <li>{@link dependencies.impl.OIImpl#getEJava <em>EJava</em>}</li>
+ *   <li>{@link dependencies.impl.OIImpl#getEComponentSQL <em>EComponent SQL</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getEAltair <em>EAltair</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getETrxOP <em>ETrx OP</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getESAT <em>ESAT</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getEFachada <em>EFachada</em>}</li>
  *   <li>{@link dependencies.impl.OIImpl#getEWebService <em>EWeb Service</em>}</li>
+ *   <li>{@link dependencies.impl.OIImpl#getEJava <em>EJava</em>}</li>
+ *   <li>{@link dependencies.impl.OIImpl#getEAppAdapter <em>EApp Adapter</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,16 +70,6 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	 * @ordered
 	 */
 	protected EList<OI> estadoLlamadaOI;
-
-	/**
-	 * The cached value of the '{@link #getERAppAdapter() <em>ER App Adapter</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getERAppAdapter()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AppAdapter> erAppAdapter;
 
 	/**
 	 * The default value of the '{@link #getLnName() <em>Ln Name</em>}' attribute.
@@ -172,24 +162,14 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	protected EList<Siebel> eSiebel;
 
 	/**
-	 * The cached value of the '{@link #getESQLComponent() <em>ESQL Component</em>}' containment reference.
+	 * The cached value of the '{@link #getEComponentSQL() <em>EComponent SQL</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getESQLComponent()
+	 * @see #getEComponentSQL()
 	 * @generated
 	 * @ordered
 	 */
-	protected SQLComponent eSQLComponent;
-
-	/**
-	 * The cached value of the '{@link #getEJava() <em>EJava</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEJava()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Java> eJava;
+	protected ComponentSQL eComponentSQL;
 
 	/**
 	 * The cached value of the '{@link #getEAltair() <em>EAltair</em>}' containment reference list.
@@ -242,6 +222,26 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	protected EList<Webservice> eWebService;
 
 	/**
+	 * The cached value of the '{@link #getEJava() <em>EJava</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEJava()
+	 * @generated
+	 * @ordered
+	 */
+	protected Java eJava;
+
+	/**
+	 * The cached value of the '{@link #getEAppAdapter() <em>EApp Adapter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEAppAdapter()
+	 * @generated
+	 * @ordered
+	 */
+	protected AppAdapter eAppAdapter;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -270,18 +270,6 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 			estadoLlamadaOI = new EObjectResolvingEList<OI>(OI.class, this, DependenciesPackage.OI__ESTADO_LLAMADA_OI);
 		}
 		return estadoLlamadaOI;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<AppAdapter> getERAppAdapter() {
-		if (erAppAdapter == null) {
-			erAppAdapter = new EObjectContainmentEList<AppAdapter>(AppAdapter.class, this, DependenciesPackage.OI__ER_APP_ADAPTER);
-		}
-		return erAppAdapter;
 	}
 
 	/**
@@ -388,8 +376,8 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SQLComponent getESQLComponent() {
-		return eSQLComponent;
+	public ComponentSQL getEComponentSQL() {
+		return eComponentSQL;
 	}
 
 	/**
@@ -397,11 +385,11 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetESQLComponent(SQLComponent newESQLComponent, NotificationChain msgs) {
-		SQLComponent oldESQLComponent = eSQLComponent;
-		eSQLComponent = newESQLComponent;
+	public NotificationChain basicSetEComponentSQL(ComponentSQL newEComponentSQL, NotificationChain msgs) {
+		ComponentSQL oldEComponentSQL = eComponentSQL;
+		eComponentSQL = newEComponentSQL;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.OI__ESQL_COMPONENT, oldESQLComponent, newESQLComponent);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.OI__ECOMPONENT_SQL, oldEComponentSQL, newEComponentSQL);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -412,30 +400,18 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setESQLComponent(SQLComponent newESQLComponent) {
-		if (newESQLComponent != eSQLComponent) {
+	public void setEComponentSQL(ComponentSQL newEComponentSQL) {
+		if (newEComponentSQL != eComponentSQL) {
 			NotificationChain msgs = null;
-			if (eSQLComponent != null)
-				msgs = ((InternalEObject)eSQLComponent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.OI__ESQL_COMPONENT, null, msgs);
-			if (newESQLComponent != null)
-				msgs = ((InternalEObject)newESQLComponent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.OI__ESQL_COMPONENT, null, msgs);
-			msgs = basicSetESQLComponent(newESQLComponent, msgs);
+			if (eComponentSQL != null)
+				msgs = ((InternalEObject)eComponentSQL).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.OI__ECOMPONENT_SQL, null, msgs);
+			if (newEComponentSQL != null)
+				msgs = ((InternalEObject)newEComponentSQL).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.OI__ECOMPONENT_SQL, null, msgs);
+			msgs = basicSetEComponentSQL(newEComponentSQL, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.OI__ESQL_COMPONENT, newESQLComponent, newESQLComponent));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Java> getEJava() {
-		if (eJava == null) {
-			eJava = new EObjectResolvingEList<Java>(Java.class, this, DependenciesPackage.OI__EJAVA);
-		}
-		return eJava;
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.OI__ECOMPONENT_SQL, newEComponentSQL, newEComponentSQL));
 	}
 
 	/**
@@ -503,19 +479,103 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Java getEJava() {
+		return eJava;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEJava(Java newEJava, NotificationChain msgs) {
+		Java oldEJava = eJava;
+		eJava = newEJava;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.OI__EJAVA, oldEJava, newEJava);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEJava(Java newEJava) {
+		if (newEJava != eJava) {
+			NotificationChain msgs = null;
+			if (eJava != null)
+				msgs = ((InternalEObject)eJava).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.OI__EJAVA, null, msgs);
+			if (newEJava != null)
+				msgs = ((InternalEObject)newEJava).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.OI__EJAVA, null, msgs);
+			msgs = basicSetEJava(newEJava, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.OI__EJAVA, newEJava, newEJava));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AppAdapter getEAppAdapter() {
+		return eAppAdapter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEAppAdapter(AppAdapter newEAppAdapter, NotificationChain msgs) {
+		AppAdapter oldEAppAdapter = eAppAdapter;
+		eAppAdapter = newEAppAdapter;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.OI__EAPP_ADAPTER, oldEAppAdapter, newEAppAdapter);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEAppAdapter(AppAdapter newEAppAdapter) {
+		if (newEAppAdapter != eAppAdapter) {
+			NotificationChain msgs = null;
+			if (eAppAdapter != null)
+				msgs = ((InternalEObject)eAppAdapter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.OI__EAPP_ADAPTER, null, msgs);
+			if (newEAppAdapter != null)
+				msgs = ((InternalEObject)newEAppAdapter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.OI__EAPP_ADAPTER, null, msgs);
+			msgs = basicSetEAppAdapter(newEAppAdapter, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.OI__EAPP_ADAPTER, newEAppAdapter, newEAppAdapter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DependenciesPackage.OI__ER_APP_ADAPTER:
-				return ((InternalEList<?>)getERAppAdapter()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.OI__ETP:
 				return ((InternalEList<?>)getETp()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.OI__EBBOO:
 				return ((InternalEList<?>)getEBBOO()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.OI__ESIEBEL:
 				return ((InternalEList<?>)getESiebel()).basicRemove(otherEnd, msgs);
-			case DependenciesPackage.OI__ESQL_COMPONENT:
-				return basicSetESQLComponent(null, msgs);
+			case DependenciesPackage.OI__ECOMPONENT_SQL:
+				return basicSetEComponentSQL(null, msgs);
 			case DependenciesPackage.OI__EALTAIR:
 				return ((InternalEList<?>)getEAltair()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.OI__ETRX_OP:
@@ -524,6 +584,10 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				return ((InternalEList<?>)getESAT()).basicRemove(otherEnd, msgs);
 			case DependenciesPackage.OI__EFACHADA:
 				return ((InternalEList<?>)getEFachada()).basicRemove(otherEnd, msgs);
+			case DependenciesPackage.OI__EJAVA:
+				return basicSetEJava(null, msgs);
+			case DependenciesPackage.OI__EAPP_ADAPTER:
+				return basicSetEAppAdapter(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -538,8 +602,6 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 		switch (featureID) {
 			case DependenciesPackage.OI__ESTADO_LLAMADA_OI:
 				return getEstadoLlamadaOI();
-			case DependenciesPackage.OI__ER_APP_ADAPTER:
-				return getERAppAdapter();
 			case DependenciesPackage.OI__LN_NAME:
 				return getLnName();
 			case DependenciesPackage.OI__OI_NAME:
@@ -552,10 +614,8 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				return getEBBOO();
 			case DependenciesPackage.OI__ESIEBEL:
 				return getESiebel();
-			case DependenciesPackage.OI__ESQL_COMPONENT:
-				return getESQLComponent();
-			case DependenciesPackage.OI__EJAVA:
-				return getEJava();
+			case DependenciesPackage.OI__ECOMPONENT_SQL:
+				return getEComponentSQL();
 			case DependenciesPackage.OI__EALTAIR:
 				return getEAltair();
 			case DependenciesPackage.OI__ETRX_OP:
@@ -566,6 +626,10 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				return getEFachada();
 			case DependenciesPackage.OI__EWEB_SERVICE:
 				return getEWebService();
+			case DependenciesPackage.OI__EJAVA:
+				return getEJava();
+			case DependenciesPackage.OI__EAPP_ADAPTER:
+				return getEAppAdapter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -582,10 +646,6 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 			case DependenciesPackage.OI__ESTADO_LLAMADA_OI:
 				getEstadoLlamadaOI().clear();
 				getEstadoLlamadaOI().addAll((Collection<? extends OI>)newValue);
-				return;
-			case DependenciesPackage.OI__ER_APP_ADAPTER:
-				getERAppAdapter().clear();
-				getERAppAdapter().addAll((Collection<? extends AppAdapter>)newValue);
 				return;
 			case DependenciesPackage.OI__LN_NAME:
 				setLnName((String)newValue);
@@ -608,12 +668,8 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				getESiebel().clear();
 				getESiebel().addAll((Collection<? extends Siebel>)newValue);
 				return;
-			case DependenciesPackage.OI__ESQL_COMPONENT:
-				setESQLComponent((SQLComponent)newValue);
-				return;
-			case DependenciesPackage.OI__EJAVA:
-				getEJava().clear();
-				getEJava().addAll((Collection<? extends Java>)newValue);
+			case DependenciesPackage.OI__ECOMPONENT_SQL:
+				setEComponentSQL((ComponentSQL)newValue);
 				return;
 			case DependenciesPackage.OI__EALTAIR:
 				getEAltair().clear();
@@ -635,6 +691,12 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				getEWebService().clear();
 				getEWebService().addAll((Collection<? extends Webservice>)newValue);
 				return;
+			case DependenciesPackage.OI__EJAVA:
+				setEJava((Java)newValue);
+				return;
+			case DependenciesPackage.OI__EAPP_ADAPTER:
+				setEAppAdapter((AppAdapter)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -649,9 +711,6 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 		switch (featureID) {
 			case DependenciesPackage.OI__ESTADO_LLAMADA_OI:
 				getEstadoLlamadaOI().clear();
-				return;
-			case DependenciesPackage.OI__ER_APP_ADAPTER:
-				getERAppAdapter().clear();
 				return;
 			case DependenciesPackage.OI__LN_NAME:
 				setLnName(LN_NAME_EDEFAULT);
@@ -671,11 +730,8 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 			case DependenciesPackage.OI__ESIEBEL:
 				getESiebel().clear();
 				return;
-			case DependenciesPackage.OI__ESQL_COMPONENT:
-				setESQLComponent((SQLComponent)null);
-				return;
-			case DependenciesPackage.OI__EJAVA:
-				getEJava().clear();
+			case DependenciesPackage.OI__ECOMPONENT_SQL:
+				setEComponentSQL((ComponentSQL)null);
 				return;
 			case DependenciesPackage.OI__EALTAIR:
 				getEAltair().clear();
@@ -692,6 +748,12 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 			case DependenciesPackage.OI__EWEB_SERVICE:
 				getEWebService().clear();
 				return;
+			case DependenciesPackage.OI__EJAVA:
+				setEJava((Java)null);
+				return;
+			case DependenciesPackage.OI__EAPP_ADAPTER:
+				setEAppAdapter((AppAdapter)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -706,8 +768,6 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 		switch (featureID) {
 			case DependenciesPackage.OI__ESTADO_LLAMADA_OI:
 				return estadoLlamadaOI != null && !estadoLlamadaOI.isEmpty();
-			case DependenciesPackage.OI__ER_APP_ADAPTER:
-				return erAppAdapter != null && !erAppAdapter.isEmpty();
 			case DependenciesPackage.OI__LN_NAME:
 				return LN_NAME_EDEFAULT == null ? lnName != null : !LN_NAME_EDEFAULT.equals(lnName);
 			case DependenciesPackage.OI__OI_NAME:
@@ -720,10 +780,8 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				return eBBOO != null && !eBBOO.isEmpty();
 			case DependenciesPackage.OI__ESIEBEL:
 				return eSiebel != null && !eSiebel.isEmpty();
-			case DependenciesPackage.OI__ESQL_COMPONENT:
-				return eSQLComponent != null;
-			case DependenciesPackage.OI__EJAVA:
-				return eJava != null && !eJava.isEmpty();
+			case DependenciesPackage.OI__ECOMPONENT_SQL:
+				return eComponentSQL != null;
 			case DependenciesPackage.OI__EALTAIR:
 				return eAltair != null && !eAltair.isEmpty();
 			case DependenciesPackage.OI__ETRX_OP:
@@ -734,6 +792,10 @@ public class OIImpl extends MinimalEObjectImpl.Container implements OI {
 				return eFachada != null && !eFachada.isEmpty();
 			case DependenciesPackage.OI__EWEB_SERVICE:
 				return eWebService != null && !eWebService.isEmpty();
+			case DependenciesPackage.OI__EJAVA:
+				return eJava != null;
+			case DependenciesPackage.OI__EAPP_ADAPTER:
+				return eAppAdapter != null;
 		}
 		return super.eIsSet(featureID);
 	}

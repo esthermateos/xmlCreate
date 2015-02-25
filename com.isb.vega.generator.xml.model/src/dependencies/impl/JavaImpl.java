@@ -5,23 +5,16 @@ package dependencies.impl;
 import dependencies.Cache;
 import dependencies.DependenciesPackage;
 import dependencies.FTP;
-import dependencies.Fachada;
 import dependencies.Java;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +23,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link dependencies.impl.JavaImpl#getEFachada <em>EFachada</em>}</li>
+ *   <li>{@link dependencies.impl.JavaImpl#getPackage <em>Package</em>}</li>
+ *   <li>{@link dependencies.impl.JavaImpl#getComponentName <em>Component Name</em>}</li>
  *   <li>{@link dependencies.impl.JavaImpl#getECache <em>ECache</em>}</li>
  *   <li>{@link dependencies.impl.JavaImpl#getEFTP <em>EFTP</em>}</li>
  * </ul>
@@ -40,34 +34,64 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class JavaImpl extends MinimalEObjectImpl.Container implements Java {
 	/**
-	 * The cached value of the '{@link #getEFachada() <em>EFachada</em>}' reference list.
+	 * The default value of the '{@link #getPackage() <em>Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEFachada()
+	 * @see #getPackage()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Fachada> eFachada;
+	protected static final String PACKAGE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getECache() <em>ECache</em>}' containment reference list.
+	 * The cached value of the '{@link #getPackage() <em>Package</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPackage()
+	 * @generated
+	 * @ordered
+	 */
+	protected String package_ = PACKAGE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getComponentName() <em>Component Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponentName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMPONENT_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getComponentName() <em>Component Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponentName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String componentName = COMPONENT_NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getECache() <em>ECache</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getECache()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Cache> eCache;
+	protected Cache eCache;
 
 	/**
-	 * The cached value of the '{@link #getEFTP() <em>EFTP</em>}' containment reference list.
+	 * The cached value of the '{@link #getEFTP() <em>EFTP</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEFTP()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<FTP> eFTP;
+	protected FTP eFTP;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,11 +117,8 @@ public class JavaImpl extends MinimalEObjectImpl.Container implements Java {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Fachada> getEFachada() {
-		if (eFachada == null) {
-			eFachada = new EObjectResolvingEList<Fachada>(Fachada.class, this, DependenciesPackage.JAVA__EFACHADA);
-		}
-		return eFachada;
+	public String getPackage() {
+		return package_;
 	}
 
 	/**
@@ -105,10 +126,40 @@ public class JavaImpl extends MinimalEObjectImpl.Container implements Java {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Cache> getECache() {
-		if (eCache == null) {
-			eCache = new EObjectContainmentEList<Cache>(Cache.class, this, DependenciesPackage.JAVA__ECACHE);
-		}
+	public void setPackage(String newPackage) {
+		String oldPackage = package_;
+		package_ = newPackage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.JAVA__PACKAGE, oldPackage, package_));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getComponentName() {
+		return componentName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComponentName(String newComponentName) {
+		String oldComponentName = componentName;
+		componentName = newComponentName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.JAVA__COMPONENT_NAME, oldComponentName, componentName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cache getECache() {
 		return eCache;
 	}
 
@@ -117,11 +168,76 @@ public class JavaImpl extends MinimalEObjectImpl.Container implements Java {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FTP> getEFTP() {
-		if (eFTP == null) {
-			eFTP = new EObjectContainmentEList<FTP>(FTP.class, this, DependenciesPackage.JAVA__EFTP);
+	public NotificationChain basicSetECache(Cache newECache, NotificationChain msgs) {
+		Cache oldECache = eCache;
+		eCache = newECache;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.JAVA__ECACHE, oldECache, newECache);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setECache(Cache newECache) {
+		if (newECache != eCache) {
+			NotificationChain msgs = null;
+			if (eCache != null)
+				msgs = ((InternalEObject)eCache).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.JAVA__ECACHE, null, msgs);
+			if (newECache != null)
+				msgs = ((InternalEObject)newECache).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.JAVA__ECACHE, null, msgs);
+			msgs = basicSetECache(newECache, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.JAVA__ECACHE, newECache, newECache));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FTP getEFTP() {
 		return eFTP;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEFTP(FTP newEFTP, NotificationChain msgs) {
+		FTP oldEFTP = eFTP;
+		eFTP = newEFTP;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DependenciesPackage.JAVA__EFTP, oldEFTP, newEFTP);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEFTP(FTP newEFTP) {
+		if (newEFTP != eFTP) {
+			NotificationChain msgs = null;
+			if (eFTP != null)
+				msgs = ((InternalEObject)eFTP).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.JAVA__EFTP, null, msgs);
+			if (newEFTP != null)
+				msgs = ((InternalEObject)newEFTP).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DependenciesPackage.JAVA__EFTP, null, msgs);
+			msgs = basicSetEFTP(newEFTP, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.JAVA__EFTP, newEFTP, newEFTP));
 	}
 
 	/**
@@ -133,9 +249,9 @@ public class JavaImpl extends MinimalEObjectImpl.Container implements Java {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DependenciesPackage.JAVA__ECACHE:
-				return ((InternalEList<?>)getECache()).basicRemove(otherEnd, msgs);
+				return basicSetECache(null, msgs);
 			case DependenciesPackage.JAVA__EFTP:
-				return ((InternalEList<?>)getEFTP()).basicRemove(otherEnd, msgs);
+				return basicSetEFTP(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -148,8 +264,10 @@ public class JavaImpl extends MinimalEObjectImpl.Container implements Java {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DependenciesPackage.JAVA__EFACHADA:
-				return getEFachada();
+			case DependenciesPackage.JAVA__PACKAGE:
+				return getPackage();
+			case DependenciesPackage.JAVA__COMPONENT_NAME:
+				return getComponentName();
 			case DependenciesPackage.JAVA__ECACHE:
 				return getECache();
 			case DependenciesPackage.JAVA__EFTP:
@@ -163,21 +281,20 @@ public class JavaImpl extends MinimalEObjectImpl.Container implements Java {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DependenciesPackage.JAVA__EFACHADA:
-				getEFachada().clear();
-				getEFachada().addAll((Collection<? extends Fachada>)newValue);
+			case DependenciesPackage.JAVA__PACKAGE:
+				setPackage((String)newValue);
+				return;
+			case DependenciesPackage.JAVA__COMPONENT_NAME:
+				setComponentName((String)newValue);
 				return;
 			case DependenciesPackage.JAVA__ECACHE:
-				getECache().clear();
-				getECache().addAll((Collection<? extends Cache>)newValue);
+				setECache((Cache)newValue);
 				return;
 			case DependenciesPackage.JAVA__EFTP:
-				getEFTP().clear();
-				getEFTP().addAll((Collection<? extends FTP>)newValue);
+				setEFTP((FTP)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -191,14 +308,17 @@ public class JavaImpl extends MinimalEObjectImpl.Container implements Java {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DependenciesPackage.JAVA__EFACHADA:
-				getEFachada().clear();
+			case DependenciesPackage.JAVA__PACKAGE:
+				setPackage(PACKAGE_EDEFAULT);
+				return;
+			case DependenciesPackage.JAVA__COMPONENT_NAME:
+				setComponentName(COMPONENT_NAME_EDEFAULT);
 				return;
 			case DependenciesPackage.JAVA__ECACHE:
-				getECache().clear();
+				setECache((Cache)null);
 				return;
 			case DependenciesPackage.JAVA__EFTP:
-				getEFTP().clear();
+				setEFTP((FTP)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -212,14 +332,34 @@ public class JavaImpl extends MinimalEObjectImpl.Container implements Java {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DependenciesPackage.JAVA__EFACHADA:
-				return eFachada != null && !eFachada.isEmpty();
+			case DependenciesPackage.JAVA__PACKAGE:
+				return PACKAGE_EDEFAULT == null ? package_ != null : !PACKAGE_EDEFAULT.equals(package_);
+			case DependenciesPackage.JAVA__COMPONENT_NAME:
+				return COMPONENT_NAME_EDEFAULT == null ? componentName != null : !COMPONENT_NAME_EDEFAULT.equals(componentName);
 			case DependenciesPackage.JAVA__ECACHE:
-				return eCache != null && !eCache.isEmpty();
+				return eCache != null;
 			case DependenciesPackage.JAVA__EFTP:
-				return eFTP != null && !eFTP.isEmpty();
+				return eFTP != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (package: ");
+		result.append(package_);
+		result.append(", componentName: ");
+		result.append(componentName);
+		result.append(')');
+		return result.toString();
 	}
 
 } //JavaImpl

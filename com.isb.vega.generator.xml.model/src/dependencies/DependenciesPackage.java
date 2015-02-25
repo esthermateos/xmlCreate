@@ -330,22 +330,13 @@ public interface DependenciesPackage extends EPackage {
 	int OI__ESTADO_LLAMADA_OI = 0;
 
 	/**
-	 * The feature id for the '<em><b>ER App Adapter</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OI__ER_APP_ADAPTER = 1;
-
-	/**
 	 * The feature id for the '<em><b>Ln Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OI__LN_NAME = 2;
+	int OI__LN_NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Oi Name</b></em>' attribute.
@@ -354,7 +345,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__OI_NAME = 3;
+	int OI__OI_NAME = 2;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -363,7 +354,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__VERSION = 4;
+	int OI__VERSION = 3;
 
 	/**
 	 * The feature id for the '<em><b>ETp</b></em>' containment reference list.
@@ -372,7 +363,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__ETP = 5;
+	int OI__ETP = 4;
 
 	/**
 	 * The feature id for the '<em><b>EBBOO</b></em>' containment reference list.
@@ -381,7 +372,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__EBBOO = 6;
+	int OI__EBBOO = 5;
 
 	/**
 	 * The feature id for the '<em><b>ESiebel</b></em>' containment reference list.
@@ -390,25 +381,16 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__ESIEBEL = 7;
+	int OI__ESIEBEL = 6;
 
 	/**
-	 * The feature id for the '<em><b>ESQL Component</b></em>' containment reference.
+	 * The feature id for the '<em><b>EComponent SQL</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OI__ESQL_COMPONENT = 8;
-
-	/**
-	 * The feature id for the '<em><b>EJava</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OI__EJAVA = 9;
+	int OI__ECOMPONENT_SQL = 7;
 
 	/**
 	 * The feature id for the '<em><b>EAltair</b></em>' containment reference list.
@@ -417,7 +399,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__EALTAIR = 10;
+	int OI__EALTAIR = 8;
 
 	/**
 	 * The feature id for the '<em><b>ETrx OP</b></em>' containment reference list.
@@ -426,7 +408,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__ETRX_OP = 11;
+	int OI__ETRX_OP = 9;
 
 	/**
 	 * The feature id for the '<em><b>ESAT</b></em>' containment reference list.
@@ -435,7 +417,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__ESAT = 12;
+	int OI__ESAT = 10;
 
 	/**
 	 * The feature id for the '<em><b>EFachada</b></em>' containment reference list.
@@ -444,7 +426,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__EFACHADA = 13;
+	int OI__EFACHADA = 11;
 
 	/**
 	 * The feature id for the '<em><b>EWeb Service</b></em>' reference list.
@@ -453,7 +435,25 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OI__EWEB_SERVICE = 14;
+	int OI__EWEB_SERVICE = 12;
+
+	/**
+	 * The feature id for the '<em><b>EJava</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OI__EJAVA = 13;
+
+	/**
+	 * The feature id for the '<em><b>EApp Adapter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OI__EAPP_ADAPTER = 14;
 
 	/**
 	 * The number of structural features of the '<em>OI</em>' class.
@@ -529,13 +529,40 @@ public interface DependenciesPackage extends EPackage {
 	int FACHADA__EOI = 4;
 
 	/**
+	 * The feature id for the '<em><b>EComponent SQL</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACHADA__ECOMPONENT_SQL = 5;
+
+	/**
+	 * The feature id for the '<em><b>EJava</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACHADA__EJAVA = 6;
+
+	/**
+	 * The feature id for the '<em><b>EApp Adapter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACHADA__EAPP_ADAPTER = 7;
+
+	/**
 	 * The number of structural features of the '<em>Fachada</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FACHADA_FEATURE_COUNT = 5;
+	int FACHADA_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Fachada</em>' class.
@@ -1304,31 +1331,40 @@ public interface DependenciesPackage extends EPackage {
 	int JAVA = 13;
 
 	/**
-	 * The feature id for the '<em><b>EFachada</b></em>' reference list.
+	 * The feature id for the '<em><b>Package</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA__EFACHADA = 0;
+	int JAVA__PACKAGE = 0;
 
 	/**
-	 * The feature id for the '<em><b>ECache</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Component Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA__ECACHE = 1;
+	int JAVA__COMPONENT_NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>EFTP</b></em>' containment reference list.
+	 * The feature id for the '<em><b>ECache</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA__EFTP = 2;
+	int JAVA__ECACHE = 2;
+
+	/**
+	 * The feature id for the '<em><b>EFTP</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA__EFTP = 3;
 
 	/**
 	 * The number of structural features of the '<em>Java</em>' class.
@@ -1337,7 +1373,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_FEATURE_COUNT = 3;
+	int JAVA_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Java</em>' class.
@@ -1359,31 +1395,40 @@ public interface DependenciesPackage extends EPackage {
 	int APP_ADAPTER = 14;
 
 	/**
-	 * The feature id for the '<em><b>EFachada</b></em>' reference list.
+	 * The feature id for the '<em><b>ECache</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_ADAPTER__EFACHADA = 0;
+	int APP_ADAPTER__ECACHE = 0;
 
 	/**
-	 * The feature id for the '<em><b>ECache</b></em>' containment reference list.
+	 * The feature id for the '<em><b>EFTP</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_ADAPTER__ECACHE = 1;
+	int APP_ADAPTER__EFTP = 1;
 
 	/**
-	 * The feature id for the '<em><b>EFTP</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Package</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_ADAPTER__EFTP = 2;
+	int APP_ADAPTER__PACKAGE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_ADAPTER__COMPONENT_NAME = 3;
 
 	/**
 	 * The number of structural features of the '<em>App Adapter</em>' class.
@@ -1392,7 +1437,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APP_ADAPTER_FEATURE_COUNT = 3;
+	int APP_ADAPTER_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>App Adapter</em>' class.
@@ -1715,14 +1760,14 @@ public interface DependenciesPackage extends EPackage {
 	int TABLE_PARAMETERS_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link dependencies.impl.SQLComponentImpl <em>SQL Component</em>}' class.
+	 * The meta object id for the '{@link dependencies.impl.ComponentSQLImpl <em>Component SQL</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dependencies.impl.SQLComponentImpl
-	 * @see dependencies.impl.DependenciesPackageImpl#getSQLComponent()
+	 * @see dependencies.impl.ComponentSQLImpl
+	 * @see dependencies.impl.DependenciesPackageImpl#getComponentSQL()
 	 * @generated
 	 */
-	int SQL_COMPONENT = 20;
+	int COMPONENT_SQL = 20;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' attribute.
@@ -1731,7 +1776,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_COMPONENT__IMPLEMENTATION_TYPE = 0;
+	int COMPONENT_SQL__IMPLEMENTATION_TYPE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Datasource</b></em>' attribute.
@@ -1740,7 +1785,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_COMPONENT__DATASOURCE = 1;
+	int COMPONENT_SQL__DATASOURCE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Data Source Alias</b></em>' attribute.
@@ -1749,7 +1794,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_COMPONENT__DATA_SOURCE_ALIAS = 2;
+	int COMPONENT_SQL__DATA_SOURCE_ALIAS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Max Rows</b></em>' attribute.
@@ -1758,7 +1803,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_COMPONENT__MAX_ROWS = 3;
+	int COMPONENT_SQL__MAX_ROWS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Page Max Size</b></em>' attribute.
@@ -1767,7 +1812,7 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_COMPONENT__PAGE_MAX_SIZE = 4;
+	int COMPONENT_SQL__PAGE_MAX_SIZE = 4;
 
 	/**
 	 * The feature id for the '<em><b>ESQL Sentence</b></em>' containment reference list.
@@ -1776,43 +1821,43 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_COMPONENT__ESQL_SENTENCE = 5;
+	int COMPONENT_SQL__ESQL_SENTENCE = 5;
 
 	/**
-	 * The feature id for the '<em><b>ECache</b></em>' containment reference list.
+	 * The feature id for the '<em><b>ECache</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_COMPONENT__ECACHE = 6;
+	int COMPONENT_SQL__ECACHE = 6;
 
 	/**
-	 * The feature id for the '<em><b>EFTP</b></em>' containment reference list.
+	 * The feature id for the '<em><b>EFTP</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_COMPONENT__EFTP = 7;
+	int COMPONENT_SQL__EFTP = 7;
 
 	/**
-	 * The number of structural features of the '<em>SQL Component</em>' class.
+	 * The number of structural features of the '<em>Component SQL</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_COMPONENT_FEATURE_COUNT = 8;
+	int COMPONENT_SQL_FEATURE_COUNT = 8;
 
 	/**
-	 * The number of operations of the '<em>SQL Component</em>' class.
+	 * The number of operations of the '<em>Component SQL</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SQL_COMPONENT_OPERATION_COUNT = 0;
+	int COMPONENT_SQL_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link dependencies.impl.SQLSentenceImpl <em>SQL Sentence</em>}' class.
@@ -2668,17 +2713,6 @@ public interface DependenciesPackage extends EPackage {
 	EReference getOI_EstadoLlamadaOI();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dependencies.OI#getERAppAdapter <em>ER App Adapter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>ER App Adapter</em>'.
-	 * @see dependencies.OI#getERAppAdapter()
-	 * @see #getOI()
-	 * @generated
-	 */
-	EReference getOI_ERAppAdapter();
-
-	/**
 	 * Returns the meta object for the attribute '{@link dependencies.OI#getLnName <em>Ln Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2745,26 +2779,15 @@ public interface DependenciesPackage extends EPackage {
 	EReference getOI_ESiebel();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link dependencies.OI#getESQLComponent <em>ESQL Component</em>}'.
+	 * Returns the meta object for the containment reference '{@link dependencies.OI#getEComponentSQL <em>EComponent SQL</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>ESQL Component</em>'.
-	 * @see dependencies.OI#getESQLComponent()
+	 * @return the meta object for the containment reference '<em>EComponent SQL</em>'.
+	 * @see dependencies.OI#getEComponentSQL()
 	 * @see #getOI()
 	 * @generated
 	 */
-	EReference getOI_ESQLComponent();
-
-	/**
-	 * Returns the meta object for the reference list '{@link dependencies.OI#getEJava <em>EJava</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>EJava</em>'.
-	 * @see dependencies.OI#getEJava()
-	 * @see #getOI()
-	 * @generated
-	 */
-	EReference getOI_EJava();
+	EReference getOI_EComponentSQL();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link dependencies.OI#getEAltair <em>EAltair</em>}'.
@@ -2820,6 +2843,28 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOI_EWebService();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dependencies.OI#getEJava <em>EJava</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>EJava</em>'.
+	 * @see dependencies.OI#getEJava()
+	 * @see #getOI()
+	 * @generated
+	 */
+	EReference getOI_EJava();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dependencies.OI#getEAppAdapter <em>EApp Adapter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>EApp Adapter</em>'.
+	 * @see dependencies.OI#getEAppAdapter()
+	 * @see #getOI()
+	 * @generated
+	 */
+	EReference getOI_EAppAdapter();
 
 	/**
 	 * Returns the meta object for class '{@link dependencies.Fachada <em>Fachada</em>}'.
@@ -2885,6 +2930,39 @@ public interface DependenciesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFachada_EOI();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dependencies.Fachada#getEComponentSQL <em>EComponent SQL</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>EComponent SQL</em>'.
+	 * @see dependencies.Fachada#getEComponentSQL()
+	 * @see #getFachada()
+	 * @generated
+	 */
+	EReference getFachada_EComponentSQL();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dependencies.Fachada#getEJava <em>EJava</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>EJava</em>'.
+	 * @see dependencies.Fachada#getEJava()
+	 * @see #getFachada()
+	 * @generated
+	 */
+	EReference getFachada_EJava();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dependencies.Fachada#getEAppAdapter <em>EApp Adapter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>EApp Adapter</em>'.
+	 * @see dependencies.Fachada#getEAppAdapter()
+	 * @see #getFachada()
+	 * @generated
+	 */
+	EReference getFachada_EAppAdapter();
 
 	/**
 	 * Returns the meta object for class '{@link dependencies.TrxOP <em>Trx OP</em>}'.
@@ -3592,21 +3670,32 @@ public interface DependenciesPackage extends EPackage {
 	EClass getJava();
 
 	/**
-	 * Returns the meta object for the reference list '{@link dependencies.Java#getEFachada <em>EFachada</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.Java#getPackage <em>Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>EFachada</em>'.
-	 * @see dependencies.Java#getEFachada()
+	 * @return the meta object for the attribute '<em>Package</em>'.
+	 * @see dependencies.Java#getPackage()
 	 * @see #getJava()
 	 * @generated
 	 */
-	EReference getJava_EFachada();
+	EAttribute getJava_Package();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dependencies.Java#getECache <em>ECache</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.Java#getComponentName <em>Component Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>ECache</em>'.
+	 * @return the meta object for the attribute '<em>Component Name</em>'.
+	 * @see dependencies.Java#getComponentName()
+	 * @see #getJava()
+	 * @generated
+	 */
+	EAttribute getJava_ComponentName();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dependencies.Java#getECache <em>ECache</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>ECache</em>'.
 	 * @see dependencies.Java#getECache()
 	 * @see #getJava()
 	 * @generated
@@ -3614,10 +3703,10 @@ public interface DependenciesPackage extends EPackage {
 	EReference getJava_ECache();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dependencies.Java#getEFTP <em>EFTP</em>}'.
+	 * Returns the meta object for the containment reference '{@link dependencies.Java#getEFTP <em>EFTP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>EFTP</em>'.
+	 * @return the meta object for the containment reference '<em>EFTP</em>'.
 	 * @see dependencies.Java#getEFTP()
 	 * @see #getJava()
 	 * @generated
@@ -3635,21 +3724,10 @@ public interface DependenciesPackage extends EPackage {
 	EClass getAppAdapter();
 
 	/**
-	 * Returns the meta object for the reference list '{@link dependencies.AppAdapter#getEFachada <em>EFachada</em>}'.
+	 * Returns the meta object for the containment reference '{@link dependencies.AppAdapter#getECache <em>ECache</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>EFachada</em>'.
-	 * @see dependencies.AppAdapter#getEFachada()
-	 * @see #getAppAdapter()
-	 * @generated
-	 */
-	EReference getAppAdapter_EFachada();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dependencies.AppAdapter#getECache <em>ECache</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>ECache</em>'.
+	 * @return the meta object for the containment reference '<em>ECache</em>'.
 	 * @see dependencies.AppAdapter#getECache()
 	 * @see #getAppAdapter()
 	 * @generated
@@ -3657,15 +3735,37 @@ public interface DependenciesPackage extends EPackage {
 	EReference getAppAdapter_ECache();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dependencies.AppAdapter#getEFTP <em>EFTP</em>}'.
+	 * Returns the meta object for the containment reference '{@link dependencies.AppAdapter#getEFTP <em>EFTP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>EFTP</em>'.
+	 * @return the meta object for the containment reference '<em>EFTP</em>'.
 	 * @see dependencies.AppAdapter#getEFTP()
 	 * @see #getAppAdapter()
 	 * @generated
 	 */
 	EReference getAppAdapter_EFTP();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dependencies.AppAdapter#getPackage <em>Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Package</em>'.
+	 * @see dependencies.AppAdapter#getPackage()
+	 * @see #getAppAdapter()
+	 * @generated
+	 */
+	EAttribute getAppAdapter_Package();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dependencies.AppAdapter#getComponentName <em>Component Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Component Name</em>'.
+	 * @see dependencies.AppAdapter#getComponentName()
+	 * @see #getAppAdapter()
+	 * @generated
+	 */
+	EAttribute getAppAdapter_ComponentName();
 
 	/**
 	 * Returns the meta object for class '{@link dependencies.JSP <em>JSP</em>}'.
@@ -3927,102 +4027,102 @@ public interface DependenciesPackage extends EPackage {
 	EReference getTableParameters_EClientArcReferences();
 
 	/**
-	 * Returns the meta object for class '{@link dependencies.SQLComponent <em>SQL Component</em>}'.
+	 * Returns the meta object for class '{@link dependencies.ComponentSQL <em>Component SQL</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>SQL Component</em>'.
-	 * @see dependencies.SQLComponent
+	 * @return the meta object for class '<em>Component SQL</em>'.
+	 * @see dependencies.ComponentSQL
 	 * @generated
 	 */
-	EClass getSQLComponent();
+	EClass getComponentSQL();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.SQLComponent#getImplementationType <em>Implementation Type</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.ComponentSQL#getImplementationType <em>Implementation Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Implementation Type</em>'.
-	 * @see dependencies.SQLComponent#getImplementationType()
-	 * @see #getSQLComponent()
+	 * @see dependencies.ComponentSQL#getImplementationType()
+	 * @see #getComponentSQL()
 	 * @generated
 	 */
-	EAttribute getSQLComponent_ImplementationType();
+	EAttribute getComponentSQL_ImplementationType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.SQLComponent#getDatasource <em>Datasource</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.ComponentSQL#getDatasource <em>Datasource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Datasource</em>'.
-	 * @see dependencies.SQLComponent#getDatasource()
-	 * @see #getSQLComponent()
+	 * @see dependencies.ComponentSQL#getDatasource()
+	 * @see #getComponentSQL()
 	 * @generated
 	 */
-	EAttribute getSQLComponent_Datasource();
+	EAttribute getComponentSQL_Datasource();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.SQLComponent#getDataSourceAlias <em>Data Source Alias</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.ComponentSQL#getDataSourceAlias <em>Data Source Alias</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Data Source Alias</em>'.
-	 * @see dependencies.SQLComponent#getDataSourceAlias()
-	 * @see #getSQLComponent()
+	 * @see dependencies.ComponentSQL#getDataSourceAlias()
+	 * @see #getComponentSQL()
 	 * @generated
 	 */
-	EAttribute getSQLComponent_DataSourceAlias();
+	EAttribute getComponentSQL_DataSourceAlias();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.SQLComponent#getMaxRows <em>Max Rows</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.ComponentSQL#getMaxRows <em>Max Rows</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Max Rows</em>'.
-	 * @see dependencies.SQLComponent#getMaxRows()
-	 * @see #getSQLComponent()
+	 * @see dependencies.ComponentSQL#getMaxRows()
+	 * @see #getComponentSQL()
 	 * @generated
 	 */
-	EAttribute getSQLComponent_MaxRows();
+	EAttribute getComponentSQL_MaxRows();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dependencies.SQLComponent#getPageMaxSize <em>Page Max Size</em>}'.
+	 * Returns the meta object for the attribute '{@link dependencies.ComponentSQL#getPageMaxSize <em>Page Max Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Page Max Size</em>'.
-	 * @see dependencies.SQLComponent#getPageMaxSize()
-	 * @see #getSQLComponent()
+	 * @see dependencies.ComponentSQL#getPageMaxSize()
+	 * @see #getComponentSQL()
 	 * @generated
 	 */
-	EAttribute getSQLComponent_PageMaxSize();
+	EAttribute getComponentSQL_PageMaxSize();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dependencies.SQLComponent#getESQLSentence <em>ESQL Sentence</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dependencies.ComponentSQL#getESQLSentence <em>ESQL Sentence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>ESQL Sentence</em>'.
-	 * @see dependencies.SQLComponent#getESQLSentence()
-	 * @see #getSQLComponent()
+	 * @see dependencies.ComponentSQL#getESQLSentence()
+	 * @see #getComponentSQL()
 	 * @generated
 	 */
-	EReference getSQLComponent_ESQLSentence();
+	EReference getComponentSQL_ESQLSentence();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dependencies.SQLComponent#getECache <em>ECache</em>}'.
+	 * Returns the meta object for the containment reference '{@link dependencies.ComponentSQL#getECache <em>ECache</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>ECache</em>'.
-	 * @see dependencies.SQLComponent#getECache()
-	 * @see #getSQLComponent()
+	 * @return the meta object for the containment reference '<em>ECache</em>'.
+	 * @see dependencies.ComponentSQL#getECache()
+	 * @see #getComponentSQL()
 	 * @generated
 	 */
-	EReference getSQLComponent_ECache();
+	EReference getComponentSQL_ECache();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dependencies.SQLComponent#getEFTP <em>EFTP</em>}'.
+	 * Returns the meta object for the containment reference '{@link dependencies.ComponentSQL#getEFTP <em>EFTP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>EFTP</em>'.
-	 * @see dependencies.SQLComponent#getEFTP()
-	 * @see #getSQLComponent()
+	 * @return the meta object for the containment reference '<em>EFTP</em>'.
+	 * @see dependencies.ComponentSQL#getEFTP()
+	 * @see #getComponentSQL()
 	 * @generated
 	 */
-	EReference getSQLComponent_EFTP();
+	EReference getComponentSQL_EFTP();
 
 	/**
 	 * Returns the meta object for class '{@link dependencies.SQLSentence <em>SQL Sentence</em>}'.
@@ -4691,14 +4791,6 @@ public interface DependenciesPackage extends EPackage {
 		EReference OI__ESTADO_LLAMADA_OI = eINSTANCE.getOI_EstadoLlamadaOI();
 
 		/**
-		 * The meta object literal for the '<em><b>ER App Adapter</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OI__ER_APP_ADAPTER = eINSTANCE.getOI_ERAppAdapter();
-
-		/**
 		 * The meta object literal for the '<em><b>Ln Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4747,20 +4839,12 @@ public interface DependenciesPackage extends EPackage {
 		EReference OI__ESIEBEL = eINSTANCE.getOI_ESiebel();
 
 		/**
-		 * The meta object literal for the '<em><b>ESQL Component</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>EComponent SQL</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OI__ESQL_COMPONENT = eINSTANCE.getOI_ESQLComponent();
-
-		/**
-		 * The meta object literal for the '<em><b>EJava</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OI__EJAVA = eINSTANCE.getOI_EJava();
+		EReference OI__ECOMPONENT_SQL = eINSTANCE.getOI_EComponentSQL();
 
 		/**
 		 * The meta object literal for the '<em><b>EAltair</b></em>' containment reference list feature.
@@ -4801,6 +4885,22 @@ public interface DependenciesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OI__EWEB_SERVICE = eINSTANCE.getOI_EWebService();
+
+		/**
+		 * The meta object literal for the '<em><b>EJava</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OI__EJAVA = eINSTANCE.getOI_EJava();
+
+		/**
+		 * The meta object literal for the '<em><b>EApp Adapter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OI__EAPP_ADAPTER = eINSTANCE.getOI_EAppAdapter();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.FachadaImpl <em>Fachada</em>}' class.
@@ -4851,6 +4951,30 @@ public interface DependenciesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FACHADA__EOI = eINSTANCE.getFachada_EOI();
+
+		/**
+		 * The meta object literal for the '<em><b>EComponent SQL</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FACHADA__ECOMPONENT_SQL = eINSTANCE.getFachada_EComponentSQL();
+
+		/**
+		 * The meta object literal for the '<em><b>EJava</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FACHADA__EJAVA = eINSTANCE.getFachada_EJava();
+
+		/**
+		 * The meta object literal for the '<em><b>EApp Adapter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FACHADA__EAPP_ADAPTER = eINSTANCE.getFachada_EAppAdapter();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.TrxOPImpl <em>Trx OP</em>}' class.
@@ -5393,15 +5517,23 @@ public interface DependenciesPackage extends EPackage {
 		EClass JAVA = eINSTANCE.getJava();
 
 		/**
-		 * The meta object literal for the '<em><b>EFachada</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Package</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference JAVA__EFACHADA = eINSTANCE.getJava_EFachada();
+		EAttribute JAVA__PACKAGE = eINSTANCE.getJava_Package();
 
 		/**
-		 * The meta object literal for the '<em><b>ECache</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Component Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JAVA__COMPONENT_NAME = eINSTANCE.getJava_ComponentName();
+
+		/**
+		 * The meta object literal for the '<em><b>ECache</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5409,7 +5541,7 @@ public interface DependenciesPackage extends EPackage {
 		EReference JAVA__ECACHE = eINSTANCE.getJava_ECache();
 
 		/**
-		 * The meta object literal for the '<em><b>EFTP</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>EFTP</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5427,15 +5559,7 @@ public interface DependenciesPackage extends EPackage {
 		EClass APP_ADAPTER = eINSTANCE.getAppAdapter();
 
 		/**
-		 * The meta object literal for the '<em><b>EFachada</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference APP_ADAPTER__EFACHADA = eINSTANCE.getAppAdapter_EFachada();
-
-		/**
-		 * The meta object literal for the '<em><b>ECache</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>ECache</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5443,12 +5567,28 @@ public interface DependenciesPackage extends EPackage {
 		EReference APP_ADAPTER__ECACHE = eINSTANCE.getAppAdapter_ECache();
 
 		/**
-		 * The meta object literal for the '<em><b>EFTP</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>EFTP</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference APP_ADAPTER__EFTP = eINSTANCE.getAppAdapter_EFTP();
+
+		/**
+		 * The meta object literal for the '<em><b>Package</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APP_ADAPTER__PACKAGE = eINSTANCE.getAppAdapter_Package();
+
+		/**
+		 * The meta object literal for the '<em><b>Component Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APP_ADAPTER__COMPONENT_NAME = eINSTANCE.getAppAdapter_ComponentName();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.JSPImpl <em>JSP</em>}' class.
@@ -5653,14 +5793,14 @@ public interface DependenciesPackage extends EPackage {
 		EReference TABLE_PARAMETERS__ECLIENT_ARC_REFERENCES = eINSTANCE.getTableParameters_EClientArcReferences();
 
 		/**
-		 * The meta object literal for the '{@link dependencies.impl.SQLComponentImpl <em>SQL Component</em>}' class.
+		 * The meta object literal for the '{@link dependencies.impl.ComponentSQLImpl <em>Component SQL</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dependencies.impl.SQLComponentImpl
-		 * @see dependencies.impl.DependenciesPackageImpl#getSQLComponent()
+		 * @see dependencies.impl.ComponentSQLImpl
+		 * @see dependencies.impl.DependenciesPackageImpl#getComponentSQL()
 		 * @generated
 		 */
-		EClass SQL_COMPONENT = eINSTANCE.getSQLComponent();
+		EClass COMPONENT_SQL = eINSTANCE.getComponentSQL();
 
 		/**
 		 * The meta object literal for the '<em><b>Implementation Type</b></em>' attribute feature.
@@ -5668,7 +5808,7 @@ public interface DependenciesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SQL_COMPONENT__IMPLEMENTATION_TYPE = eINSTANCE.getSQLComponent_ImplementationType();
+		EAttribute COMPONENT_SQL__IMPLEMENTATION_TYPE = eINSTANCE.getComponentSQL_ImplementationType();
 
 		/**
 		 * The meta object literal for the '<em><b>Datasource</b></em>' attribute feature.
@@ -5676,7 +5816,7 @@ public interface DependenciesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SQL_COMPONENT__DATASOURCE = eINSTANCE.getSQLComponent_Datasource();
+		EAttribute COMPONENT_SQL__DATASOURCE = eINSTANCE.getComponentSQL_Datasource();
 
 		/**
 		 * The meta object literal for the '<em><b>Data Source Alias</b></em>' attribute feature.
@@ -5684,7 +5824,7 @@ public interface DependenciesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SQL_COMPONENT__DATA_SOURCE_ALIAS = eINSTANCE.getSQLComponent_DataSourceAlias();
+		EAttribute COMPONENT_SQL__DATA_SOURCE_ALIAS = eINSTANCE.getComponentSQL_DataSourceAlias();
 
 		/**
 		 * The meta object literal for the '<em><b>Max Rows</b></em>' attribute feature.
@@ -5692,7 +5832,7 @@ public interface DependenciesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SQL_COMPONENT__MAX_ROWS = eINSTANCE.getSQLComponent_MaxRows();
+		EAttribute COMPONENT_SQL__MAX_ROWS = eINSTANCE.getComponentSQL_MaxRows();
 
 		/**
 		 * The meta object literal for the '<em><b>Page Max Size</b></em>' attribute feature.
@@ -5700,7 +5840,7 @@ public interface DependenciesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SQL_COMPONENT__PAGE_MAX_SIZE = eINSTANCE.getSQLComponent_PageMaxSize();
+		EAttribute COMPONENT_SQL__PAGE_MAX_SIZE = eINSTANCE.getComponentSQL_PageMaxSize();
 
 		/**
 		 * The meta object literal for the '<em><b>ESQL Sentence</b></em>' containment reference list feature.
@@ -5708,23 +5848,23 @@ public interface DependenciesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SQL_COMPONENT__ESQL_SENTENCE = eINSTANCE.getSQLComponent_ESQLSentence();
+		EReference COMPONENT_SQL__ESQL_SENTENCE = eINSTANCE.getComponentSQL_ESQLSentence();
 
 		/**
-		 * The meta object literal for the '<em><b>ECache</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>ECache</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SQL_COMPONENT__ECACHE = eINSTANCE.getSQLComponent_ECache();
+		EReference COMPONENT_SQL__ECACHE = eINSTANCE.getComponentSQL_ECache();
 
 		/**
-		 * The meta object literal for the '<em><b>EFTP</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>EFTP</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SQL_COMPONENT__EFTP = eINSTANCE.getSQLComponent_EFTP();
+		EReference COMPONENT_SQL__EFTP = eINSTANCE.getComponentSQL_EFTP();
 
 		/**
 		 * The meta object literal for the '{@link dependencies.impl.SQLSentenceImpl <em>SQL Sentence</em>}' class.
