@@ -6,6 +6,14 @@ import java.util.List;
 
 import com.isb.vega.generator.xml.configuration.EntitiesLogLevelsXmlGenerator.EntityAndLogLevels;
 import com.isb.vega.internal.model.assembly.AssemblyChannelAdapterReference;
+import com.isb.vega.internal.model.blapplication.BLApplication;
+import com.isb.vega.internal.model.operation.flow.state.connector.altair.AltairState;
+import com.isb.vega.internal.model.operation.flow.state.connector.bboo.BBOOState;
+import com.isb.vega.internal.model.operation.flow.state.connector.sat.SatState;
+import com.isb.vega.internal.model.operation.flow.state.connector.siebel.SiebelState;
+import com.isb.vega.internal.model.operation.flow.state.connector.tp.TPStateImpl;
+import com.isb.vega.internal.model.operation.flow.state.connector.trxop.TrxopState;
+import com.isb.vega.internal.model.operation.flow.state.connector.wscaller.WSCallerState;
 import com.isb.vega.model.assembly.IAssemblyFileData;
 import com.isb.vega.model.assembly.IAssemblyNode;
 import com.isb.vega.model.assembly.IAssemblyProject;
@@ -20,12 +28,16 @@ import com.isb.vega.model.assembly.settings.ISetting;
 import com.isb.vega.model.channeladapter.IChannelAdapter;
 import com.isb.vega.model.channeladapter.IChannelAdapterMethod;
 import com.isb.vega.model.core.IVegaElement;
+import com.isb.vega.model.core.VegaModelUtils;
 import com.isb.vega.model.descriptors.xml.generator.IEntitiesLogLevelsXmlGenerator;
 import com.isb.vega.model.operation.flow.IFlowOperationData;
+import com.isb.vega.model.operation.flow.IInternalOperationData;
 import com.isb.vega.model.operation.flow.IState;
 import com.isb.vega.model.operation.flow.state.facade.IFacadeInterfaceState;
 import com.isb.vega.runtime.wrapper.manager.MessagingServiceManager;
 
+import dependencies.Altair;
+import dependencies.BBOO;
 import dependencies.ChannelAdapter;
 import dependencies.DependenciesFactory;
 import dependencies.Ensamblado;
@@ -34,12 +46,18 @@ import dependencies.HOST;
 import dependencies.JMS;
 import dependencies.LogLevel;
 import dependencies.MultiProfile;
+import dependencies.OI;
 import dependencies.OP;
+import dependencies.SAT;
 import dependencies.SATLogicalChannel;
 import dependencies.SATPhysicalChannel;
 import dependencies.Security;
+import dependencies.Siebel;
+import dependencies.Tp;
+import dependencies.TrxOP;
 import dependencies.TrxOPLogicalChannel;
 import dependencies.TrxOPPhysicalChannel;
+import dependencies.Webservice;
 
 public class CreateEntities {
 
@@ -49,24 +67,26 @@ public class CreateEntities {
 	static String sat = "Sat.HostCommunication.";
 
 
-	Fachada fachada;
 	UtilsDependencies utilsDependencies = new UtilsDependencies();
 	/** Rellena la entidad fachada a partir del State proporcionado.
 	 * @param dependencies - Factoría de entidades del modelo
 	 * @param iState - estado de interfaz de fachada
+	 * @param string2 
+	 * @param namecalledfacadeInterface 
+	 * @param string 
+	 * @param calledfacade 
 	 * @return 
 	 * @return listFachada - lista de fachadas cargadas
 	 */
 	public Fachada createFacades(DependenciesFactory dependencies,
 			IState iState) {
-		List<Fachada> listFachada = new ArrayList<Fachada>();
-			IFacadeInterfaceState facadeState = (IFacadeInterfaceState)iState;					
-			fachada = dependencies.createFachada();
-			fachada.setFacadeName(facadeState.getFacade());
-			fachada.setMethodName(facadeState.getName());
-			fachada.setInterfazName(facadeState.getFacadeInterface());
-			if(fachada!=null) listFachada.add(fachada);
-	 
+			Fachada fachada;
+				IFacadeInterfaceState facadeState = (IFacadeInterfaceState)iState;					
+				fachada = dependencies.createFachada();
+				fachada.setFacadeName(facadeState.getFacade());
+				fachada.setMethodName(facadeState.getName());
+				fachada.setInterfazName(facadeState.getFacadeInterface());
+				fachada.setMethodID(facadeState.getMethodID());
 		return fachada;
 	}
 
@@ -78,13 +98,10 @@ public class CreateEntities {
 	 */
 	public OP createOPs(DependenciesFactory dependencies,
 			IFlowOperationData iFlowOperationData,Ensamblado ensamblado) {
-		List<OP> listOP = new ArrayList<OP>();
 		OP op = dependencies.createOP();	
 		op.setOpName(iFlowOperationData.getName());
 		op.setVersion(iFlowOperationData.getVersion());
 		op.setLpName(iFlowOperationData.getParent().getParent().getParent().getElementId());
-		if (op !=null) listOP.add(op);
-	//	ensamblado.setEOP(op);
 		return op;
 	}
 
@@ -109,7 +126,8 @@ public class CreateEntities {
 	 * @param iAssemblyCategoryProfile - objeto que proporciona el contenedor del perfil múltiple de vega.
 	 * @param multiprofile - entidad MULTIPROFILE
 	 */
-	public void setValuesMultiProfiles(IAssemblyCategoryProfile iAssemblyCategoryProfile, MultiProfile multiprofile) {
+	public void setValuesMultiProfiles(IAssemblyCategoryProfile iAssemblyCategoryProfile,
+											  MultiProfile multiprofile) {
 		IAssemblyValueCategory[] assemblyValueCategory = iAssemblyCategoryProfile.getAssemblyValueCategoryContainer().getValues();
 		if (iAssemblyCategoryProfile.getName().equals( "CanalMarco")){
 			multiprofile.setCatCanalMarco(utilsDependencies.obtenerValor(assemblyValueCategory));
@@ -321,5 +339,112 @@ public class CreateEntities {
 		}
 		ensamblado.getEJMS().addAll(listJMS);
 	}
+	
+	public  OI createOis(DependenciesFactory dependencies,
+			IInternalOperationData iInternalOperationData) {
+			BLApplication parent = VegaModelUtils.findParentElement(iInternalOperationData, BLApplication.class);						
+			OI oi = dependencies.createOI();
+			oi.setLnName(parent.getElementId());
+			oi.setOiName(iInternalOperationData.getName());
+			oi.setVersion(iInternalOperationData.getVersion());
+		return oi;
+	}
+	
+	public Webservice createWebservice(DependenciesFactory dependencies,IState iState) {
+
+            WSCallerState wsState = (WSCallerState)iState;       
+            Webservice webService = dependencies.createWebservice();
+            webService.setAlias(wsState.getAlias());
+            webService.setNamespace(wsState.getNameSpace());
+            webService.setState(wsState.getName());//wsState.getStateType()
+            webService.setSynchrony((wsState.getMessageType()== 1) ? "true": "false");
+            webService.setWsdl(wsState.getWsdl());
+            webService.setWsOp(wsState.getOperation());
+            webService.setTransport(wsState.getTransport());
+
+            return webService;
+
+}
+	
+	public Siebel createSiebel(DependenciesFactory dependencies,IState iState) {
+
+            SiebelState siebelState = (SiebelState)iState;
+            Siebel siebel = dependencies.createSiebel();
+            siebel.setState(siebelState.getName());//siebelState.getStateType()
+            siebel.setServer(siebelState.getSiebelServerAlias());
+            siebel.setRequest(siebelState.getSiebelRequestType());
+            siebel.setObject(siebelState.getSiebelObject());
+
+            return siebel;
+      
+}
+
+	public SAT createSAT (DependenciesFactory dependencies,IState iState) {
+
+		 SatState satState = (SatState)iState;
+         SAT sat = dependencies.createSAT();
+         sat.setAlias(satState.getSatAlias());
+         sat.setMode(satState.getSatMode());
+         sat.setSatName(satState.getSatName()); // dudas con name
+         sat.setState(satState.getName());//satState.getStateType()
+         sat.setVersion(satState.getSatVersion());
+
+         return sat;
+
+}
+	
+	public Altair createAltair (DependenciesFactory dependencies,IState iState) {
+
+		  AltairState altairState = (AltairState)iState;
+          Altair altair = dependencies.createAltair();
+          altair.setAlias(altairState.getAltairAlias());
+          altair.setMode(altairState.getAltairMode());
+          altair.setState(altairState.getName());//altairState.getStateType()
+          altair.setTransaction(altairState.getAltairTransaction());
+          altair.setVersion(altairState.getAltairVersion());
+
+        return altair;
+
+}
+	
+	public BBOO createBBOO (DependenciesFactory dependencies,IState iState) {
+		BBOOState bbooState = (BBOOState)iState;
+		BBOO bboo = dependencies.createBBOO();
+		bboo.setAlias(bbooState.getBBOOServerAlias()); //mirar ya que no hay otro alias
+		bboo.setDocument(bbooState.getBBOODocument());
+		bboo.setProvider(bbooState.getBBOODataProvider());
+		bboo.setState(bbooState.getName());//bbooState.getStateType()
+		
+      return bboo;
+
+}
+	
+	public Tp createTp (DependenciesFactory dependencies,IState iState) {
+		TPStateImpl tpState = (TPStateImpl)iState;
+        Tp tp = dependencies.createTp();
+        tp.setCode(tpState.getCode());
+        tp.setState(tpState.getName());//tpState.getStateType()
+        tp.setSubtype(tpState.getSubType());
+        tp.setType(tpState.getType());
+		
+      return tp;
+
+}
+	
+	public TrxOP createTrxOP (DependenciesFactory dependencies,IState iState) {
+
+		TrxopState trxopState = (TrxopState)iState;
+		TrxOP trxop = dependencies.createTrxOP();
+		trxop.setAlias(trxopState.getTrxopAlias());
+		trxop.setProtocol(trxopState.getTrxopMode());
+		trxop.setOperation(trxopState.getTrxopOperation());
+		trxop.setState(trxopState.getName());//trxopState.getStateType()
+		trxop.setTransaction(trxopState.getTrxopTransaction());
+		trxop.setTransactionMode(trxopState.getTrxopCtgAware());
+		trxop.setVersion(trxopState.getTrxopVersion());
+		
+      return trxop;
+
+}
 	
 }

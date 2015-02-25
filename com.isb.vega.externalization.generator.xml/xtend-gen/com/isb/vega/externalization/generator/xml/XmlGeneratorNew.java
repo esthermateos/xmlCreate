@@ -4,6 +4,7 @@ import com.google.common.base.Objects;
 import com.isb.vega.externalization.generator.xml.AssemblyXML;
 import com.isb.vega.externalization.generator.xml.Connectors;
 import com.isb.vega.externalization.generator.xml.GetDate;
+import com.isb.vega.externalization.generator.xml.GetInternalOperationFacadeModel;
 import com.isb.vega.externalization.generator.xml.Global;
 import com.isb.vega.externalization.generator.xml.SqlSentence;
 import com.isb.vega.externalization.generator.xml.Using;
@@ -50,7 +51,7 @@ public class XmlGeneratorNew {
               it.append(_doGenerateCommunication);
               CharSequence _doGenerateChannelAdapter = XmlGeneratorNew.this.doGenerateChannelAdapter(XmlGeneratorNew.this.ensamblado);
               it.append(_doGenerateChannelAdapter);
-              CharSequence _doGenerateWebServices = XmlGeneratorNew.this.doGenerateWebServices();
+              CharSequence _doGenerateWebServices = XmlGeneratorNew.this.doGenerateWebServices(XmlGeneratorNew.this.ensamblado);
               it.append(_doGenerateWebServices);
               CharSequence _doGenerateSQLComponents = XmlGeneratorNew.this.doGenerateSQLComponents();
               it.append(_doGenerateSQLComponents);
@@ -62,7 +63,7 @@ public class XmlGeneratorNew {
               it.append(_doGenerateRules);
               CharSequence _doGenerateGlobal = XmlGeneratorNew.this.doGenerateGlobal();
               it.append(_doGenerateGlobal);
-              CharSequence _doGenerateOther = XmlGeneratorNew.this.doGenerateOther();
+              CharSequence _doGenerateOther = XmlGeneratorNew.this.doGenerateOther(XmlGeneratorNew.this.ensamblado);
               it.append(_doGenerateOther);
               CharSequence _doGenerateFooter = XmlGeneratorNew.this.doGenerateFooter();
               Writer _append = it.append(_doGenerateFooter);
@@ -159,13 +160,31 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateOther() {
+  public CharSequence doGenerateOther(final Ensamblado ensamblado) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<other>");
     _builder.newLine();
-    _builder.append("\t");
-    _builder.append("<catCon/>\t");
-    _builder.newLine();
+    {
+      boolean _notEquals = (!Objects.equal(ensamblado, null));
+      if (_notEquals) {
+        {
+          boolean _isCatCon = GetInternalOperationFacadeModel.isCatCon(ensamblado);
+          if (_isCatCon) {
+            _builder.append("\t");
+            _builder.append("<catCon>yes</catCon>");
+            _builder.newLine();
+          } else {
+            _builder.append("\t");
+            _builder.append("<catCon>no</catCon>");
+            _builder.newLine();
+          }
+        }
+      } else {
+        _builder.append("\t");
+        _builder.append("<catCon/>");
+        _builder.newLine();
+      }
+    }
     _builder.append("</other>");
     _builder.newLine();
     return _builder;
@@ -178,9 +197,9 @@ public class XmlGeneratorNew {
     _builder.append("<configuration>");
     _builder.newLine();
     _builder.append("<appmetainf createdBy=\"ALMSupport\" date=\"");
-    String _Date = GetDate.Date();
-    _builder.append(_Date, "");
-    _builder.append("\" version=\"2.0\">");
+    String _date = GetDate.date();
+    _builder.append(_date, "");
+    _builder.append("\" version=\"2.0\"/>");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
@@ -254,7 +273,7 @@ public class XmlGeneratorNew {
     return _builder;
   }
   
-  public CharSequence doGenerateWebServices() {
+  public CharSequence doGenerateWebServices(final Ensamblado ensamblado) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<webServices>");
     _builder.newLine();
@@ -262,7 +281,7 @@ public class XmlGeneratorNew {
     _builder.append("<associatedLogics></associatedLogics>");
     _builder.newLine();
     _builder.append("\t");
-    CharSequence _doGenerateWebServiceStates = WebServiceStates.doGenerateWebServiceStates();
+    CharSequence _doGenerateWebServiceStates = WebServiceStates.doGenerateWebServiceStates(ensamblado);
     _builder.append(_doGenerateWebServiceStates, "	");
     _builder.newLineIfNotEmpty();
     _builder.append("</webServices>");
@@ -479,15 +498,15 @@ public class XmlGeneratorNew {
         _builder.append(_doGenerateAltair, "	");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        CharSequence _doGenerateBboo = Connectors.doGenerateBboo();
+        CharSequence _doGenerateBboo = Connectors.doGenerateBboo(ensamblado);
         _builder.append(_doGenerateBboo, "	");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        CharSequence _doGenerateTp = Connectors.doGenerateTp();
+        CharSequence _doGenerateTp = Connectors.doGenerateTp(ensamblado);
         _builder.append(_doGenerateTp, "	");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        CharSequence _doGenerateSiebel = Connectors.doGenerateSiebel();
+        CharSequence _doGenerateSiebel = Connectors.doGenerateSiebel(ensamblado);
         _builder.append(_doGenerateSiebel, "	");
         _builder.newLineIfNotEmpty();
         _builder.append("</communication>");

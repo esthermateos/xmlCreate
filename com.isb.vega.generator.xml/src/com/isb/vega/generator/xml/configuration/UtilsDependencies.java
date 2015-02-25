@@ -23,11 +23,18 @@ import com.isb.vega.model.component.IBaseComponent;
 import com.isb.vega.model.component.IBaseComponentData;
 import com.isb.vega.model.component.IBaseMethod;
 import com.isb.vega.model.component.IComponent;
+import com.isb.vega.model.component.IComponentField;
 import com.isb.vega.model.component.IImplLogMethod;
+import com.isb.vega.model.component.IImplMethod;
 import com.isb.vega.model.component.IMethod;
+import com.isb.vega.model.component.IMethodImplementation;
 import com.isb.vega.model.component.IPhysicalComponentData;
 import com.isb.vega.model.component.UtilsComponents;
+import com.isb.vega.model.component.delegate.IDelegateMethodImplementation;
+import com.isb.vega.model.component.facade.IFacadeInterfaceData;
 import com.isb.vega.model.component.facade.IFacadeInterfaceMethod;
+import com.isb.vega.model.component.java.IJavaMethodImplementation;
+import com.isb.vega.model.component.mapper.IMapperMethodImplementation;
 import com.isb.vega.model.component.pl.IPLPhysicalComponent;
 import com.isb.vega.model.core.IVegaProject;
 import com.isb.vega.model.descriptors.xml.generator.IEntitiesLogLevelsXmlGenerator;
@@ -625,6 +632,48 @@ public class UtilsDependencies {
 		return nameconnector;
 	}
 
-	
+	public static IComponentField getImplMethodField(IBaseComponentData baseCompData, String methodID)
+	{
+		//para IFs no tiene sentido
+		if(baseCompData instanceof IFacadeInterfaceData)
+			return null;
+		
+		IImplMethod method = (IImplMethod)  baseCompData.getBaseMethodsContainer().getBaseMethod(methodID);
+		
+		if(method==null)
+			return null;
+		
+		IMethodImplementation methodImpl = method.getMethodImplementation();		
+		
+		
+		if(methodImpl!= null)
+		{
+			if(methodImpl.getMethodImplementationType().equals(
+					IMapperMethodImplementation.MAPPER_IMPLEMENTATION_TYPE)){
+				IMapperMethodImplementation delegateMethodImpl = (IMapperMethodImplementation)methodImpl;
+				IComponentField field =
+					baseCompData.getComponentFieldContainer().getComponentField(delegateMethodImpl.getTargetField());
+				if(field != null)
+					return field;
+			}else if(methodImpl.getMethodImplementationType().equals("delegateImplementation")){
+				
+				IDelegateMethodImplementation delegateMethodImpl = (IDelegateMethodImplementation)methodImpl;
+				IComponentField field =
+					baseCompData.getComponentFieldContainer().getComponentField(delegateMethodImpl.getTargetField());
+				if(field != null)
+					return field;
+			}else if(methodImpl.getMethodImplementationType().equals("javaImplementation")){
+				
+				IJavaMethodImplementation delegateMethodImpl = (IJavaMethodImplementation)methodImpl;
+//				IComponentField field =
+//					baseCompData.getComponentFieldContainer().getComponentField(delegateMethodImpl.getTargetField());
+//				if(field != null)
+//					return field;
+				
+			}
+		}
+
+		return null;
+	}
 
 }

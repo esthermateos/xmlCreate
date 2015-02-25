@@ -2435,7 +2435,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEClass(trxOPEClass, TrxOP.class, "TrxOP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTrxOP_State(), ecorePackage.getEString(), "state", null, 0, 1, TrxOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrxOP_Transaction(), ecorePackage.getEString(), "transaction", null, 0, 1, TrxOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrxOP_Operation(), ecorePackage.getEInt(), "operation", null, 0, 1, TrxOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrxOP_Operation(), ecorePackage.getEString(), "operation", null, 0, 1, TrxOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrxOP_Version(), ecorePackage.getEString(), "version", null, 0, 1, TrxOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrxOP_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, TrxOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrxOP_Protocol(), ecorePackage.getEString(), "protocol", null, 0, 1, TrxOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

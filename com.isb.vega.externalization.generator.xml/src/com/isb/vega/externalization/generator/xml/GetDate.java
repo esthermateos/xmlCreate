@@ -4,7 +4,7 @@ import java.util.Calendar;
 
 public class GetDate {
 	
-	public static String Date() {
+	public static String date() {
 		String date="";
 		Calendar c = Calendar.getInstance();
 		String dia = Integer.toString(c.get(Calendar.DATE));

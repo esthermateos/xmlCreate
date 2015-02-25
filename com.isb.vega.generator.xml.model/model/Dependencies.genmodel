@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.isb.vega.generator.xml.model/src" modelPluginID="com.isb.vega.generator.xml.model"
     modelName="Dependencies" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+    runtimeVersion="2.6" operationReflection="true" importOrganizing="true">
   <foreignModel>Dependencies.ecore</foreignModel>
   <genPackages prefix="Dependencies" disposableProviderFactory="true" ecorePackage="Dependencies.ecore#/">
     <genClasses ecoreClass="Dependencies.ecore#//HOST">

@@ -6,10 +6,11 @@ class Connectors {
 	
 	def static doGenerateTrxOP(Ensamblado ensamblado) 	
     '''
+    «var ops = ensamblado.EOP»
     «var host =  ensamblado.EHOST»
 	«IF host!=null»
 		«IF host.trxprotocol!=null || host.trxOPDefaultMode!=null || host.redProtocol!=null || host.trxOPTCPAlias!=null || host.EOPLogicalChannel!=null || host.EPhysicalChannel!=null »
-		<trxOP>
+		<trxOp>
 			«IF host.trxprotocol!=null && !host.trxprotocol.toString.equals("")»
 			<trxOpProtocol>«host.trxprotocol.toString»</trxOpProtocol>
 			«ELSE»
@@ -39,27 +40,63 @@ class Connectors {
 				«ENDIF»
 			</trxOpLogicalChannels>
 			<trxOpPyshicalChannels>
-				«var PyshicalChannels = host.EPhysicalChannel»
-				«IF PyshicalChannels!=null»
-					«FOR PyshicalChannel : PyshicalChannels»
-						<trxOpPyshicalChannel name="«PyshicalChannel.name»">«PyshicalChannel.value»</trxOpPyshicalChannel>
+				«var pyshicalChannels = host.EPhysicalChannel»
+				«IF pyshicalChannels!=null»
+					«FOR pyshicalChannel : pyshicalChannels»
+						<trxOpPyshicalChannel name="«pyshicalChannel.name»">«pyshicalChannel.value»</trxOpPyshicalChannel>
 					«ENDFOR»
 				«ENDIF»			
 			</trxOpPyshicalChannels>
 			<trxOpStates>
-				<trxOpState>
-					«Utils.doGenerateFieldStatesHead»
-					<transaction>«»</transaction>
-					<operation>«»</operation>
-					<version>«»</version>
-					<alias>«»</alias>
-					<protocol>«»</protocol>
-					<transactionMode>«»</transactionMode>
-				</trxOpState>
+				«var listaOI = GetInternalOperationFacadeModel.getTotalInternalOperations(ensamblado)»
+				«IF listaOI!=null && listaOI.length!=0»
+				«FOR internalOper : listaOI»
+				«var listTrx = internalOper.ETrxOP»
+				«IF listTrx!=null && listTrx.length!=0»
+					«FOR trxop : listTrx»
+					<trxOpState>
+						«Utils.doGenerateFieldStatesHead(internalOper, trxop.state)»
+						«IF trxop.transaction!=null && !trxop.transaction.toString.equals("")»
+						<transaction>«trxop.transaction»</transaction>
+						«ELSE»
+						<transaction/>
+						«ENDIF»
+						«IF trxop.operation!=null && !trxop.version.toString.equals("")»
+						<operation>«trxop.operation»</operation>
+						«ELSE»
+						<operation/>
+						«ENDIF»
+						«IF trxop.version!=null && !trxop.version.toString.equals("")»
+						<version>«trxop.version»</version>
+						«ELSE»
+						<version/>
+						«ENDIF»
+						«IF trxop.alias!=null && !trxop.alias.toString.equals("")»
+						<alias>«trxop.alias»</alias>
+						«ELSE»
+						<alias/>
+						«ENDIF»
+						«IF trxop.protocol!=null && !trxop.protocol.toString.equals("")»
+						<protocol>«trxop.protocol»</protocol>
+						«ELSE»
+						<protocol/>
+						«ENDIF»
+						«IF trxop.transactionMode!=null && !trxop.transactionMode.toString.equals("")»
+						<transactionMode>«trxop.transactionMode»</transactionMode>
+						«ELSE»
+						<transactionMode/>
+						«ENDIF»
+					</trxOpState>
+					«ENDFOR»
+				«ENDIF»
+				«ENDFOR»
+				«ELSE»
+				<trxOpState/>
+				«ENDIF»
 			</trxOpStates>
 		</trxOp>
 		«ELSE»
-		<trxOP>
+		<trxOp>
 			<trxOpProtocol/>
 			<trxOpDefaultMode/>
 			<trxOpRedGProtocol/>
@@ -70,7 +107,7 @@ class Connectors {
 		</trxOp>
 		«ENDIF»
 	«ELSE»
-		<trxOP>
+		<trxOp>
 			<trxOpProtocol/>
 			<trxOpDefaultMode/>
 			<trxOpRedGProtocol/>
@@ -131,11 +168,27 @@ class Connectors {
 				«ENDIF»
 			</satPyshicalChannels>
 			<satStates>
-				<satState>
-					«Utils.doGenerateFieldStatesHead»
-					<satName>«»</satName>
-					«Utils.doGenerateFieldStatesFoot»
-				</satState>
+			«var listaOI = GetInternalOperationFacadeModel.getTotalInternalOperations(ensamblado)»
+				«IF listaOI!=null && listaOI.length!=0»
+				«FOR internalOper : listaOI»
+				«var listSat = internalOper.ESAT»
+				«IF listSat!=null && listSat.length!=0»
+					«FOR sat : listSat»
+					<satState>
+						«Utils.doGenerateFieldStatesHead(internalOper, sat.state)»
+						«IF sat.satName!=null && !sat.satName.toString.equals("")»
+						<satName>«sat.satName»</satName>
+						«ELSE»
+						<satName/>
+						«ENDIF»
+						«Utils.doGenerateFieldStatesFoot(sat.version, sat.alias, sat.mode)»
+					</satState>
+					«ENDFOR»
+				«ENDIF»
+				«ENDFOR»
+				«ELSE»
+				<satState/>
+				«ENDIF»
 			</satStates>
 		</sat>
 		«ELSE»
@@ -181,11 +234,27 @@ class Connectors {
 			<altairAlias/>
 			«ENDIF»
 			<altairStates>
-				<altairState>
-					«Utils.doGenerateFieldStatesHead»
-					<transaction>«»</transaction>
-					«Utils.doGenerateFieldStatesFoot»
-				</altairState>				
+			«var listaOI = GetInternalOperationFacadeModel.getTotalInternalOperations(ensamblado)»
+				«IF listaOI!=null && listaOI.length!=0»
+					«FOR internalOper : listaOI»
+					«var listAltair= internalOper.EAltair»
+					«IF listAltair!=null && listAltair.length!=0»
+						«FOR altair : listAltair»
+						<altairState>
+							«Utils.doGenerateFieldStatesHead(internalOper, altair.state)»
+							«IF altair.transaction!=null && !altair.transaction.equals("")»
+							<transaction>«altair.transaction»</transaction>
+							«ELSE»
+							<transaction/>
+							«ENDIF»
+							«Utils.doGenerateFieldStatesFoot(altair.version, altair.alias, altair.mode)»
+						</altairState>
+					«ENDFOR»
+				«ENDIF»
+				«ENDFOR»
+				«ELSE»
+				<altairState/>
+				«ENDIF»				
 			</altairStates>
 		</altair>
 		«ELSE»
@@ -204,45 +273,120 @@ class Connectors {
 	«ENDIF»
 	'''
 	
-	def static doGenerateBboo() 
+	def static doGenerateBboo(Ensamblado ensamblado) 
     '''
 	<bboo>
 		<bbooStates>
-			<bbooState>
-			«Utils.doGenerateFieldStatesHead»
-			<alias>«»</alias>
-			<document>«»</document>
-			<provider>«»</provider>
-			</bbooState>
+		«var listaOI = GetInternalOperationFacadeModel.getTotalInternalOperations(ensamblado)»
+			«IF listaOI!=null && listaOI.length!=0»
+				«FOR internalOper : listaOI»
+				«var listBBOO = internalOper.EBBOO»
+				«IF listBBOO!=null && listBBOO.length!=0»
+					«FOR bboo : listBBOO»
+					<bbooState>
+						«Utils.doGenerateFieldStatesHead(internalOper,bboo.state)»
+						«IF bboo.alias!=null && !bboo.alias.toString.equals("")»
+						<alias>«bboo.alias»</alias>
+						«ELSE»
+						<alias/>
+						«ENDIF»
+						«IF bboo.document!=null && !bboo.document.toString.equals("")»
+						<document>«bboo.document»</document>
+						«ELSE»
+						<document/>
+						«ENDIF»
+						«IF bboo.provider!=null && !bboo.provider.toString.equals("")»
+						<provider>«bboo.provider»</provider>
+						«ELSE»
+						<provider/>
+						«ENDIF»
+					</bbooState>
+					«ENDFOR»
+				«ENDIF»
+				«ENDFOR»
+			«ELSE»
+			<bbooState/>
+			«ENDIF»
 		</bbooStates>
 	</bboo>	
 	'''
 	
-	def static doGenerateSiebel() 
+	def static doGenerateSiebel(Ensamblado ensamblado) 
     '''
 	<siebel>
 		<siebelStates>
-			<siebelState>
-				«Utils.doGenerateFieldStatesHead»
-				<server>«»</server>
-				<object>«»</type>
-				<request>«»</request>
-			</siebelState>
+		«var listaOI = GetInternalOperationFacadeModel.getTotalInternalOperations(ensamblado)»
+			«IF listaOI!=null && listaOI.length!=0»
+				«FOR internalOper : listaOI»
+				«var listSiebels = internalOper.ESiebel»
+				«IF listSiebels!=null && listSiebels.length!=0»
+					«FOR siebel : listSiebels»
+					<siebelState>
+						«Utils.doGenerateFieldStatesHead(internalOper, siebel.state)»
+						«IF siebel.server!=null && !siebel.server.toString.equals("")»
+						<server>«siebel.server»</server>
+						«ELSE»
+						<server/>
+						«ENDIF»
+						«IF siebel.object!=null && !siebel.object.toString.equals("")»
+						<object>«siebel.object»</object>
+						«ELSE»
+						<object/>
+						«ENDIF»
+						«IF siebel.request!=null && !siebel.request.toString.equals("")»
+						<request>«siebel.request»</request>
+						«ELSE»
+						<request/>
+						«ENDIF»
+					</siebelState>
+					«ENDFOR»
+				«ENDIF»
+				«ENDFOR»
+			«ELSE»
+			<siebelStates/>
+			«ENDIF»
 		</siebelStates>
 	</siebel>	
 	'''	
 	
-	def static doGenerateTp() 
+	def static doGenerateTp(Ensamblado ensamblado) 
     '''
 	<tp>
 		<tpStates>
-			<tpState>
-				«Utils.doGenerateFieldStatesHead»
-				<code>«»</code>
-				<type>«»</type>
-				<subtype>«»</subtype>
-			</tpState>
+		«var listaOI = GetInternalOperationFacadeModel.getTotalInternalOperations(ensamblado)»
+			«IF listaOI!=null && listaOI.length!=0»
+				«FOR internalOper : listaOI»
+				«var listTP = internalOper.ETp»
+				«IF listTP!=null && listTP.length!=0»
+					«FOR tp : listTP»
+					<tpState>
+						«Utils.doGenerateFieldStatesHead(internalOper,tp.state)»
+						«IF tp.code!=null && !tp.code.toString.equals("")»
+						<code>«tp.code»</code>
+						«ELSE»
+						<code/>
+						«ENDIF»
+						«IF tp.type!=null && !tp.type.toString.equals("")»
+						<type>«tp.type»</type>
+						«ELSE»
+						<type/>
+						«ENDIF»
+						«IF tp.subtype!=null && !tp.subtype.toString.equals("")»
+						<subtype>«tp.subtype»</subtype>
+						«ELSE»
+						<subtype/>
+						«ENDIF»
+					</tpState>
+					«ENDFOR»
+				«ENDIF»
+				«ENDFOR»
+			«ELSE»
+			<tpState/>
+			«ENDIF»
 		</tpStates>
-	</tp>	
+	</tp>
 	'''
 }
+				
+			
+

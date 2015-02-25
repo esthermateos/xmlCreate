@@ -24,13 +24,13 @@ class XmlGeneratorNew {
 			it.append(doGenerateAssembly(ensamblado, listPort, listModules))
 			it.append(doGenerateCommunication(ensamblado))
 			it.append(doGenerateChannelAdapter(ensamblado))
-			it.append(doGenerateWebServices())
+			it.append(doGenerateWebServices(ensamblado))
 			it.append(doGenerateSQLComponents())
 			it.append(doGenerateCaches())
 			it.append(doGenerateFtps())
 			it.append(doGenerateRules())
 			it.append(doGenerateGlobal())
-			it.append(doGenerateOther())
+			it.append(doGenerateOther(ensamblado))
 			it.append(doGenerateFooter());
 		]
 	}
@@ -68,16 +68,24 @@ class XmlGeneratorNew {
 		</rules>
 	'''
 	
-		def doGenerateOther() '''
+		def doGenerateOther(Ensamblado ensamblado) '''
 		<other>
-			<catCon/>	
+			«IF ensamblado!=null»
+				«IF GetInternalOperationFacadeModel.isCatCon(ensamblado)»
+				<catCon>yes</catCon>
+				«ELSE»
+				<catCon>no</catCon>
+				«ENDIF»
+			«ELSE»
+			<catCon/>
+			«ENDIF»	
 		</other>
 	'''
 	
 		def doGenerateHeader() '''
 		<?xml version="1.0" encoding="ISO-8859-1"?>
 		<configuration>
-		<appmetainf createdBy="ALMSupport" date="«GetDate.Date()»" version="2.0">
+		<appmetainf createdBy="ALMSupport" date="«GetDate.date()»" version="2.0"/>
 	'''
 	
 		def doGenerateSQLComponents() '''
@@ -102,10 +110,10 @@ class XmlGeneratorNew {
 		</sqlComponents>
 	'''
 	
-		def doGenerateWebServices() '''
+		def doGenerateWebServices(Ensamblado ensamblado) '''
 		<webServices>
 			<associatedLogics></associatedLogics>
-			«WebServiceStates.doGenerateWebServiceStates»
+			«WebServiceStates.doGenerateWebServiceStates(ensamblado)»
 		</webServices>
 	'''
 	
@@ -161,9 +169,9 @@ class XmlGeneratorNew {
 			«Connectors.doGenerateTrxOP(ensamblado)»
 			«Connectors.doGenerateSat(ensamblado)»
 			«Connectors.doGenerateAltair(ensamblado)»
-			«Connectors.doGenerateBboo()»
-			«Connectors.doGenerateTp()»
-			«Connectors.doGenerateSiebel()»
+			«Connectors.doGenerateBboo(ensamblado)»
+			«Connectors.doGenerateTp(ensamblado)»
+			«Connectors.doGenerateSiebel(ensamblado)»
 		</communication>
 		«ELSE»
 		<communication/>

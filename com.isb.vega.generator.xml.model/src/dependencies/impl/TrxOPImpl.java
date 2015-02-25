@@ -80,7 +80,7 @@ public class TrxOPImpl extends MinimalEObjectImpl.Container implements TrxOP {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int OPERATION_EDEFAULT = 0;
+	protected static final String OPERATION_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getOperation() <em>Operation</em>}' attribute.
@@ -90,7 +90,7 @@ public class TrxOPImpl extends MinimalEObjectImpl.Container implements TrxOP {
 	 * @generated
 	 * @ordered
 	 */
-	protected int operation = OPERATION_EDEFAULT;
+	protected String operation = OPERATION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
@@ -238,7 +238,7 @@ public class TrxOPImpl extends MinimalEObjectImpl.Container implements TrxOP {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getOperation() {
+	public String getOperation() {
 		return operation;
 	}
 
@@ -247,8 +247,8 @@ public class TrxOPImpl extends MinimalEObjectImpl.Container implements TrxOP {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOperation(int newOperation) {
-		int oldOperation = operation;
+	public void setOperation(String newOperation) {
+		String oldOperation = operation;
 		operation = newOperation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.TRX_OP__OPERATION, oldOperation, operation));
@@ -379,7 +379,7 @@ public class TrxOPImpl extends MinimalEObjectImpl.Container implements TrxOP {
 				setTransaction((String)newValue);
 				return;
 			case DependenciesPackage.TRX_OP__OPERATION:
-				setOperation((Integer)newValue);
+				setOperation((String)newValue);
 				return;
 			case DependenciesPackage.TRX_OP__VERSION:
 				setVersion((String)newValue);
@@ -443,7 +443,7 @@ public class TrxOPImpl extends MinimalEObjectImpl.Container implements TrxOP {
 			case DependenciesPackage.TRX_OP__TRANSACTION:
 				return TRANSACTION_EDEFAULT == null ? transaction != null : !TRANSACTION_EDEFAULT.equals(transaction);
 			case DependenciesPackage.TRX_OP__OPERATION:
-				return operation != OPERATION_EDEFAULT;
+				return OPERATION_EDEFAULT == null ? operation != null : !OPERATION_EDEFAULT.equals(operation);
 			case DependenciesPackage.TRX_OP__VERSION:
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 			case DependenciesPackage.TRX_OP__ALIAS:
