@@ -54,7 +54,7 @@ public class XmlGeneratorNew {
               it.append(_doGenerateWebServices);
               CharSequence _doGenerateSQLComponents = XmlGeneratorNew.this.doGenerateSQLComponents();
               it.append(_doGenerateSQLComponents);
-              CharSequence _doGenerateCaches = XmlGeneratorNew.this.doGenerateCaches();
+              CharSequence _doGenerateCaches = XmlGeneratorNew.this.doGenerateCaches(XmlGeneratorNew.this.ensamblado);
               it.append(_doGenerateCaches);
               CharSequence _doGenerateFtps = XmlGeneratorNew.this.doGenerateFtps();
               it.append(_doGenerateFtps);
@@ -81,7 +81,7 @@ public class XmlGeneratorNew {
     }
   }
   
-  public CharSequence doGenerateCaches() {
+  public CharSequence doGenerateCaches(final Ensamblado ensamblado) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<caches>");
     _builder.newLine();
@@ -89,7 +89,7 @@ public class XmlGeneratorNew {
     _builder.append("<cache>");
     _builder.newLine();
     _builder.append("\t\t");
-    CharSequence _doGeneratePackNameAlias = Utils.doGeneratePackNameAlias();
+    CharSequence _doGeneratePackNameAlias = Utils.doGeneratePackNameAlias(ensamblado);
     _builder.append(_doGeneratePackNameAlias, "		");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
@@ -112,8 +112,8 @@ public class XmlGeneratorNew {
     _builder.append("</module>");
     _builder.newLine();
     _builder.append("\t\t");
-    CharSequence _doGeneratePackNameAlias = Utils.doGeneratePackNameAlias();
-    _builder.append(_doGeneratePackNameAlias, "		");
+    CharSequence _doGenerateFTP = Utils.doGenerateFTP();
+    _builder.append(_doGenerateFTP, "		");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("</ftp>");

@@ -6,12 +6,6 @@ import java.util.List;
 
 import com.isb.vega.generator.xml.configuration.EntitiesLogLevelsXmlGenerator.EntityAndLogLevels;
 import com.isb.vega.internal.model.assembly.AssemblyChannelAdapterReference;
-import com.isb.vega.internal.model.operation.flow.state.connector.altair.AltairState;
-import com.isb.vega.internal.model.operation.flow.state.connector.bboo.BBOOState;
-import com.isb.vega.internal.model.operation.flow.state.connector.sat.SatState;
-import com.isb.vega.internal.model.operation.flow.state.connector.siebel.SiebelState;
-import com.isb.vega.internal.model.operation.flow.state.connector.tp.TPStateImpl;
-import com.isb.vega.internal.model.operation.flow.state.connector.trxop.TrxopState;
 import com.isb.vega.internal.model.operation.flow.state.connector.wscaller.WSCallerState;
 import com.isb.vega.model.assembly.IAssemblyFileData;
 import com.isb.vega.model.assembly.IAssemblyNode;
@@ -45,6 +39,7 @@ import dependencies.MultiProfile;
 import dependencies.OP;
 import dependencies.SATLogicalChannel;
 import dependencies.SATPhysicalChannel;
+
 import dependencies.Security;
 import dependencies.TrxOPLogicalChannel;
 import dependencies.TrxOPPhysicalChannel;
@@ -60,6 +55,7 @@ public class CreateEntities  {
 
 	Fachada fachada;
 	Webservice webService;
+
 	UtilsDependencies utilsDependencies = new UtilsDependencies();
 	
 	/** Rellena la entidad fachada a partir del State proporcionado.
@@ -103,29 +99,8 @@ public class CreateEntities  {
 		
 		return webService;
 	}
-	public void createConectores(DependenciesFactory dependencies,
-			IState iState) {
-		
-			if (iState instanceof SiebelState){
-				
-			}
-			else if (iState instanceof SatState){
-				
-			}
-			else if (iState instanceof AltairState){
-				
-			}
-			else if (iState instanceof BBOOState){
-				
-			}
-			else if (iState instanceof TrxopState){
-				
-			}
-			else if (iState instanceof TPStateImpl){
-				
-			}
-			//SiebelState siebelState = (SiebelState)iState;
-	}
+	  
+	
 	/** Rellena la entidad OP a partir del IFlowOperationData proporcionado.
 	 * @param iFlowOperationData -
 	 * @param dependencies - Factoría de entidades del modelo
@@ -378,5 +353,7 @@ public class CreateEntities  {
 		}
 		ensamblado.getEJMS().addAll(listJMS);
 	}
+
+	
 	
 }
