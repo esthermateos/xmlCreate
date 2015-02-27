@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dependencies.ComponentSQL#getESQLSentence <em>ESQL Sentence</em>}</li>
  *   <li>{@link dependencies.ComponentSQL#getECache <em>ECache</em>}</li>
  *   <li>{@link dependencies.ComponentSQL#getEFTP <em>EFTP</em>}</li>
+ *   <li>{@link dependencies.ComponentSQL#getComponent <em>Component</em>}</li>
+ *   <li>{@link dependencies.ComponentSQL#getModule <em>Module</em>}</li>
  * </ul>
  * </p>
  *
@@ -227,5 +229,57 @@ public interface ComponentSQL extends EObject {
 	 * @generated
 	 */
 	void setEFTP(FTP value);
+
+	/**
+	 * Returns the value of the '<em><b>Component</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Component</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Component</em>' attribute.
+	 * @see #setComponent(String)
+	 * @see dependencies.DependenciesPackage#getComponentSQL_Component()
+	 * @model
+	 * @generated
+	 */
+	String getComponent();
+
+	/**
+	 * Sets the value of the '{@link dependencies.ComponentSQL#getComponent <em>Component</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Component</em>' attribute.
+	 * @see #getComponent()
+	 * @generated
+	 */
+	void setComponent(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Module</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Module</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Module</em>' attribute.
+	 * @see #setModule(String)
+	 * @see dependencies.DependenciesPackage#getComponentSQL_Module()
+	 * @model
+	 * @generated
+	 */
+	String getModule();
+
+	/**
+	 * Sets the value of the '{@link dependencies.ComponentSQL#getModule <em>Module</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Module</em>' attribute.
+	 * @see #getModule()
+	 * @generated
+	 */
+	void setModule(String value);
 
 } // ComponentSQL

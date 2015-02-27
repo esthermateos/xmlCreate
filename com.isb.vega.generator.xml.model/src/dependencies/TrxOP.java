@@ -88,12 +88,12 @@ public interface TrxOP extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Operation</em>' attribute.
-	 * @see #setOperation(int)
+	 * @see #setOperation(String)
 	 * @see dependencies.DependenciesPackage#getTrxOP_Operation()
 	 * @model
 	 * @generated
 	 */
-	int getOperation();
+	String getOperation();
 
 	/**
 	 * Sets the value of the '{@link dependencies.TrxOP#getOperation <em>Operation</em>}' attribute.
@@ -103,7 +103,7 @@ public interface TrxOP extends EObject {
 	 * @see #getOperation()
 	 * @generated
 	 */
-	void setOperation(int value);
+	void setOperation(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Version</b></em>' attribute.

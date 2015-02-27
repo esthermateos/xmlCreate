@@ -39,6 +39,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dependencies.impl.ComponentSQLImpl#getESQLSentence <em>ESQL Sentence</em>}</li>
  *   <li>{@link dependencies.impl.ComponentSQLImpl#getECache <em>ECache</em>}</li>
  *   <li>{@link dependencies.impl.ComponentSQLImpl#getEFTP <em>EFTP</em>}</li>
+ *   <li>{@link dependencies.impl.ComponentSQLImpl#getComponent <em>Component</em>}</li>
+ *   <li>{@link dependencies.impl.ComponentSQLImpl#getModule <em>Module</em>}</li>
  * </ul>
  * </p>
  *
@@ -174,6 +176,46 @@ public class ComponentSQLImpl extends MinimalEObjectImpl.Container implements Co
 	 * @ordered
 	 */
 	protected FTP eFTP;
+
+	/**
+	 * The default value of the '{@link #getComponent() <em>Component</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponent()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMPONENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getComponent() <em>Component</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponent()
+	 * @generated
+	 * @ordered
+	 */
+	protected String component = COMPONENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getModule() <em>Module</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModule()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MODULE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getModule() <em>Module</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModule()
+	 * @generated
+	 * @ordered
+	 */
+	protected String module = MODULE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -402,6 +444,48 @@ public class ComponentSQLImpl extends MinimalEObjectImpl.Container implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getComponent() {
+		return component;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComponent(String newComponent) {
+		String oldComponent = component;
+		component = newComponent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.COMPONENT_SQL__COMPONENT, oldComponent, component));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getModule() {
+		return module;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setModule(String newModule) {
+		String oldModule = module;
+		module = newModule;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependenciesPackage.COMPONENT_SQL__MODULE, oldModule, module));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -439,6 +523,10 @@ public class ComponentSQLImpl extends MinimalEObjectImpl.Container implements Co
 				return getECache();
 			case DependenciesPackage.COMPONENT_SQL__EFTP:
 				return getEFTP();
+			case DependenciesPackage.COMPONENT_SQL__COMPONENT:
+				return getComponent();
+			case DependenciesPackage.COMPONENT_SQL__MODULE:
+				return getModule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -477,6 +565,12 @@ public class ComponentSQLImpl extends MinimalEObjectImpl.Container implements Co
 			case DependenciesPackage.COMPONENT_SQL__EFTP:
 				setEFTP((FTP)newValue);
 				return;
+			case DependenciesPackage.COMPONENT_SQL__COMPONENT:
+				setComponent((String)newValue);
+				return;
+			case DependenciesPackage.COMPONENT_SQL__MODULE:
+				setModule((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -513,6 +607,12 @@ public class ComponentSQLImpl extends MinimalEObjectImpl.Container implements Co
 			case DependenciesPackage.COMPONENT_SQL__EFTP:
 				setEFTP((FTP)null);
 				return;
+			case DependenciesPackage.COMPONENT_SQL__COMPONENT:
+				setComponent(COMPONENT_EDEFAULT);
+				return;
+			case DependenciesPackage.COMPONENT_SQL__MODULE:
+				setModule(MODULE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -541,6 +641,10 @@ public class ComponentSQLImpl extends MinimalEObjectImpl.Container implements Co
 				return eCache != null;
 			case DependenciesPackage.COMPONENT_SQL__EFTP:
 				return eFTP != null;
+			case DependenciesPackage.COMPONENT_SQL__COMPONENT:
+				return COMPONENT_EDEFAULT == null ? component != null : !COMPONENT_EDEFAULT.equals(component);
+			case DependenciesPackage.COMPONENT_SQL__MODULE:
+				return MODULE_EDEFAULT == null ? module != null : !MODULE_EDEFAULT.equals(module);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -565,6 +669,10 @@ public class ComponentSQLImpl extends MinimalEObjectImpl.Container implements Co
 		result.append(maxRows);
 		result.append(", pageMaxSize: ");
 		result.append(pageMaxSize);
+		result.append(", component: ");
+		result.append(component);
+		result.append(", module: ");
+		result.append(module);
 		result.append(')');
 		return result.toString();
 	}

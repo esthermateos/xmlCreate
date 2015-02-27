@@ -46,8 +46,8 @@
         eType="#//BBOO" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eSiebel" upperBound="-1"
         eType="#//Siebel" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eComponentSQL" eType="#//ComponentSQL"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eComponentSQL" upperBound="-1"
+        eType="#//ComponentSQL" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eAltair" upperBound="-1"
         eType="#//Altair" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eTrxOP" upperBound="-1"
@@ -58,10 +58,10 @@
         eType="#//Fachada" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eWebService" upperBound="-1"
         eType="#//Webservice"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eJava" eType="#//Java"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eAppAdapter" eType="#//AppAdapter"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eJava" upperBound="-1"
+        eType="#//Java" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eAppAdapter" upperBound="-1"
+        eType="#//AppAdapter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Fachada">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="facadeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -79,7 +79,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="TrxOP">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transaction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -213,6 +213,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="eCache" eType="#//Cache"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eFTP" eType="#//FTP" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="component" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="module" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SQLSentence">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -1737,6 +1737,24 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getComponentSQL_Component() {
+		return (EAttribute)componentSQLEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponentSQL_Module() {
+		return (EAttribute)componentSQLEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSQLSentence() {
 		return sqlSentenceEClass;
 	}
@@ -2296,6 +2314,8 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		createEReference(componentSQLEClass, COMPONENT_SQL__ESQL_SENTENCE);
 		createEReference(componentSQLEClass, COMPONENT_SQL__ECACHE);
 		createEReference(componentSQLEClass, COMPONENT_SQL__EFTP);
+		createEAttribute(componentSQLEClass, COMPONENT_SQL__COMPONENT);
+		createEAttribute(componentSQLEClass, COMPONENT_SQL__MODULE);
 
 		sqlSentenceEClass = createEClass(SQL_SENTENCE);
 		createEAttribute(sqlSentenceEClass, SQL_SENTENCE__NAME);
@@ -2413,14 +2433,14 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEReference(getOI_ETp(), this.getTp(), null, "eTp", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOI_EBBOO(), this.getBBOO(), null, "eBBOO", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOI_ESiebel(), this.getSiebel(), null, "eSiebel", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOI_EComponentSQL(), this.getComponentSQL(), null, "eComponentSQL", null, 0, 1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOI_EComponentSQL(), this.getComponentSQL(), null, "eComponentSQL", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOI_EAltair(), this.getAltair(), null, "eAltair", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOI_ETrxOP(), this.getTrxOP(), null, "eTrxOP", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOI_ESAT(), this.getSAT(), null, "eSAT", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOI_EFachada(), this.getFachada(), null, "eFachada", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOI_EWebService(), this.getWebservice(), null, "eWebService", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOI_EJava(), this.getJava(), null, "eJava", null, 0, 1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOI_EAppAdapter(), this.getAppAdapter(), null, "eAppAdapter", null, 0, 1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOI_EJava(), this.getJava(), null, "eJava", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOI_EAppAdapter(), this.getAppAdapter(), null, "eAppAdapter", null, 0, -1, dependencies.OI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fachadaEClass, Fachada.class, "Fachada", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFachada_FacadeName(), ecorePackage.getEString(), "facadeName", null, 0, 1, Fachada.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2435,7 +2455,7 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEClass(trxOPEClass, TrxOP.class, "TrxOP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTrxOP_State(), ecorePackage.getEString(), "state", null, 0, 1, TrxOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrxOP_Transaction(), ecorePackage.getEString(), "transaction", null, 0, 1, TrxOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrxOP_Operation(), ecorePackage.getEInt(), "operation", null, 0, 1, TrxOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrxOP_Operation(), ecorePackage.getEString(), "operation", null, 0, 1, TrxOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrxOP_Version(), ecorePackage.getEString(), "version", null, 0, 1, TrxOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrxOP_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, TrxOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrxOP_Protocol(), ecorePackage.getEString(), "protocol", null, 0, 1, TrxOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2555,6 +2575,8 @@ public class DependenciesPackageImpl extends EPackageImpl implements Dependencie
 		initEReference(getComponentSQL_ESQLSentence(), this.getSQLSentence(), null, "eSQLSentence", null, 1, -1, ComponentSQL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentSQL_ECache(), this.getCache(), null, "eCache", null, 0, 1, ComponentSQL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentSQL_EFTP(), this.getFTP(), null, "eFTP", null, 0, 1, ComponentSQL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentSQL_Component(), ecorePackage.getEString(), "component", null, 0, 1, ComponentSQL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentSQL_Module(), ecorePackage.getEString(), "module", null, 0, 1, ComponentSQL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sqlSentenceEClass, SQLSentence.class, "SQLSentence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSQLSentence_Name(), ecorePackage.getEString(), "name", null, 0, 1, SQLSentence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

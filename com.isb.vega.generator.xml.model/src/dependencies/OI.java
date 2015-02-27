@@ -180,30 +180,20 @@ public interface OI extends EObject {
 	EList<Siebel> getESiebel();
 
 	/**
-	 * Returns the value of the '<em><b>EComponent SQL</b></em>' containment reference.
+	 * Returns the value of the '<em><b>EComponent SQL</b></em>' containment reference list.
+	 * The list contents are of type {@link dependencies.ComponentSQL}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EComponent SQL</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>EComponent SQL</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EComponent SQL</em>' containment reference.
-	 * @see #setEComponentSQL(ComponentSQL)
+	 * @return the value of the '<em>EComponent SQL</em>' containment reference list.
 	 * @see dependencies.DependenciesPackage#getOI_EComponentSQL()
 	 * @model containment="true"
 	 * @generated
 	 */
-	ComponentSQL getEComponentSQL();
-
-	/**
-	 * Sets the value of the '{@link dependencies.OI#getEComponentSQL <em>EComponent SQL</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EComponent SQL</em>' containment reference.
-	 * @see #getEComponentSQL()
-	 * @generated
-	 */
-	void setEComponentSQL(ComponentSQL value);
+	EList<ComponentSQL> getEComponentSQL();
 
 	/**
 	 * Returns the value of the '<em><b>EAltair</b></em>' containment reference list.
@@ -286,55 +276,35 @@ public interface OI extends EObject {
 	EList<Webservice> getEWebService();
 
 	/**
-	 * Returns the value of the '<em><b>EJava</b></em>' containment reference.
+	 * Returns the value of the '<em><b>EJava</b></em>' containment reference list.
+	 * The list contents are of type {@link dependencies.Java}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EJava</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>EJava</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EJava</em>' containment reference.
-	 * @see #setEJava(Java)
+	 * @return the value of the '<em>EJava</em>' containment reference list.
 	 * @see dependencies.DependenciesPackage#getOI_EJava()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Java getEJava();
+	EList<Java> getEJava();
 
 	/**
-	 * Sets the value of the '{@link dependencies.OI#getEJava <em>EJava</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EJava</em>' containment reference.
-	 * @see #getEJava()
-	 * @generated
-	 */
-	void setEJava(Java value);
-
-	/**
-	 * Returns the value of the '<em><b>EApp Adapter</b></em>' containment reference.
+	 * Returns the value of the '<em><b>EApp Adapter</b></em>' containment reference list.
+	 * The list contents are of type {@link dependencies.AppAdapter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EApp Adapter</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>EApp Adapter</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EApp Adapter</em>' containment reference.
-	 * @see #setEAppAdapter(AppAdapter)
+	 * @return the value of the '<em>EApp Adapter</em>' containment reference list.
 	 * @see dependencies.DependenciesPackage#getOI_EAppAdapter()
 	 * @model containment="true"
 	 * @generated
 	 */
-	AppAdapter getEAppAdapter();
-
-	/**
-	 * Sets the value of the '{@link dependencies.OI#getEAppAdapter <em>EApp Adapter</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EApp Adapter</em>' containment reference.
-	 * @see #getEAppAdapter()
-	 * @generated
-	 */
-	void setEAppAdapter(AppAdapter value);
+	EList<AppAdapter> getEAppAdapter();
 
 } // OI
